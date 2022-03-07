@@ -103,7 +103,7 @@ export default function () {
                     </Grid>
                     <Grid item xs={12}>
                         <Paper elevation={3} className={classes.paperContainer}>
-                            <ClinicHistoryComponent />
+                            {/* <ClinicHistoryComponent /> */}
                         </Paper>
                     </Grid>
                     <Grid item xs={12}>
