@@ -5,7 +5,7 @@ import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
 
 import EditIcon from '@mui/icons-material/Edit';
-// import ContactsIcon from '@mui/icons-material/ContactsIcon';
+import RecentActorsIcon from '@mui/icons-material/RecentActors';
 import { useEffect, useState } from 'react';
 import { primaryColor, secondaryColor } from '../../assets/css/js/mainTheme';
 import { useDispatch, useSelector } from 'react-redux';
@@ -53,7 +53,7 @@ export default function BusinessDial() {
                         ariaLabel="SpeedDial openIcon example"
                         className={classes.speedDial}
                         hidden={hidden}
-                        icon={<ContactsIcon color='secondary' openIcon={<EditIcon />} />}
+                        icon={<RecentActorsIcon color='secondary' openIcon={<EditIcon />} />}
                         onClose={handleClose}
                         onOpen={handleOpen}
                         open={open}
@@ -61,7 +61,7 @@ export default function BusinessDial() {
                         {business.map((i) => (
                             <SpeedDialAction
                                 key={i.id}
-                                icon={<ContactsIcon />}
+                                icon={<RecentActorsIcon />}
                                 tooltipTitle={<Typography>{i.razon}</Typography>}
                                 onClick={() => handleClickBusiness(i)}
                                 FabProps={{

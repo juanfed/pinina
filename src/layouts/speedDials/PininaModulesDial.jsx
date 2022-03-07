@@ -11,7 +11,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import EditIcon from '@mui/icons-material/Edit';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import FaceIcon from '@mui/icons-material/Face';
-// import ContactsIcon from '@mui/icons-material/Contacts';
+import ContactsIcon from '@mui/icons-material/Contacts';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 // import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useState, useEffect } from 'react';

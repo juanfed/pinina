@@ -1,6 +1,6 @@
 
 import { Grid, IconButton, Typography, Button, Menu, MenuItem, TextField, Divider, Dialog } from '@mui/material';
-import { DataGrid } from '@material-ui/data-grid';
+import { DataGrid } from '@mui/x-data-grid';
 import { clinicHistoryStyles } from '../../assets/css/js/clinicHistoryStyles';
 //iccons
 import MoreVertIcon from '@mui/icons-material/MoreVert';
