@@ -1,4 +1,4 @@
-import { Typography, Button, Grid, Dialog, TextField } from '@material-ui/core';
+import { Typography, Button, Grid, Dialog, TextField } from '@mui/material';
 import React, { useState } from 'react'
 import { useEffect } from 'react';
 import dewormingStyles from '../../assets/css/js/dewormingStyle';
@@ -120,164 +120,162 @@ export default function Deworming() {
         handleInputReset();
     }
 
-    return (
-        <>
-            <Grid container justify='center' className={classes.registryButton}>
-                <Grid item xs={2} className={classes.title}>
-                    <Button
-                        variant='outlined'
+    return <>
+        <Grid container justifyContent='center' className={classes.registryButton}>
+            <Grid item xs={2} className={classes.title}>
+                <Button
+                    variant='outlined'
+                    color='secondary'
+                    fullWidth
+                    onClick={handleOpenDialog}
+                >
+                    <Typography
                         color='secondary'
-                        fullWidth
-                        onClick={handleOpenDialog}
                     >
+                        Nueva desparasitación
+                    </Typography>
+                </Button>
+            </Grid>
+        </Grid>
+        {
+            tableData.length ?
+                <MaterialTable
+                    tableData={tableData}
+                    rows={rows}
+                />
+                :
+                null
+        }
+        <Dialog
+            maxWidth='xs'
+            open={dialog}
+            onClose={handleCloseDialog}
+        >
+            <div className={classes.dialogContainer}>
+                <Grid container spacing={2} justifyContent='center'>
+                    <Grid item xs={12} className={classes.dialogTitle}>
                         <Typography
+                            variant='h5'
                             color='secondary'
                         >
-                            Nueva desparasitación
+                            Registrar Desparasitación
                         </Typography>
-                    </Button>
-                </Grid>
-            </Grid>
-            {
-                tableData.length ?
-                    <MaterialTable
-                        tableData={tableData}
-                        rows={rows}
-                    />
-                    :
-                    null
-            }
-            <Dialog
-                maxWidth='xs'
-                open={dialog}
-                onClose={handleCloseDialog}
-            >
-                <div className={classes.dialogContainer}>
-                    <Grid container spacing={2} justify='center'>
-                        <Grid item xs={12} className={classes.dialogTitle}>
-                            <Typography
-                                variant='h5'
-                                color='secondary'
-                            >
-                                Registrar Desparasitación
-                            </Typography>
-                        </Grid>
-                        <Grid item md={12}>
-                            <TextField
-                                label="Desparasitación"
-                                name="deworming"
-                                onChange={handleChange}
-                                value={deworming}
-                                variant="outlined"
-                                color='secondary'
-                                size='small'
-                                fullWidth
-                            />
-                        </Grid>
-                        <Grid item md={12}>
-                            <TextField
-                                label="Fecha desparasitación"
-                                name="dewormingDate"
-                                onChange={handleChange}
-                                value={dewormingDate}
-                                variant="outlined"
-                                color='secondary'
-                                size='small'
-                                fullWidth
-                            />
-                        </Grid>
-                        <Grid item md={12}>
-                            <TextField
-                                label="Dosis"
-                                name="dose"
-                                onChange={handleChange}
-                                value={dose}
-                                variant="outlined"
-                                color='secondary'
-                                size='small'
-                                fullWidth
-                            />
-                        </Grid>
-                        <Grid item md={12}>
-                            <TextField
-                                label="Fecha última desparasitación"
-                                name="lastDewormingDate"
-                                onChange={handleChange}
-                                value={lastDewormingDate}
-                                variant="outlined"
-                                color='secondary'
-                                size='small'
-                                fullWidth
-                            />
-                        </Grid>
-                        <Grid item md={12}>
-                            <TextField
-                                label="Fecha Próxima desparasitación"
-                                name="nextDewormingDate"
-                                onChange={handleChange}
-                                value={nextDewormingDate}
-                                variant="outlined"
-                                color='secondary'
-                                size='small'
-                                fullWidth
-                            />
-                        </Grid>
-                        <Grid item md={12}>
-                            <TextField
-                                label="Próxima"
-                                name="nextDeworming"
-                                onChange={handleChange}
-                                value={nextDeworming}
-                                variant="outlined"
-                                color='secondary'
-                                size='small'
-                                fullWidth
-                            />
-                        </Grid>
-                        <Grid item md={12}>
-                            <TextField
-                                label="Estado"
-                                name="status"
-                                onChange={handleChange}
-                                value={status}
-                                variant="outlined"
-                                color='secondary'
-                                size='small'
-                                fullWidth
-                            />
-                        </Grid>
-                        <Grid item md={4}>
-                            <Button
-                                variant='contained'
-                                color='primary'
-                                onClick={handleDewormingSave}
-                                fullWidth
-                            >
-                                <Typography
-                                    color='secondary'
-                                >
-                                    Registrar
-                                </Typography>
-                            </Button>
-                        </Grid>
-                        <Grid item md={4}>
-                            <Button
-                                variant='contained'
-                                color='primary'
-                                onClick={handleInputReset}
-                                fullWidth
-                            >
-                                <Typography
-                                    color='secondary'
-                                >
-                                    Cancelar
-                                </Typography>
-                            </Button>
-                        </Grid>
                     </Grid>
-                </div>
+                    <Grid item md={12}>
+                        <TextField
+                            label="Desparasitación"
+                            name="deworming"
+                            onChange={handleChange}
+                            value={deworming}
+                            variant="outlined"
+                            color='secondary'
+                            size='small'
+                            fullWidth
+                        />
+                    </Grid>
+                    <Grid item md={12}>
+                        <TextField
+                            label="Fecha desparasitación"
+                            name="dewormingDate"
+                            onChange={handleChange}
+                            value={dewormingDate}
+                            variant="outlined"
+                            color='secondary'
+                            size='small'
+                            fullWidth
+                        />
+                    </Grid>
+                    <Grid item md={12}>
+                        <TextField
+                            label="Dosis"
+                            name="dose"
+                            onChange={handleChange}
+                            value={dose}
+                            variant="outlined"
+                            color='secondary'
+                            size='small'
+                            fullWidth
+                        />
+                    </Grid>
+                    <Grid item md={12}>
+                        <TextField
+                            label="Fecha última desparasitación"
+                            name="lastDewormingDate"
+                            onChange={handleChange}
+                            value={lastDewormingDate}
+                            variant="outlined"
+                            color='secondary'
+                            size='small'
+                            fullWidth
+                        />
+                    </Grid>
+                    <Grid item md={12}>
+                        <TextField
+                            label="Fecha Próxima desparasitación"
+                            name="nextDewormingDate"
+                            onChange={handleChange}
+                            value={nextDewormingDate}
+                            variant="outlined"
+                            color='secondary'
+                            size='small'
+                            fullWidth
+                        />
+                    </Grid>
+                    <Grid item md={12}>
+                        <TextField
+                            label="Próxima"
+                            name="nextDeworming"
+                            onChange={handleChange}
+                            value={nextDeworming}
+                            variant="outlined"
+                            color='secondary'
+                            size='small'
+                            fullWidth
+                        />
+                    </Grid>
+                    <Grid item md={12}>
+                        <TextField
+                            label="Estado"
+                            name="status"
+                            onChange={handleChange}
+                            value={status}
+                            variant="outlined"
+                            color='secondary'
+                            size='small'
+                            fullWidth
+                        />
+                    </Grid>
+                    <Grid item md={4}>
+                        <Button
+                            variant='contained'
+                            color='primary'
+                            onClick={handleDewormingSave}
+                            fullWidth
+                        >
+                            <Typography
+                                color='secondary'
+                            >
+                                Registrar
+                            </Typography>
+                        </Button>
+                    </Grid>
+                    <Grid item md={4}>
+                        <Button
+                            variant='contained'
+                            color='primary'
+                            onClick={handleInputReset}
+                            fullWidth
+                        >
+                            <Typography
+                                color='secondary'
+                            >
+                                Cancelar
+                            </Typography>
+                        </Button>
+                    </Grid>
+                </Grid>
+            </div>
 
-            </Dialog>
-        </>
-    )
+        </Dialog>
+    </>;
 }

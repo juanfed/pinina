@@ -1,21 +1,21 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
 //material ui
-import { Dialog, Grid, IconButton, TextField, Typography, Button, CircularProgress } from "@material-ui/core";
+import { Dialog, Grid, IconButton, TextField, Typography, Button, CircularProgress } from "@mui/material";
 import { forgotPasswordStyles } from '../../assets/css/js/forgotPasswordStyles';
 import { useDispatch, useSelector } from "react-redux";
 //icons
-import CloseIcon from '@material-ui/icons/Close';
+import CloseIcon from '@mui/icons-material/Close';
 import CheckEmailModal from '../../components/verifyCode/CheckEmailModal';
-import { useTheme } from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import { genPassCodeAction, setForgotPasswordModal, updatePassCodeAction, verifyPassCodeAction } from '../../redux/actions/AuthAction';
 
 function ForgotPassword() {
     const classes = forgotPasswordStyles();
     const dispatch = useDispatch();
     const theme = useTheme();
-    const fullScreenResponsive = useMediaQuery(theme.breakpoints.down('sm'));
+    const fullScreenResponsive = useMediaQuery(theme.breakpoints.down('md'));
     const [submitCode, setSubmitCode] = useState(false);
     const { forgotPasswordModal } = useSelector(state => state.auth);
     const [displayMsg, setDisplayMsg] = useState(false);
@@ -113,191 +113,189 @@ function ForgotPassword() {
     const handleClose = () => {
         dispatch(setForgotPasswordModal(false));
     }
-    return (
-        <>
-            <Dialog
-                open={forgotPasswordModal}
-                onClose={handleClose}
-                fullScreen={fullScreenResponsive}
-            >
-                {
-                    displayPasswordChange ?
-                        updatePasswordSuccess ?
-                            <Grid container className={classes.rootContainer}>
-                                <Grid container justify='flex-end'>
-                                    <Grid item>
-                                        <IconButton onClick={handleClose}>
-                                            <CloseIcon />
-                                        </IconButton>
-                                    </Grid>
+    return <>
+        <Dialog
+            open={forgotPasswordModal}
+            onClose={handleClose}
+            fullScreen={fullScreenResponsive}
+        >
+            {
+                displayPasswordChange ?
+                    updatePasswordSuccess ?
+                        <Grid container className={classes.rootContainer}>
+                            <Grid container justifyContent='flex-end'>
+                                <Grid item>
+                                    <IconButton onClick={handleClose} size="large">
+                                        <CloseIcon />
+                                    </IconButton>
                                 </Grid>
-                                <Grid container justify='center' spacing={2} className={classes.mainContainer}>
+                            </Grid>
+                            <Grid container justifyContent='center' spacing={2} className={classes.mainContainer}>
 
-                                    <Grid item xs={12}>
-                                        <Typography variant='h6'>
-                                            La contraseña se ha actualizado correctamente
-                                        </Typography>
-                                    </Grid>
+                                <Grid item xs={12}>
+                                    <Typography variant='h6'>
+                                        La contraseña se ha actualizado correctamente
+                                    </Typography>
+                                </Grid>
 
-                                    <Grid container justify='center' className={classes.buttonContainer}>
-                                        <Grid item xs={4}>
-                                            <Button
-                                                onClick={handleClose}
-                                                className={classes.button}
-                                                variant='contained'
-                                                color='secondary'>
-                                                Aceptar
-                                            </Button>
-                                        </Grid>
+                                <Grid container justifyContent='center' className={classes.buttonContainer}>
+                                    <Grid item xs={4}>
+                                        <Button
+                                            onClick={handleClose}
+                                            className={classes.button}
+                                            variant='contained'
+                                            color='secondary'>
+                                            Aceptar
+                                        </Button>
                                     </Grid>
                                 </Grid>
                             </Grid>
-                            :
-                            <Grid container className={classes.rootContainer}>
-                                <Grid container justify='flex-end'>
-                                    <Grid item>
-                                        <IconButton onClick={handleClose}>
-                                            <CloseIcon />
-                                        </IconButton>
-                                    </Grid>
-                                </Grid>
-                                <Grid container justify='center' spacing={2} className={classes.mainContainer}>
-
-                                    <Grid item xs={12}>
-                                        <Typography variant='h6'>
-                                            Ingresa nueva contraseña
-                                        </Typography>
-                                    </Grid>
-                                    {displayMsg &&
-                                        <Grid item xs={12}>
-                                            <Typography>
-                                                {verifyMsg}
-                                            </Typography>
-                                        </Grid>
-                                    }
-                                    <Grid item xs={10}>
-                                        {loader &&
-                                            <CircularProgress />
-                                        }
-                                    </Grid>
-                                    <Grid container spacing={2} justify='center'>
-                                        <Grid item xs={10}>
-                                            <TextField
-                                                onChange={handleChange}
-                                                name='password' value={password}
-                                                size='small' variant='outlined'
-                                                label='Nueva contraseña'
-                                                type='password'
-                                                color='secondary'
-                                            />
-                                        </Grid>
-                                        <Grid item xs={10}>
-                                            <TextField
-                                                onChange={handleChange}
-                                                name='password_2'
-                                                value={password_2}
-                                                size='small'
-                                                variant='outlined'
-                                                label='Repite Contraseña'
-                                                type='password'
-                                                color='secondary'
-                                            />
-                                        </Grid>
-                                    </Grid>
-                                    <Grid container justify='center' className={classes.buttonContainer}>
-                                        <Grid item xs={4}>
-                                            <Button
-                                                disabled={password.length && password_2.length < 4}
-                                                onClick={handleSavePassword}
-                                                className={classes.button}
-                                                variant='contained'
-                                                color='secondary'>
-                                                Enviar
-                                            </Button>
-                                        </Grid>
-                                    </Grid>
-                                </Grid>
-                            </Grid>
+                        </Grid>
                         :
-                        checkEmailModal ?
-                            <Grid container className={classes.rootContainer}>
-                                <Grid container justify='flex-end'>
-                                    <Grid item>
-                                        <IconButton onClick={handleClose}>
-                                            <CloseIcon />
-                                        </IconButton>
-                                    </Grid>
+                        <Grid container className={classes.rootContainer}>
+                            <Grid container justifyContent='flex-end'>
+                                <Grid item>
+                                    <IconButton onClick={handleClose} size="large">
+                                        <CloseIcon />
+                                    </IconButton>
                                 </Grid>
-                                <CheckEmailModal
-                                    submitCode={submitCode}
-                                    setSubmitCode={setSubmitCode}
-                                    setVerifyCode={setVerifyCode}
-                                    verifyMsg={verifyMsg}
-                                    registrySuccess={registrySuccess}
-                                    generateCode={generateCode}
-                                    loader={loader}
-                                    checkEmailModal={checkEmailModal}
-                                />
                             </Grid>
-                            :
-                            <>
-                                <Grid container justify='flex-end' className={classes.closeButtonContainer}>
-                                    <Grid item>
-                                        <IconButton onClick={handleClose}>
-                                            <CloseIcon />
-                                        </IconButton>
+                            <Grid container justifyContent='center' spacing={2} className={classes.mainContainer}>
+
+                                <Grid item xs={12}>
+                                    <Typography variant='h6'>
+                                        Ingresa nueva contraseña
+                                    </Typography>
+                                </Grid>
+                                {displayMsg &&
+                                    <Grid item xs={12}>
+                                        <Typography>
+                                            {verifyMsg}
+                                        </Typography>
+                                    </Grid>
+                                }
+                                <Grid item xs={10}>
+                                    {loader &&
+                                        <CircularProgress />
+                                    }
+                                </Grid>
+                                <Grid container spacing={2} justifyContent='center'>
+                                    <Grid item xs={10}>
+                                        <TextField
+                                            onChange={handleChange}
+                                            name='password' value={password}
+                                            size='small' variant='outlined'
+                                            label='Nueva contraseña'
+                                            type='password'
+                                            color='secondary'
+                                        />
+                                    </Grid>
+                                    <Grid item xs={10}>
+                                        <TextField
+                                            onChange={handleChange}
+                                            name='password_2'
+                                            value={password_2}
+                                            size='small'
+                                            variant='outlined'
+                                            label='Repite Contraseña'
+                                            type='password'
+                                            color='secondary'
+                                        />
                                     </Grid>
                                 </Grid>
-                                <Grid container className={classes.rootContainer}>
+                                <Grid container justifyContent='center' className={classes.buttonContainer}>
+                                    <Grid item xs={4}>
+                                        <Button
+                                            disabled={password.length && password_2.length < 4}
+                                            onClick={handleSavePassword}
+                                            className={classes.button}
+                                            variant='contained'
+                                            color='secondary'>
+                                            Enviar
+                                        </Button>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    :
+                    checkEmailModal ?
+                        <Grid container className={classes.rootContainer}>
+                            <Grid container justifyContent='flex-end'>
+                                <Grid item>
+                                    <IconButton onClick={handleClose} size="large">
+                                        <CloseIcon />
+                                    </IconButton>
+                                </Grid>
+                            </Grid>
+                            <CheckEmailModal
+                                submitCode={submitCode}
+                                setSubmitCode={setSubmitCode}
+                                setVerifyCode={setVerifyCode}
+                                verifyMsg={verifyMsg}
+                                registrySuccess={registrySuccess}
+                                generateCode={generateCode}
+                                loader={loader}
+                                checkEmailModal={checkEmailModal}
+                            />
+                        </Grid>
+                        :
+                        <>
+                            <Grid container justifyContent='flex-end' className={classes.closeButtonContainer}>
+                                <Grid item>
+                                    <IconButton onClick={handleClose} size="large">
+                                        <CloseIcon />
+                                    </IconButton>
+                                </Grid>
+                            </Grid>
+                            <Grid container className={classes.rootContainer}>
 
-                                    <Grid container alignItems='center' justify='center' spacing={2} className={classes.mainContainer}>
-                                        <Grid item>
-                                            <Grid container spacing={2} justify='center'>
+                                <Grid container alignItems='center' justifyContent='center' spacing={2} className={classes.mainContainer}>
+                                    <Grid item>
+                                        <Grid container spacing={2} justifyContent='center'>
+                                            <Grid item xs={12}>
+                                                <Grid container justifyContent='center' className={classes.emailTitle}>
+                                                    <Typography align='center' variant='h6'>
+                                                        Ingresa tu correo electrónico
+                                                    </Typography>
+                                                </Grid>
+                                            </Grid>
+                                            {displayMsg &&
                                                 <Grid item xs={12}>
-                                                    <Grid container justify='center' className={classes.emailTitle}>
-                                                        <Typography align='center' variant='h6'>
-                                                            Ingresa tu correo electrónico
-                                                        </Typography>
-                                                    </Grid>
+                                                    <Typography>
+                                                        {verifyMsg}
+                                                    </Typography>
                                                 </Grid>
-                                                {displayMsg &&
-                                                    <Grid item xs={12}>
-                                                        <Typography>
-                                                            {verifyMsg}
-                                                        </Typography>
-                                                    </Grid>
+                                            }
+                                            <Grid item xs={10}>
+                                                {loader ?
+                                                    <CircularProgress />
+                                                    :
+                                                    <TextField
+                                                        fullWidth
+                                                        className={classes.input}
+                                                        onChange={(e) => setCorreo(e.target.value)}
+                                                        value={correo} label='Correo'
+                                                        variant='outlined'
+                                                        type='email'
+                                                        color='secondary'
+                                                    />
                                                 }
-                                                <Grid item xs={10}>
-                                                    {loader ?
-                                                        <CircularProgress />
-                                                        :
-                                                        <TextField
-                                                            fullWidth
-                                                            className={classes.input}
-                                                            onChange={(e) => setCorreo(e.target.value)}
-                                                            value={correo} label='Correo'
-                                                            variant='outlined'
-                                                            type='email'
-                                                            color='secondary'
-                                                        />
-                                                    }
-                                                </Grid>
-                                                <Grid container justify='center' className={classes.buttonContainer}>
-                                                    <Grid item xs={4}>
-                                                        <Grid container className={classes.buttonEmail}>
-                                                            <Button fullWidth disabled={correo.length === 0} onClick={generateCode} className={classes.button} variant='contained' color='secondary'>Continuar</Button>
-                                                        </Grid>
+                                            </Grid>
+                                            <Grid container justifyContent='center' className={classes.buttonContainer}>
+                                                <Grid item xs={4}>
+                                                    <Grid container className={classes.buttonEmail}>
+                                                        <Button fullWidth disabled={correo.length === 0} onClick={generateCode} className={classes.button} variant='contained' color='secondary'>Continuar</Button>
                                                     </Grid>
                                                 </Grid>
                                             </Grid>
                                         </Grid>
                                     </Grid>
                                 </Grid>
-                            </>
-                }
-            </Dialog>
-        </>
-    )
+                            </Grid>
+                        </>
+            }
+        </Dialog>
+    </>;
 }
 
 export default ForgotPassword

@@ -1,11 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Grid, Typography, Button } from '@material-ui/core'
+import { Grid, Typography, Button } from '@mui/material'
 import { useDispatch } from 'react-redux'
 import { checkEmailModalStyles } from '../../assets/css/js/checkEmailModalStyles';
 //icons
 // import { set_check_email_modal_action } from '../redux/actions/loginAction';
 import { useRef, useState, useEffect } from 'react';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import CircularProgress from '@mui/material/CircularProgress';
 import { Link } from 'next/link';
 
 export default function CheckEmailModal({
@@ -234,162 +234,160 @@ export default function CheckEmailModal({
             }
         }
     };
-    return (
-        <>
-            {checkEmailModal &&
+    return <>
+        {checkEmailModal &&
+            <Grid container
+                className={classes.mainContainer}
+            >
                 <Grid container
-                    className={classes.mainContainer}
+                    spacing={2}
+                    justifyContent='center'
+                    className={classes.dialogText}
                 >
-                    <Grid container
-                        spacing={2}
-                        justify='center'
-                        className={classes.dialogText}
-                    >
+                    <Grid item xs={12}>
+                        <Typography align='center'>
+                            {verifyMsg}
+                        </Typography>
+                    </Grid>
+                    {displayExpires &&
                         <Grid item xs={12}>
-                            <Typography align='center'>
-                                {verifyMsg}
+                            <Typography align='center' color='secondary'>
+                                {`Expira en ${minuteZero ? 0 : ''}${validityMinutes}:${secondZero ? 0 : ''}${validitySeconds}`}
                             </Typography>
                         </Grid>
-                        {displayExpires &&
-                            <Grid item xs={12}>
-                                <Typography align='center' color='secondary'>
-                                    {`Expira en ${minuteZero ? 0 : ''}${validityMinutes}:${secondZero ? 0 : ''}${validitySeconds}`}
-                                </Typography>
-                            </Grid>
-                        }
-                        {verifyMsg === 'Validando...' &&
-                            <Grid item xs={12}>
-                                <CircularProgress color='secondary' />
-                            </Grid>
-                        }
-                    </Grid>
-                    {registrySuccess ? null
-                        :
-                        <Grid container
-                            spacing={1}
-                            justify='center'
-                            className={classes.dialogText}
-                        >
-                            <Grid item>
-                                <input
-                                    onChange={handleChange}
-                                    ref={inputRef_1}
-                                    name='verify_code_1'
-                                    value={verify_code_1}
-                                    size='small' variant='outlined'
-                                    className={classes.codeInputs}
-                                />
-                            </Grid>
-                            <Grid item>
-                                <input
-                                    readOnly={readInput_2}
-                                    onChange={handleChange}
-                                    ref={inputRef_2}
-                                    name='verify_code_2'
-                                    value={verify_code_2}
-                                    size='small'
-                                    variant='outlined'
-                                    className={classes.codeInputs}
-                                />
-                            </Grid>
-                            <Grid item>
-                                <input
-                                    readOnly={readInput_3}
-                                    onChange={handleChange}
-                                    ref={inputRef_3} name='verify_code_3'
-                                    value={verify_code_3} size='small'
-                                    variant='outlined'
-                                    className={classes.codeInputs}
-                                />
-                            </Grid>
-                            <Grid item>
-                                <input
-                                    readOnly={readInput_4}
-                                    onChange={handleChange}
-                                    ref={inputRef_4} name='verify_code_4'
-                                    value={verify_code_4}
-                                    size='small'
-                                    variant='outlined'
-                                    className={classes.codeInputs}
-                                />
-                            </Grid>
-                            <Grid item>
-                                <input
-                                    readOnly={readInput_5}
-                                    onChange={handleChange}
-                                    ref={inputRef_5}
-                                    name='verify_code_5'
-                                    value={verify_code_5}
-                                    size='small'
-                                    variant='outlined'
-                                    className={classes.codeInputs}
-                                />
-                            </Grid>
-                            <Grid item>
-                                <input
-                                    readOnly={readInput_6}
-                                    onChange={handleChange}
-                                    ref={inputRef_6}
-                                    name='verify_code_6'
-                                    value={verify_code_6}
-                                    size='small' variant='outlined'
-                                    className={classes.codeInputs}
-                                />
-                            </Grid>
-                        </Grid>
                     }
-                    <Grid container
-                        spacing={2}
-                        justify='center'
-                        className={classes.sendButtonContainer}
-                    >
-                        <Grid item xs={5}>
-                            {registrySuccess ?
-                                <Button
-                                    disabled={sendButton}
-                                    className={classes.resendButton}
-                                    fullWidth
-                                    variant='contained'
-                                    color='secondary'
-                                    onClick={handleNextStep}
-                                >
-                                    Aceptar
-                                </Button>
-                                :
-                                <Button
-                                    disabled={sendButton}
-                                    className={classes.resendButton}
-                                    fullWidth variant='contained'
-                                    color='secondary'
-                                    onClick={() => setSubmitCode(true)}
-                                >
-                                    Enviar
-                                </Button>
-                            }
-                        </Grid>
-                    </Grid>
-                    {registrySuccess ? null :
-                        <Grid container
-                            spacing={2}
-                            justify='center'
-                            className={classes.dialogText}
-                        >
-                            <Grid item xs={10}>
-                                <Typography align='center'>
-                                    ¿No ha recibido el código?
-                                </Typography>
-                            </Grid>
-                            <Grid item xs={12}>
-                                {waitTime && <Typography color='secondary'>{time}</Typography>}
-                                <Button fullWidth disabled={waitTime} color='secondary' onClick={checkGenCode}>
-                                    Reenviar código
-                                </Button>
-                            </Grid>
+                    {verifyMsg === 'Validando...' &&
+                        <Grid item xs={12}>
+                            <CircularProgress color='secondary' />
                         </Grid>
                     }
                 </Grid>
-            }
-        </>
-    )
+                {registrySuccess ? null
+                    :
+                    <Grid container
+                        spacing={1}
+                        justifyContent='center'
+                        className={classes.dialogText}
+                    >
+                        <Grid item>
+                            <input
+                                onChange={handleChange}
+                                ref={inputRef_1}
+                                name='verify_code_1'
+                                value={verify_code_1}
+                                size='small' variant='outlined'
+                                className={classes.codeInputs}
+                            />
+                        </Grid>
+                        <Grid item>
+                            <input
+                                readOnly={readInput_2}
+                                onChange={handleChange}
+                                ref={inputRef_2}
+                                name='verify_code_2'
+                                value={verify_code_2}
+                                size='small'
+                                variant='outlined'
+                                className={classes.codeInputs}
+                            />
+                        </Grid>
+                        <Grid item>
+                            <input
+                                readOnly={readInput_3}
+                                onChange={handleChange}
+                                ref={inputRef_3} name='verify_code_3'
+                                value={verify_code_3} size='small'
+                                variant='outlined'
+                                className={classes.codeInputs}
+                            />
+                        </Grid>
+                        <Grid item>
+                            <input
+                                readOnly={readInput_4}
+                                onChange={handleChange}
+                                ref={inputRef_4} name='verify_code_4'
+                                value={verify_code_4}
+                                size='small'
+                                variant='outlined'
+                                className={classes.codeInputs}
+                            />
+                        </Grid>
+                        <Grid item>
+                            <input
+                                readOnly={readInput_5}
+                                onChange={handleChange}
+                                ref={inputRef_5}
+                                name='verify_code_5'
+                                value={verify_code_5}
+                                size='small'
+                                variant='outlined'
+                                className={classes.codeInputs}
+                            />
+                        </Grid>
+                        <Grid item>
+                            <input
+                                readOnly={readInput_6}
+                                onChange={handleChange}
+                                ref={inputRef_6}
+                                name='verify_code_6'
+                                value={verify_code_6}
+                                size='small' variant='outlined'
+                                className={classes.codeInputs}
+                            />
+                        </Grid>
+                    </Grid>
+                }
+                <Grid container
+                    spacing={2}
+                    justifyContent='center'
+                    className={classes.sendButtonContainer}
+                >
+                    <Grid item xs={5}>
+                        {registrySuccess ?
+                            <Button
+                                disabled={sendButton}
+                                className={classes.resendButton}
+                                fullWidth
+                                variant='contained'
+                                color='secondary'
+                                onClick={handleNextStep}
+                            >
+                                Aceptar
+                            </Button>
+                            :
+                            <Button
+                                disabled={sendButton}
+                                className={classes.resendButton}
+                                fullWidth variant='contained'
+                                color='secondary'
+                                onClick={() => setSubmitCode(true)}
+                            >
+                                Enviar
+                            </Button>
+                        }
+                    </Grid>
+                </Grid>
+                {registrySuccess ? null :
+                    <Grid container
+                        spacing={2}
+                        justifyContent='center'
+                        className={classes.dialogText}
+                    >
+                        <Grid item xs={10}>
+                            <Typography align='center'>
+                                ¿No ha recibido el código?
+                            </Typography>
+                        </Grid>
+                        <Grid item xs={12}>
+                            {waitTime && <Typography color='secondary'>{time}</Typography>}
+                            <Button fullWidth disabled={waitTime} color='secondary' onClick={checkGenCode}>
+                                Reenviar código
+                            </Button>
+                        </Grid>
+                    </Grid>
+                }
+            </Grid>
+        }
+    </>;
 }
 

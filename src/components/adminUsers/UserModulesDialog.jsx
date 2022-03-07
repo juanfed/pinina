@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
-import { Dialog, Grid, Typography, Paper, IconButton, Divider } from '@material-ui/core';
+import { Dialog, Grid, Typography, Paper, IconButton, Divider } from '@mui/material';
 import { userModulesDialogStyles } from '../../assets/css/js/userModulesDialogStyles';
 import { useDispatch, useSelector } from 'react-redux';
 //icons
-import DeleteIcon from '@material-ui/icons/Delete';
+import DeleteIcon from '@mui/icons-material/Delete';
 import WhiteTable from '../tables/WhiteTable';
 import { removeUserModulesAction } from '../../redux/actions/adminAction';
 
@@ -75,7 +75,7 @@ export default function UserModulesDialog({ dialog, closeDialog, userId }) {
             maxWidth='md'
         >
             <Grid container className={classes.rootContainer}>
-                <Grid container justify='center' className={classes.titleContainer}>
+                <Grid container justifyContent='center' className={classes.titleContainer}>
                     <Grid item xs={12}>
                         <Typography
                             align='center'
@@ -88,7 +88,7 @@ export default function UserModulesDialog({ dialog, closeDialog, userId }) {
                     </Grid>
                 </Grid>
                 <Grid container
-                    spacing={2} justify='center'
+                    spacing={2} justifyContent='center'
                     className={classes.mainContainer}
                 >
                     {modulesData.map(i => (
@@ -99,7 +99,7 @@ export default function UserModulesDialog({ dialog, closeDialog, userId }) {
                             >
                                 <Grid container
                                     alignItems='center'
-                                    justify='center'
+                                    justifyContent='center'
                                     className={classes.modulesContainer}
                                 >
                                     <Grid item xs={10}>
@@ -130,7 +130,7 @@ export default function UserModulesDialog({ dialog, closeDialog, userId }) {
                 {restringedModules.length !== 0 &&
                     <Grid container
                         spacing={3}
-                        justify='center'
+                        justifyContent='center'
                         className={classes.mainContainer}
                     >
                         <Grid item xs={12}>
@@ -152,6 +152,6 @@ export default function UserModulesDialog({ dialog, closeDialog, userId }) {
                 }
             </Grid>
         </Dialog>
-    )
+    );
 };
 

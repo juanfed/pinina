@@ -1,15 +1,15 @@
-import { makeStyles } from '@material-ui/core/styles';
-import { Typography } from '@material-ui/core/';
-import SpeedDial from '@material-ui/lab/SpeedDial';
-import SpeedDialAction from '@material-ui/lab/SpeedDialAction';
+import makeStyles from '@mui/styles/makeStyles';
+import { Typography } from '@mui/material/';
+import SpeedDial from '@mui/material/SpeedDial';
+import SpeedDialAction from '@mui/material/SpeedDialAction';
 import { useState, useEffect } from 'react';
 //icons
-import PetsIcon from '@material-ui/icons/Pets';
-import AddIcon from '@material-ui/icons/Add';
-import InfoIcon from '@material-ui/icons/Info';
-import DeleteIcon from '@material-ui/icons/Delete';
-import AppsIcon from '@material-ui/icons/Apps';
-import CancelIcon from '@material-ui/icons/Cancel';
+import PetsIcon from '@mui/icons-material/Pets';
+import AddIcon from '@mui/icons-material/Add';
+import InfoIcon from '@mui/icons-material/Info';
+import DeleteIcon from '@mui/icons-material/Delete';
+import AppsIcon from '@mui/icons-material/Apps';
+import CancelIcon from '@mui/icons-material/Cancel';
 import { secondaryColor } from '../../../assets/css/js/mainTheme';
 import { useDispatch, useSelector } from 'react-redux';
 import { onDeleteUserAction, setDeleteProfileModuleAction } from '../../../redux/actions/adminAction';

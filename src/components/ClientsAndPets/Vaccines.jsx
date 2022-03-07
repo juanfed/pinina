@@ -1,4 +1,4 @@
-import { Grid, Button, Typography, TextField, Dialog } from '@material-ui/core'
+import { Grid, Button, Typography, TextField, Dialog } from '@mui/material'
 import React, { useState } from 'react'
 import vaccinesStyles from '../../assets/css/js/vaccinesStyles'
 import Table from '../tables/Table'
@@ -71,7 +71,7 @@ export default function Vaccines() {
                 >
                     <Grid container spacing={2}
                     >
-                        <Grid container justify='center'>
+                        <Grid container justifyContent='center'>
                             <Grid item md={12} style={{ textAlign: 'center' }}>
                                 <Typography
                                     variant='h5'
@@ -83,7 +83,7 @@ export default function Vaccines() {
                         </Grid>
                         <Grid container
                             spacing={1}
-                            justify='center'
+                            justifyContent='center'
 
                         >
                             <Grid item md={12}>
@@ -215,7 +215,7 @@ export default function Vaccines() {
                 </div>
             </Dialog>
             <Grid container>
-                <Grid container justify='center'>
+                <Grid container justifyContent='center'>
                     <Grid item md={2}>
                         <Button
                             color='secondary'
@@ -238,7 +238,7 @@ export default function Vaccines() {
                             <Grid container
                                 alignItems='center'
                                 spacing={0}
-                                justify='center'
+                                justifyContent='center'
                                 className={classes.tables}
                                 key={item.description}
 
@@ -317,5 +317,5 @@ export default function Vaccines() {
                 }
             </Grid>
         </Grid >
-    )
+    );
 }

@@ -7,7 +7,7 @@ import Link from 'next/link';
 import ForgotPassword from "../verifyCode/ForgotPassword";
 
 //Material
-import { Grid, TextField, Button } from '@material-ui/core/';
+import { Grid, TextField, Button } from '@mui/material/';
 
 // Social redes
 import FacebookLogin from 'react-facebook-login';
@@ -117,77 +117,75 @@ const Login = ({ setLogin }) => {
 
     };
 
-    return (
-        <>
-            <Grid container justify='center' spacing={2}>
-                <Grid item xs={12}>
-                    <TextField
-                        fullWidth
-                        label='Correo'
-                        variant='outlined'
-                        type='email'
-                        size='small'
-                        name='correo'
-                        value={correo}
-                        color='secondary'
-                        onChange={handleChange}
-                    />
-                </Grid>
-                <Grid item xs={12}>
-                    <TextField
-                        fullWidth
-                        label='Contraseña'
-                        type='password'
-                        variant='outlined'
-                        size='small'
-                        name='password'
-                        value={password}
-                        color='secondary'
-                        onChange={handleChange}
-                    />
-                </Grid>
-                <Grid item xs={12}>
-                    <Grid container justify='center' className={classes.buttonContainer}>
-                        <Grid item xs={12}>
-                            <Button
-                                fullWidth
-                                color='secondary'
-                                variant='contained'
-                                onClick={handleSubmit}
-                            >
-                                Iniciar Sesión
-                            </Button>
-                        </Grid>
-                    </Grid>
-                </Grid>
-                <Grid item xs={12}>
-                    <Grid container justify='center' className={classes.buttonContainer}>
-                        <Grid item xs={12}>
-                            <Button
-                                fullWidth
-                                color='secondary'
-                                variant='inherit'
-                                onClick={() => dispatch(setForgotPasswordModal(true))}
-                            >
-                                Recuperar contraseña
-                            </Button>
-                        </Grid>
-                        <Grid item xs={12}>
-                            <Button
-                                fullWidth
-                                color='secondary'
-                                variant='inherit'
-                                onClick={() => router.push('/adminUser')}
-                            >
-                                Admin Usuarios
-                            </Button>
-                        </Grid>
+    return <>
+        <Grid container justifyContent='center' spacing={2}>
+            <Grid item xs={12}>
+                <TextField
+                    fullWidth
+                    label='Correo'
+                    variant='outlined'
+                    type='email'
+                    size='small'
+                    name='correo'
+                    value={correo}
+                    color='secondary'
+                    onChange={handleChange}
+                />
+            </Grid>
+            <Grid item xs={12}>
+                <TextField
+                    fullWidth
+                    label='Contraseña'
+                    type='password'
+                    variant='outlined'
+                    size='small'
+                    name='password'
+                    value={password}
+                    color='secondary'
+                    onChange={handleChange}
+                />
+            </Grid>
+            <Grid item xs={12}>
+                <Grid container justifyContent='center' className={classes.buttonContainer}>
+                    <Grid item xs={12}>
+                        <Button
+                            fullWidth
+                            color='secondary'
+                            variant='contained'
+                            onClick={handleSubmit}
+                        >
+                            Iniciar Sesión
+                        </Button>
                     </Grid>
                 </Grid>
             </Grid>
-            <ForgotPassword />
-        </>
-    )
+            <Grid item xs={12}>
+                <Grid container justifyContent='center' className={classes.buttonContainer}>
+                    <Grid item xs={12}>
+                        <Button
+                            fullWidth
+                            color='secondary'
+                            variant='inherit'
+                            onClick={() => dispatch(setForgotPasswordModal(true))}
+                        >
+                            Recuperar contraseña
+                        </Button>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Button
+                            fullWidth
+                            color='secondary'
+                            variant='inherit'
+                            onClick={() => router.push('/adminUser')}
+                        >
+                            Admin Usuarios
+                        </Button>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+        <ForgotPassword />
+    </>;
 }
 
 export default Login

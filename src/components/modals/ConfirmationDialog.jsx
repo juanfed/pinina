@@ -1,4 +1,4 @@
-import { Dialog, Typography, Grid, Button } from '@material-ui/core';
+import { Dialog, Typography, Grid, Button } from '@mui/material';
 import React, { useState } from 'react';
 import confirmDeleteUserDialogStyles from '../../assets/css/js/confirmDeleteUserDialogStyles';
 
@@ -13,14 +13,14 @@ export default function ConfirmationDialog({ message, dialog, closeDialog, handl
             onClose={closeDialog}
             maxWidth='lg'
         >
-            <Grid container justify='center' className={classes.rootContainer} >
+            <Grid container justifyContent='center' className={classes.rootContainer} >
                 <Grid xs={12}>
                     <Grid container
                         spacing={2}
-                        justify='center'
+                        justifyContent='center'
                     >
                         <Grid item xs={12}>
-                            <Grid container justify='center' className={classes.msgContainer}>
+                            <Grid container justifyContent='center' className={classes.msgContainer}>
                                 {success ?
                                     <Grid item>
                                         <Typography align='center' variant='h5'>
@@ -85,5 +85,5 @@ export default function ConfirmationDialog({ message, dialog, closeDialog, handl
                 </Grid>
             </Grid>
         </Dialog >
-    )
+    );
 };

@@ -1,6 +1,6 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme, adaptV4Theme } from '@mui/material/styles';
 
-const mainTheme = createMuiTheme({
+const mainTheme = createTheme(adaptV4Theme({
 	palette: {
 		primary: {
 			// main: '#F8F29A',
@@ -34,7 +34,7 @@ const mainTheme = createMuiTheme({
 			main: '#31190C'
 		}
 	}
-});
+}));
 
 export const tableTypographyColor = '#6B6B6B';
 const primaryColor = mainTheme.palette.primary.main;

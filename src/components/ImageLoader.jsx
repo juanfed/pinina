@@ -1,4 +1,4 @@
-import { Grid } from '@material-ui/core'
+import { Grid } from '@mui/material'
 import imageLoaderStyles from '../assets/css/js/imageLoaderStyles'
 
 export default function ImageLoader() {

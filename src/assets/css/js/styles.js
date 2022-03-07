@@ -1,7 +1,7 @@
-import { blue } from "@material-ui/core/colors";
+import { blue } from "@mui/material/colors";
 import { primaryColor, secondaryColor } from "./mainTheme";
 
-const { makeStyles } = require("@material-ui/core");
+const { makeStyles } = require("@mui/material");
 
 const drawerWidth = 340;
 
@@ -282,13 +282,13 @@ const useStyles = makeStyles((theme) => ({
     },
     mainContainer: {
         padding: theme.spacing(5, 5, 2, 20),
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('md')]: {
             padding: theme.spacing(0, 0, 0, 0),
         },
     },
     sonContainer: {
         padding: theme.spacing(0, 5, 2, 20),
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('md')]: {
             padding: theme.spacing(0, 0, 0, 0),
         },
     },
@@ -332,7 +332,7 @@ const useStyles = makeStyles((theme) => ({
         color: secondaryColor,
         padding: theme.spacing(1, 1, 1, 0),
         // vertical padding + font size from searchIcon
-        paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+        paddingLeft: `calc(1em + ${theme.spacing(4)})`,
         transition: theme.transitions.create('width'),
         width: '100%',
         [theme.breakpoints.up('sm')]: {

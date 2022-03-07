@@ -1,28 +1,28 @@
 //hooks
 import { useState, useEffect } from "react";
 //material ui
-import { Dialog, Grid, Typography, IconButton, Button, TextField, Box, Paper, Switch, ListItem, ListItemText, MenuItem, Checkbox } from "@material-ui/core"
+import { Dialog, Grid, Typography, IconButton, Button, TextField, Box, Paper, Switch, ListItem, ListItemText, MenuItem, Checkbox } from "@mui/material"
 import setUserPrivDialogStyles from "../../assets/css/js/setUserPrivDialogStyles";
 //components
 import WhiteTable from "../tables/WhiteTable";
 //icons
-import DeleteIcon from '@material-ui/icons/Delete';
-import SearchIcon from '@material-ui/icons/Search';
-import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
-import EmailIcon from '@material-ui/icons/Email';
-import ViewModuleIcon from '@material-ui/icons/ViewModule';
-import CancelIcon from '@material-ui/icons/Cancel';
-import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import DoubleArrowIcon from '@material-ui/icons/DoubleArrow';
+import DeleteIcon from '@mui/icons-material/Delete';
+import SearchIcon from '@mui/icons-material/Search';
+import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
+import EmailIcon from '@mui/icons-material/Email';
+import ViewModuleIcon from '@mui/icons-material/ViewModule';
+import CancelIcon from '@mui/icons-material/Cancel';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
 import RightArrow from '../../assets/icons/right-arrow.svg'
 import LeftArrow from '../../assets/icons/left-arrow.svg'
 import RightSingleArrow from '../../assets/icons/right-single-arrow.svg'
 import LeftSingleArrow from '../../assets/icons/left-single-arrow.svg'
-import CloseIcon from '@material-ui/icons/Close';
-import SyncAltIcon from '@material-ui/icons/SyncAlt';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import CloseIcon from '@mui/icons-material/Close';
+import SyncAltIcon from '@mui/icons-material/SyncAlt';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 //redux
 import { useDispatch, useSelector } from "react-redux";
 import { cleanUserProfileModulesData, cleanUserProfileModulesDataAction, createUserModulesAction, getModulesAction, getUserModulesAction, getUsersBusinessAction, loadModulesByUserAction, removeUserModulesAction, searchUserAction, setUserAccessAction, updateModulesAction } from "../../redux/actions/adminAction";
@@ -547,502 +547,500 @@ export default function AssignProfileDialog({ dialog, closeDialog, moreInfo }) {
         }
     }, [localModulesList]);
 
-    return (
-        <>
-            <Dialog
-                open={dialog}
-                onClose={handleClose}
-                maxWidth='md'
-            >
-                <Grid container className={classes.closeContainer}>
-                    <Grid item xs={12}>
-                        <Grid container justify='flex-end'>
-                            <Grid item>
-                                <IconButton onClick={handleClose}>
-                                    <CloseIcon size='large' color='secondary' />
-                                </IconButton>
-                            </Grid>
+    return <>
+        <Dialog
+            open={dialog}
+            onClose={handleClose}
+            maxWidth='md'
+        >
+            <Grid container className={classes.closeContainer}>
+                <Grid item xs={12}>
+                    <Grid container justifyContent='flex-end'>
+                        <Grid item>
+                            <IconButton onClick={handleClose} size="large">
+                                <CloseIcon size='large' color='secondary' />
+                            </IconButton>
                         </Grid>
                     </Grid>
-                    {displayConfirmation ?
-                        <Grid container className={classes.rootContainer}>
-                            {successMsg.length ?
-                                <Grid container justify='center' spacing={2}>
-                                    <Grid item xs={12}>
-                                        <Typography align='center' variant='body1'>
-                                            {successMsg}
-                                        </Typography>
-                                    </Grid>
-                                    <Grid item xs={3}>
-                                        <Button variant='contained' fullWidth color='secondary' onClick={resetDialog}>
-                                            <Typography>
-                                                Aceptar
-                                            </Typography>
-                                        </Button>
-                                    </Grid>
+                </Grid>
+                {displayConfirmation ?
+                    <Grid container className={classes.rootContainer}>
+                        {successMsg.length ?
+                            <Grid container justifyContent='center' spacing={2}>
+                                <Grid item xs={12}>
+                                    <Typography align='center' variant='body1'>
+                                        {successMsg}
+                                    </Typography>
                                 </Grid>
-                                :
-                                <Grid container justify='center' spacing={2} >
-                                    <Grid item xs={12}>
-                                        <Typography align='center' variant='body1'>
-                                            {`Se habilitarán los módulos anteriores al usuario ${user.nombres_apellidos} ¿Está seguro?`}
+                                <Grid item xs={3}>
+                                    <Button variant='contained' fullWidth color='secondary' onClick={resetDialog}>
+                                        <Typography>
+                                            Aceptar
                                         </Typography>
-                                    </Grid>
-                                    <Grid item xs={3}>
-                                        <Button variant='contained' fullWidth color='secondary' onClick={handleSaveModules}>
-                                            <Typography>
-                                                Aceptar
-                                            </Typography>
-                                        </Button>
-                                    </Grid>
-                                    <Grid item xs={3}>
-                                        <Button variant='contained' fullWidth color='secondary' onClick={() => setDisplayConfirmation(false)}>
-                                            <Typography>
-                                                Cancelar
-                                            </Typography>
-                                        </Button>
-                                    </Grid>
+                                    </Button>
                                 </Grid>
-                            }
+                            </Grid>
+                            :
+                            <Grid container justifyContent='center' spacing={2} >
+                                <Grid item xs={12}>
+                                    <Typography align='center' variant='body1'>
+                                        {`Se habilitarán los módulos anteriores al usuario ${user.nombres_apellidos} ¿Está seguro?`}
+                                    </Typography>
+                                </Grid>
+                                <Grid item xs={3}>
+                                    <Button variant='contained' fullWidth color='secondary' onClick={handleSaveModules}>
+                                        <Typography>
+                                            Aceptar
+                                        </Typography>
+                                    </Button>
+                                </Grid>
+                                <Grid item xs={3}>
+                                    <Button variant='contained' fullWidth color='secondary' onClick={() => setDisplayConfirmation(false)}>
+                                        <Typography>
+                                            Cancelar
+                                        </Typography>
+                                    </Button>
+                                </Grid>
+                            </Grid>
+                        }
+                    </Grid>
+                    :
+                    <Grid container
+                        justifyContent='center'
+                        alignItems='center'
+                        className={classes.rootContainer}
+                    >
+                        <Grid item xs={12}>
+                            <Grid container justifyContent='center' alignItems='center' style={{ height: '100%' }} className={classes.titleContainer}>
+                                <Grid item>
+                                    <Typography
+                                        align='center'
+                                        variant='h5'
+                                        className={classes.title}
+                                        color='secondary'
+                                    >
+                                        {user?.id ?
+                                            `Perfil de ${user?.nombres_apellidos}`
+                                            :
+                                            'Perfil'
+                                        }
+                                    </Typography>
+                                </Grid>
+                            </Grid>
                         </Grid>
-                        :
-                        <Grid container
-                            justify='center'
-                            alignItems='center'
-                            className={classes.rootContainer}
-                        >
-                            <Grid item xs={12}>
-                                <Grid container justify='center' alignItems='center' style={{ height: '100%' }} className={classes.titleContainer}>
-                                    <Grid item>
-                                        <Typography
-                                            align='center'
-                                            variant='h5'
-                                            className={classes.title}
-                                            color='secondary'
-                                        >
-                                            {user?.id ?
-                                                `Perfil de ${user?.nombres_apellidos}`
-                                                :
-                                                'Perfil'
-                                            }
-                                        </Typography>
+                        {displaySearch &&
+                            <Grid item xs={8}>
+                                <Grid container spacing={4} justifyContent='center' className={classes.inputContainer}>
+                                    <Grid item xs={12}>
+                                        <Grid container justifyContent='center' alignItems='center'>
+                                            <Grid item xs={2}>
+                                                <Box mt={3}>
+                                                    <AssignmentIndIcon
+                                                        color='secondary'
+                                                    />
+                                                </Box>
+                                            </Grid>
+                                            <Grid item xs={8}>
+                                                <TextField
+                                                    disabled={email.length > 0}
+                                                    label="Busqueda por Cédula"
+                                                    fullWidth
+                                                    color='secondary'
+                                                    onChange={handleChange}
+                                                    name='identification'
+                                                    value={identification}
+                                                    error={idError}
+                                                    helperText={helperId}
+                                                />
+                                            </Grid>
+                                            <Grid item xs={2}>
+                                                <Box mt={3}>
+                                                    <IconButton
+                                                        onClick={handleSearchById}
+                                                        color='secondary'
+                                                        disabled={email.length > 0 || identification.length <= 0}
+                                                        size="large">
+                                                        <SearchIcon />
+                                                    </IconButton>
+                                                </Box>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                        <Grid container justifyContent='center' alignItems='center'>
+                                            <Grid item xs={2}>
+                                                <Box mt={3}>
+                                                    <EmailIcon
+                                                        color='secondary'
+                                                    />
+                                                </Box>
+                                            </Grid>
+                                            <Grid item xs={8}>
+                                                <TextField
+                                                    disabled={identification.length > 0}
+                                                    label="Busqueda por Correo"
+                                                    color='secondary'
+                                                    fullWidth
+                                                    onChange={handleChange}
+                                                    name='email'
+                                                    value={email}
+                                                    error={emailError}
+                                                    helperText={helperEmail}
+                                                />
+                                            </Grid>
+                                            <Grid item xs={2}>
+                                                <Box mt={3}>
+                                                    <IconButton
+                                                        onClick={handleSearchByEmail}
+                                                        color='secondary'
+                                                        disabled={identification.length > 0 || email.length <= 0}
+                                                        size="large">
+                                                        <SearchIcon />
+                                                    </IconButton>
+                                                </Box>
+                                            </Grid>
+                                        </Grid>
                                     </Grid>
                                 </Grid>
                             </Grid>
-                            {displaySearch &&
-                                <Grid item xs={8}>
-                                    <Grid container spacing={4} justify='center' className={classes.inputContainer}>
-                                        <Grid item xs={12}>
-                                            <Grid container justify='center' alignItems='center'>
-                                                <Grid item xs={2}>
-                                                    <Box mt={3}>
-                                                        <AssignmentIndIcon
-                                                            color='secondary'
-                                                        />
-                                                    </Box>
-                                                </Grid>
-                                                <Grid item xs={8}>
-                                                    <TextField
-                                                        disabled={email.length > 0}
-                                                        label="Busqueda por Cédula"
-                                                        fullWidth
-                                                        color='secondary'
-                                                        onChange={handleChange}
-                                                        name='identification'
-                                                        value={identification}
-                                                        error={idError}
-                                                        helperText={helperId}
-                                                    />
-                                                </Grid>
-                                                <Grid item xs={2}>
-                                                    <Box mt={3}>
-                                                        <IconButton
-                                                            onClick={handleSearchById}
-                                                            color='secondary'
-                                                            disabled={email.length > 0 || identification.length <= 0}
-                                                        >
-                                                            <SearchIcon />
-                                                        </IconButton>
-                                                    </Box>
-                                                </Grid>
+                        }
+                        {displayModules &&
+                            <>
+                                <Grid item xs={4}>
+                                    <Grid container justifyContent='flex-start'>
+                                        <Grid container justifyContent='center' spacing={2} >
+                                            <Grid item xs={12}>
+                                                <Typography align='center' variant='h6'>
+                                                    Módulos
+                                                </Typography>
                                             </Grid>
-                                        </Grid>
-                                        <Grid item xs={12}>
-                                            <Grid container justify='center' alignItems='center'>
-                                                <Grid item xs={2}>
-                                                    <Box mt={3}>
-                                                        <EmailIcon
-                                                            color='secondary'
-                                                        />
-                                                    </Box>
-                                                </Grid>
-                                                <Grid item xs={8}>
-                                                    <TextField
-                                                        disabled={identification.length > 0}
-                                                        label="Busqueda por Correo"
-                                                        color='secondary'
-                                                        fullWidth
-                                                        onChange={handleChange}
-                                                        name='email'
-                                                        value={email}
-                                                        error={emailError}
-                                                        helperText={helperEmail}
-                                                    />
-                                                </Grid>
-                                                <Grid item xs={2}>
-                                                    <Box mt={3}>
-                                                        <IconButton
-                                                            onClick={handleSearchByEmail}
-                                                            color='secondary'
-                                                            disabled={identification.length > 0 || email.length <= 0}
-                                                        >
-                                                            <SearchIcon />
-                                                        </IconButton>
-                                                    </Box>
+                                            <Grid item xs={10}>
+                                                <Button
+                                                    size='small'
+                                                    onClick={selectAllLocalListModule}
+                                                    fullWidth variant='outlined'
+                                                    color='secondary'>
+                                                    <Grid container justifyContent='center' alignItems='center'>
+                                                        <Grid item>
+                                                            <Checkbox size='small' checked={allLocalModuleCheck} />
+                                                        </Grid>
+                                                        <Grid item>
+                                                            <Typography variant='body2'>
+                                                                Seleccionar todos
+                                                            </Typography>
+                                                        </Grid>
+                                                    </Grid>
+                                                </Button>
+                                            </Grid>
+                                            <Grid item xs={12}>
+                                                <Grid container
+                                                    justifyContent='center'
+                                                    spacing={1}
+                                                    style={{ height: '250px', overflow: 'scroll', overflowX: 'hidden' }}
+                                                >
+                                                    {localModulesList.map(i => (
+                                                        <Grid item xs={10} key={i.id}>
+                                                            <Button
+                                                                onClick={() => handleAddNewModule(i.id)}
+                                                                fullWidth
+                                                                variant={i.checked ? 'outlined' : 'inherit'}
+                                                                color={i.checked ? 'secondary' : 'default'}
+                                                            >
+                                                                <Typography
+                                                                    align='center'
+                                                                    variant='body1'
+                                                                >
+                                                                    {i.modulo}
+                                                                </Typography>
+                                                            </Button>
+                                                        </Grid>
+                                                    ))}
                                                 </Grid>
                                             </Grid>
                                         </Grid>
                                     </Grid>
                                 </Grid>
-                            }
-                            {displayModules &&
-                                <>
-                                    <Grid item xs={4}>
-                                        <Grid container justify='flex-start'>
-                                            <Grid container justify='center' spacing={2} >
+                                <Grid item xs={4}>
+                                    <Grid container style={{/*  height: '200px', */ paddingLeft: 10, paddingRight: 10 }} justifyContent='center' alignItems='center' spacing={1}>
+                                        {/*  <Grid item xs={8}>
+                                                <Button fullWidth onClick={handleTransferAllRestringedModules}>
+
+                                                    <Grid container spacing={1} justify='center'  >
+                                                        <Grid item>
+                                                            <Typography variant='body2'>Full restringido</Typography>
+                                                        </Grid>
+                                                        <Grid item>
+                                                            <img src={RightArrow} style={{ height: 15 }} alt='Transferir todos los módulos' />
+                                                        </Grid>
+                                                    </Grid>
+                                                </Button>
+                                            </Grid> */}
+                                        <Grid item xs={8}>
+                                            <Button fullWidth onClick={handleTransferRestringedModules} variant='outlined' color='secondary'>
+                                                <Grid container spacing={1} justifyContent='center' alignItems='center'  >
+                                                    <Grid item>
+                                                        <Typography variant='body1'>Restringido</Typography>
+                                                    </Grid>
+                                                    <Grid item>
+                                                        <ArrowForwardIcon fontSize='small' />
+                                                    </Grid>
+                                                </Grid>
+                                            </Button>
+                                        </Grid>
+                                        <Grid item xs={8}>
+                                            <Button fullWidth onClick={handleTransferModules} variant='outlined' color='secondary' >
+                                                <Grid container spacing={1} justifyContent='center' alignItems='center'  >
+                                                    <Grid item>
+                                                        <Typography variant='body1'>Administrador</Typography>
+                                                    </Grid>
+                                                    <Grid item>
+                                                        <ArrowForwardIcon fontSize='small' />
+                                                    </Grid>
+                                                </Grid>
+                                            </Button>
+
+                                        </Grid>
+                                        <Grid item>
+
+                                        </Grid>
+                                        {/*  <Grid item xs={8}>
+                                                <Button fullWidth onClick={handleTransferAllAdminModules}>
+                                                    <Grid container spacing={1} justify='center' >
+                                                        <Grid item>
+                                                            <Typography variant='body2'>Full Administrador</Typography>
+                                                        </Grid>
+                                                        <Grid item>
+                                                            <img src={RightArrow} style={{ height: 15 }} alt='Transferir todos los módulos' />
+                                                        </Grid>
+                                                    </Grid>
+                                                </Button>
+                                            </Grid> */}
+                                        <Grid item xs={8}>
+                                            <Button fullWidth onClick={handleReturnModules} variant='outlined' color='secondary'>
+                                                <Grid container spacing={1} justifyContent='center' alignItems='center'>
+                                                    <Grid item>
+                                                        <ArrowBackIcon fontSize='small' />
+                                                    </Grid>
+                                                    <Grid item>
+                                                        <Typography variant='body1'>Retirar módulos</Typography>
+                                                    </Grid>
+                                                </Grid>
+                                            </Button>
+                                        </Grid>
+                                        {/*  <Grid item xs={8}>
+                                                <Button fullWidth onClick={handleReturnAllModules}>
+                                                    <Grid container spacing={1} justify='center'>
+                                                        <Grid item>
+                                                            <img src={LeftArrow} style={{ height: 15 }} alt='Transferir todos los módulos' />
+                                                        </Grid>
+                                                        <Grid item>
+                                                            <Typography variant='body2'>Quitar Todos</Typography>
+                                                        </Grid>
+                                                    </Grid>
+                                                </Button>
+                                            </Grid> */}
+                                        <Grid item xs={12}>
+                                            <Grid container className={classes.conventionsContainer} justifyContent='center'>
+                                                <Grid item xs={6}>
+                                                    <Grid container justifyContent='center' alignItems='center'>
+                                                        <Grid item>
+                                                            <FiberManualRecordIcon style={{ color: primaryColor }} />
+                                                        </Grid>
+                                                        <Grid item>
+                                                            <Typography variant='body2'>
+                                                                Administrador
+                                                            </Typography>
+                                                        </Grid>
+                                                    </Grid>
+                                                </Grid>
+                                                <Grid item xs={6}>
+                                                    <Grid container justifyContent='center' alignItems='center'>
+                                                        <Grid item>
+                                                            <FiberManualRecordIcon style={{ color: '#A4A5A3' }} />
+                                                        </Grid>
+                                                        <Grid item>
+                                                            <Typography variant='body2'>
+                                                                Restringido
+                                                            </Typography>
+                                                        </Grid>
+                                                    </Grid>
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                        <Grid item xs={8}>
+
+
+                                            <Button variant='contained' fullWidth color='primary' onClick={() => setDisplayConfirmation(true)}>
+                                                <Typography variant='body1'>
+                                                    Aplicar cambios
+                                                </Typography>
+                                            </Button>
+
+
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                                <Grid item xs={4}>
+                                    <Grid container justifyContent='center' spacing={2} alignItems='center'>
+                                        {userModules.length ?
+                                            <>
                                                 <Grid item xs={12}>
-                                                    <Typography align='center' variant='h6'>
-                                                        Módulos
+                                                    <Typography
+                                                        align='center'
+                                                        variant='h6'
+                                                    >
+                                                        {title}
                                                     </Typography>
                                                 </Grid>
                                                 <Grid item xs={10}>
                                                     <Button
                                                         size='small'
-                                                        onClick={selectAllLocalListModule}
-                                                        fullWidth variant='outlined'
-                                                        color='secondary'>
-                                                        <Grid container justify='center' alignItems='center'>
-                                                            <Grid item>
-                                                                <Checkbox size='small' checked={allLocalModuleCheck} />
-                                                            </Grid>
-                                                            <Grid item>
-                                                                <Typography variant='body2'>
-                                                                    Seleccionar todos
-                                                                </Typography>
-                                                            </Grid>
-                                                        </Grid>
+                                                        onClick={selectAllUserModule}
+                                                        fullWidth
+                                                        variant='outlined'
+                                                        color='secondary'
+                                                    >
+                                                        <Checkbox size='small' checked={allUserModuleCheck} />
+                                                        <Typography variant='body2'>
+                                                            Seleccionar Todos
+                                                        </Typography>
                                                     </Button>
                                                 </Grid>
+                                                {/*  <Grid item xs={10}>
+                                                        <Button color='secondary' fullWidth variant='outlined' onClick={handleSetAdminModules}>
+                                                            <Typography
+                                                                variant='body2'
+                                                            >
+                                                                Establecer todos Administrador
+                                                            </Typography>
+                                                            <Switch size='small' checked={allAdminChecked} />
+                                                        </Button>
+                                                    </Grid> */}
                                                 <Grid item xs={12}>
                                                     <Grid container
-                                                        justify='center'
+                                                        justifyContent='center'
                                                         spacing={1}
+                                                        alignItems='flex-start'
                                                         style={{ height: '250px', overflow: 'scroll', overflowX: 'hidden' }}
                                                     >
-                                                        {localModulesList.map(i => (
+                                                        {userModules.map(i => (
                                                             <Grid item xs={10} key={i.id}>
                                                                 <Button
-                                                                    onClick={() => handleAddNewModule(i.id)}
+                                                                    onClick={() => handleSelectUserModule(i.id)}
+                                                                    variant='outlined'
                                                                     fullWidth
-                                                                    variant={i.checked ? 'outlined' : 'inherit'}
-                                                                    color={i.checked ? 'secondary' : 'default'}
+                                                                    color={i.t_adm ? 'primary' : '#CACACA'}
+                                                                    size='small'
+                                                                    variant='contained'
+                                                                /* style={{ backgroundColor: i.t_adm ? primaryColor : '#FFFF' }} */
                                                                 >
-                                                                    <Typography
-                                                                        align='center'
-                                                                        variant='body1'
+                                                                    <Grid container
+                                                                        justifyContent='center'
+                                                                        alignItems='center'
+                                                                    /*  spacing={1} */
                                                                     >
-                                                                        {i.modulo}
-                                                                    </Typography>
+                                                                        <Grid item xs={2}>
+
+                                                                            <Switch
+                                                                                size='small'
+                                                                                color='secondary'
+                                                                                checked={i.t_adm}
+                                                                                onChange={(e) => handlechangeSwitchModule(e, i.id)}
+                                                                            />
+
+                                                                        </Grid>
+                                                                        <Grid item xs={8}>
+                                                                            <Grid container justifyContent='center'>
+                                                                                <Grid item>
+                                                                                    <Typography
+                                                                                        variant='body1'
+                                                                                        color='default'
+                                                                                        align='center'
+                                                                                    >
+                                                                                        {i.modulo}
+                                                                                    </Typography>
+                                                                                </Grid>
+                                                                            </Grid>
+                                                                        </Grid>
+                                                                        <Grid item xs={2}>
+                                                                            <Checkbox size='small' checked={i.userChecked} />
+                                                                        </Grid>
+                                                                    </Grid>
                                                                 </Button>
                                                             </Grid>
                                                         ))}
                                                     </Grid>
                                                 </Grid>
-                                            </Grid>
-                                        </Grid>
-                                    </Grid>
-                                    <Grid item xs={4}>
-                                        <Grid container style={{/*  height: '200px', */ paddingLeft: 10, paddingRight: 10 }} justify='center' alignItems='center' spacing={1}>
-                                            {/*  <Grid item xs={8}>
-                                                    <Button fullWidth onClick={handleTransferAllRestringedModules}>
 
-                                                        <Grid container spacing={1} justify='center'  >
-                                                            <Grid item>
-                                                                <Typography variant='body2'>Full restringido</Typography>
-                                                            </Grid>
-                                                            <Grid item>
-                                                                <img src={RightArrow} style={{ height: 15 }} alt='Transferir todos los módulos' />
-                                                            </Grid>
-                                                        </Grid>
-                                                    </Button>
-                                                </Grid> */}
-                                            <Grid item xs={8}>
-                                                <Button fullWidth onClick={handleTransferRestringedModules} variant='outlined' color='secondary'>
-                                                    <Grid container spacing={1} justify='center' alignItems='center'  >
-                                                        <Grid item>
-                                                            <Typography variant='body1'>Restringido</Typography>
-                                                        </Grid>
-                                                        <Grid item>
-                                                            <ArrowForwardIcon fontSize='small' />
-                                                        </Grid>
-                                                    </Grid>
-                                                </Button>
-                                            </Grid>
-                                            <Grid item xs={8}>
-                                                <Button fullWidth onClick={handleTransferModules} variant='outlined' color='secondary' >
-                                                    <Grid container spacing={1} justify='center' alignItems='center'  >
-                                                        <Grid item>
-                                                            <Typography variant='body1'>Administrador</Typography>
-                                                        </Grid>
-                                                        <Grid item>
-                                                            <ArrowForwardIcon fontSize='small' />
-                                                        </Grid>
-                                                    </Grid>
-                                                </Button>
-
-                                            </Grid>
-                                            <Grid item>
-
-                                            </Grid>
-                                            {/*  <Grid item xs={8}>
-                                                    <Button fullWidth onClick={handleTransferAllAdminModules}>
-                                                        <Grid container spacing={1} justify='center' >
-                                                            <Grid item>
-                                                                <Typography variant='body2'>Full Administrador</Typography>
-                                                            </Grid>
-                                                            <Grid item>
-                                                                <img src={RightArrow} style={{ height: 15 }} alt='Transferir todos los módulos' />
-                                                            </Grid>
-                                                        </Grid>
-                                                    </Button>
-                                                </Grid> */}
-                                            <Grid item xs={8}>
-                                                <Button fullWidth onClick={handleReturnModules} variant='outlined' color='secondary'>
-                                                    <Grid container spacing={1} justify='center' alignItems='center'>
-                                                        <Grid item>
-                                                            <ArrowBackIcon fontSize='small' />
-                                                        </Grid>
-                                                        <Grid item>
-                                                            <Typography variant='body1'>Retirar módulos</Typography>
-                                                        </Grid>
-                                                    </Grid>
-                                                </Button>
-                                            </Grid>
-                                            {/*  <Grid item xs={8}>
-                                                    <Button fullWidth onClick={handleReturnAllModules}>
-                                                        <Grid container spacing={1} justify='center'>
-                                                            <Grid item>
-                                                                <img src={LeftArrow} style={{ height: 15 }} alt='Transferir todos los módulos' />
-                                                            </Grid>
-                                                            <Grid item>
-                                                                <Typography variant='body2'>Quitar Todos</Typography>
-                                                            </Grid>
-                                                        </Grid>
-                                                    </Button>
-                                                </Grid> */}
-                                            <Grid item xs={12}>
-                                                <Grid container className={classes.conventionsContainer} justify='center'>
-                                                    <Grid item xs={6}>
-                                                        <Grid container justify='center' alignItems='center'>
-                                                            <Grid item>
-                                                                <FiberManualRecordIcon style={{ color: primaryColor }} />
-                                                            </Grid>
-                                                            <Grid item>
-                                                                <Typography variant='body2'>
-                                                                    Administrador
-                                                                </Typography>
-                                                            </Grid>
-                                                        </Grid>
-                                                    </Grid>
-                                                    <Grid item xs={6}>
-                                                        <Grid container justify='center' alignItems='center'>
-                                                            <Grid item>
-                                                                <FiberManualRecordIcon style={{ color: '#A4A5A3' }} />
-                                                            </Grid>
-                                                            <Grid item>
-                                                                <Typography variant='body2'>
-                                                                    Restringido
-                                                                </Typography>
-                                                            </Grid>
-                                                        </Grid>
-                                                    </Grid>
-                                                </Grid>
-                                            </Grid>
-                                            <Grid item xs={8}>
-
-
-                                                <Button variant='contained' fullWidth color='primary' onClick={() => setDisplayConfirmation(true)}>
-                                                    <Typography variant='body1'>
-                                                        Aplicar cambios
+                                            </>
+                                            :
+                                            <Grid container
+                                                style={{ minHeight: '300px' }}
+                                                alignItems='center'
+                                                justifyContent='center'
+                                                spacing={2}
+                                            >
+                                                <Grid item  >
+                                                    <Typography variant='body1' align='center'>
+                                                        Seleccione los módulos para este usuario
                                                     </Typography>
-                                                </Button>
-
-
-                                            </Grid>
-                                        </Grid>
-                                    </Grid>
-                                    <Grid item xs={4}>
-                                        <Grid container justify='center' spacing={2} alignItems='center'>
-                                            {userModules.length ?
-                                                <>
-                                                    <Grid item xs={12}>
-                                                        <Typography
-                                                            align='center'
-                                                            variant='h6'
-                                                        >
-                                                            {title}
-                                                        </Typography>
-                                                    </Grid>
-                                                    <Grid item xs={10}>
-                                                        <Button
-                                                            size='small'
-                                                            onClick={selectAllUserModule}
-                                                            fullWidth
-                                                            variant='outlined'
-                                                            color='secondary'
-                                                        >
-                                                            <Checkbox size='small' checked={allUserModuleCheck} />
-                                                            <Typography variant='body2'>
-                                                                Seleccionar Todos
-                                                            </Typography>
-                                                        </Button>
-                                                    </Grid>
-                                                    {/*  <Grid item xs={10}>
-                                                            <Button color='secondary' fullWidth variant='outlined' onClick={handleSetAdminModules}>
-                                                                <Typography
-                                                                    variant='body2'
-                                                                >
-                                                                    Establecer todos Administrador
-                                                                </Typography>
-                                                                <Switch size='small' checked={allAdminChecked} />
-                                                            </Button>
-                                                        </Grid> */}
-                                                    <Grid item xs={12}>
-                                                        <Grid container
-                                                            justify='center'
-                                                            spacing={1}
-                                                            alignItems='flex-start'
-                                                            style={{ height: '250px', overflow: 'scroll', overflowX: 'hidden' }}
-                                                        >
-                                                            {userModules.map(i => (
-                                                                <Grid item xs={10} key={i.id}>
-                                                                    <Button
-                                                                        onClick={() => handleSelectUserModule(i.id)}
-                                                                        variant='outlined'
-                                                                        fullWidth
-                                                                        color={i.t_adm ? 'primary' : '#CACACA'}
-                                                                        size='small'
-                                                                        variant='contained'
-                                                                    /* style={{ backgroundColor: i.t_adm ? primaryColor : '#FFFF' }} */
-                                                                    >
-                                                                        <Grid container
-                                                                            justify='center'
-                                                                            alignItems='center'
-                                                                        /*  spacing={1} */
-                                                                        >
-                                                                            <Grid item xs={2}>
-
-                                                                                <Switch
-                                                                                    size='small'
-                                                                                    color='secondary'
-                                                                                    checked={i.t_adm}
-                                                                                    onChange={(e) => handlechangeSwitchModule(e, i.id)}
-                                                                                />
-
-                                                                            </Grid>
-                                                                            <Grid item xs={8}>
-                                                                                <Grid container justify='center'>
-                                                                                    <Grid item>
-                                                                                        <Typography
-                                                                                            variant='body1'
-                                                                                            color='default'
-                                                                                            align='center'
-                                                                                        >
-                                                                                            {i.modulo}
-                                                                                        </Typography>
-                                                                                    </Grid>
-                                                                                </Grid>
-                                                                            </Grid>
-                                                                            <Grid item xs={2}>
-                                                                                <Checkbox size='small' checked={i.userChecked} />
-                                                                            </Grid>
-                                                                        </Grid>
-                                                                    </Button>
-                                                                </Grid>
-                                                            ))}
-                                                        </Grid>
-                                                    </Grid>
-
-                                                </>
-                                                :
-                                                <Grid container
-                                                    style={{ minHeight: '300px' }}
-                                                    alignItems='center'
-                                                    justify='center'
-                                                    spacing={2}
-                                                >
-                                                    <Grid item  >
-                                                        <Typography variant='body1' align='center'>
-                                                            Seleccione los módulos para este usuario
-                                                        </Typography>
-                                                    </Grid>
                                                 </Grid>
-                                            }
-                                        </Grid>
-                                    </Grid>
-                                </>
-                            }
-                            {showTable &&
-                                <>
-                                    <Grid item xs={12}>
-                                        <Grid container spacing={3} justify='center' className={classes.tableContainer} >
-                                            <Grid item xs={12}>
-                                                <WhiteTable rows={rows} tableData={tableData} handleDisplayModules={handleDisplayModules} />
                                             </Grid>
-                                        </Grid>
-                                    </Grid>
-                                </>
-                            }
-                            {showSuccessMsg &&
-                                <Grid container justify='center' spacing={3}>
-                                    <Grid item xs={12}>
-                                        <Typography
-                                            variant='body1'
-                                            align='center'
-                                            color={tableTypographyColor}
-                                        >
-                                            {successMsg}
-                                        </Typography>
-                                    </Grid>
-                                    <Grid item xs={2}>
-                                        <Button
-                                            fullWidth
-                                            variant='contained'
-                                            color='secondary'
-                                            onClick={handleClose}
-                                        >
-                                            <Typography>
-                                                Aceptar
-                                            </Typography>
-                                        </Button>
+                                        }
                                     </Grid>
                                 </Grid>
-                            }
-
-                            {/* <Grid container justify='center' className={classes.addModulesContainer}>
-                                    <Grid item xs={4}>
-                                        <Button variant='contained' fullWidth color='primary' onClick={() => setDisplayConfirmation(true)}>
-                                            <Typography variant='body1'>
-                                                Aplicar cambios
-                                            </Typography>
-                                        </Button>
+                            </>
+                        }
+                        {showTable &&
+                            <>
+                                <Grid item xs={12}>
+                                    <Grid container spacing={3} justifyContent='center' className={classes.tableContainer} >
+                                        <Grid item xs={12}>
+                                            <WhiteTable rows={rows} tableData={tableData} handleDisplayModules={handleDisplayModules} />
+                                        </Grid>
                                     </Grid>
-                                </Grid> */}
+                                </Grid>
+                            </>
+                        }
+                        {showSuccessMsg &&
+                            <Grid container justifyContent='center' spacing={3}>
+                                <Grid item xs={12}>
+                                    <Typography
+                                        variant='body1'
+                                        align='center'
+                                        color={tableTypographyColor}
+                                    >
+                                        {successMsg}
+                                    </Typography>
+                                </Grid>
+                                <Grid item xs={2}>
+                                    <Button
+                                        fullWidth
+                                        variant='contained'
+                                        color='secondary'
+                                        onClick={handleClose}
+                                    >
+                                        <Typography>
+                                            Aceptar
+                                        </Typography>
+                                    </Button>
+                                </Grid>
+                            </Grid>
+                        }
 
-                        </Grid>
-                    }
-                </Grid>
-            </Dialog>
-        </>
-    )
+                        {/* <Grid container justify='center' className={classes.addModulesContainer}>
+                                <Grid item xs={4}>
+                                    <Button variant='contained' fullWidth color='primary' onClick={() => setDisplayConfirmation(true)}>
+                                        <Typography variant='body1'>
+                                            Aplicar cambios
+                                        </Typography>
+                                    </Button>
+                                </Grid>
+                            </Grid> */}
+
+                    </Grid>
+                }
+            </Grid>
+        </Dialog>
+    </>;
 }

@@ -1,15 +1,14 @@
-import { makeStyles } from '@material-ui/core/styles';
-import { Backdrop, Typography } from '@material-ui/core/';
-import SpeedDial from '@material-ui/lab/SpeedDial';
+import makeStyles from '@mui/styles/makeStyles';
+import { Backdrop, Typography } from '@mui/material/';
+import SpeedDial from '@mui/material/SpeedDial';
 
-import SpeedDialAction from '@material-ui/lab/SpeedDialAction';
+import SpeedDialAction from '@mui/material/SpeedDialAction';
 
-import EditIcon from '@material-ui/icons/Edit';
-import BusinessIcon from '@material-ui/icons/Business';
+import EditIcon from '@mui/icons-material/Edit';
+// import ContactsIcon from '@mui/icons-material/ContactsIcon';
 import { useEffect, useState } from 'react';
 import { primaryColor, secondaryColor } from '../../assets/css/js/mainTheme';
 import { useDispatch, useSelector } from 'react-redux';
-import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 import { saveSelectedBusinessDataAction } from '../../redux/actions/adminAction';
 
 const useStyles = makeStyles((theme) => ({
@@ -54,7 +53,7 @@ export default function BusinessDial() {
                         ariaLabel="SpeedDial openIcon example"
                         className={classes.speedDial}
                         hidden={hidden}
-                        icon={<BusinessIcon color='secondary' openIcon={<EditIcon />} />}
+                        icon={<ContactsIcon color='secondary' openIcon={<EditIcon />} />}
                         onClose={handleClose}
                         onOpen={handleOpen}
                         open={open}
@@ -62,7 +61,7 @@ export default function BusinessDial() {
                         {business.map((i) => (
                             <SpeedDialAction
                                 key={i.id}
-                                icon={<BusinessCenterIcon />}
+                                icon={<ContactsIcon />}
                                 tooltipTitle={<Typography>{i.razon}</Typography>}
                                 onClick={() => handleClickBusiness(i)}
                                 FabProps={{

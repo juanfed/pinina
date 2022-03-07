@@ -1,34 +1,33 @@
-import { makeStyles } from '@material-ui/core/styles';
-import { Button, Typography, Backdrop } from '@material-ui/core/';
-import SpeedDial from '@material-ui/lab/SpeedDial';
-import SpeedDialIcon from '@material-ui/lab/SpeedDialIcon';
-import SpeedDialAction from '@material-ui/lab/SpeedDialAction';
-import FileCopyIcon from '@material-ui/icons/FileCopyOutlined';
-import SaveIcon from '@material-ui/icons/Save';
-import PrintIcon from '@material-ui/icons/Print';
-import ShareIcon from '@material-ui/icons/Share';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import EditIcon from '@material-ui/icons/Edit';
-import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
-import FaceIcon from '@material-ui/icons/Face';
-import CloudUploadIcon from '@material-ui/icons/CloudUpload';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import makeStyles from '@mui/styles/makeStyles';
+import { Button, Typography, Backdrop } from '@mui/material/';
+import SpeedDial from '@mui/material/SpeedDial';
+import SpeedDialIcon from '@mui/material/SpeedDialIcon';
+import SpeedDialAction from '@mui/material/SpeedDialAction';
+import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
+import SaveIcon from '@mui/icons-material/Save';
+import PrintIcon from '@mui/icons-material/Print';
+import ShareIcon from '@mui/icons-material/Share';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import EditIcon from '@mui/icons-material/Edit';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import FaceIcon from '@mui/icons-material/Face';
+// import ContactsIcon from '@mui/icons-material/Contacts';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+// import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useState, useEffect } from 'react';
 //icons
 import pininaLogo from '../../assets/img/icons/logopalette2.svg'
-import PetsIcon from '@material-ui/icons/Pets';
-import MenuIcon from '@material-ui/icons/Menu';
-import HomeIcon from '@material-ui/icons/Home';
-import NotificationsIcon from '@material-ui/icons/Notifications';
-import EventNoteIcon from '@material-ui/icons/EventNote';
-import GroupIcon from '@material-ui/icons/Group';
-import WorkIcon from '@material-ui/icons/Work';
-import ReceiptIcon from '@material-ui/icons/Receipt';
-import StorageIcon from '@material-ui/icons/Storage';
-import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
-import ContactsIcon from '@material-ui/icons/Contacts';
-import SupervisedUserCircleIcon from '@material-ui/icons/SupervisedUserCircle';
+import PetsIcon from '@mui/icons-material/Pets';
+import MenuIcon from '@mui/icons-material/Menu';
+import HomeIcon from '@mui/icons-material/Home';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import EventNoteIcon from '@mui/icons-material/EventNote';
+import GroupIcon from '@mui/icons-material/Group';
+import WorkIcon from '@mui/icons-material/Work';
+import ReceiptIcon from '@mui/icons-material/Receipt';
+import StorageIcon from '@mui/icons-material/Storage';
+// import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
+import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
 import router, { useRouter } from 'next/router';
 import { primaryColor, secondaryColor } from '../../assets/css/js/mainTheme';
 import { useSelector } from 'react-redux';
@@ -120,7 +119,7 @@ export default function PininaModulesDial() {
                 const data = userModules.filter(i => i.id_usuario === user.id);
                 const newActions = data.map(i => {
                     return {
-                        icon: <AccountBalanceWalletIcon fontSize='large' />,
+                        icon: <ContactsIcon fontSize='large' />,
                         name:
                             <Typography variant='h6'>
                                 {i.modulo}

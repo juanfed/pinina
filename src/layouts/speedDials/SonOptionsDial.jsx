@@ -1,25 +1,25 @@
-import { makeStyles } from '@material-ui/core/styles';
-import { Backdrop, Typography, Grid } from '@material-ui/core/';
-import SpeedDial from '@material-ui/lab/SpeedDial';
+import makeStyles from '@mui/styles/makeStyles';
+import { Backdrop, Typography, Grid } from '@mui/material/';
+import SpeedDial from '@mui/material/SpeedDial';
 
-import SpeedDialAction from '@material-ui/lab/SpeedDialAction';
+import SpeedDialAction from '@mui/material/SpeedDialAction';
 
 //icons
-import AddIcon from '@material-ui/icons/Add';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import CancelIcon from '@material-ui/icons/Cancel';
-import SaveIcon from '@material-ui/icons/Save';
-import DeleteIcon from '@material-ui/icons/Delete';
-import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
-import SearchIcon from '@material-ui/icons/Search';
+import AddIcon from '@mui/icons-material/Add';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import CancelIcon from '@mui/icons-material/Cancel';
+import SaveIcon from '@mui/icons-material/Save';
+import DeleteIcon from '@mui/icons-material/Delete';
+import KeyboardReturnIcon from '@mui/icons-material/KeyboardReturn';
+import SearchIcon from '@mui/icons-material/Search';
 
-import AppsIcon from '@material-ui/icons/Apps';
-import EditIcon from '@material-ui/icons/Edit';
-import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
-import FaceIcon from '@material-ui/icons/Face';
-import CloudUploadIcon from '@material-ui/icons/CloudUpload';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import AppsIcon from '@mui/icons-material/Apps';
+import EditIcon from '@mui/icons-material/Edit';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import FaceIcon from '@mui/icons-material/Face';
+import ContactsIcon from '@mui/icons-material/CloudUpload';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useState, useEffect } from 'react';
 import { primaryColor, secondaryColor } from '../../assets/css/js/mainTheme';
 import { useDispatch, useSelector } from 'react-redux';
@@ -163,7 +163,7 @@ export default function SonOptionsDial({ title, handleAdd, handleEdit, addState,
 }
 
 const Dial = ({ classes, title }) =>
-    <Grid container alignItems='center' justify='center'>
+    <Grid container alignItems='center' justifyContent='center'>
         <Grid item>
             <AppsIcon
                 color='secondary'

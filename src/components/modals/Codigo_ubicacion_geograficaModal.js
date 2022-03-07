@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axiosClient from "../../config/AxiosClient";
 import { useSnackbar } from "notistack";
 
-import { Dialog, DialogContent, DialogTitle, Divider, List, ListItem, ListItemText } from "@material-ui/core";
+import { Dialog, DialogContent, DialogTitle, Divider, List, ListItem, ListItemText } from "@mui/material";
 
 const Codigo_ubicacion_geograficaModal = ({ modalCodigo_ubicacion_geografica, setModalCodigo_ubicacion_geografica, consultData, setConsultData }) => {
 

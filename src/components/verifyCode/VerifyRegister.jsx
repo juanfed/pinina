@@ -1,5 +1,5 @@
 import useDialog from "../../hooks/useDialog"
-import { Dialog } from '@material-ui/core'
+import { Dialog } from '@mui/material'
 //components
 import CheckEmailModal from "./CheckEmailModal"
 

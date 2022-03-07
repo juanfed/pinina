@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core';
+import makeStyles from '@mui/styles/makeStyles';
 import { primaryColor, secondaryColor, tableTypographyColor } from './mainTheme';
 
 export const userModulesDialogStyles = makeStyles((theme) => ({
@@ -63,7 +63,7 @@ export const userModulesDialogStyles = makeStyles((theme) => ({
 	// inputInput: {
 	// 	padding: theme.spacing(1, 1, 1, 0),
 	// 	// vertical padding + font size from searchIcon
-	// 	paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+	// 	paddingLeft: `calc(1em + ${theme.spacing(4)})`,
 	// 	transition: theme.transitions.create('width'),
 	// 	width: '100%',
 	// 	[theme.breakpoints.up('md')]: {

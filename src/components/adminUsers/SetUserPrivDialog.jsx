@@ -1,15 +1,15 @@
 //hooks
 import { useState, useEffect } from "react";
 //material ui
-import { Dialog, Grid, Typography, IconButton, Button, TextField, Box } from "@material-ui/core"
+import { Dialog, Grid, Typography, IconButton, Button, TextField, Box } from "@mui/material"
 import setUserPrivDialogStyles from "../../assets/css/js/setUserPrivDialogStyles";
 //components
 import WhiteTable from "../tables/WhiteTable";
 //icons
-import SearchIcon from '@material-ui/icons/Search';
-import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
-import EmailIcon from '@material-ui/icons/Email';
-import CloseIcon from '@material-ui/icons/Close';
+import SearchIcon from '@mui/icons-material/Search';
+import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
+import EmailIcon from '@mui/icons-material/Email';
+import CloseIcon from '@mui/icons-material/Close';
 //redux
 import { useDispatch, useSelector } from "react-redux";
 import { getUsersBusinessAction, searchUserAction, setUserAccessAction } from "../../redux/actions/adminAction";
@@ -156,208 +156,206 @@ export default function SetUserPrivDialog({ dialog, closeDialog }) {
         })
         closeDialog();
     }
-    return (
-        <>
-            <Dialog
-                open={dialog}
-                onClose={handleClose}
-                maxWidth='lg'
-            >
-                <Grid container>
-                    <Grid item xs={12}>
-                        <Grid container justify='flex-end' className={classes.titleContainer}>
-                            <Grid item>
-                                <IconButton onClick={handleClose}>
-                                    <CloseIcon size='large' color='secondary' />
-                                </IconButton>
-                            </Grid>
+    return <>
+        <Dialog
+            open={dialog}
+            onClose={handleClose}
+            maxWidth='lg'
+        >
+            <Grid container>
+                <Grid item xs={12}>
+                    <Grid container justifyContent='flex-end' className={classes.titleContainer}>
+                        <Grid item>
+                            <IconButton onClick={handleClose} size="large">
+                                <CloseIcon size='large' color='secondary' />
+                            </IconButton>
                         </Grid>
-                    </Grid>
-                    <Grid container
-                        justify='center'
-                        className={classes.rootContainer}
-                    >
-
-                        <Grid item xs={12}>
-                            <Grid container justify='center' className={classes.titleContainer}>
-                                <Grid item>
-                                    <Typography
-                                        align='center'
-                                        variant='h5'
-                                        className={classes.title}
-                                        color='secondary'
-                                    >
-                                        Agregar Administradores
-                                    </Typography>
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                        <Grid item xs={12}>
-                            <Grid container spacing={4} alignItems='center' justify='center' className={classes.inputContainer}>
-                                <Grid item xs={4}>
-                                    <Grid container justify='center' alignItems='center'>
-                                        <Grid item xs={2}>
-                                            <Box mt={3}>
-                                                <AssignmentIndIcon
-                                                    color='secondary'
-                                                />
-                                            </Box>
-                                        </Grid>
-                                        <Grid item xs={8}>
-                                            <TextField
-                                                disabled={email.length > 0}
-                                                label="Busqueda por Cédula"
-                                                fullWidth
-                                                color='secondary'
-                                                onChange={handleChange}
-                                                name='identification'
-                                                value={identification}
-                                                error={idError}
-                                                helperText={helperId}
-                                            />
-                                        </Grid>
-                                        <Grid item xs={2}>
-                                            <Box mt={3}>
-                                                <IconButton
-                                                    onClick={handleSearchById}
-                                                    color='secondary'
-                                                    disabled={email.length > 0 || identification.length <= 0}
-                                                >
-                                                    <SearchIcon />
-                                                </IconButton>
-                                            </Box>
-                                        </Grid>
-                                    </Grid>
-                                </Grid>
-                                <Grid item xs={4}>
-                                    <Grid container alignItems='center' justify='center'>
-                                        <Grid item xs={2}>
-                                            <Box mt={3}>
-                                                <EmailIcon
-                                                    color='secondary'
-                                                />
-                                            </Box>
-                                        </Grid>
-                                        <Grid item xs={8}>
-                                            <TextField
-                                                disabled={identification.length > 0}
-                                                label="Busqueda por Correo"
-                                                color='secondary'
-                                                fullWidth
-                                                onChange={handleChange}
-                                                name='email'
-                                                value={email}
-                                                error={emailError}
-                                                helperText={helperEmail}
-                                            />
-                                        </Grid>
-                                        <Grid item xs={2}>
-                                            <Box mt={3}>
-                                                <IconButton
-                                                    onClick={handleSearchByEmail}
-                                                    color='secondary'
-                                                    disabled={identification.length > 0 || email.length <= 0}
-                                                >
-                                                    <SearchIcon />
-                                                </IconButton>
-                                            </Box>
-                                        </Grid>
-                                    </Grid>
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                        {showTable &&
-                            <>
-                                <Grid item xs={12}>
-                                    <Grid container spacing={3} justify='center' className={classes.tableContainer} >
-                                        <Grid item xs={12}>
-                                            <WhiteTable rows={rows} tableData={tableData} />
-                                        </Grid>
-                                    </Grid>
-                                </Grid>
-                                {!showConfirmMsg &&
-                                    <Grid item xs={3}>
-                                        <Button
-                                            color='secondary'
-                                            fullWidth
-                                            variant='contained'
-                                            onClick={() => setShowConfirmMsg(true)}
-                                        >
-                                            <Typography
-                                                color='#fff'
-                                            >
-                                                Agregar Usuario
-                                            </Typography>
-                                        </Button>
-                                    </Grid>
-                                }
-                            </>
-                        }
-                        {showConfirmMsg &&
-                            <Grid container justify='center' spacing={3}>
-                                <Grid item xs={12}>
-                                    <Typography
-                                        variant='body1'
-                                        align='center'
-                                        color={tableTypographyColor}
-                                    >
-                                        Se agregará este usuario como <b>{privUserText}</b> ¿Desea Continuar?
-                                    </Typography>
-                                </Grid>
-                                <Grid item xs={2}>
-                                    <Button
-                                        fullWidth
-                                        variant='contained'
-                                        color='secondary'
-                                        onClick={handleSaveUser}
-                                    >
-                                        <Typography>
-                                            Aceptar
-                                        </Typography>
-                                    </Button>
-                                </Grid>
-                                <Grid item xs={2}>
-                                    <Button
-                                        fullWidth
-                                        variant='contained'
-                                        color='secondary'
-                                        onClick={() => setShowConfirmMsg(false)}
-                                    >
-                                        <Typography>
-                                            Cancelar
-                                        </Typography>
-                                    </Button>
-                                </Grid>
-                            </Grid>
-                        }
-                        {showSuccessMsg &&
-                            <Grid container justify='center' spacing={3}>
-                                <Grid item xs={12}>
-                                    <Typography
-                                        variant='body1'
-                                        align='center'
-                                        color={tableTypographyColor}
-                                    >
-                                        {successMsg}
-                                    </Typography>
-                                </Grid>
-                                <Grid item xs={2}>
-                                    <Button
-                                        fullWidth
-                                        variant='contained'
-                                        color='secondary'
-                                        onClick={handleResetModal}
-                                    >
-                                        <Typography>
-                                            Aceptar
-                                        </Typography>
-                                    </Button>
-                                </Grid>
-                            </Grid>
-                        }
                     </Grid>
                 </Grid>
-            </Dialog>
-        </>
-    )
+                <Grid container
+                    justifyContent='center'
+                    className={classes.rootContainer}
+                >
+
+                    <Grid item xs={12}>
+                        <Grid container justifyContent='center' className={classes.titleContainer}>
+                            <Grid item>
+                                <Typography
+                                    align='center'
+                                    variant='h5'
+                                    className={classes.title}
+                                    color='secondary'
+                                >
+                                    Agregar Administradores
+                                </Typography>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Grid container spacing={4} alignItems='center' justifyContent='center' className={classes.inputContainer}>
+                            <Grid item xs={4}>
+                                <Grid container justifyContent='center' alignItems='center'>
+                                    <Grid item xs={2}>
+                                        <Box mt={3}>
+                                            <AssignmentIndIcon
+                                                color='secondary'
+                                            />
+                                        </Box>
+                                    </Grid>
+                                    <Grid item xs={8}>
+                                        <TextField
+                                            disabled={email.length > 0}
+                                            label="Busqueda por Cédula"
+                                            fullWidth
+                                            color='secondary'
+                                            onChange={handleChange}
+                                            name='identification'
+                                            value={identification}
+                                            error={idError}
+                                            helperText={helperId}
+                                        />
+                                    </Grid>
+                                    <Grid item xs={2}>
+                                        <Box mt={3}>
+                                            <IconButton
+                                                onClick={handleSearchById}
+                                                color='secondary'
+                                                disabled={email.length > 0 || identification.length <= 0}
+                                                size="large">
+                                                <SearchIcon />
+                                            </IconButton>
+                                        </Box>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                            <Grid item xs={4}>
+                                <Grid container alignItems='center' justifyContent='center'>
+                                    <Grid item xs={2}>
+                                        <Box mt={3}>
+                                            <EmailIcon
+                                                color='secondary'
+                                            />
+                                        </Box>
+                                    </Grid>
+                                    <Grid item xs={8}>
+                                        <TextField
+                                            disabled={identification.length > 0}
+                                            label="Busqueda por Correo"
+                                            color='secondary'
+                                            fullWidth
+                                            onChange={handleChange}
+                                            name='email'
+                                            value={email}
+                                            error={emailError}
+                                            helperText={helperEmail}
+                                        />
+                                    </Grid>
+                                    <Grid item xs={2}>
+                                        <Box mt={3}>
+                                            <IconButton
+                                                onClick={handleSearchByEmail}
+                                                color='secondary'
+                                                disabled={identification.length > 0 || email.length <= 0}
+                                                size="large">
+                                                <SearchIcon />
+                                            </IconButton>
+                                        </Box>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    {showTable &&
+                        <>
+                            <Grid item xs={12}>
+                                <Grid container spacing={3} justifyContent='center' className={classes.tableContainer} >
+                                    <Grid item xs={12}>
+                                        <WhiteTable rows={rows} tableData={tableData} />
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                            {!showConfirmMsg &&
+                                <Grid item xs={3}>
+                                    <Button
+                                        color='secondary'
+                                        fullWidth
+                                        variant='contained'
+                                        onClick={() => setShowConfirmMsg(true)}
+                                    >
+                                        <Typography
+                                            color='#fff'
+                                        >
+                                            Agregar Usuario
+                                        </Typography>
+                                    </Button>
+                                </Grid>
+                            }
+                        </>
+                    }
+                    {showConfirmMsg &&
+                        <Grid container justifyContent='center' spacing={3}>
+                            <Grid item xs={12}>
+                                <Typography
+                                    variant='body1'
+                                    align='center'
+                                    color={tableTypographyColor}
+                                >
+                                    Se agregará este usuario como <b>{privUserText}</b> ¿Desea Continuar?
+                                </Typography>
+                            </Grid>
+                            <Grid item xs={2}>
+                                <Button
+                                    fullWidth
+                                    variant='contained'
+                                    color='secondary'
+                                    onClick={handleSaveUser}
+                                >
+                                    <Typography>
+                                        Aceptar
+                                    </Typography>
+                                </Button>
+                            </Grid>
+                            <Grid item xs={2}>
+                                <Button
+                                    fullWidth
+                                    variant='contained'
+                                    color='secondary'
+                                    onClick={() => setShowConfirmMsg(false)}
+                                >
+                                    <Typography>
+                                        Cancelar
+                                    </Typography>
+                                </Button>
+                            </Grid>
+                        </Grid>
+                    }
+                    {showSuccessMsg &&
+                        <Grid container justifyContent='center' spacing={3}>
+                            <Grid item xs={12}>
+                                <Typography
+                                    variant='body1'
+                                    align='center'
+                                    color={tableTypographyColor}
+                                >
+                                    {successMsg}
+                                </Typography>
+                            </Grid>
+                            <Grid item xs={2}>
+                                <Button
+                                    fullWidth
+                                    variant='contained'
+                                    color='secondary'
+                                    onClick={handleResetModal}
+                                >
+                                    <Typography>
+                                        Aceptar
+                                    </Typography>
+                                </Button>
+                            </Grid>
+                        </Grid>
+                    }
+                </Grid>
+            </Grid>
+        </Dialog>
+    </>;
 }

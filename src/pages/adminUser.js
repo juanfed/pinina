@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
-import { Grid, TablePagination, Card, CardContent, Typography } from '@material-ui/core';
+import { Grid, TablePagination, Card, CardContent, Typography } from '@mui/material';
 import router, { useRouter } from 'next/router';
 // Snackbar
 import { useSnackbar } from "notistack";
 import adminUserStyles from '../assets/css/js/adminUsersStyles';
 //icons
-import DirectionsIcon from '@material-ui/icons/Directions';
-import PhoneIcon from '@material-ui/icons/Phone';
-import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
-import PublicIcon from '@material-ui/icons/Public';
+import DirectionsIcon from '@mui/icons-material/Directions';
+import PhoneIcon from '@mui/icons-material/Phone';
+import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
+import PublicIcon from '@mui/icons-material/Public';
 //components
 import AdminOptionsDial from '../components/adminUsers/dials/AdminOptionsDial';
 import { useDispatch, useSelector } from 'react-redux';
@@ -387,160 +387,157 @@ export default function AdminUser() {
             setMoreInfoModule(false);
         }
     }, [userProfileModules])
-    return (
-        <>
-            <MainAppBar />
-            {selectedBusinessData?.id_empresa ?
-                <>
-                    <Grid container justify='center' className={classes.background}>
-                        <Grid item xs={12}>
-                            <Grid container spacing={4} justify='center' className={classes.root}>
-                                <Grid item xl={12} sm={10} md={11} xs={10}>
-                                    <Grid container justify="flex-start">
-                                        <Grid item md={3} sm={3} xs={3} style={{ textAlign: "center" }}>
-                                            <Card className={classes.mediaInfo}>
-                                                <CardContent>
-                                                    <Grid container style={{ textAlign: "center" }}>
-                                                        <Grid item xs={4}>
-                                                            <PhoneIcon color='secondary' color='secondary' className={classes.logoInfoDir} />
-                                                        </Grid>
-                                                        <Grid item xs={8}>
-                                                            <h6 className={classes.textInfoDir}>Telefono</h6>
-                                                            <h4 className={classes.tituloInfoDir}> {selectedBusinessData?.telefono_uno} </h4>
-                                                        </Grid>
+    return <>
+        <MainAppBar />
+        {selectedBusinessData?.id_empresa ?
+            <>
+                <Grid container justifyContent='center' className={classes.background}>
+                    <Grid item xs={12}>
+                        <Grid container spacing={4} justifyContent='center' className={classes.root}>
+                            <Grid item xl={12} sm={10} md={11} xs={10}>
+                                <Grid container justifyContent="flex-start">
+                                    <Grid item md={3} sm={3} xs={3} style={{ textAlign: "center" }}>
+                                        <Card className={classes.mediaInfo}>
+                                            <CardContent>
+                                                <Grid container style={{ textAlign: "center" }}>
+                                                    <Grid item xs={4}>
+                                                        <PhoneIcon color='secondary' color='secondary' className={classes.logoInfoDir} />
                                                     </Grid>
-                                                </CardContent>
-                                            </Card>
-                                        </Grid>
-                                        <Grid item md={3} sm={3} xs={3} style={{ textAlign: "center" }}>
+                                                    <Grid item xs={8}>
+                                                        <h6 className={classes.textInfoDir}>Telefono</h6>
+                                                        <h4 className={classes.tituloInfoDir}> {selectedBusinessData?.telefono_uno} </h4>
+                                                    </Grid>
+                                                </Grid>
+                                            </CardContent>
+                                        </Card>
+                                    </Grid>
+                                    <Grid item md={3} sm={3} xs={3} style={{ textAlign: "center" }}>
 
-                                            <Card className={classes.mediaInfo}>
-                                                <CardContent>
-                                                    <Grid container style={{ textAlign: "center" }}>
-                                                        <Grid item xs={5}>
-                                                            {0 === 0 && (
-                                                                <AssignmentIndIcon color='secondary' className={classes.logoInfoNit} />
-                                                            )}
-                                                            {1 === 0 && (
-                                                                <DescriptionIcon color='secondary' className={classes.logoInfoNit} />
-                                                            )}
-                                                        </Grid>
-                                                        <Grid item xs={5}>
-                                                            <h6 className={classes.textInfoNit}>NIT</h6>
-                                                            <h4 className={classes.tituloInfoNit}>{selectedBusinessData?.nit}</h4>
-                                                        </Grid>
+                                        <Card className={classes.mediaInfo}>
+                                            <CardContent>
+                                                <Grid container style={{ textAlign: "center" }}>
+                                                    <Grid item xs={5}>
+                                                        {0 === 0 && (
+                                                            <AssignmentIndIcon color='secondary' className={classes.logoInfoNit} />
+                                                        )}
+                                                        {1 === 0 && (
+                                                            <DescriptionIcon color='secondary' className={classes.logoInfoNit} />
+                                                        )}
                                                     </Grid>
-                                                </CardContent>
-                                            </Card>
-                                        </Grid>
-                                        <Grid item md={3} sm={3} xs={3} style={{ textAlign: "center" }}>
-                                            <Card className={classes.mediaInfo}>
-                                                <CardContent>
-                                                    <Grid container style={{ textAlign: "center" }}>
-                                                        <Grid item xs={4}>
-                                                            <DirectionsIcon color='secondary' className={classes.logoInfoDir} />
-                                                        </Grid>
-                                                        <Grid item xs={8}>
-                                                            <h6 className={classes.textInfoDir}>Dirección</h6>
-                                                            <h4 className={classes.tituloInfoDir}>{selectedBusinessData?.direccion_principal} </h4>
-                                                        </Grid>
+                                                    <Grid item xs={5}>
+                                                        <h6 className={classes.textInfoNit}>NIT</h6>
+                                                        <h4 className={classes.tituloInfoNit}>{selectedBusinessData?.nit}</h4>
                                                     </Grid>
-                                                </CardContent>
-                                            </Card>
-                                        </Grid>
-                                        <Grid item md={3} sm={3} xs={3} style={{ textAlign: "center" }}>
-                                            <Card className={classes.mediaInfo}>
-                                                <CardContent>
-                                                    <Grid container style={{ textAlign: "center" }}>
-                                                        <Grid item xs={6}>
-                                                            <PublicIcon color='secondary' className={classes.logoInfoId} />
-                                                        </Grid>
-                                                        <Grid item xs={6}>
-                                                            <h6 className={classes.textInfoId}>Pais</h6>
-                                                            <h4 className={classes.tituloInfoId}>{selectedBusinessData?.pais} </h4>
-                                                        </Grid>
+                                                </Grid>
+                                            </CardContent>
+                                        </Card>
+                                    </Grid>
+                                    <Grid item md={3} sm={3} xs={3} style={{ textAlign: "center" }}>
+                                        <Card className={classes.mediaInfo}>
+                                            <CardContent>
+                                                <Grid container style={{ textAlign: "center" }}>
+                                                    <Grid item xs={4}>
+                                                        <DirectionsIcon color='secondary' className={classes.logoInfoDir} />
                                                     </Grid>
-                                                </CardContent>
-                                            </Card>
-                                        </Grid>
+                                                    <Grid item xs={8}>
+                                                        <h6 className={classes.textInfoDir}>Dirección</h6>
+                                                        <h4 className={classes.tituloInfoDir}>{selectedBusinessData?.direccion_principal} </h4>
+                                                    </Grid>
+                                                </Grid>
+                                            </CardContent>
+                                        </Card>
+                                    </Grid>
+                                    <Grid item md={3} sm={3} xs={3} style={{ textAlign: "center" }}>
+                                        <Card className={classes.mediaInfo}>
+                                            <CardContent>
+                                                <Grid container style={{ textAlign: "center" }}>
+                                                    <Grid item xs={6}>
+                                                        <PublicIcon color='secondary' className={classes.logoInfoId} />
+                                                    </Grid>
+                                                    <Grid item xs={6}>
+                                                        <h6 className={classes.textInfoId}>Pais</h6>
+                                                        <h4 className={classes.tituloInfoId}>{selectedBusinessData?.pais} </h4>
+                                                    </Grid>
+                                                </Grid>
+                                            </CardContent>
+                                        </Card>
                                     </Grid>
                                 </Grid>
-                                {adminAccess &&
-                                    <>
-                                        <Grid item xs={12}>
-                                            <Grid container spacing={0}>
-                                                <Grid item xs={12} id='profile'>
-                                                    <AdminOptionsDial
-                                                        title='Administradores'
-                                                        setPrivDialog={setPrivDialog}
-                                                    />
-                                                </Grid>
+                            </Grid>
+                            {adminAccess &&
+                                <>
+                                    <Grid item xs={12}>
+                                        <Grid container spacing={0}>
+                                            <Grid item xs={12} id='profile'>
+                                                <AdminOptionsDial
+                                                    title='Administradores'
+                                                    setPrivDialog={setPrivDialog}
+                                                />
                                             </Grid>
                                         </Grid>
-                                        <Grid item xs={12}>
-                                            <WhiteTable
-                                                tableData={tableData}
-                                                rows={rows}
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                        <WhiteTable
+                                            tableData={tableData}
+                                            rows={rows}
 
-                                            />
-                                            <TablePagination
-                                                rowsPerPageOptions={[5, 10, 25]}
-                                                component="div"
-                                                count={rows.length}
-                                                rowsPerPage={rowsPerPage}
-                                                page={page}
-                                                onChangePage={handleChangePage}
-                                                onChangeRowsPerPage={handleChangeRowsPerPage}
-                                            />
-                                        </Grid>
-                                    </>
-                                }
-                                <Grid item xs={12} id='profile'>
-                                    <ProfileOptionsDial setProfileDialog={setProfileDialog} />
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <WhiteTable
-                                        tableData={modulesTableData}
-                                        rows={modulesRows}
-                                        setModulesDialog={setModulesDialog}
-                                        handleMoreInfo={handleMoreInfo}
-                                    />
-                                    <TablePagination
-                                        rowsPerPageOptions={[5, 10, 25]}
-                                        component="div"
-                                        count={rows.length}
-                                        rowsPerPage={rowsPerPage}
-                                        page={page}
-                                        onChangePage={handleChangePage}
-                                        onChangeRowsPerPage={handleChangeRowsPerPage}
-                                    />
-                                </Grid>
+                                        />
+                                        <TablePagination
+                                            rowsPerPageOptions={[5, 10, 25]}
+                                            component="div"
+                                            count={rows.length}
+                                            rowsPerPage={rowsPerPage}
+                                            page={page}
+                                            onPageChange={handleChangePage}
+                                            onRowsPerPageChange={handleChangeRowsPerPage}
+                                        />
+                                    </Grid>
+                                </>
+                            }
+                            <Grid item xs={12} id='profile'>
+                                <ProfileOptionsDial setProfileDialog={setProfileDialog} />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <WhiteTable
+                                    tableData={modulesTableData}
+                                    rows={modulesRows}
+                                    setModulesDialog={setModulesDialog}
+                                    handleMoreInfo={handleMoreInfo}
+                                />
+                                <TablePagination
+                                    rowsPerPageOptions={[5, 10, 25]}
+                                    component="div"
+                                    count={rows.length}
+                                    rowsPerPage={rowsPerPage}
+                                    page={page}
+                                    onPageChange={handleChangePage}
+                                    onRowsPerPageChange={handleChangeRowsPerPage}
+                                />
                             </Grid>
                         </Grid>
                     </Grid>
-                    <SetUserPrivDialog dialog={privDialog} closeDialog={closePrivDialog} />
-                    <ConfirmDeleteUserDialog />
-                    <ConfirmDeleteProfileDialog />
-                    <AssignProfileDialog dialog={profileDialog} closeDialog={closeProfileDialog} moreInfo={moreInfoModule} />
-                    <UserModulesDialog userId={userIdModules} dialog={openModulesDialog} closeDialog={setOpenModulesDialog} />
-                    <ConfirmationDialog
-                        success={updateAdminSuccess}
-                        message={updateAdminUserMsg}
-                        handleConfirm={handleConfirmUpdDialog}
-                        dialog={confirmUpdateAdminDialog}
-                        closeDialog={handleCloseConfirmUptDialog}
-                    />
-                </>
-                :
-                <Grid container alignItems='center' justify='center' style={{ minHeigth: '50vh', paddingTop: '500px' }}>
-                    <Grid item xs={12}>
-                        <Typography variant='h5' align='center' color='secondary'>
-                            Seleccione una Empresa
-                        </Typography>
-                    </Grid>
                 </Grid>
-            }
-        </>
-
-    );
+                <SetUserPrivDialog dialog={privDialog} closeDialog={closePrivDialog} />
+                <ConfirmDeleteUserDialog />
+                <ConfirmDeleteProfileDialog />
+                <AssignProfileDialog dialog={profileDialog} closeDialog={closeProfileDialog} moreInfo={moreInfoModule} />
+                <UserModulesDialog userId={userIdModules} dialog={openModulesDialog} closeDialog={setOpenModulesDialog} />
+                <ConfirmationDialog
+                    success={updateAdminSuccess}
+                    message={updateAdminUserMsg}
+                    handleConfirm={handleConfirmUpdDialog}
+                    dialog={confirmUpdateAdminDialog}
+                    closeDialog={handleCloseConfirmUptDialog}
+                />
+            </>
+            :
+            <Grid container alignItems='center' justifyContent='center' style={{ minHeigth: '50vh', paddingTop: '500px' }}>
+                <Grid item xs={12}>
+                    <Typography variant='h5' align='center' color='secondary'>
+                        Seleccione una Empresa
+                    </Typography>
+                </Grid>
+            </Grid>
+        }
+    </>;
 }

@@ -31,20 +31,18 @@ export default function tablePage() {
     useEffect(() => {
         console.log(tableRows)
     }, [tableRows])
-    return (
-        <>
-            {showTable &&
-                <>
-                    <Grid container justify='center'>
-                        <Grid item >
-                            <WhiteTable
-                                tableData={tableData}
-                                rows={tableRows}
-                            />
-                        </Grid>
+    return <>
+        {showTable &&
+            <>
+                <Grid container justifyContent='center'>
+                    <Grid item >
+                        <WhiteTable
+                            tableData={tableData}
+                            rows={tableRows}
+                        />
                     </Grid>
-                </>
-            }
-        </>
-    )
+                </Grid>
+            </>
+        }
+    </>;
 };

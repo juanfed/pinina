@@ -28,17 +28,17 @@ import T_mascotasT_razasre0lsModal from '../../components/modals/T_mascotasT_raz
 import { AddCloseAction, cleanCloseAction, cleanOffAction, cleanOnAction, cleanOpenAction, deleteCloseAction, editCloseAction, editOpenAction, saveCloseAction, sonCloseAction } from '../../redux/actions/MainAction';
 
 // Material UI Components
-import { Grid, Button, TextField, List, ListItem, ListItemText, Divider } from '@material-ui/core'; 
-import { Typography, IconButton, FormLabel, FormControl, FormControlLabel, Checkbox, Box, Dialog, DialogContent, DialogContentText, DialogActions, DialogTitle } from '@material-ui/core';
+import { Grid, Button, TextField, List, ListItem, ListItemText, Divider } from '@mui/material'; 
+import { Typography, IconButton, FormLabel, FormControl, FormControlLabel, Checkbox, Box, Dialog, DialogContent, DialogContentText, DialogActions, DialogTitle } from '@mui/material';
 
 // Styles
 import useStyles from '../../assets/css/js/styles';
 
 // Material UI Icons
-import CloseIcon from '@material-ui/icons/Close';
-import AddIcon from '@material-ui/icons/Add';
-import SearchIcon from '@material-ui/icons/Search';
-import RemoveIcon from '@material-ui/icons/Remove';
+import CloseIcon from '@mui/icons-material/Close';
+import AddIcon from '@mui/icons-material/Add';
+import SearchIcon from '@mui/icons-material/Search';
+import RemoveIcon from '@mui/icons-material/Remove';
 
 const C_masnnkYqCreate = () => {
 
@@ -402,253 +402,261 @@ fecha_nacimiento: ''
             
             
 
-    return (
-        <>
-        <ReduxOptionsDial/>
-        <MainAppBar/>
-            <Dialog
-                open={ modalDelete }
-                onClose={ () => handleClose() }
-                aria-labelledby="alert-dialog-title"
-                aria-describedby="alert-dialog-description"
-            >
-                <DialogTitle id="alert-dialog-title">{ "Esta Seguro de Eliminar " + elementToDelete }</DialogTitle>
-                <DialogContent>
-                    <DialogContentText id="alert-dialog-description">
-                        Si elimina el elemento no podrá ser recuperado.
-                    </DialogContentText>
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={ () => handleClose() } color="primary">
-                        Cancelar
-                    </Button>
-                    <Button onClick={ () => deleteElement() } color="secondary" autoFocus>
-                        Eliminar
-                    </Button>
-                </DialogActions>
-            </Dialog>
+    return <>
+    <ReduxOptionsDial/>
+    <MainAppBar/>
+        <Dialog
+            open={ modalDelete }
+            onClose={ () => handleClose() }
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
+        >
+            <DialogTitle id="alert-dialog-title">{ "Esta Seguro de Eliminar " + elementToDelete }</DialogTitle>
+            <DialogContent>
+                <DialogContentText id="alert-dialog-description">
+                    Si elimina el elemento no podrá ser recuperado.
+                </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+                <Button onClick={ () => handleClose() } color="primary">
+                    Cancelar
+                </Button>
+                <Button onClick={ () => deleteElement() } color="secondary" autoFocus>
+                    Eliminar
+                </Button>
+            </DialogActions>
+        </Dialog>
 
-        
-                <br/>
-                <Box m={ 0 } p={ 1 }>
+    
+            <br/>
+            <Box m={ 0 } p={ 1 }>
 
-            <Typography variant="h6" className="text-left ml-3 my-3">t_mascotas</Typography>
+        <Typography variant="h6" className="text-left ml-3 my-3">t_mascotas</Typography>
 
-            <Grid container justify="center" alignItems="center">
+        <Grid container justifyContent="center" alignItems="center">
 
-                    
-                        <Grid item md={ 12 } sm={ 12 } xs={ 12 } className="text-center mb-3">
-                            <TextField 
-                                required={ false }
-                                type="text"
-                                name="nombre_mascota"
-                                id="nombre_mascota"
-                                variant="outlined"
-                                color='secondary'
-                                className={ classes.width }
-                                label="Nombre mascota"
-                                placeholder="Ingrese Nombre mascota"
-                                value={ data.nombre_mascota }
-                                onChange={ (e) => handleChange(e) }
-                            />
-                        
-
-                            <IconButton className="border"
-                                onClick={ () => {
-                                    setSearch(true)
-                                    if (data.nombre_mascota === '') {
-                                        dispatch(editCloseAction());
-                                        dispatch(cleanCloseAction());
-                                    } 
-                                } }
-                            >
-                                <SearchIcon />
-                            </IconButton>
-            
-                        </Grid>
-                        {/* REPLACEBLURnombre_mascota */}
-                        
-                    { ((add || edit) && !son) && (
-                        <>
+                
                     <Grid item md={ 12 } sm={ 12 } xs={ 12 } className="text-center mb-3">
-                                
-                            <div className="d-flex align-items-center ml-3 mb-3 mt-3">
-                                <Typography variant="h6" className="text-left text-info">T_colores</Typography>
-                                <IconButton className="border ml-3" onClick={ () => setT_colores(!t_colores) }>
-                                    { t_colores ? <CloseIcon /> : <AddIcon /> }
-                                </IconButton>
-                            </div>
-                                        
-    
-                            <TextField 
-                                required={ true }
-                                type="text"
-                                name="id_color"
-                                id="id_color"
-                                color='secondary'
-                                variant="outlined"
-                                className={ classes.width }
-                                label="Id color"
-                                placeholder="Ingrese Id color"
-                                value={ data.id_colorDescripcion }
-                                onChange={ (e) => handleChange(e) }
-                            />
-                            
-                        </Grid><Grid item md={ 12 } sm={ 12 } xs={ 12 } className="text-center mb-3">
-                                
-                            <div className="d-flex align-items-center ml-3 mb-3 mt-3">
-                                <Typography variant="h6" className="text-left text-info">T_clientes</Typography>
-                                <IconButton className="border ml-3" onClick={ () => setT_clientes(!t_clientes) }>
-                                    { t_clientes ? <CloseIcon /> : <AddIcon /> }
-                                </IconButton>
-                            </div>
-                                        
-    
-                            <TextField 
-                                required={ true }
-                                type="text"
-                                name="id_clientes"
-                                id="id_clientes"
-                                color='secondary'
-                                variant="outlined"
-                                className={ classes.width }
-                                label="Id clientes"
-                                placeholder="Ingrese Id clientes"
-                                value={ data.id_clientesDescripcion }
-                                onChange={ (e) => handleChange(e) }
-                            />
-                            
-                        </Grid><Grid item md={ 12 } sm={ 12 } xs={ 12 } className="text-center mb-3">
-                                
-    
-                            <TextField 
-                                required={ true }
-                                type="text"
-                                name="escala_edad"
-                                id="escala_edad"
-                                color='secondary'
-                                variant="outlined"
-                                className={ classes.width }
-                                label="Escala edad"
-                                placeholder="Ingrese Escala edad"
-                                value={ data.escala_edad }
-                                onChange={ (e) => handleChange(e) }
-                            />
-                            
-                        </Grid><Grid item md={ 12 } sm={ 12 } xs={ 12 } className="text-center mb-3">
-                                
-                            <div className="d-flex align-items-center ml-3 mb-3 mt-3">
-                                <Typography variant="h6" className="text-left text-info">T_razas</Typography>
-                                <IconButton className="border ml-3" onClick={ () => setT_razas(!t_razas) }>
-                                    { t_razas ? <CloseIcon /> : <AddIcon /> }
-                                </IconButton>
-                            </div>
-                                        
-    
-                            <TextField 
-                                required={ true }
-                                type="text"
-                                name="id_raza"
-                                id="id_raza"
-                                color='secondary'
-                                variant="outlined"
-                                className={ classes.width }
-                                label="Id raza"
-                                placeholder="Ingrese Id raza"
-                                value={ data.id_razaDescripcion }
-                                onChange={ (e) => handleChange(e) }
-                            />
-                            
-                        </Grid><Grid item md={ 12 } sm={ 12 } xs={ 12 } className="text-center mb-3">
-                                
-    
-                            <TextField 
-                                required={ true }
-                                type="text"
-                                name="edad_mascota"
-                                id="edad_mascota"
-                                color='secondary'
-                                variant="outlined"
-                                className={ classes.width }
-                                label="Edad mascota"
-                                placeholder="Ingrese Edad mascota"
-                                value={ data.edad_mascota }
-                                onChange={ (e) => handleChange(e) }
-                            />
-                            
-                        </Grid><Grid item md={ 12 } sm={ 12 } xs={ 12 } className="text-center mb-3">
-                                
-    
-                            <TextField 
-                                required={ false }
-                                type="text"
-                                name="nombre_mascota"
-                                id="nombre_mascota"
-                                color='secondary'
-                                variant="outlined"
-                                className={ classes.width }
-                                label="Nombre mascota"
-                                placeholder="Ingrese Nombre mascota"
-                                value={ data.nombre_mascota }
-                                onChange={ (e) => handleChange(e) }
-                            />
-                            
-                        </Grid><Grid item md={ 12 } sm={ 12 } xs={ 12 } className="text-center mb-3">
-                                
-    
-                            <TextField 
-                                required={ false }
-                                type="text"
-                                name="fecha_nacimiento"
-                                id="fecha_nacimiento"
-                                color='secondary'
-                                variant="outlined"
-                                className={ classes.width }
-                                label="Fecha nacimiento"
-                                placeholder="Ingrese Fecha nacimiento"
-                                value={ data.fecha_nacimiento }
-                                onChange={ (e) => handleChange(e) }
-                            />
-                            
-                        </Grid>
-
-                        </>
-                    ) }
-
-                    
+                        <TextField 
+                            required={ false }
+                            type="text"
+                            name="nombre_mascota"
+                            id="nombre_mascota"
+                            variant="outlined"
+                            color='secondary'
+                            className={ classes.width }
+                            label="Nombre mascota"
+                            placeholder="Ingrese Nombre mascota"
+                            value={ data.nombre_mascota }
+                            onChange={ (e) => handleChange(e) }
+                        />
                     
 
+                        <IconButton
+                            className="border"
+                            onClick={ () => {
+                                setSearch(true)
+                                if (data.nombre_mascota === '') {
+                                    dispatch(editCloseAction());
+                                    dispatch(cleanCloseAction());
+                                } 
+                            } }
+                            size="large">
+                            <SearchIcon />
+                        </IconButton>
+        
+                    </Grid>
+                    {/* REPLACEBLURnombre_mascota */}
                     
+                { ((add || edit) && !son) && (
+                    <>
+                <Grid item md={ 12 } sm={ 12 } xs={ 12 } className="text-center mb-3">
+                            
+                        <div className="d-flex align-items-center ml-3 mb-3 mt-3">
+                            <Typography variant="h6" className="text-left text-info">T_colores</Typography>
+                            <IconButton
+                                className="border ml-3"
+                                onClick={ () => setT_colores(!t_colores) }
+                                size="large">
+                                { t_colores ? <CloseIcon /> : <AddIcon /> }
+                            </IconButton>
+                        </div>
+                                    
+
+                        <TextField 
+                            required={ true }
+                            type="text"
+                            name="id_color"
+                            id="id_color"
+                            color='secondary'
+                            variant="outlined"
+                            className={ classes.width }
+                            label="Id color"
+                            placeholder="Ingrese Id color"
+                            value={ data.id_colorDescripcion }
+                            onChange={ (e) => handleChange(e) }
+                        />
+                        
+                    </Grid><Grid item md={ 12 } sm={ 12 } xs={ 12 } className="text-center mb-3">
+                            
+                        <div className="d-flex align-items-center ml-3 mb-3 mt-3">
+                            <Typography variant="h6" className="text-left text-info">T_clientes</Typography>
+                            <IconButton
+                                className="border ml-3"
+                                onClick={ () => setT_clientes(!t_clientes) }
+                                size="large">
+                                { t_clientes ? <CloseIcon /> : <AddIcon /> }
+                            </IconButton>
+                        </div>
+                                    
+
+                        <TextField 
+                            required={ true }
+                            type="text"
+                            name="id_clientes"
+                            id="id_clientes"
+                            color='secondary'
+                            variant="outlined"
+                            className={ classes.width }
+                            label="Id clientes"
+                            placeholder="Ingrese Id clientes"
+                            value={ data.id_clientesDescripcion }
+                            onChange={ (e) => handleChange(e) }
+                        />
+                        
+                    </Grid><Grid item md={ 12 } sm={ 12 } xs={ 12 } className="text-center mb-3">
+                            
+
+                        <TextField 
+                            required={ true }
+                            type="text"
+                            name="escala_edad"
+                            id="escala_edad"
+                            color='secondary'
+                            variant="outlined"
+                            className={ classes.width }
+                            label="Escala edad"
+                            placeholder="Ingrese Escala edad"
+                            value={ data.escala_edad }
+                            onChange={ (e) => handleChange(e) }
+                        />
+                        
+                    </Grid><Grid item md={ 12 } sm={ 12 } xs={ 12 } className="text-center mb-3">
+                            
+                        <div className="d-flex align-items-center ml-3 mb-3 mt-3">
+                            <Typography variant="h6" className="text-left text-info">T_razas</Typography>
+                            <IconButton
+                                className="border ml-3"
+                                onClick={ () => setT_razas(!t_razas) }
+                                size="large">
+                                { t_razas ? <CloseIcon /> : <AddIcon /> }
+                            </IconButton>
+                        </div>
+                                    
+
+                        <TextField 
+                            required={ true }
+                            type="text"
+                            name="id_raza"
+                            id="id_raza"
+                            color='secondary'
+                            variant="outlined"
+                            className={ classes.width }
+                            label="Id raza"
+                            placeholder="Ingrese Id raza"
+                            value={ data.id_razaDescripcion }
+                            onChange={ (e) => handleChange(e) }
+                        />
+                        
+                    </Grid><Grid item md={ 12 } sm={ 12 } xs={ 12 } className="text-center mb-3">
+                            
+
+                        <TextField 
+                            required={ true }
+                            type="text"
+                            name="edad_mascota"
+                            id="edad_mascota"
+                            color='secondary'
+                            variant="outlined"
+                            className={ classes.width }
+                            label="Edad mascota"
+                            placeholder="Ingrese Edad mascota"
+                            value={ data.edad_mascota }
+                            onChange={ (e) => handleChange(e) }
+                        />
+                        
+                    </Grid><Grid item md={ 12 } sm={ 12 } xs={ 12 } className="text-center mb-3">
+                            
+
+                        <TextField 
+                            required={ false }
+                            type="text"
+                            name="nombre_mascota"
+                            id="nombre_mascota"
+                            color='secondary'
+                            variant="outlined"
+                            className={ classes.width }
+                            label="Nombre mascota"
+                            placeholder="Ingrese Nombre mascota"
+                            value={ data.nombre_mascota }
+                            onChange={ (e) => handleChange(e) }
+                        />
+                        
+                    </Grid><Grid item md={ 12 } sm={ 12 } xs={ 12 } className="text-center mb-3">
+                            
+
+                        <TextField 
+                            required={ false }
+                            type="text"
+                            name="fecha_nacimiento"
+                            id="fecha_nacimiento"
+                            color='secondary'
+                            variant="outlined"
+                            className={ classes.width }
+                            label="Fecha nacimiento"
+                            placeholder="Ingrese Fecha nacimiento"
+                            value={ data.fecha_nacimiento }
+                            onChange={ (e) => handleChange(e) }
+                        />
+                        
+                    </Grid>
+
+                    </>
+                ) }
+
+                
+                
+
+                
 <C_hisnnkYqCreateSon search={ search } setSearch={ setSearch } searchResult={ searchResultt_historias_clinicas } fatherParam={ data.id_mascotas } idToSearch={ idToSearch } setIdToSearch={ setIdToSearch } setFieldToSearch={ setFieldToSearch } />
 
-        <C_vacnnkYqCreateSon search={ search } setSearch={ setSearch } searchResult={ searchResultt_vacunas } fatherParam={ data.id_mascotas } idToSearch={ idToSearch } setIdToSearch={ setIdToSearch } setFieldToSearch={ setFieldToSearch } />
-        {/* REPLACESON */}
-                    
-        
-
-                    
-                { t_colores && (
-                    <T_mascotasT_coloresRRkaCModal t_colores={ t_colores } setT_colores={ setT_colores } consultData={ data } setConsultData={ setData } />
-                ) }
+    <C_vacnnkYqCreateSon search={ search } setSearch={ setSearch } searchResult={ searchResultt_vacunas } fatherParam={ data.id_mascotas } idToSearch={ idToSearch } setIdToSearch={ setIdToSearch } setFieldToSearch={ setFieldToSearch } />
+    {/* REPLACESON */}
                 
-                { t_clientes && (
-                    <T_mascotasT_clientesfusxtModal t_clientes={ t_clientes } setT_clientes={ setT_clientes } consultData={ data } setConsultData={ setData } />
-                ) }
-                
-                { t_razas && (
-                    <T_mascotasT_razasre0lsModal t_razas={ t_razas } setT_razas={ setT_razas } consultData={ data } setConsultData={ setData } />
-                ) }
-                {/* REPLACECOMPONENT */}
-                    
-                    
-                    
-                    
-                </Grid>
+    
 
-                </Box>
+                
+            { t_colores && (
+                <T_mascotasT_coloresRRkaCModal t_colores={ t_colores } setT_colores={ setT_colores } consultData={ data } setConsultData={ setData } />
+            ) }
             
-        </>
-    )
+            { t_clientes && (
+                <T_mascotasT_clientesfusxtModal t_clientes={ t_clientes } setT_clientes={ setT_clientes } consultData={ data } setConsultData={ setData } />
+            ) }
+            
+            { t_razas && (
+                <T_mascotasT_razasre0lsModal t_razas={ t_razas } setT_razas={ setT_razas } consultData={ data } setConsultData={ setData } />
+            ) }
+            {/* REPLACECOMPONENT */}
+                
+                
+                
+                
+            </Grid>
+
+            </Box>
+        
+    </>;
 }
 
 export default C_masnnkYqCreate;

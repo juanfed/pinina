@@ -18,15 +18,15 @@ import {
     DialogContentText,
     DialogTitle,
     TextField
-} from '@material-ui/core';
-import { Typography, IconButton } from '@material-ui/core';
+} from '@mui/material';
+import { Typography, IconButton } from '@mui/material';
 
 // Styles
 import useStyles from '../../assets/css/js/styles';
 
 // Material UI Icons
-import SearchIcon from '@material-ui/icons/Search';
-import CloseIcon from '@material-ui/icons/Close';
+import SearchIcon from '@mui/icons-material/Search';
+import CloseIcon from '@mui/icons-material/Close';
 
 
 const C_hisnnkYqCreateSon = ({ setSearch, searchResult, setSearchResult, fatherParam, initialData }) => {
@@ -295,235 +295,233 @@ const C_hisnnkYqCreateSon = ({ setSearch, searchResult, setSearchResult, fatherP
         }
     }, [searchData]);
 
-    return (
-        <>
-            <Dialog
-                open={modalDelete}
-                onClose={() => handleClose()}
-                aria-labelledby="alert-dialog-title"
-                aria-describedby="alert-dialog-description"
-            >
-                <DialogTitle id="alert-dialog-title">{"Esta Seguro de Eliminar " + idToDelete}</DialogTitle>
-                <DialogContent>
-                    <DialogContentText id="alert-dialog-description">
-                        Si elimina el elemento no podrá ser recuperado.
-                    </DialogContentText>
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={() => handleClose()} color="primary">
-                        Cancelar
-                    </Button>
-                    <Button onClick={() => deleteElement(idToDelete)} color="secondary" autoFocus>
-                        Eliminar
-                    </Button>
-                </DialogActions>
-            </Dialog>
-            <Grid container className={classes.sonContainer}>
-                <Grid item xs={10}>
-                    <SonOptionsDial
-                        title='Historias Clínicas'
-                        handleAdd={handleAdd}
-                        handleEdit={handleEdit}
-                        handleBack={handleBack}
-                        handleDelete={handleDelete}
-                        handleSearch={handleSearch}
-                        addState={addState}
-                        editState={edit}
-                        deleteState={deleteItem}
-                    />
-                </Grid>
+    return <>
+        <Dialog
+            open={modalDelete}
+            onClose={() => handleClose()}
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
+        >
+            <DialogTitle id="alert-dialog-title">{"Esta Seguro de Eliminar " + idToDelete}</DialogTitle>
+            <DialogContent>
+                <DialogContentText id="alert-dialog-description">
+                    Si elimina el elemento no podrá ser recuperado.
+                </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+                <Button onClick={() => handleClose()} color="primary">
+                    Cancelar
+                </Button>
+                <Button onClick={() => deleteElement(idToDelete)} color="secondary" autoFocus>
+                    Eliminar
+                </Button>
+            </DialogActions>
+        </Dialog>
+        <Grid container className={classes.sonContainer}>
+            <Grid item xs={10}>
+                <SonOptionsDial
+                    title='Historias Clínicas'
+                    handleAdd={handleAdd}
+                    handleEdit={handleEdit}
+                    handleBack={handleBack}
+                    handleDelete={handleDelete}
+                    handleSearch={handleSearch}
+                    addState={addState}
+                    editState={edit}
+                    deleteState={deleteItem}
+                />
             </Grid>
-            <Grid container justify="center" spacing={2} alignItems="center">
-                {searchState &&
-                    <>
-                        <Grid item xs={4}>
-                            <Grid container justify='center' alignItems='center' className={classes.searchContainer}>
-                                <Grid item>
-                                    <Grid container alignItems='center' className={classes.SearchIcon}>
-                                        <Grid item>
-                                            <SearchIcon className={classes.searchIcon} />
-                                        </Grid>
+        </Grid>
+        <Grid container justifyContent="center" spacing={2} alignItems="center">
+            {searchState &&
+                <>
+                    <Grid item xs={4}>
+                        <Grid container justifyContent='center' alignItems='center' className={classes.searchContainer}>
+                            <Grid item>
+                                <Grid container alignItems='center' className={classes.SearchIcon}>
+                                    <Grid item>
+                                        <SearchIcon className={classes.searchIcon} />
                                     </Grid>
                                 </Grid>
-                                <Grid item xs={3}>
-                                    <InputBase
-                                        fullWidth
-                                        placeholder="Buscar..."
-                                        classes={{
-                                            root: classes.inputRoot,
-                                            input: classes.inputInput,
-                                        }}
-                                        inputProps={{ 'aria-label': 'search' }}
-                                        onChange={handleSearchBarChange}
-                                        value={searchData}
-                                    />
-                                </Grid>
                             </Grid>
-                        </Grid>
-                        <Grid item>
-                            <IconButton
-                                size='small'
-                                className={classes.searchIconButton}
-                                onClick={hideAndCleanSearchBar}
-                            >
-                                <CloseIcon className={classes.icon} />
-                            </IconButton>
-                        </Grid>
-                    </>
-                }
-
-
-                <Grid item md={10} className="text-center">
-                    {searchResult.length > 0 ? (
-                        <WhiteTable
-                            tableData={tableData}
-                            rows={tableRows}
-                            handleEdit={handleEditItem}
-                            handleDelete={handleDeleteItem}
-                        />
-                    )
-                        :
-                        (
-                            <Grid container justify='center' className={classes.noEntries}>
-                                <Grid item>
-                                    <Typography align='center' variant='h6' color='secondary'>
-                                        No ha registrado historias clínicas relacionadas con este paciente
-                                    </Typography>
-                                </Grid>
-                            </Grid>
-                        )
-                    }
-                </Grid>
-            </Grid>
-            <Dialog
-                open={addState || editState}
-                onClose={() => {
-                    setAddState(false);
-                    setEditState(false);
-                }}>
-                <Grid container className={classes.dialogContainer} justify='center'>
-                    <Grid container spacing={1} justify='center'>
-                        <Grid container justify='center' className={classes.dialogTitle}>
-                            <Grid item>
-                                <Typography align='center' variant='h5'>
-                                    {dialogTitle}
-                                </Typography>
-                            </Grid>
-                        </Grid>
-
-                        <Grid item md={12} sm={12} xs={12}>
-                            <TextField
-                                required={false}
-                                type="text"
-                                name="sintomas"
-                                id="sintomas"
-                                variant="outlined"
-                                label="Sintomas"
-                                placeholder="Ingrese Sintomas"
-                                value={data.sintomas}
-                                onChange={(e) => handleChange(e)}
-                                fullWidth
-                                color='secondary'
-                            />
-                        </Grid>
-                        <Grid item md={12} sm={12} xs={12}>
-                            <TextField
-                                required={false}
-                                type="text"
-                                name="antecedentes"
-                                id="antecedentes"
-                                variant="outlined"
-                                label="Antecedentes"
-                                placeholder="Ingrese Antecedentes"
-                                value={data.antecedentes}
-                                onChange={(e) => handleChange(e)}
-                                fullWidth
-                                color='secondary'
-                            />
-                        </Grid>
-                        <Grid item md={12} sm={12} xs={12}>
-                            <TextField
-                                required={false}
-                                type="text"
-                                name="diagnostico"
-                                id="diagnostico"
-                                variant="outlined"
-                                label="Diagnostico"
-                                placeholder="Ingrese Diagnostico"
-                                value={data.diagnostico}
-                                onChange={(e) => handleChange(e)}
-                                fullWidth
-                                color='secondary'
-                            />
-                        </Grid>
-                        <Grid item md={12} sm={12} xs={12}>
-                            <TextField
-                                required={false}
-                                type="text"
-                                name="hora"
-                                id="hora"
-                                variant="outlined"
-                                label="Hora"
-                                placeholder="Ingrese Hora"
-                                value={data.hora}
-                                onChange={(e) => handleChange(e)}
-                                fullWidth
-                                color='secondary'
-                            />
-                        </Grid>
-                        <Grid item md={12} sm={12} xs={12}>
-                            <TextField
-                                required={false}
-                                type="text"
-                                name="observaciones"
-                                id="observaciones"
-                                variant="outlined"
-                                label="Observaciones"
-                                placeholder="Ingrese Observaciones"
-                                value={data.observaciones}
-                                onChange={(e) => handleChange(e)}
-                                fullWidth
-                                color='secondary'
-                            />
-                        </Grid>
-                        <Grid item md={12} sm={12} xs={12}>
-                            <TextField
-                                required={false}
-                                type="number"
-                                name="id_mascotas"
-                                id="id_mascotas"
-                                variant="outlined"
-                                label="Id mascotas"
-                                placeholder="Ingrese Id mascotas"
-                                value={data.id_mascotas}
-                                onChange={(e) => handleChange(e)}
-                                fullWidth
-                                color='secondary'
-                            />
-                        </Grid>
-                        <Grid container justify='center'>
-                            <Grid item md={6} sm={12} xs={12}>
-                                <Button
+                            <Grid item xs={3}>
+                                <InputBase
                                     fullWidth
-                                    variant="contained"
-                                    color='primary'
-                                    onClick={e => handleSubmit(e)}
-                                >
-                                    <Typography>
-                                        {addState ? 'Nuevo Registro' : 'Editar Registro'}
-                                    </Typography>
-                                </Button>
+                                    placeholder="Buscar..."
+                                    classes={{
+                                        root: classes.inputRoot,
+                                        input: classes.inputInput,
+                                    }}
+                                    inputProps={{ 'aria-label': 'search' }}
+                                    onChange={handleSearchBarChange}
+                                    value={searchData}
+                                />
                             </Grid>
                         </Grid>
                     </Grid>
+                    <Grid item>
+                        <IconButton
+                            size='small'
+                            className={classes.searchIconButton}
+                            onClick={hideAndCleanSearchBar}
+                        >
+                            <CloseIcon className={classes.icon} />
+                        </IconButton>
+                    </Grid>
+                </>
+            }
+
+
+            <Grid item md={10} className="text-center">
+                {searchResult.length > 0 ? (
+                    <WhiteTable
+                        tableData={tableData}
+                        rows={tableRows}
+                        handleEdit={handleEditItem}
+                        handleDelete={handleDeleteItem}
+                    />
+                )
+                    :
+                    (
+                        <Grid container justifyContent='center' className={classes.noEntries}>
+                            <Grid item>
+                                <Typography align='center' variant='h6' color='secondary'>
+                                    No ha registrado historias clínicas relacionadas con este paciente
+                                </Typography>
+                            </Grid>
+                        </Grid>
+                    )
+                }
+            </Grid>
+        </Grid>
+        <Dialog
+            open={addState || editState}
+            onClose={() => {
+                setAddState(false);
+                setEditState(false);
+            }}>
+            <Grid container className={classes.dialogContainer} justifyContent='center'>
+                <Grid container spacing={1} justifyContent='center'>
+                    <Grid container justifyContent='center' className={classes.dialogTitle}>
+                        <Grid item>
+                            <Typography align='center' variant='h5'>
+                                {dialogTitle}
+                            </Typography>
+                        </Grid>
+                    </Grid>
+
+                    <Grid item md={12} sm={12} xs={12}>
+                        <TextField
+                            required={false}
+                            type="text"
+                            name="sintomas"
+                            id="sintomas"
+                            variant="outlined"
+                            label="Sintomas"
+                            placeholder="Ingrese Sintomas"
+                            value={data.sintomas}
+                            onChange={(e) => handleChange(e)}
+                            fullWidth
+                            color='secondary'
+                        />
+                    </Grid>
+                    <Grid item md={12} sm={12} xs={12}>
+                        <TextField
+                            required={false}
+                            type="text"
+                            name="antecedentes"
+                            id="antecedentes"
+                            variant="outlined"
+                            label="Antecedentes"
+                            placeholder="Ingrese Antecedentes"
+                            value={data.antecedentes}
+                            onChange={(e) => handleChange(e)}
+                            fullWidth
+                            color='secondary'
+                        />
+                    </Grid>
+                    <Grid item md={12} sm={12} xs={12}>
+                        <TextField
+                            required={false}
+                            type="text"
+                            name="diagnostico"
+                            id="diagnostico"
+                            variant="outlined"
+                            label="Diagnostico"
+                            placeholder="Ingrese Diagnostico"
+                            value={data.diagnostico}
+                            onChange={(e) => handleChange(e)}
+                            fullWidth
+                            color='secondary'
+                        />
+                    </Grid>
+                    <Grid item md={12} sm={12} xs={12}>
+                        <TextField
+                            required={false}
+                            type="text"
+                            name="hora"
+                            id="hora"
+                            variant="outlined"
+                            label="Hora"
+                            placeholder="Ingrese Hora"
+                            value={data.hora}
+                            onChange={(e) => handleChange(e)}
+                            fullWidth
+                            color='secondary'
+                        />
+                    </Grid>
+                    <Grid item md={12} sm={12} xs={12}>
+                        <TextField
+                            required={false}
+                            type="text"
+                            name="observaciones"
+                            id="observaciones"
+                            variant="outlined"
+                            label="Observaciones"
+                            placeholder="Ingrese Observaciones"
+                            value={data.observaciones}
+                            onChange={(e) => handleChange(e)}
+                            fullWidth
+                            color='secondary'
+                        />
+                    </Grid>
+                    <Grid item md={12} sm={12} xs={12}>
+                        <TextField
+                            required={false}
+                            type="number"
+                            name="id_mascotas"
+                            id="id_mascotas"
+                            variant="outlined"
+                            label="Id mascotas"
+                            placeholder="Ingrese Id mascotas"
+                            value={data.id_mascotas}
+                            onChange={(e) => handleChange(e)}
+                            fullWidth
+                            color='secondary'
+                        />
+                    </Grid>
+                    <Grid container justifyContent='center'>
+                        <Grid item md={6} sm={12} xs={12}>
+                            <Button
+                                fullWidth
+                                variant="contained"
+                                color='primary'
+                                onClick={e => handleSubmit(e)}
+                            >
+                                <Typography>
+                                    {addState ? 'Nuevo Registro' : 'Editar Registro'}
+                                </Typography>
+                            </Button>
+                        </Grid>
+                    </Grid>
                 </Grid>
-            </Dialog>
+            </Grid>
+        </Dialog>
 
-            {/* REPLACECOMPONENT */}
+        {/* REPLACECOMPONENT */}
 
 
-        </>
-    )
+    </>;
 }
 
 export default C_hisnnkYqCreateSon;

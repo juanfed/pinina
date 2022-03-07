@@ -2,12 +2,12 @@ import React from 'react';
 import Link from 'next/link';
 
 // Material UI Components
-import { ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
+import { ListItem, ListItemIcon, ListItemText } from '@mui/material';
 
 // Icons
-import ClearAllIcon from '@material-ui/icons/ClearAll';
-import AddIcon from '@material-ui/icons/Add';
-import ListIcon from '@material-ui/icons/List';
+import ClearAllIcon from '@mui/icons-material/ClearAll';
+import AddIcon from '@mui/icons-material/Add';
+import ListIcon from '@mui/icons-material/List';
 
 export function ListItems() {
 

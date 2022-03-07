@@ -1,4 +1,4 @@
-import { Grid, Button, Typography, Divider } from '@material-ui/core'
+import { Grid, Button, Typography, Divider } from '@mui/material'
 import { useRouter } from 'next/router';
 import React from 'react'
 import CPNavbarStyles from '../../assets/css/js/CPNavBarStyles'
@@ -9,7 +9,7 @@ export default function CPNavBar() {
     const router = useRouter();
     return (
         <Grid container
-            justify='center'
+            justifyContent='center'
             spacing={2}
             className={classes.root}>
             <Grid item md={2} lg={2} xl={2}>
@@ -97,6 +97,5 @@ export default function CPNavBar() {
             </Grid>
 
         </Grid>
-
-    )
+    );
 }

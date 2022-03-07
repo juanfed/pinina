@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { withStyles, makeStyles, useTheme } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import { Paper, Grid, Checkbox, Button, IconButton, TableFooter, TablePagination } from '@material-ui/core';
+import { useTheme } from '@mui/material/styles';
+import withStyles from '@mui/styles/withStyles';
+import makeStyles from '@mui/styles/makeStyles';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import { Paper, Grid, Checkbox, Button, IconButton, TableFooter, TablePagination } from '@mui/material';
 import { primaryColor, tableTypographyColor } from '../../assets/css/js/mainTheme';
-import { Typography, Select, FormControl, InputLabel, MenuItem } from '@material-ui/core';
-import Switch from '@material-ui/core/Switch';
+import { Typography, Select, FormControl, InputLabel, MenuItem } from '@mui/material';
+import Switch from '@mui/material/Switch';
 import { useDispatch, useSelector } from 'react-redux';
 import {
     confirmDeleteAction,
@@ -24,11 +26,11 @@ import {
     setUserAccessAction
 } from '../../redux/actions/adminAction';
 //icons
-import SaveIcon from '@material-ui/icons/Save';
-import FirstPageIcon from '@material-ui/icons/FirstPage';
-import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
-import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
-import LastPageIcon from '@material-ui/icons/LastPage';
+import SaveIcon from '@mui/icons-material/Save';
+import FirstPageIcon from '@mui/icons-material/FirstPage';
+import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
+import LastPageIcon from '@mui/icons-material/LastPage';
 // Snackbar
 import { useSnackbar } from "notistack";
 
@@ -103,24 +105,28 @@ function TablePaginationActions(props) {
                 onClick={handleFirstPageButtonClick}
                 disabled={page === 0}
                 aria-label="first page"
-            >
+                size="large">
                 {theme.direction === 'rtl' ? <LastPageIcon /> : <FirstPageIcon />}
             </IconButton>
-            <IconButton onClick={handleBackButtonClick} disabled={page === 0} aria-label="previous page">
+            <IconButton
+                onClick={handleBackButtonClick}
+                disabled={page === 0}
+                aria-label="previous page"
+                size="large">
                 {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
             </IconButton>
             <IconButton
                 onClick={handleNextButtonClick}
                 disabled={page >= Math.ceil(count / rowsPerPage) - 1}
                 aria-label="next page"
-            >
+                size="large">
                 {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
             </IconButton>
             <IconButton
                 onClick={handleLastPageButtonClick}
                 disabled={page >= Math.ceil(count / rowsPerPage) - 1}
                 aria-label="last page"
-            >
+                size="large">
                 {theme.direction === 'rtl' ? <FirstPageIcon /> : <LastPageIcon />}
             </IconButton>
         </div>
@@ -158,350 +164,348 @@ export default function WhiteTable(props) {
         setRowsPerPage(parseInt(e.target.value, 10));
         setPage(0);
     };
-    return (
-        <>
-            <TableContainer component={Paper} className={classes.main} elevation={5}>
-                <Table className={classes.table} aria-label="customized table">
-                    <TableHead >
-                        <TableRow>
-                            {rows.map(i => (
-                                <StyledTableCell key={i.id}>
-                                    <Typography
-                                        className={classes.typography}
-                                        align='center'
-                                        variant='body1'
-                                    >
-                                        {i.title}
-                                    </Typography>
-                                </StyledTableCell>
-                            ))}
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {(rowsPerPage > 0
-                            ? data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                            : data
-                        ).map((i) => (
-                            <StyledTableRow key={i.data_0} onClick={() => handleClick && handleClick(i.data_0, i.data_3)}>
-                                <StyledTableCell component="th" scope="row" >
+    return <>
+        <TableContainer component={Paper} className={classes.main} elevation={5}>
+            <Table className={classes.table} aria-label="customized table">
+                <TableHead >
+                    <TableRow>
+                        {rows.map(i => (
+                            <StyledTableCell key={i.id}>
+                                <Typography
+                                    className={classes.typography}
+                                    align='center'
+                                    variant='body1'
+                                >
+                                    {i.title}
+                                </Typography>
+                            </StyledTableCell>
+                        ))}
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    {(rowsPerPage > 0
+                        ? data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                        : data
+                    ).map((i) => (
+                        <StyledTableRow key={i.data_0} onClick={() => handleClick && handleClick(i.data_0, i.data_3)}>
+                            <StyledTableCell component="th" scope="row" >
+                                <Typography
+                                    className={classes.typography}
+                                    variant='body2'
+                                    align='center'
+                                >
+                                    {i.data_1}
+                                </Typography>
+                            </StyledTableCell>
+                            {i.data_2 &&
+                                <StyledTableCell >
                                     <Typography
                                         className={classes.typography}
                                         variant='body2'
                                         align='center'
                                     >
-                                        {i.data_1}
+                                        {i.data_2}
                                     </Typography>
                                 </StyledTableCell>
-                                {i.data_2 &&
-                                    <StyledTableCell >
-                                        <Typography
-                                            className={classes.typography}
-                                            variant='body2'
-                                            align='center'
-                                        >
-                                            {i.data_2}
-                                        </Typography>
-                                    </StyledTableCell>
-                                }
-                                {i.data_3 &&
-                                    <StyledTableCell>
-                                        <Typography
-                                            className={classes.typography}
-                                            variant='body2'
-                                            align='center'
-                                        >
-                                            {i.data_3}
-                                        </Typography>
-                                    </StyledTableCell>
-                                }
-                                {i.data_4 ?
-                                    <StyledTableCell>
-                                        <Typography
-                                            className={classes.typography}
-                                            variant='body2'
-                                            align='center'
-                                        >
-                                            {i.data_4}
-                                        </Typography>
-                                    </StyledTableCell>
-                                    : null}
-                                {i.modulesMenu ?
-                                    <StyledTableCell>
-                                        <ModulesMenu id={i.data_0} />
-                                    </StyledTableCell>
-                                    : null}
-                                {i.data_5 ?
-                                    <StyledTableCell>
-                                        <Typography
-                                            className={classes.typography}
-                                            variant='body2'
-                                            align='center'
-                                        >
-                                            {i.data_5}
-                                        </Typography>
-                                    </StyledTableCell>
-                                    : null}
-                                {i.data_6 ?
-                                    <StyledTableCell>
-                                        <Typography
-                                            className={classes.typography}
-                                            variant='body2'
-                                            align='center'
-                                        >
-                                            {i.data_6}
-                                        </Typography>
-                                    </StyledTableCell>
-                                    : null}
-                                {i.data_7 ?
-                                    <StyledTableCell>
-                                        <Typography
-                                            className={classes.typography}
-                                            variant='body2'
-                                            align='center'
-                                        >
-                                            {i.data_7}
-                                        </Typography>
-                                    </StyledTableCell>
-                                    : null}
-                                {i.data_8 ?
-                                    <StyledTableCell>
-                                        <Typography
-                                            className={classes.typography}
-                                            variant='body2'
-                                            align='center'
-                                        >
-                                            {i.data_8}
-                                        </Typography>
-                                    </StyledTableCell>
-                                    : null}
-                                {i.data_9 ?
-                                    <StyledTableCell>
-                                        <Typography
-                                            className={classes.typography}
-                                            variant='body2'
-                                            align='center'
-                                        >
-                                            {i.data_9}
-                                        </Typography>
-                                    </StyledTableCell>
-                                    : null}
-                                {i.data_10 ?
-                                    <StyledTableCell>
-                                        <Typography
-                                            className={classes.typography}
-                                            variant='body2'
-                                            align='center'
-                                        >
-                                            {i.data_10}
-                                        </Typography>
-                                    </StyledTableCell>
-                                    : null}
-                                {i.data_11 ?
-                                    <StyledTableCell>
-                                        <Typography
-                                            className={classes.typography}
-                                            variant='body2'
-                                            align='center'
-                                        >
-                                            {i.data_11}
-                                        </Typography>
-                                    </StyledTableCell>
-                                    : null}
-                                {i.removeUser &&
-                                    <StyledTableCell>
-                                        <Grid container justify='center'>
-                                            <Grid item>
-                                                <Button
-                                                    variant='outlined'
-                                                    color='secondary'
-                                                    onClick={() => dispatch(confirmDeleteAction(i.data_0))}
-                                                >
-                                                    <Typography align='center' color='secondary' variant='body2'>
-                                                        <b>Eliminar</b>
-                                                    </Typography>
-                                                </Button>
-                                            </Grid>
+                            }
+                            {i.data_3 &&
+                                <StyledTableCell>
+                                    <Typography
+                                        className={classes.typography}
+                                        variant='body2'
+                                        align='center'
+                                    >
+                                        {i.data_3}
+                                    </Typography>
+                                </StyledTableCell>
+                            }
+                            {i.data_4 ?
+                                <StyledTableCell>
+                                    <Typography
+                                        className={classes.typography}
+                                        variant='body2'
+                                        align='center'
+                                    >
+                                        {i.data_4}
+                                    </Typography>
+                                </StyledTableCell>
+                                : null}
+                            {i.modulesMenu ?
+                                <StyledTableCell>
+                                    <ModulesMenu id={i.data_0} />
+                                </StyledTableCell>
+                                : null}
+                            {i.data_5 ?
+                                <StyledTableCell>
+                                    <Typography
+                                        className={classes.typography}
+                                        variant='body2'
+                                        align='center'
+                                    >
+                                        {i.data_5}
+                                    </Typography>
+                                </StyledTableCell>
+                                : null}
+                            {i.data_6 ?
+                                <StyledTableCell>
+                                    <Typography
+                                        className={classes.typography}
+                                        variant='body2'
+                                        align='center'
+                                    >
+                                        {i.data_6}
+                                    </Typography>
+                                </StyledTableCell>
+                                : null}
+                            {i.data_7 ?
+                                <StyledTableCell>
+                                    <Typography
+                                        className={classes.typography}
+                                        variant='body2'
+                                        align='center'
+                                    >
+                                        {i.data_7}
+                                    </Typography>
+                                </StyledTableCell>
+                                : null}
+                            {i.data_8 ?
+                                <StyledTableCell>
+                                    <Typography
+                                        className={classes.typography}
+                                        variant='body2'
+                                        align='center'
+                                    >
+                                        {i.data_8}
+                                    </Typography>
+                                </StyledTableCell>
+                                : null}
+                            {i.data_9 ?
+                                <StyledTableCell>
+                                    <Typography
+                                        className={classes.typography}
+                                        variant='body2'
+                                        align='center'
+                                    >
+                                        {i.data_9}
+                                    </Typography>
+                                </StyledTableCell>
+                                : null}
+                            {i.data_10 ?
+                                <StyledTableCell>
+                                    <Typography
+                                        className={classes.typography}
+                                        variant='body2'
+                                        align='center'
+                                    >
+                                        {i.data_10}
+                                    </Typography>
+                                </StyledTableCell>
+                                : null}
+                            {i.data_11 ?
+                                <StyledTableCell>
+                                    <Typography
+                                        className={classes.typography}
+                                        variant='body2'
+                                        align='center'
+                                    >
+                                        {i.data_11}
+                                    </Typography>
+                                </StyledTableCell>
+                                : null}
+                            {i.removeUser &&
+                                <StyledTableCell>
+                                    <Grid container justifyContent='center'>
+                                        <Grid item>
+                                            <Button
+                                                variant='outlined'
+                                                color='secondary'
+                                                onClick={() => dispatch(confirmDeleteAction(i.data_0))}
+                                            >
+                                                <Typography align='center' color='secondary' variant='body2'>
+                                                    <b>Eliminar</b>
+                                                </Typography>
+                                            </Button>
                                         </Grid>
-                                    </StyledTableCell>
-                                }
-                                {i.edit &&
-                                    <StyledTableCell>
-                                        {/*  <Grid container justify='center'>
-                                            <Grid item> */}
-                                        <Button
-                                            fullWidth
-                                            variant='outlined'
-                                            size='small'
-                                            color='secondary'
-                                            onClick={() => handleEdit(i)}
-                                        >
-                                            <Typography align='center' color='secondary' variant='body2'>
-                                                <b>Editar</b>
-                                            </Typography>
-                                        </Button>
-                                        {/*         </Grid>
-                                        </Grid> */}
-                                    </StyledTableCell>
-                                }
-                                {i.delete &&
-                                    <StyledTableCell>
-                                        {/*  <Grid container justify='center'>
-                                            <Grid item> */}
-                                        <Button
-                                            fullWidth
-                                            variant='outlined'
-                                            size='small'
-                                            color='secondary'
-                                            onClick={() => handleDelete(i.data_0)}
-                                        >
-                                            <Typography align='center' color='secondary' variant='body2'>
-                                                <b>Eliminar</b>
-                                            </Typography>
-                                        </Button>
-                                        {/*         </Grid>
-                                        </Grid> */}
-                                    </StyledTableCell>
-                                }
-                                {i.removeUserProfile &&
-                                    <StyledTableCell>
-                                        <Grid container justify='center'>
-                                            <Grid item>
-                                                <Button
-                                                    variant='outlined'
-                                                    color='secondary'
-                                                    onClick={() => dispatch(confirmDeleteProfileAction(i.id_usuario))}
-                                                >
-                                                    <Typography align='center' color='secondary' variant='body2'>
-                                                        <b>Eliminar</b>
-                                                    </Typography>
-                                                </Button>
-                                            </Grid>
+                                    </Grid>
+                                </StyledTableCell>
+                            }
+                            {i.edit &&
+                                <StyledTableCell>
+                                    {/*  <Grid container justify='center'>
+                                        <Grid item> */}
+                                    <Button
+                                        fullWidth
+                                        variant='outlined'
+                                        size='small'
+                                        color='secondary'
+                                        onClick={() => handleEdit(i)}
+                                    >
+                                        <Typography align='center' color='secondary' variant='body2'>
+                                            <b>Editar</b>
+                                        </Typography>
+                                    </Button>
+                                    {/*         </Grid>
+                                    </Grid> */}
+                                </StyledTableCell>
+                            }
+                            {i.delete &&
+                                <StyledTableCell>
+                                    {/*  <Grid container justify='center'>
+                                        <Grid item> */}
+                                    <Button
+                                        fullWidth
+                                        variant='outlined'
+                                        size='small'
+                                        color='secondary'
+                                        onClick={() => handleDelete(i.data_0)}
+                                    >
+                                        <Typography align='center' color='secondary' variant='body2'>
+                                            <b>Eliminar</b>
+                                        </Typography>
+                                    </Button>
+                                    {/*         </Grid>
+                                    </Grid> */}
+                                </StyledTableCell>
+                            }
+                            {i.removeUserProfile &&
+                                <StyledTableCell>
+                                    <Grid container justifyContent='center'>
+                                        <Grid item>
+                                            <Button
+                                                variant='outlined'
+                                                color='secondary'
+                                                onClick={() => dispatch(confirmDeleteProfileAction(i.id_usuario))}
+                                            >
+                                                <Typography align='center' color='secondary' variant='body2'>
+                                                    <b>Eliminar</b>
+                                                </Typography>
+                                            </Button>
                                         </Grid>
-                                    </StyledTableCell>
-                                }
-                                {i.moreInfo &&
-                                    <StyledTableCell>
-                                        <Grid container justify='center'>
-                                            <Grid item>
-                                                <Button
-                                                    variant='outlined'
-                                                    color='secondary'
-                                                    onClick={() => handleMoreInfo(i.id_usuario)}
-                                                >
-                                                    <Typography align='center' color='secondary' variant='body2'>
-                                                        Más información
-                                                    </Typography>
-                                                </Button>
-                                            </Grid>
+                                    </Grid>
+                                </StyledTableCell>
+                            }
+                            {i.moreInfo &&
+                                <StyledTableCell>
+                                    <Grid container justifyContent='center'>
+                                        <Grid item>
+                                            <Button
+                                                variant='outlined'
+                                                color='secondary'
+                                                onClick={() => handleMoreInfo(i.id_usuario)}
+                                            >
+                                                <Typography align='center' color='secondary' variant='body2'>
+                                                    Más información
+                                                </Typography>
+                                            </Button>
                                         </Grid>
-                                    </StyledTableCell>
-                                }
-                                {i.select &&
-                                    <StyledTableCell>
-                                        <Grid container justify='center'>
-                                            <Grid item>
-                                                <Button
-                                                    variant='outlined'
-                                                    color='secondary'
-                                                    onClick={() => handleSelect(i)}
-                                                >
-                                                    <Typography align='center' color='secondary' variant='body2'>
-                                                        Seleccionar
-                                                    </Typography>
-                                                </Button>
-                                            </Grid>
+                                    </Grid>
+                                </StyledTableCell>
+                            }
+                            {i.select &&
+                                <StyledTableCell>
+                                    <Grid container justifyContent='center'>
+                                        <Grid item>
+                                            <Button
+                                                variant='outlined'
+                                                color='secondary'
+                                                onClick={() => handleSelect(i)}
+                                            >
+                                                <Typography align='center' color='secondary' variant='body2'>
+                                                    Seleccionar
+                                                </Typography>
+                                            </Button>
                                         </Grid>
-                                    </StyledTableCell>
-                                }
-                                {i.adminSwitch &&
-                                    <StyledTableCell>
-                                        <SwitchComponent
-                                            initialState={i.t_adm}
-                                            userId={i.id_usuario}
-                                            moduleId={i.data_0}
-                                        />
-                                    </StyledTableCell>
-                                }
-                                {i.updateUser &&
-                                    <StyledTableCell>
-                                        <SaveDataComponent userId={i.id_usuario} />
-                                    </StyledTableCell>
-                                }
-                                {i.assignButton &&
-                                    <StyledTableCell>
-                                        <Grid container justify='center'>
-                                            <Grid item xs={10}>
-                                                <Button
-                                                    variant='outlined'
-                                                    color='secondary'
-                                                    fullWidth
-                                                    onClick={handleDisplayModules}
+                                    </Grid>
+                                </StyledTableCell>
+                            }
+                            {i.adminSwitch &&
+                                <StyledTableCell>
+                                    <SwitchComponent
+                                        initialState={i.t_adm}
+                                        userId={i.id_usuario}
+                                        moduleId={i.data_0}
+                                    />
+                                </StyledTableCell>
+                            }
+                            {i.updateUser &&
+                                <StyledTableCell>
+                                    <SaveDataComponent userId={i.id_usuario} />
+                                </StyledTableCell>
+                            }
+                            {i.assignButton &&
+                                <StyledTableCell>
+                                    <Grid container justifyContent='center'>
+                                        <Grid item xs={10}>
+                                            <Button
+                                                variant='outlined'
+                                                color='secondary'
+                                                fullWidth
+                                                onClick={handleDisplayModules}
+                                            >
+                                                <Typography
+                                                    variant='body2'
+                                                    align='center'
                                                 >
-                                                    <Typography
-                                                        variant='body2'
-                                                        align='center'
-                                                    >
-                                                        Agregar
-                                                    </Typography>
-                                                </Button>
-                                            </Grid>
+                                                    Agregar
+                                                </Typography>
+                                            </Button>
                                         </Grid>
-                                    </StyledTableCell>
-                                }
-                                {i.assignModulesButton &&
-                                    <StyledTableCell>
-                                        <Grid container justify='center'>
-                                            <Grid item xs={10}>
-                                                <Button
-                                                    variant='outlined'
-                                                    color='secondary'
-                                                    fullWidth
-                                                    onClick={() => dispatch(setModulesAction({
-                                                        id_usuario: i.id_usuario,
-                                                        id_modulo: i.data_0,
-                                                        id_empresa: selectedBusinessData.id_empresa,
-                                                    }, switchAdminState))}
+                                    </Grid>
+                                </StyledTableCell>
+                            }
+                            {i.assignModulesButton &&
+                                <StyledTableCell>
+                                    <Grid container justifyContent='center'>
+                                        <Grid item xs={10}>
+                                            <Button
+                                                variant='outlined'
+                                                color='secondary'
+                                                fullWidth
+                                                onClick={() => dispatch(setModulesAction({
+                                                    id_usuario: i.id_usuario,
+                                                    id_modulo: i.data_0,
+                                                    id_empresa: selectedBusinessData.id_empresa,
+                                                }, switchAdminState))}
+                                            >
+                                                <Typography
+                                                    variant='body2'
+                                                    align='center'
                                                 >
-                                                    <Typography
-                                                        variant='body2'
-                                                        align='center'
-                                                    >
-                                                        Asignar Permisos
-                                                    </Typography>
-                                                </Button>
-                                            </Grid>
+                                                    Asignar Permisos
+                                                </Typography>
+                                            </Button>
                                         </Grid>
-                                    </StyledTableCell>
-                                }
-                            </StyledTableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-            <Grid container justify='flex-end'>
-                <Grid item>
-                    <TablePagination
-                        style={{
-                            border: 'none'
-                        }}
-                        elevation={0}
-                        rowsPerPageOptions={[5, 10, 25, { label: 'Todos', value: -1 }]}
-                        colSpan={3}
-                        count={tableData.length}
-                        rowsPerPage={rowsPerPage}
-                        page={page}
-                        SelectProps={{
-                            inputProps: { 'aria-label': 'Filas por página' },
-                            native: true,
-                        }}
-                        onChangePage={handleChangePage}
-                        onChangeRowsPerPage={handleChangeRowsPerPage}
-                        ActionsComponent={TablePaginationActions}
-                    />
-                </Grid>
+                                    </Grid>
+                                </StyledTableCell>
+                            }
+                        </StyledTableRow>
+                    ))}
+                </TableBody>
+            </Table>
+        </TableContainer>
+        <Grid container justifyContent='flex-end'>
+            <Grid item>
+                <TablePagination
+                    style={{
+                        border: 'none'
+                    }}
+                    elevation={0}
+                    rowsPerPageOptions={[5, 10, 25, { label: 'Todos', value: -1 }]}
+                    colSpan={3}
+                    count={tableData.length}
+                    rowsPerPage={rowsPerPage}
+                    page={page}
+                    SelectProps={{
+                        inputProps: { 'aria-label': 'Filas por página' },
+                        native: true,
+                    }}
+                    onPageChange={handleChangePage}
+                    onRowsPerPageChange={handleChangeRowsPerPage}
+                    ActionsComponent={TablePaginationActions}
+                />
             </Grid>
-        </>
-    );
+        </Grid>
+    </>;
 }
 
 //component for adminUsers Module
@@ -553,7 +557,7 @@ const SwitchComponent = ({ initialState, userId, moduleId }) => {
         }
     }, [checked]);
     return (
-        <Grid container justify='center' alignItems='center'>
+        <Grid container justifyContent='center' alignItems='center'>
             <Grid item>
                 <Typography
                     className={classes.typography}
@@ -577,7 +581,7 @@ const SwitchComponent = ({ initialState, userId, moduleId }) => {
                 </Typography>
             </Grid>
         </Grid>
-    )
+    );
 };
 
 //component for manage modules in adminUsersmodule
@@ -644,7 +648,7 @@ const ModulesMenu = ({ id }) => {
     }, [currentUserDataSettings])
 
     return (
-        <Grid container justify='center'>
+        <Grid container justifyContent='center'>
             <Grid item xs={12}>
                 <FormControl
                     size='small'
@@ -683,7 +687,7 @@ const SaveDataComponent = ({ userId }) => {
         dispatch(saveUpdateAdminDataAction(filteredData[0], true));
     }
     return (
-        <Grid container justify='center'>
+        <Grid container justifyContent='center'>
             <Grid item>
                 <Button
                     size='small'
@@ -696,5 +700,5 @@ const SaveDataComponent = ({ userId }) => {
                 </Button>
             </Grid>
         </Grid>
-    )
+    );
 }

@@ -1,15 +1,15 @@
-import { makeStyles } from '@material-ui/core/styles';
-import { Backdrop, Typography } from '@material-ui/core/';
-import SpeedDial from '@material-ui/lab/SpeedDial';
+import makeStyles from '@mui/styles/makeStyles';
+import { Backdrop, Typography } from '@mui/material/';
+import SpeedDial from '@mui/material/SpeedDial';
 
-import SpeedDialAction from '@material-ui/lab/SpeedDialAction';
+import SpeedDialAction from '@mui/material/SpeedDialAction';
 
-import EditIcon from '@material-ui/icons/Edit';
-import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
-import FaceIcon from '@material-ui/icons/Face';
-import CloudUploadIcon from '@material-ui/icons/CloudUpload';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import EditIcon from '@mui/icons-material/Edit';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import FaceIcon from '@mui/icons-material/Face';
+// import ContactsIcon from '@mui/icons-material/Contacts';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+// import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useState, useEffect } from 'react';
 import { primaryColor, secondaryColor } from '../../assets/css/js/mainTheme';
 import { useSelector } from 'react-redux';
@@ -31,13 +31,13 @@ export default function AdminUserDial() {
     /*  const actions = [
          { icon: <PeopleAltIcon />, name: <Typography>Administración de Usuarios</Typography> },
          { icon: <FaceIcon />, name: <Typography>Validación Facial</Typography> },
-         { icon: <CloudUploadIcon />, name: <Typography>Subir Archivos</Typography> },
+         { icon: <ContactsIcon />, name: <Typography>Subir Archivos</Typography> },
          { icon: <ExitToAppIcon />, name: <Typography>Cerrar Sesión</Typography> },
      ]; */
 
     const [actions, setActions] = useState([
         { icon: <FaceIcon />, name: <Typography>Validación Facial</Typography>, id: 1 },
-        { icon: <CloudUploadIcon />, name: <Typography>Subir Archivos</Typography>, id: 2 },
+        { icon: <ContactsIcon />, name: <Typography>Subir Archivos</Typography>, id: 2 },
         { icon: <ExitToAppIcon />, name: <Typography>Cerrar Sesión</Typography>, id: 3 },
     ])
 
@@ -67,7 +67,7 @@ export default function AdminUserDial() {
             case 'module_restri':
                 setActions([
                     { icon: <FaceIcon />, name: <Typography>Validación Facial</Typography>, id: 1 },
-                    { icon: <CloudUploadIcon />, name: <Typography>Subir Archivos</Typography>, id: 2 },
+                    { icon: <ContactsIcon />, name: <Typography>Subir Archivos</Typography>, id: 2 },
                     { icon: <ExitToAppIcon />, name: <Typography>Cerrar Sesión</Typography>, id: 3 },
                 ])
                 break;
@@ -75,7 +75,7 @@ export default function AdminUserDial() {
                 setActions([
                     { icon: <PeopleAltIcon />, name: <Typography>Administración de Usuarios</Typography>, id: 0 },
                     { icon: <FaceIcon />, name: <Typography>Validación Facial</Typography>, id: 1 },
-                    { icon: <CloudUploadIcon />, name: <Typography>Subir Archivos</Typography>, id: 2 },
+                    { icon: <ContactsIcon />, name: <Typography>Subir Archivos</Typography>, id: 2 },
                     { icon: <ExitToAppIcon />, name: <Typography>Cerrar Sesión</Typography>, id: 3 },
                 ])
         }
@@ -89,7 +89,7 @@ export default function AdminUserDial() {
                 ariaLabel="SpeedDial openIcon example"
                 className={classes.speedDial}
                 hidden={hidden}
-                icon={<AccountCircleIcon color='secondary' openIcon={<EditIcon />} />}
+                icon={<ContactsIcon color='secondary' openIcon={<EditIcon />} />}
                 onClose={handleClose}
                 onOpen={handleOpen}
                 open={open}

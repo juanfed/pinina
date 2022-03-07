@@ -1,21 +1,23 @@
 import React from 'react';
-import { withStyles, makeStyles, Button, Grid, IconButton } from '@material-ui/core';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
+import { Button, Grid, IconButton } from '@mui/material';
+import withStyles from '@mui/styles/withStyles';
+import makeStyles from '@mui/styles/makeStyles';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 import { primaryColor, secondaryColor, tableTypographyColor } from '../../assets/css/js/mainTheme';
-import { Typography } from '@material-ui/core';
+import { Typography } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import {
     confirmDeleteAction,
     confirmDeleteProfileAction
 } from '../../redux/actions/adminAction';
 //icons
-import RefreshIcon from '@material-ui/icons/Refresh';
+import RefreshIcon from '@mui/icons-material/Refresh';
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -189,7 +191,7 @@ export default function AdminTable({ tableData, rows, setModulesDialog }) {
                                 : null}
                             {i.removeUser &&
                                 <StyledTableCell>
-                                    <Grid container justify='center'>
+                                    <Grid container justifyContent='center'>
                                         <Grid item>
                                             <Button
                                                 variant='outlined'
@@ -206,7 +208,7 @@ export default function AdminTable({ tableData, rows, setModulesDialog }) {
                             }
                             {i.removeUserProfile &&
                                 <StyledTableCell>
-                                    <Grid container justify='center'>
+                                    <Grid container justifyContent='center'>
                                         <Grid item>
                                             <Button
                                                 variant='outlined'
@@ -223,7 +225,7 @@ export default function AdminTable({ tableData, rows, setModulesDialog }) {
                             }
                             {i.moreInfo &&
                                 <StyledTableCell>
-                                    <Grid container justify='center'>
+                                    <Grid container justifyContent='center'>
                                         <Grid item>
                                             <Button
                                                 variant='outlined'
@@ -240,13 +242,13 @@ export default function AdminTable({ tableData, rows, setModulesDialog }) {
                             }
                             {i.updateUser &&
                                 <StyledTableCell>
-                                    <Grid container justify='center'>
+                                    <Grid container justifyContent='center'>
                                         <Grid item>
                                             <IconButton
                                                 variant='outlined'
                                                 color='secondary'
                                                 onClick={() => setModulesDialog(true, i.id_usuario)}
-                                            >
+                                                size="large">
                                                 <RefreshIcon />
                                             </IconButton>
                                         </Grid>

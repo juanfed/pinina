@@ -1,11 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { useSnackbar } from "notistack";
 import { useDispatch, useSelector } from "react-redux";
-import { Dialog, DialogContent, DialogTitle, Divider, List, ListItem, ListItemText, IconButton, Grid, Paper, makeStyles, Button, DialogActions, TextField } from "@material-ui/core";
+import {
+    Dialog,
+    DialogContent,
+    DialogTitle,
+    Divider,
+    List,
+    ListItem,
+    ListItemText,
+    IconButton,
+    Grid,
+    Paper,
+    Button,
+    DialogActions,
+    TextField,
+} from "@mui/material";
+import makeStyles from '@mui/styles/makeStyles';
 // Icons
-import CloseIcon from '@material-ui/icons/Close';
-import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
-import CloudUploadIcon from '@material-ui/icons/CloudUpload';
+import CloseIcon from '@mui/icons-material/Close';
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
+import ContactsIcon from '@mui/icons-material/CloudUpload';
 // Actions
 import { RutCloseAction, UploadRut, UploadCComercio, UploadMMercantil } from "../../redux/actions/MainAction";
 
@@ -88,14 +103,14 @@ const RutUpload = () => {
         dispatch(UploadMMercantil(form));
     }
 
-    return(
+    return (
         <Dialog  open={ rut } onClose={ () => dispatch(RutCloseAction()) } maxWidth={ 'md' } fullWidth={ true }>
             <DialogTitle className="text-center"> SUBIDA DE ARCHIVOS </DialogTitle>
             <DialogContent dividers>
                 <Paper className={classes.paper}>
                     RUT
                     <br></br>
-                    <IconButton disabled>
+                    <IconButton disabled size="large">
                         <PictureAsPdfIcon />
                     </IconButton>
                     <br></br>
@@ -106,7 +121,7 @@ const RutUpload = () => {
             <DialogContent dividers>
                 <Paper className={classes.paper}>CAMARA DE COMERCIO
                     <br></br>
-                    <IconButton disabled>
+                    <IconButton disabled size="large">
                         <PictureAsPdfIcon />
                     </IconButton>
                     <br></br>
@@ -117,7 +132,7 @@ const RutUpload = () => {
             <DialogContent dividers>
                 <Paper className={classes.paper}>MATRICULA MERCANTIL
                     <br></br>
-                    <IconButton disabled>
+                    <IconButton disabled size="large">
                         <PictureAsPdfIcon />
                     </IconButton>
                     <br></br>
@@ -126,7 +141,7 @@ const RutUpload = () => {
                 </Paper>
             </DialogContent>
         </Dialog>
-    )
+    );
 
 }
 

@@ -19,17 +19,17 @@ import T_citasT_clienteswhSa6Modal from '../../components/modals/T_citasT_client
 import { AddCloseAction, cleanCloseAction, cleanOffAction, cleanOnAction, cleanOpenAction, deleteCloseAction, editCloseAction, editOpenAction, saveCloseAction, sonCloseAction } from '../../redux/actions/MainAction';
 
 // Material UI Components
-import { Grid, Button, TextField, List, ListItem, ListItemText, Divider } from '@material-ui/core';
-import { Typography, IconButton, FormLabel, FormControl, FormControlLabel, Checkbox, Box, Dialog, DialogContent, DialogContentText, DialogActions, DialogTitle } from '@material-ui/core';
+import { Grid, Button, TextField, List, ListItem, ListItemText, Divider } from '@mui/material';
+import { Typography, IconButton, FormLabel, FormControl, FormControlLabel, Checkbox, Box, Dialog, DialogContent, DialogContentText, DialogActions, DialogTitle } from '@mui/material';
 
 // Styles
 import useStyles from '../../assets/css/js/styles';
 
 // Material UI Icons
-import CloseIcon from '@material-ui/icons/Close';
-import AddIcon from '@material-ui/icons/Add';
-import SearchIcon from '@material-ui/icons/Search';
-import RemoveIcon from '@material-ui/icons/Remove';
+import CloseIcon from '@mui/icons-material/Close';
+import AddIcon from '@mui/icons-material/Add';
+import SearchIcon from '@mui/icons-material/Search';
+import RemoveIcon from '@mui/icons-material/Remove';
 
 const C_citOxUh2Create = () => {
 
@@ -258,172 +258,177 @@ const C_citOxUh2Create = () => {
 
     // REPLACETABLE
 
-    return (
-        <>
-            <ReduxOptionsDial />
-            <MainAppBar />
-            <Dialog
-                open={modalDelete}
-                onClose={() => handleClose()}
-                aria-labelledby="alert-dialog-title"
-                aria-describedby="alert-dialog-description"
-            >
-                <DialogTitle id="alert-dialog-title">{"Esta Seguro de Eliminar " + elementToDelete}</DialogTitle>
-                <DialogContent>
-                    <DialogContentText id="alert-dialog-description">
-                        Si elimina el elemento no podrá ser recuperado.
-                    </DialogContentText>
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={() => handleClose()} color="primary">
-                        Cancelar
-                    </Button>
-                    <Button onClick={() => deleteElement()} color="secondary" autoFocus>
-                        Eliminar
-                    </Button>
-                </DialogActions>
-            </Dialog>
+    return <>
+        <ReduxOptionsDial />
+        <MainAppBar />
+        <Dialog
+            open={modalDelete}
+            onClose={() => handleClose()}
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
+        >
+            <DialogTitle id="alert-dialog-title">{"Esta Seguro de Eliminar " + elementToDelete}</DialogTitle>
+            <DialogContent>
+                <DialogContentText id="alert-dialog-description">
+                    Si elimina el elemento no podrá ser recuperado.
+                </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+                <Button onClick={() => handleClose()} color="primary">
+                    Cancelar
+                </Button>
+                <Button onClick={() => deleteElement()} color="secondary" autoFocus>
+                    Eliminar
+                </Button>
+            </DialogActions>
+        </Dialog>
 
 
-            <br />
-            <Box m={0} p={1}>
+        <br />
+        <Box m={0} p={1}>
 
-                <Typography variant="h6" className="text-left ml-3 my-3">t_citas</Typography>
+            <Typography variant="h6" className="text-left ml-3 my-3">t_citas</Typography>
 
-                <Grid container justify="center" alignItems="center">
-
-
-                    <Grid item md={12} sm={12} xs={12} className="text-center mb-3">
-                        <TextField
-                            required={false}
-                            type="number"
-                            name="profecional_cita"
-                            id="profecional_cita"
-                            variant="outlined"
-                            className={classes.width}
-                            label="Profecional cita"
-                            placeholder="Ingrese Profecional cita"
-                            value={data.profecional_cita}
-                            onChange={(e) => handleChange(e)}
-                        />
+            <Grid container justifyContent="center" alignItems="center">
 
 
-                        <IconButton className="border"
-                            onClick={() => {
-                                setSearch(true)
-                                if (data.profecional_cita === '') {
-                                    dispatch(editCloseAction());
-                                    dispatch(cleanCloseAction());
-                                }
-                            }}
-                        >
-                            <SearchIcon />
-                        </IconButton>
-
-                    </Grid>
-                    {/* REPLACEBLURprofecional_cita */}
-
-                    {((add || edit) && !son) && (
-                        <>
-                            <Grid item md={2} sm={12} xs={12} className="text-center mb-3">
-
-                                <div className="d-flex align-items-center ml-3 mb-3 mt-3">
-                                    <Typography variant="h6" className="text-left text-info">T_mascotas</Typography>
-                                    <IconButton className="border ml-3" onClick={() => setT_mascotas(!t_mascotas)}>
-                                        {t_mascotas ? <CloseIcon /> : <AddIcon />}
-                                    </IconButton>
-                                </div>
+                <Grid item md={12} sm={12} xs={12} className="text-center mb-3">
+                    <TextField
+                        required={false}
+                        type="number"
+                        name="profecional_cita"
+                        id="profecional_cita"
+                        variant="outlined"
+                        className={classes.width}
+                        label="Profecional cita"
+                        placeholder="Ingrese Profecional cita"
+                        value={data.profecional_cita}
+                        onChange={(e) => handleChange(e)}
+                    />
 
 
-                                <TextField
-                                    required={false}
-                                    type="text"
-                                    name="paciente_cita"
-                                    id="paciente_cita"
-                                    variant="outlined"
-                                    className={classes.width}
-                                    label="Paciente cita"
-                                    placeholder="Ingrese Paciente cita"
-                                    value={data.paciente_citaDescripcion}
-                                    onChange={(e) => handleChange(e)}
-                                />
-
-                            </Grid><Grid item md={2} sm={12} xs={12} className="text-center mb-3">
-
-                                <div className="d-flex align-items-center ml-3 mb-3 mt-3">
-                                    <Typography variant="h6" className="text-left text-info">T_clientes</Typography>
-                                    <IconButton className="border ml-3" onClick={() => setT_clientes(!t_clientes)}>
-                                        {t_clientes ? <CloseIcon /> : <AddIcon />}
-                                    </IconButton>
-                                </div>
-
-
-                                <TextField
-                                    required={false}
-                                    type="text"
-                                    name="propietario_cita"
-                                    id="propietario_cita"
-                                    variant="outlined"
-                                    className={classes.width}
-                                    label="Propietario cita"
-                                    placeholder="Ingrese Propietario cita"
-                                    value={data.propietario_citaDescripcion}
-                                    onChange={(e) => handleChange(e)}
-                                />
-
-                            </Grid><Grid item md={2} sm={12} xs={12} className="text-center mb-3">
-
-
-                                <TextField
-                                    required={false}
-                                    type="text"
-                                    name="hora_cita"
-                                    id="hora_cita"
-                                    variant="outlined"
-                                    className={classes.width}
-                                    label="Hora cita"
-                                    placeholder="Ingrese Hora cita"
-                                    value={data.hora_cita}
-                                    onChange={(e) => handleChange(e)}
-                                />
-
-                            </Grid>
-
-                        </>
-                    )}
-
-
-                    {(data.id && data.id !== '') && (
-                        <div className="all" style={{ zIndex: 3, height: '30vh' }}>
-                            {/* REPLACESONSMENU */}
-                            <div className="center">
-                                <img src="/assets/img/folder.png" alt="" />
-                            </div>
-                        </div>
-                    )}
-
-
-
-                    {/* REPLACESON */}
-
-
-                    {t_mascotas && (
-                        <T_citasT_mascotasNqo31Modal t_mascotas={t_mascotas} setT_mascotas={setT_mascotas} consultData={data} setConsultData={setData} />
-                    )}
-
-                    {t_clientes && (
-                        <T_citasT_clienteswhSa6Modal t_clientes={t_clientes} setT_clientes={setT_clientes} consultData={data} setConsultData={setData} />
-                    )}
-                    {/* REPLACECOMPONENT */}
-
-
+                    <IconButton
+                        className="border"
+                        onClick={() => {
+                            setSearch(true)
+                            if (data.profecional_cita === '') {
+                                dispatch(editCloseAction());
+                                dispatch(cleanCloseAction());
+                            }
+                        }}
+                        size="large">
+                        <SearchIcon />
+                    </IconButton>
 
                 </Grid>
+                {/* REPLACEBLURprofecional_cita */}
 
-            </Box>
+                {((add || edit) && !son) && (
+                    <>
+                        <Grid item md={2} sm={12} xs={12} className="text-center mb-3">
 
-        </>
-    )
+                            <div className="d-flex align-items-center ml-3 mb-3 mt-3">
+                                <Typography variant="h6" className="text-left text-info">T_mascotas</Typography>
+                                <IconButton
+                                    className="border ml-3"
+                                    onClick={() => setT_mascotas(!t_mascotas)}
+                                    size="large">
+                                    {t_mascotas ? <CloseIcon /> : <AddIcon />}
+                                </IconButton>
+                            </div>
+
+
+                            <TextField
+                                required={false}
+                                type="text"
+                                name="paciente_cita"
+                                id="paciente_cita"
+                                variant="outlined"
+                                className={classes.width}
+                                label="Paciente cita"
+                                placeholder="Ingrese Paciente cita"
+                                value={data.paciente_citaDescripcion}
+                                onChange={(e) => handleChange(e)}
+                            />
+
+                        </Grid><Grid item md={2} sm={12} xs={12} className="text-center mb-3">
+
+                            <div className="d-flex align-items-center ml-3 mb-3 mt-3">
+                                <Typography variant="h6" className="text-left text-info">T_clientes</Typography>
+                                <IconButton
+                                    className="border ml-3"
+                                    onClick={() => setT_clientes(!t_clientes)}
+                                    size="large">
+                                    {t_clientes ? <CloseIcon /> : <AddIcon />}
+                                </IconButton>
+                            </div>
+
+
+                            <TextField
+                                required={false}
+                                type="text"
+                                name="propietario_cita"
+                                id="propietario_cita"
+                                variant="outlined"
+                                className={classes.width}
+                                label="Propietario cita"
+                                placeholder="Ingrese Propietario cita"
+                                value={data.propietario_citaDescripcion}
+                                onChange={(e) => handleChange(e)}
+                            />
+
+                        </Grid><Grid item md={2} sm={12} xs={12} className="text-center mb-3">
+
+
+                            <TextField
+                                required={false}
+                                type="text"
+                                name="hora_cita"
+                                id="hora_cita"
+                                variant="outlined"
+                                className={classes.width}
+                                label="Hora cita"
+                                placeholder="Ingrese Hora cita"
+                                value={data.hora_cita}
+                                onChange={(e) => handleChange(e)}
+                            />
+
+                        </Grid>
+
+                    </>
+                )}
+
+
+                {(data.id && data.id !== '') && (
+                    <div className="all" style={{ zIndex: 3, height: '30vh' }}>
+                        {/* REPLACESONSMENU */}
+                        <div className="center">
+                            <img src="/assets/img/folder.png" alt="" />
+                        </div>
+                    </div>
+                )}
+
+
+
+                {/* REPLACESON */}
+
+
+                {t_mascotas && (
+                    <T_citasT_mascotasNqo31Modal t_mascotas={t_mascotas} setT_mascotas={setT_mascotas} consultData={data} setConsultData={setData} />
+                )}
+
+                {t_clientes && (
+                    <T_citasT_clienteswhSa6Modal t_clientes={t_clientes} setT_clientes={setT_clientes} consultData={data} setConsultData={setData} />
+                )}
+                {/* REPLACECOMPONENT */}
+
+
+
+            </Grid>
+
+        </Box>
+
+    </>;
 }
 
 export default C_citOxUh2Create;

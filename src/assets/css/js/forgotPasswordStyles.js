@@ -1,16 +1,16 @@
-import { makeStyles } from '@material-ui/core';
+import makeStyles from '@mui/styles/makeStyles';
 import { primaryColor } from './mainTheme';
 
 export const forgotPasswordStyles = makeStyles((theme) => ({
     rootContainer: {
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('md')]: {
             padding: theme.spacing(1, 2, 1, 2),
             minHeight: '80vh'
         },
         padding: theme.spacing(4, 4, 4, 4)
     },
     closeButtonContainer: {
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('md')]: {
             // minHeight: '5vh'
         },
     },

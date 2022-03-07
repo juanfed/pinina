@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 import axiosClient from "../../config/AxiosClient";
 import { useSnackbar } from "notistack";
 
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Divider, Grid, IconButton, List, ListItem, ListItemText, TextField, Typography } from "@material-ui/core";
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Divider, Grid, IconButton, List, ListItem, ListItemText, TextField, Typography } from "@mui/material";
 
 // Material UI Icons
-import CloseIcon from '@material-ui/icons/Close';
-import AddIcon from '@material-ui/icons/Add';
-import CreateIcon from '@material-ui/icons/Create';
-import DeleteIcon from '@material-ui/icons/Delete';
+import CloseIcon from '@mui/icons-material/Close';
+import AddIcon from '@mui/icons-material/Add';
+import CreateIcon from '@mui/icons-material/Create';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 // Styles
 import useStyles from "../../assets/css/js/styles";
@@ -75,8 +75,7 @@ useEffect(() => {
                 }
             
 
-return (
-<>
+return <>
     <Dialog
         open={ t_tipo_documento }
         onClose={ () => setT_tipo_documento(false) }
@@ -84,7 +83,7 @@ return (
         maxWidth={ 'md' }
     >
         <DialogContent>
-            <Grid container display="flex" justify="center" alignItems="center" className="mt-5">
+            <Grid container display="flex" justifyContent="center" alignItems="center" className="mt-5">
                 <Grid item md={ 6 } xs={ 12 } sm={ 12 } className="mb-3">
                     <Typography variant="h5" className="text-center text-info">T_tipo_documento</Typography>
                 </Grid>
@@ -139,8 +138,7 @@ return (
             </List>
         </DialogContent>
     </Dialog>
-</>
-)
+</>;
 }
 
 export default T_tipo_documento;

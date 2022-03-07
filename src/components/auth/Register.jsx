@@ -3,13 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-import { Button, TextField, Dialog, Divider } from '@material-ui/core/';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
+import { Button, TextField, Dialog, Divider } from '@mui/material/';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import CssBaseline from '@mui/material/CssBaseline';
+import Typography from '@mui/material/Typography';
 //material lab for  autocomplete field countries
-import Autocomplete from '@material-ui/lab/Autocomplete';
+import Autocomplete from '@mui/material/Autocomplete';
 
 //components
 import CheckEmailModal from "../verifyCode/CheckEmailModal";
@@ -31,12 +31,12 @@ import { useSnackbar } from "notistack";
 
 // Actions
 import { ConsultCountries, genRegCodeAction, RegisterUser, verifyRegCodeAction } from '../../redux/actions/AuthAction';
-import { List, ListItem, ListItemText, Collapse, ListItemIcon } from "@material-ui/core";
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import ExpandLess from '@material-ui/icons/ExpandLess';
-import ExpandMore from '@material-ui/icons/ExpandMore';
-import StarBorder from '@material-ui/icons/StarBorder';
-import StarIcon from '@material-ui/icons/Star';
+import { List, ListItem, ListItemText, Collapse, ListItemIcon } from "@mui/material";
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
+import StarBorder from '@mui/icons-material/StarBorder';
+import StarIcon from '@mui/icons-material/Star';
 
 //icons
 import googleLogo from '../../assets/icons/google.svg'
@@ -570,235 +570,233 @@ export default function Register() {
         }
     }
 
-    return (
-        <>
-            <Grid container
-                justify='center'
-                spacing={2}
-                className={classes.mainContainer}
-            >
-                <Grid item xs={12} md={6}>
-                    <TextField
-                        fullWidth
-                        name='primer_nombre'
-                        value={primer_nombre}
-                        type='text'
-                        label='Primer nombre'
-                        onChange={handleChange}
-                        variant='outlined'
-                        size='small'
-                        color='secondary'
-                        helperText={firstNameMsg}
-                        error={firstNameError}
-                        onClick={handleClickFirstName}
-                    />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                    <TextField
-                        fullWidth
-                        name='segundo_nombre'
-                        value={segundo_nombre}
-                        type='text'
-                        label='Segundo nombre'
-                        onChange={handleChange}
-                        variant='outlined'
-                        size='small'
-                        color='secondary'
-                        helperText={secNameMsg}
-                        error={secNameError}
-                        onClick={handleClickSecName}
-                    />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                    <TextField
-                        fullWidth
-                        name='primer_apellido'
-                        value={primer_apellido}
-                        type='text'
-                        label='Primer apellido'
-                        onChange={handleChange}
-                        variant='outlined'
-                        size='small'
-                        color='secondary'
-                        helperText={lastNameMsg}
-                        error={lastNameError}
-                        onClick={handleClickLastName}
-                    />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                    <TextField
-                        fullWidth
-                        name='segundo_apellido'
-                        value={segundo_apellido}
-                        type='text'
-                        label='Segundo apellido'
-                        onChange={handleChange}
-                        variant='outlined'
-                        size='small'
-                        color='secondary'
-                        helperText={secLastNameMsg}
-                        error={secLastNameError}
-                        onClick={handleClickSecLastName}
-                    />
-                </Grid>
-                <Grid item xs={12} md={12}>
-                    <TextField
-                        fullWidth
-                        name='correo'
-                        value={correo}
-                        type='email'
-                        label='Email'
-                        onChange={handleChange}
-                        variant='outlined'
-                        size='small'
-                        color='secondary'
-                        onClick={handleClickEmail}
-                        helperText={emailMsg}
-                        error={emailError}
-                    />
-                </Grid>
-                <Grid item xs={12}>
-                    <TextField
-                        fullWidth
-                        name='telefono'
-                        value={telefono}
-                        type='number'
-                        label='Teléfono'
-                        onChange={handleChange}
-                        variant='outlined'
-                        size='small'
-                        color='secondary'
-                        onClick={handleClickTel}
-                        helperText={telMsg}
-                        error={telError}
-                    />
-                </Grid>
-                <Grid item xs={12}>
-                    {/* <TextField
-                        fullWidth
-                        name='ubicacion'
-                        value={ubicacion}
-                        type='text'
-                        label='Ubicación'
-                        variant='outlined'
-                        size='small'
-                        color='secondary'
-                    /> */}
-                    <Autocomplete
-                        fullWidth
-                        inputValue={countryValue}
-                        onInputChange={(event, newInputValue) => {
-                            setCountryValue(newInputValue);
-                        }}
-                        noOptionsText='Sin elementos'
-                        options={countries}
-                        getOptionLabel={(option) => option.descripcion}
-                        renderInput={(params) =>
-                            <TextField
-                                {...params}
-                                label="País"
-                                variant="outlined"
-                                size='small'
-                                color='secondary'
-                                onClick={handleClickCountry}
-                                helperText={countryMsg}
-                                error={countryError}
-                            />}
-                    />
-                </Grid>
-                <Grid item xs={12}>
-                    <TextField
-                        fullWidth
-                        name='password'
-                        value={password}
-                        type='password'
-                        label='Contraseña'
-                        onChange={handleChange}
-                        variant='outlined'
-                        size='small'
-                        color='secondary'
-                        onClick={handleClickPassw}
-                        helperText={passwMsg}
-                        error={passwError}
-                    />
-                </Grid>
-                <Grid item xs={12}>
-                    <TextField
-                        fullWidth
-                        name='password_2'
-                        value={password_2}
-                        type='password'
-                        label='Escriba la contraseña nuevamente'
-                        onChange={handleChange}
-                        variant='outlined'
-                        size='small'
-                        color='secondary'
-                        onClick={handleClickPassw_2}
-                        helperText={passw_2Msg}
-                        error={passw_2Error}
-                    />
-                </Grid>
-            </Grid>
-            <Grid container className={classes.buttonContainer}>
-                <Grid item xs={12}>
-                    <Button
-                        onClick={verifyFields}
-                        fullWidth
-                        color='secondary'
-                        variant='contained'
-                        disabled={registerError}
-                    >
-                        <Typography variant='body1'>
-                            Registrarse
-                        </Typography>
-                    </Button>
-                </Grid>
-            </Grid>
-            <Grid container justify='center' alignItems='center' className={classes.dividerContainer}>
-                <Grid item xs={5}>
-                    <Divider />
-                </Grid>
-                <Grid item xs={2}>
-                    <Typography align='center' color='secondary' variant='body1'>O</Typography>
-                </Grid>
-                <Grid item xs={5}>
-                    <Divider />
-                </Grid>
-            </Grid>
-            <Grid container justify='center' className={classes.googleContainer}>
-                <Grid item xs={8}>
-                    <GoogleLogin
-                        clientId="469672794762-aidvf61eooqfbbdefvd1mfa6sg8r6o5v.apps.googleusercontent.com"
-                        render={renderProps => (
-                            <Button fullWidth startIcon={<img className={classes.googleLogo} src={googleLogo} alt='google' />} className={classes.googleButton} onClick={renderProps.onClick}>
-                                <Typography variant='body1'>
-                                    Registrarse con Google
-                                </Typography>
-
-                            </Button>
-                        )}
-                        buttonText="Login"
-                        onSuccess={responseGoogle}
-                        onFailure={responseGoogle}
-                        cookiePolicy={'single_host_origin'}
-                    />
-                </Grid>
-            </Grid>
-            <Dialog
-                open={verifyDialog}
-                onClose={() => setVerifyDialog(false)}
-            >
-                <CheckEmailModal
-                    checkEmailModal={checkEmailModal}
-                    submitCode={submitCode}
-                    setSubmitCode={setSubmitCode}
-                    setVerifyCode={setVerifyCode}
-                    verifyMsg={verifyMsg}
-                    registrySuccess={registrySuccess}
-                    setRegisterToLogin={setRegisterToLogin}
-                    generateCode={generateCode}
+    return <>
+        <Grid container
+            justifyContent='center'
+            spacing={2}
+            className={classes.mainContainer}
+        >
+            <Grid item xs={12} md={6}>
+                <TextField
+                    fullWidth
+                    name='primer_nombre'
+                    value={primer_nombre}
+                    type='text'
+                    label='Primer nombre'
+                    onChange={handleChange}
+                    variant='outlined'
+                    size='small'
+                    color='secondary'
+                    helperText={firstNameMsg}
+                    error={firstNameError}
+                    onClick={handleClickFirstName}
                 />
-            </Dialog>
-        </>
-    )
+            </Grid>
+            <Grid item xs={12} md={6}>
+                <TextField
+                    fullWidth
+                    name='segundo_nombre'
+                    value={segundo_nombre}
+                    type='text'
+                    label='Segundo nombre'
+                    onChange={handleChange}
+                    variant='outlined'
+                    size='small'
+                    color='secondary'
+                    helperText={secNameMsg}
+                    error={secNameError}
+                    onClick={handleClickSecName}
+                />
+            </Grid>
+            <Grid item xs={12} md={6}>
+                <TextField
+                    fullWidth
+                    name='primer_apellido'
+                    value={primer_apellido}
+                    type='text'
+                    label='Primer apellido'
+                    onChange={handleChange}
+                    variant='outlined'
+                    size='small'
+                    color='secondary'
+                    helperText={lastNameMsg}
+                    error={lastNameError}
+                    onClick={handleClickLastName}
+                />
+            </Grid>
+            <Grid item xs={12} md={6}>
+                <TextField
+                    fullWidth
+                    name='segundo_apellido'
+                    value={segundo_apellido}
+                    type='text'
+                    label='Segundo apellido'
+                    onChange={handleChange}
+                    variant='outlined'
+                    size='small'
+                    color='secondary'
+                    helperText={secLastNameMsg}
+                    error={secLastNameError}
+                    onClick={handleClickSecLastName}
+                />
+            </Grid>
+            <Grid item xs={12} md={12}>
+                <TextField
+                    fullWidth
+                    name='correo'
+                    value={correo}
+                    type='email'
+                    label='Email'
+                    onChange={handleChange}
+                    variant='outlined'
+                    size='small'
+                    color='secondary'
+                    onClick={handleClickEmail}
+                    helperText={emailMsg}
+                    error={emailError}
+                />
+            </Grid>
+            <Grid item xs={12}>
+                <TextField
+                    fullWidth
+                    name='telefono'
+                    value={telefono}
+                    type='number'
+                    label='Teléfono'
+                    onChange={handleChange}
+                    variant='outlined'
+                    size='small'
+                    color='secondary'
+                    onClick={handleClickTel}
+                    helperText={telMsg}
+                    error={telError}
+                />
+            </Grid>
+            <Grid item xs={12}>
+                {/* <TextField
+                    fullWidth
+                    name='ubicacion'
+                    value={ubicacion}
+                    type='text'
+                    label='Ubicación'
+                    variant='outlined'
+                    size='small'
+                    color='secondary'
+                /> */}
+                <Autocomplete
+                    fullWidth
+                    inputValue={countryValue}
+                    onInputChange={(event, newInputValue) => {
+                        setCountryValue(newInputValue);
+                    }}
+                    noOptionsText='Sin elementos'
+                    options={countries}
+                    getOptionLabel={(option) => option.descripcion}
+                    renderInput={(params) =>
+                        <TextField
+                            {...params}
+                            label="País"
+                            variant="outlined"
+                            size='small'
+                            color='secondary'
+                            onClick={handleClickCountry}
+                            helperText={countryMsg}
+                            error={countryError}
+                        />}
+                />
+            </Grid>
+            <Grid item xs={12}>
+                <TextField
+                    fullWidth
+                    name='password'
+                    value={password}
+                    type='password'
+                    label='Contraseña'
+                    onChange={handleChange}
+                    variant='outlined'
+                    size='small'
+                    color='secondary'
+                    onClick={handleClickPassw}
+                    helperText={passwMsg}
+                    error={passwError}
+                />
+            </Grid>
+            <Grid item xs={12}>
+                <TextField
+                    fullWidth
+                    name='password_2'
+                    value={password_2}
+                    type='password'
+                    label='Escriba la contraseña nuevamente'
+                    onChange={handleChange}
+                    variant='outlined'
+                    size='small'
+                    color='secondary'
+                    onClick={handleClickPassw_2}
+                    helperText={passw_2Msg}
+                    error={passw_2Error}
+                />
+            </Grid>
+        </Grid>
+        <Grid container className={classes.buttonContainer}>
+            <Grid item xs={12}>
+                <Button
+                    onClick={verifyFields}
+                    fullWidth
+                    color='secondary'
+                    variant='contained'
+                    disabled={registerError}
+                >
+                    <Typography variant='body1'>
+                        Registrarse
+                    </Typography>
+                </Button>
+            </Grid>
+        </Grid>
+        <Grid container justifyContent='center' alignItems='center' className={classes.dividerContainer}>
+            <Grid item xs={5}>
+                <Divider />
+            </Grid>
+            <Grid item xs={2}>
+                <Typography align='center' color='secondary' variant='body1'>O</Typography>
+            </Grid>
+            <Grid item xs={5}>
+                <Divider />
+            </Grid>
+        </Grid>
+        <Grid container justifyContent='center' className={classes.googleContainer}>
+            <Grid item xs={8}>
+                <GoogleLogin
+                    clientId="469672794762-aidvf61eooqfbbdefvd1mfa6sg8r6o5v.apps.googleusercontent.com"
+                    render={renderProps => (
+                        <Button fullWidth startIcon={<img className={classes.googleLogo} src={googleLogo} alt='google' />} className={classes.googleButton} onClick={renderProps.onClick}>
+                            <Typography variant='body1'>
+                                Registrarse con Google
+                            </Typography>
+
+                        </Button>
+                    )}
+                    buttonText="Login"
+                    onSuccess={responseGoogle}
+                    onFailure={responseGoogle}
+                    cookiePolicy={'single_host_origin'}
+                />
+            </Grid>
+        </Grid>
+        <Dialog
+            open={verifyDialog}
+            onClose={() => setVerifyDialog(false)}
+        >
+            <CheckEmailModal
+                checkEmailModal={checkEmailModal}
+                submitCode={submitCode}
+                setSubmitCode={setSubmitCode}
+                setVerifyCode={setVerifyCode}
+                verifyMsg={verifyMsg}
+                registrySuccess={registrySuccess}
+                setRegisterToLogin={setRegisterToLogin}
+                generateCode={generateCode}
+            />
+        </Dialog>
+    </>;
 }

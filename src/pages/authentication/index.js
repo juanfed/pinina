@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-import { Button, Dialog, Divider } from '@material-ui/core/';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
+import { Button, Dialog, Divider } from '@mui/material/';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
 
 //components
 import Login from '../../components/auth/Login';
@@ -29,12 +29,12 @@ import { useSnackbar } from "notistack";
 
 // Actions
 import { ConsultCountries, genRegCodeAction, RegisterUser, verifyRegCodeAction } from "../../redux/actions/AuthAction";
-import { List, ListItem, ListItemText, Collapse, ListItemIcon } from "@material-ui/core";
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import ExpandLess from '@material-ui/icons/ExpandLess';
-import ExpandMore from '@material-ui/icons/ExpandMore';
-import StarBorder from '@material-ui/icons/StarBorder';
-import StarIcon from '@material-ui/icons/Star';
+import { List, ListItem, ListItemText, Collapse, ListItemIcon } from "@mui/material";
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
+import StarBorder from '@mui/icons-material/StarBorder';
+import StarIcon from '@mui/icons-material/Star';
 
 // Material UI Styles 
 import { authStyles } from '../../assets/css/js/authStyles';
@@ -73,14 +73,14 @@ export default () => {
         <Grid container className={classes.root}>
             <Grid item>
                 <Grid container
-                    justify='flex-end'
+                    justifyContent='flex-end'
                     className={classes.toRightContainer}
                     alignItems='center'
                 >
                     <Grid item xs={12} md={6}>
-                        <Grid container justify='center' className={classes.mainContainer}>
+                        <Grid container justifyContent='center' className={classes.mainContainer}>
                             <Paper elevation={10} className={classes.paperStyle}>
-                                <Grid container justify='center' spacing={2} className={classes.paperContainer}>
+                                <Grid container justifyContent='center' spacing={2} className={classes.paperContainer}>
                                     <Grid item xs={6}>
                                         <Button
                                             color='secondary'
@@ -127,7 +127,7 @@ export default () => {
                 </Grid>
             </Grid>
         </Grid>
-    )
+    );
 }
 
 

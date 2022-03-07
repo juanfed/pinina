@@ -1,4 +1,4 @@
-import { makeStyles } from "@material-ui/core";
+import makeStyles from '@mui/styles/makeStyles';
 
 const loginStyles = makeStyles((theme) => ({
 
@@ -9,7 +9,7 @@ const loginStyles = makeStyles((theme) => ({
         backgroundImage: 'url(https://i.ibb.co/nC23pjJ/dog-1869167-1920-1.jpg)',
         backgroundRepeat: 'no-repeat',
         backgroundColor:
-        theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
+        theme.palette.mode === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       },
@@ -18,7 +18,7 @@ const loginStyles = makeStyles((theme) => ({
         backgroundImage: 'url(https://i.ibb.co/fXdJ8yX/dog-1209154-1920.jpg)',
         backgroundRepeat: 'no-repeat',
         backgroundColor:
-          theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
+          theme.palette.mode === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       },
