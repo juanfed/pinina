@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 //components
 import Login from '../../components/auth/Login';
 import Register from '../../components/auth/Register';
-//component for check the verification code to register
+//component for check the verification code to register.
 import CheckEmailModal from "../../components/verifyCode/CheckEmailModal";
 
 // Social redes
