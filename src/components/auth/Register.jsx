@@ -608,6 +608,25 @@ export default function Register() {
                     onClick={handleClickSecName}
                 />
             </Grid>
+
+
+            <Grid item xs={12} md={6}>
+                <TextField
+                    fullWidth
+                    name='segundo_nombre'
+                    value={segundo_nombre}
+                    type='text'
+                    label='Segundo nombre'
+                    onChange={handleChange}
+                    variant='outlined'
+                    size='small'
+                    color='secondary'
+                    helperText={secNameMsg}
+                    error={secNameError}
+                    onClick={handleClickSecName}
+                />
+            </Grid>
+            
             <Grid item xs={12} md={6}>
                 <TextField
                     fullWidth
