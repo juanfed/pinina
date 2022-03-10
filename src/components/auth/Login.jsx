@@ -146,34 +146,6 @@ const Login = ({ setLogin }) => {
                 />
             </Grid>
             <Grid item xs={12}>
-                <TextField
-                    fullWidth
-                    label='Contraseñaaaa'
-                    type='password'
-                    variant='outlined'
-                    size='small'
-                    name='password'
-                    value={password}
-                    color='secondary'
-                    onChange={handleChange}
-                />
-            </Grid>
-            <Grid item xs={12}>
-                <TextField
-                    fullWidth
-                    label='Contraseñaaaa'
-                    type='password'
-                    variant='outlined'
-                    size='small'
-                    name='password'
-                    value={password}
-                    color='secondary'
-                    onChange={handleChange}
-                />
-            </Grid>
-
-
-            <Grid item xs={12}>
                 <Grid container justifyContent='center' className={classes.buttonContainer}>
                     <Grid item xs={12}>
                         <Button
