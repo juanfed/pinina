@@ -7,6 +7,7 @@ export const loginAction = (userInfo) => async (dispatch) => {
         const login = await axiosClient.post('/login/loginPinina', userInfo);
         if (login.data.code === 1) {
             // Dispatch
+            localStorage.setItem('token', login.data.user.tokenGenerado);
             dispatch(loginStartSuccess(login));
             return login.data
         }
