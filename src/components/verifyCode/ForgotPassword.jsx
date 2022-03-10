@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 //icons
 import CloseIcon from '@mui/icons-material/Close';
 import CheckEmailModal from '../../components/verifyCode/CheckEmailModal';
-import { useTheme } from '@mui/material/styles';
+import { useTheme } from '@mui/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { genPassCodeAction, setForgotPasswordModal, updatePassCodeAction, verifyPassCodeAction } from '../../redux/actions/AuthAction';
 
