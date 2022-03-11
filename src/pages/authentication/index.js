@@ -14,6 +14,10 @@ import imagen6 from "../../../src/assets/img/logofacebook.svg";
 import imagen7 from "../../../src/assets/img/logoinstagram.svg";
 import imagen8 from "../../../src/assets/img/logotwitter.svg";
 
+import GoogleAuth from "../../components/auth/GoogleAuth";
+
+import FacebookAuth from "../../components/auth/FacebookAuth";
+
 import {
   loginAction,
   setForgotPasswordModal,
@@ -386,7 +390,8 @@ export default () => {
                 md={6}
                 style={{ textAlign: "left", marginLeft: "-4rem" }}
               >
-                <Link
+                <GoogleAuth/>
+                {/* <Link
                   style={{
                     color: "#3B3D3E",
                     marginTop: "1.5rem",
@@ -399,7 +404,7 @@ export default () => {
                   }}
                 >
                   Ingresar con Google
-                </Link>
+                </Link> */}
               </Grid>
             </Grid>
 
@@ -418,7 +423,10 @@ export default () => {
                 md={6}
                 style={{ textAlign: "left", marginLeft: "-4rem" }}
               >
-                <Link
+
+                  <FacebookAuth/>     
+
+               {/*  <Link
                   style={{
                     color: "#3B3D3E",
                   }}
@@ -429,7 +437,9 @@ export default () => {
                   }}
                 >
                   Ingresar con Facebook
-                </Link>
+                </Link> */}
+
+
               </Grid>
             </Grid>
           </div>
