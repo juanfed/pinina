@@ -305,3 +305,36 @@ img {
 	line-height: 1.5;
 	border-radius: 0.25rem;
 }
+
+/* MainPages */
+.flex-container {
+	display: grid;
+	margin: 0px;
+	padding: 0px;
+	grid-template-columns: 22% auto 22%;
+	grid-template-rows: 22% auto;
+	height: 100vh;
+}
+.caja{
+  border: 1px solid rgba(70, 69, 69);
+  background-color: #fff;
+  text-align: center;
+}
+.c1{
+	background-color: lightblue;
+	grid-row: 1/3;
+}
+.c2{
+	background-color: lightcoral;
+	grid-row: 1/1;
+}
+.c3{
+	background-color: lightgreen;
+	grid-row: 1/3;
+}
+.c4{
+	background-color: lightslategray;
+	grid-row: 2/2;
+}
+
+
