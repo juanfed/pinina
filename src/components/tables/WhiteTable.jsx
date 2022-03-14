@@ -16,21 +16,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
     confirmDeleteAction,
     confirmDeleteProfileAction,
-    createUserModulesAction,
     getUpdateAdminStateAction,
     saveCurrentModulesDataAction,
     saveCurrentUserSettingsAction,
     saveUpdateAdminDataAction,
     setModulesAction,
     setSwitchAdminStateAction,
-    setUserAccessAction
 } from '../../redux/actions/adminAction';
 //icons
 import SaveIcon from '@mui/icons-material/Save';
-import FirstPageIcon from '@mui/icons-material/FirstPage';
-import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-import LastPageIcon from '@mui/icons-material/LastPage';
 // Snackbar
 import { useSnackbar } from "notistack";
 
@@ -77,61 +71,6 @@ const useStyles1 = makeStyles((theme) => ({
     },
 }));
 
-//component for actions for pagination table
-function TablePaginationActions(props) {
-    const classes = useStyles1();
-    const theme = useTheme();
-    const { count, page, rowsPerPage, onChangePage } = props;
-
-    const handleFirstPageButtonClick = (event) => {
-        onChangePage(event, 0);
-    };
-
-    const handleBackButtonClick = (event) => {
-        onChangePage(event, page - 1);
-    };
-
-    const handleNextButtonClick = (event) => {
-        onChangePage(event, page + 1);
-    };
-
-    const handleLastPageButtonClick = (event) => {
-        onChangePage(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
-    };
-
-    return (
-        <div className={classes.root}>
-            <IconButton
-                onClick={handleFirstPageButtonClick}
-                disabled={page === 0}
-                aria-label="first page"
-                size="large">
-                {theme.direction === 'rtl' ? <LastPageIcon /> : <FirstPageIcon />}
-            </IconButton>
-            <IconButton
-                onClick={handleBackButtonClick}
-                disabled={page === 0}
-                aria-label="previous page"
-                size="large">
-                {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
-            </IconButton>
-            <IconButton
-                onClick={handleNextButtonClick}
-                disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-                aria-label="next page"
-                size="large">
-                {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
-            </IconButton>
-            <IconButton
-                onClick={handleLastPageButtonClick}
-                disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-                aria-label="last page"
-                size="large">
-                {theme.direction === 'rtl' ? <FirstPageIcon /> : <LastPageIcon />}
-            </IconButton>
-        </div>
-    );
-}
 
 export default function WhiteTable(props) {
     const {
@@ -159,9 +98,8 @@ export default function WhiteTable(props) {
         setPage(newPage);
     };
 
-    const handleChangeRowsPerPage = e => {
-        console.log('hola')
-        setRowsPerPage(parseInt(e.target.value, 10));
+    const handleChangeRowsPerPage = (event) => {
+        setRowsPerPage(parseInt(event.target.value, 10));
         setPage(0);
     };
     return <>
@@ -486,22 +424,17 @@ export default function WhiteTable(props) {
         <Grid container justifyContent='flex-end'>
             <Grid item>
                 <TablePagination
-                    style={{
-                        border: 'none'
-                    }}
-                    elevation={0}
-                    rowsPerPageOptions={[5, 10, 25, { label: 'Todos', value: -1 }]}
-                    colSpan={3}
+                    component="div"
                     count={tableData.length}
-                    rowsPerPage={rowsPerPage}
-                    page={page}
                     SelectProps={{
                         inputProps: { 'aria-label': 'Filas por página' },
                         native: true,
                     }}
+                    colSpan={3}
+                    page={page}
                     onPageChange={handleChangePage}
+                    rowsPerPage={rowsPerPage}
                     onRowsPerPageChange={handleChangeRowsPerPage}
-                    ActionsComponent={TablePaginationActions}
                 />
             </Grid>
         </Grid>

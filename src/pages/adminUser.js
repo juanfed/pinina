@@ -482,15 +482,6 @@ export default function AdminUser() {
                                             rows={rows}
 
                                         />
-                                        <TablePagination
-                                            rowsPerPageOptions={[5, 10, 25]}
-                                            component="div"
-                                            count={rows.length}
-                                            rowsPerPage={rowsPerPage}
-                                            page={page}
-                                            onPageChange={handleChangePage}
-                                            onRowsPerPageChange={handleChangeRowsPerPage}
-                                        />
                                     </Grid>
                                 </>
                             }
@@ -503,15 +494,6 @@ export default function AdminUser() {
                                     rows={modulesRows}
                                     setModulesDialog={setModulesDialog}
                                     handleMoreInfo={handleMoreInfo}
-                                />
-                                <TablePagination
-                                    rowsPerPageOptions={[5, 10, 25]}
-                                    component="div"
-                                    count={rows.length}
-                                    rowsPerPage={rowsPerPage}
-                                    page={page}
-                                    onPageChange={handleChangePage}
-                                    onRowsPerPageChange={handleChangeRowsPerPage}
                                 />
                             </Grid>
                         </Grid>
