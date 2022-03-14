@@ -3,6 +3,7 @@ import makeStyles from '@mui/styles/makeStyles';
 //icons
 import MenuIcon from '@mui/icons-material/Menu';
 import PersonIcon from '@mui/icons-material/Person';
+import ContactsIcon from '@mui/icons-material/Contacts';
 import { useSelector } from 'react-redux';
 import PininaLogo from '../assets/img/icons/logopalette1.svg'
 import { saveSelectedBusinessDataAction } from '../redux/actions/adminAction';

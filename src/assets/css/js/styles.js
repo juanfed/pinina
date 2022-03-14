@@ -1,10 +1,11 @@
 import { blue } from "@mui/material/colors";
 import { primaryColor, secondaryColor } from "./mainTheme";
+import { makeStyles } from '@mui/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-const { makeStyles } = require("@mui/material");
 
 const drawerWidth = 340;
-
+const theme = createTheme();
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
