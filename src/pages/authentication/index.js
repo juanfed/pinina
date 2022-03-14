@@ -93,8 +93,6 @@ import { getCountriesAction } from "../../redux/actions/MainAction";
 import { Modalregistro } from "../../layouts/modals/modalregistro";
 
 export default () => {
- 
-
   const [login, setLogin] = useState(true);
   const [title, setTitle] = useState("Iniciar Sesión");
   const [modalRegis, setModalRegis] = useState(false);
@@ -105,6 +103,7 @@ export default () => {
   });
 
   const classes = authStyles();
+
   useEffect(() => {
     if (login) {
       setTitle("Iniciar Sesión");
@@ -120,6 +119,7 @@ export default () => {
       });
     }
   }, [login]);
+  
   //get Countries from Backend
   useEffect(() => {
     dispatch(getCountriesAction());
@@ -240,9 +240,26 @@ export default () => {
             gap: "1rem",
           }}
         >
-          <img className="logodefacebook" src={imagen6} alt="logo-facebook" />
-          <img className="logodeinstagram" src={imagen7} alt="logo-instagram" />
-          <img className="logodetwitter" src={imagen8} alt="logo-twitter" />
+          <a href="https://www.facebook.com/PetPinina" target="_blanck">
+            {" "}
+            <img
+              className="logodefacebook"
+              src={imagen6}
+              alt="logo-facebook"
+            />{" "}
+          </a>
+          <a href="https://www.instagram.com/petsaci/" target="_blanck">
+            {" "}
+            <img
+              className="logodeinstagram"
+              src={imagen7}
+              alt="logo-instagram"
+            />
+          </a>
+          <a href="https://twitter.com/petsaci" target="_blanck">
+            {" "}
+            <img className="logodetwitter" src={imagen8} alt="logo-twitter" />
+          </a>
         </Grid>
 
         <Grid item xs={6} md={6}>
@@ -272,7 +289,6 @@ export default () => {
                   </Grid>
                   <Grid item xs={11} md={11}>
                     <TextField
-                      className="textointerno"
                       inputProps={{
                         style: {
                           color: "#FFB714",
@@ -282,16 +298,12 @@ export default () => {
                         style: { color: "#EBEBEB" },
                       }}
                       fullWidth
-                      type='email'
-          
+                      type="email"
                       id="input-with-icon-grid"
                       label="Correo electrónico"
                       name="correo"
                       value={correo}
                       onChange={handleChange}
-                      InputProps={{
-                        className: classes.input,
-                      }}
                     />
                   </Grid>
                 </Grid>
@@ -299,32 +311,30 @@ export default () => {
 
               {/* contraseña */}
               <Grid item xs={12}>
-                <div className={classes.margin}>
-                  <Grid container spacing={1} alignItems="flex-end">
-                    <Grid xs={1} md={1}>
-                      <LockIcon style={{ color: "#EBEBEB" }} />
-                    </Grid>
-                    <Grid item xs={11} md={11}>
-                      <TextField
-                        inputProps={{
-                          style: {
-                            color: "#FFB714",
-                          },
-                        }}
-                        InputLabelProps={{
-                          style: { color: "#EBEBEB" },
-                        }}
-                        fullWidth
-                        type='password'
-                        id="input-with-icon-grid"
-                        label="Contraseña"
-                        name="password"
-                        value={password}
-                        onChange={handleChange}
-                      />
-                    </Grid>
+                <Grid container spacing={1} alignItems="flex-end">
+                  <Grid xs={1} md={1}>
+                    <LockIcon style={{ color: "#EBEBEB" }} />
                   </Grid>
-                </div>
+                  <Grid item xs={11} md={11}>
+                    <TextField
+                      inputProps={{
+                        style: {
+                          color: "#FFB714",
+                        },
+                      }}
+                      InputLabelProps={{
+                        style: { color: "#EBEBEB" },
+                      }}
+                      fullWidth
+                      type="password"
+                      id="input-with-icon-grid"
+                      label="Contraseña"
+                      name="password"
+                      value={password}
+                      onChange={handleChange}
+                    />
+                  </Grid>
+                </Grid>
               </Grid>
 
               {/* boton iniciar sesión */}
@@ -390,21 +400,7 @@ export default () => {
                 md={6}
                 style={{ textAlign: "left", marginLeft: "-4rem" }}
               >
-                <GoogleAuth/>
-                {/* <Link
-                  style={{
-                    color: "#3B3D3E",
-                    marginTop: "1.5rem",
-                    textAlign: "left",
-                  }}
-                  component="button"
-                  variant="body2"
-                  onClick={() => {
-                    console.info("registarme-con-google");
-                  }}
-                >
-                  Ingresar con Google
-                </Link> */}
+                <GoogleAuth />
               </Grid>
             </Grid>
 
@@ -423,23 +419,7 @@ export default () => {
                 md={6}
                 style={{ textAlign: "left", marginLeft: "-4rem" }}
               >
-
-                  <FacebookAuth/>     
-
-               {/*  <Link
-                  style={{
-                    color: "#3B3D3E",
-                  }}
-                  component="button"
-                  variant="body2"
-                  onClick={() => {
-                    console.info("registrame-con-google");
-                  }}
-                >
-                  Ingresar con Facebook
-                </Link> */}
-
-
+                <FacebookAuth />
               </Grid>
             </Grid>
           </div>
