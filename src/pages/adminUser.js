@@ -401,7 +401,7 @@ export default function AdminUser() {
                                             <CardContent>
                                                 <Grid container style={{ textAlign: "center" }}>
                                                     <Grid item xs={4}>
-                                                        <PhoneIcon color='secondary' color='secondary' className={classes.logoInfoDir} />
+                                                        <PhoneIcon className={classes.logoInfoDir} color='secondary' />
                                                     </Grid>
                                                     <Grid item xs={8}>
                                                         <h6 className={classes.textInfoDir}>Telefono</h6>

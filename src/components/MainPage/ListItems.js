@@ -2,12 +2,12 @@ import React from 'react';
 import Link from 'next/link';
 
 // Material UI Components
-import { ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 
 // Icons
-import ClearAllIcon from '@mui/icons-material/ClearAll';
-import AddIcon from '@mui/icons-material/Add';
-import ListIcon from '@mui/icons-material/List';
+import ClearAllIcon from '@material-ui/icons/ClearAll';
+import AddIcon from '@material-ui/icons/Add';
+import ListIcon from '@material-ui/icons/List';
 
 export function ListItems() {
 
@@ -19,7 +19,70 @@ export function ListItems() {
         
         
         
+        <div className="card shadow my-0" style={{ borderRadius: 20 }}>
+          <div className="card-header text-center" id="headingOne">
+            <h2 className="mb-0">
+              <ListItem disableGutters button data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" className="min-width">
+                <ListItemIcon>
+                  <ClearAllIcon className="text-info" />
+                </ListItemIcon>
+                <button className="btn btn-link btn-block text-center text-info" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  T_vacunas
+                </button>
+              </ListItem>
+            </h2>
+          </div>
+          <div id="collapseOne" className="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div className="card-body">
+              
+              <Link href="/main/C_vacTVacufCreate" activeStyle={{ color: '#e1e1e1!important', backgroundColor: '#000!important' }}>
+                  <ListItem button disableGutters>
+                    <ListItemIcon>
+                      <ListIcon />
+                    </ListItemIcon>
+                    <ListItemText primary='Todos los tvacunas' className="text-dark"/>
+                  </ListItem>
+              </Link>
+
+            </div>
+          </div>
+        </div>
+        
+        
+        <div className="card shadow my-0" style={{ borderRadius: 20 }}>
+          <div className="card-header text-center" id="headingOne">
+            <h2 className="mb-0">
+              <ListItem disableGutters button data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" className="min-width">
+                <ListItemIcon>
+                  <ClearAllIcon className="text-info" />
+                </ListItemIcon>
+                <button className="btn btn-link btn-block text-center text-info" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  T_inventarios
+                </button>
+              </ListItem>
+            </h2>
+          </div>
+          <div id="collapseOne" className="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div className="card-body">
+              
+              <Link href="/main/C_invTInveuCreate" activeStyle={{ color: '#e1e1e1!important', backgroundColor: '#000!important' }}>
+                  <ListItem button disableGutters>
+                    <ListItemIcon>
+                      <ListIcon />
+                    </ListItemIcon>
+                    <ListItemText primary='Todos los tinventarios' className="text-dark"/>
+                  </ListItem>
+              </Link>
+
+            </div>
+          </div>
+        </div>
+        
         {/* replace */}
+        
+        
+        
+        
         
         
         
