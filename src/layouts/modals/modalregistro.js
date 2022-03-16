@@ -88,15 +88,15 @@ export const Modalregistro = ({ modalRegis, setModalRegis }) => {
     correo: "",
     password: "",
     origen_cuenta: "Registro_Normal",
-    nombre_completo: "",
-    apellido_completo: "",
+    nombres: "",
+    apellidos: "",
     ubicacion: '169',
     password_2: "",
   });
   const {
     correo,
-    nombre_completo,
-    apellido_completo,
+    nombres,
+    apellidos,
     password,
     password_2,
     ubicacion
@@ -149,8 +149,8 @@ export const Modalregistro = ({ modalRegis, setModalRegis }) => {
     const response = await dispatch(
       verifyRegCodeAction({
         correo: correo,
-        nombre_completo: nombre_completo,
-        apellido_completo: apellido_completo,
+        nombres: nombres,
+        apellidos: apellidos,
         codigo: verifyCode,
         password: password,
 
@@ -309,11 +309,11 @@ export const Modalregistro = ({ modalRegis, setModalRegis }) => {
   //hook error event listener_ firstName
   useEffect(() => {
     if (firstNameClicked) {
-      if (nombre_completo.length <= 2 || nombre_completo.length >= 15) {
+      if (nombres.length <= 2 || nombres.length >= 15) {
         setFirstNameMsg("*De 3 a 15 Caractéres");
         setFirstNameError(true);
       } else {
-        let charValidate = NAMES_REG_VAR.test(nombre_completo);
+        let charValidate = NAMES_REG_VAR.test(nombres);
         if (charValidate) {
           setFirstNameMsg("");
           setFirstNameError(false);
@@ -323,16 +323,16 @@ export const Modalregistro = ({ modalRegis, setModalRegis }) => {
         }
       }
     }
-  }, [nombre_completo, firstNameClicked]);
+  }, [nombres, firstNameClicked]);
   
   //hook error event listener_ LastName
   useEffect(() => {
     if (lastNameClicked) {
-      if (apellido_completo.length <= 2 || apellido_completo.length >= 15) {
+      if (apellidos.length <= 2 || apellidos.length >= 15) {
         setLastNameMsg("*De 3 a 15 Caractéres");
         setLastNameError(true);
       } else {
-        let charValidate = NAMES_REG_VAR.test(apellido_completo);
+        let charValidate = NAMES_REG_VAR.test(apellidos);
         if (charValidate) {
           setLastNameMsg("");
           setLastNameError(false);
@@ -342,7 +342,7 @@ export const Modalregistro = ({ modalRegis, setModalRegis }) => {
         }
       }
     }
-  }, [apellido_completo, lastNameClicked]);
+  }, [apellidos, lastNameClicked]);
   
   //hook error event listener_ email
   useEffect(() => {
@@ -399,8 +399,8 @@ export const Modalregistro = ({ modalRegis, setModalRegis }) => {
 
   useEffect(() => {
     if (
-      nombre_completo.length &&
-      apellido_completo.length &&
+      nombres.length &&
+      apellidos.length &&
       password.length &&
       password_2.length &&
       ubicacion.length &&
@@ -421,8 +421,8 @@ export const Modalregistro = ({ modalRegis, setModalRegis }) => {
       setRegisterError(true);
     }
   }, [
-    nombre_completo,
-    apellido_completo,
+    nombres,
+    apellidos,
     password,
     ubicacion,
     correo,
@@ -479,8 +479,8 @@ export const Modalregistro = ({ modalRegis, setModalRegis }) => {
 
   const handleSubmit = () => {
     if (
-      nombre_completo.length &&
-      apellido_completo.length &&
+      nombres.length &&
+      apellidos.length &&
       password.length &&
       password_2.length &&
       ubicacion.length &&
@@ -521,6 +521,7 @@ export const Modalregistro = ({ modalRegis, setModalRegis }) => {
             <Grid item xs={12} md={12}>
               <Grid container spacing={1} alignItems="center">
                 <Grid
+                className="scroll"
                   item
                   xs={6}
                   md={6}
@@ -532,6 +533,8 @@ export const Modalregistro = ({ modalRegis, setModalRegis }) => {
                     borderBottomLeftRadius: "40px",
                     borderTopLeftRadius: "40px",
                     paddingBottom: "5rem",
+                    overflowY:"visible"
+                    
                   }}
                 >
                   <Grid container spacing={1} /*alignItems="center" */>
@@ -600,8 +603,8 @@ export const Modalregistro = ({ modalRegis, setModalRegis }) => {
                             fullWidth
                             id="input-with-icon-grid"
                             label="Nombre completo"
-                            name="nombre_completo"
-                            value={nombre_completo}
+                            name="nombres"
+                            value={nombres}
                             type="text"
                             onChange={handleChange}
                             helperText={firstNameMsg}
@@ -643,8 +646,8 @@ export const Modalregistro = ({ modalRegis, setModalRegis }) => {
                             fullWidth
                             id="input-with-icon-grid"
                             label="Apellidos"
-                            name="apellido_completo"
-                            value={apellido_completo}
+                            name="apellidos"
+                            value={apellidos}
                             type="text"
                             onChange={handleChange}
                             helperText={lastNameMsg}
