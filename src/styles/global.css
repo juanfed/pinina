@@ -578,7 +578,6 @@ img {
 
 .contenedorFeed {
   padding: 2rem;
-
 }
 
 .tituloFeed1 {
@@ -615,9 +614,9 @@ img {
 }
 
 .contenedorPerfil {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #ffb714;
   padding: 0.25rem 1rem 1rem 1rem;
   border-radius: 15px;
@@ -625,107 +624,129 @@ img {
   margin-top: 0.2rem;
 
   font-family: "Bebas-Neue";
-  -webkit-box-shadow: 4px 8px 12px 0px rgba(0,0,0,0.25); 
-  box-shadow: 4px 8px 12px 0px rgba(0,0,0,0.25);
+  -webkit-box-shadow: 4px 8px 12px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 4px 8px 12px 0px rgba(0, 0, 0, 0.25);
 }
 
 .contenedorNombre {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   font-family: "Bebas-Neue";
   font-size: 18px;
-  color: #8E5207;
-  
+  color: #8e5207;
 }
 
 .contenedorNotificación {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   font-family: "Bebas-Neue";
   font-size: 18px;
-  color: #8E5207;
+  color: #8e5207;
+}
+
+.tendencia1 {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  font-family: "Bebas-Neue";
+  font-size: 19px;
+  color: #81623c;
+  padding: 0;
+}
+
+.tendencia2 {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  font-family: "Montserrat";
+  font-size: 14px;
+  padding: 0;
+}
+
+.tendencia3 {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  font-family: "Montserrat";
+  font-size: 15px;
+  color: #767070;
+  padding: 0;
+}
+
+.anunciosDerecha {
+  font-size: 14px;
+  font-family: "Montserrat";
+  text-align: right;
+  margin-bottom: 1rem;
+}
+
+.puntos {
+  display: flex;
+  justify-content: right;
+  align-items: right;
+}
+
+.descripcion {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  text-align: left;
+}
+
+.descripcionHora {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  text-align: left;
+  margin-top: 1rem;
+  color: #8e5207;
+}
+
+.cantidadLikes {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  text-align: left;
+  color: #8e5207;
+  font-family: "Bebas-Neue";
+  font-size: 25px;
+}
+
+.opcionesSpa {
   
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 2rem;
+
+}
+
+.Spa {
+  
+  background-color: #FFB714;
+  border-radius: 20px;
+
+}
+
+.TitulosPaginas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  font-family: "Bebas-Neue";
+  font-size: 20px;
+  padding-bottom: 1rem;
+
+
+}
+
+.fotoServicios {
+  
+  padding: 0.7rem;
+
 }
 
 
-.tendencia1 {
-	display: flex;
-	justify-content: right;
-	align-items: center;
-	font-family: "Bebas-Neue";
-	font-size:19px;
-	color: #81623c;
-	padding: 0;
-
-  }
-  
-  .tendencia2 {
-	display: flex;
-	justify-content: right;
-	align-items: center;
-	font-family: "Montserrat";
-	font-size: 14px;
-	padding: 0;
-  }
-  
-  .tendencia3 {
-	display: flex;
-	justify-content: right;
-	align-items: center;
-	font-family: "Montserrat";
-	font-size: 15px;
-	color: #767070;
-	padding: 0;
-  }
-
-  .anunciosDerecha {
-	font-size: 14px;
-	font-family: "Montserrat";
-	text-align: right;
-	margin-bottom: 1rem;
-  }
-
-  .puntos {
-	display: flex;
-	justify-content: right;
-	align-items: right;
-	
-  }
-
-  .descripcion {
-    display: flex;
-    justify-content: left;
-    align-items: left;
-    text-align: left;
-    
-    }
-
-    .descripcionHora {
-      display: flex;
-      justify-content: left;
-      align-items: left;
-      text-align: left;
-      margin-top: 1rem;
-      color: #8E5207;
-      
-      }
-
-      .cantidadLikes {
-        display: flex;
-        justify-content: left;
-        align-items: left;
-        text-align: left;
-        color: #8E5207;
-        font-family: "Bebas-Neue";
-        font-size: 25px;
-        
-        }
-     
-    
-  
-
-  

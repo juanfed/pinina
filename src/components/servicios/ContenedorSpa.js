@@ -7,13 +7,13 @@ import historia3 from "../../assets/img/historia3.svg";
 import historia4 from "../../assets/img/historia4.svg";
 import historia5 from "../../assets/img/historia5.svg";
 import historia6 from "../../assets/img/historia6.svg";
+import spa1 from "../../assets/img/fotoSpa1.svg";
 
 const Spa = () => {
-    return (
-
-<Grid item xs={8} md={8}>
-  {/*  Contenedor de arriba */}
-  <Grid item className="caja c2" xs={12} md={12}>
+  return (
+    <Grid item xs={8} md={8}>
+      {/*  Contenedor de arriba */}
+      <Grid item className="caja c2" xs={12} md={12}>
         <img src={barraHistorias} alt="barra" />
       </Grid>
       {/*   Contenedor de las historias */}
@@ -91,9 +91,21 @@ const Spa = () => {
           </Grid>
         </Grid>
       </Grid>
-</Grid>
 
-      );
-}
- 
+      {/*  Contenedor de abajo */}
+
+      <Grid className="opcionesSpa" container xs={12} md={12}>
+        <Grid className="TitulosPaginas" item xs={12} md={12}>
+          Hoteles y guarderías cerca de tí
+        </Grid>
+        <Grid className="Spa" container xs={12} md={12}>
+        <Grid className="fotoServicios" item xs={4} md={4}>
+        <img src={spa1} alt="Spa1" />
+        </Grid>
+        </Grid>
+      </Grid>
+    </Grid>
+  );
+};
+
 export default Spa;
