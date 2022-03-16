@@ -452,6 +452,7 @@ img {
   background-image: url("../assets/img/Grupo\ 409.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
+  overflow: scroll;
 }
 
 .caja {
@@ -619,7 +620,7 @@ img {
 	align-items: center;
   background-color: #ffb714;
   padding: 0.25rem 1rem 1rem 1rem;
-  border-radius: 20px;
+  border-radius: 15px;
   height: 70%;
   margin-top: 0.2rem;
 

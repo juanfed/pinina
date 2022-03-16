@@ -56,15 +56,9 @@ import PersonIcon from "@mui/icons-material/Person";
 
 import Autocomplete from "@mui/material/Autocomplete";
 
-import {
-  Button,
-  Divider,
-  TextField,
-  InputAdornment,
-} from "@material-ui/core/";
+import { Button, Divider, TextField, InputAdornment } from "@material-ui/core/";
 
 export const Modalregistro = ({ modalRegis, setModalRegis }) => {
-
   // Styles Material UI instance
   const classes = registerStyles();
 
@@ -90,17 +84,11 @@ export const Modalregistro = ({ modalRegis, setModalRegis }) => {
     origen_cuenta: "Registro_Normal",
     nombres: "",
     apellidos: "",
-    ubicacion: '169',
+    ubicacion: "169",
     password_2: "",
   });
-  const {
-    correo,
-    nombres,
-    apellidos,
-    password,
-    password_2,
-    ubicacion
-  } = userData;
+  const { correo, nombres, apellidos, password, password_2, ubicacion } =
+    userData;
 
   const [focusedNames, setFocusedNames] = useState(false);
   const [focusedEmail, setFocusedEmail] = useState(false);
@@ -153,7 +141,7 @@ export const Modalregistro = ({ modalRegis, setModalRegis }) => {
         apellidos: apellidos,
         codigo: verifyCode,
         password: password,
-
+        ubicacion: ubicacion
       })
     );
 
@@ -263,7 +251,7 @@ export const Modalregistro = ({ modalRegis, setModalRegis }) => {
       setFirstNameClicked(true);
     }
   };
-  
+
   //Last Name
   const handleClickLastName = () => {
     if (!lastNameClicked) {
@@ -272,7 +260,7 @@ export const Modalregistro = ({ modalRegis, setModalRegis }) => {
       setLastNameClicked(true);
     }
   };
-  
+
   //Email
   const handleClickEmail = () => {
     if (!emailClicked) {
@@ -281,7 +269,7 @@ export const Modalregistro = ({ modalRegis, setModalRegis }) => {
       setEmailClicked(true);
     }
   };
-  
+
   //Password
   const handleClickPassw = () => {
     if (!passwClicked) {
@@ -324,7 +312,7 @@ export const Modalregistro = ({ modalRegis, setModalRegis }) => {
       }
     }
   }, [nombres, firstNameClicked]);
-  
+
   //hook error event listener_ LastName
   useEffect(() => {
     if (lastNameClicked) {
@@ -343,7 +331,7 @@ export const Modalregistro = ({ modalRegis, setModalRegis }) => {
       }
     }
   }, [apellidos, lastNameClicked]);
-  
+
   //hook error event listener_ email
   useEffect(() => {
     if (emailClicked) {
@@ -405,14 +393,9 @@ export const Modalregistro = ({ modalRegis, setModalRegis }) => {
       password_2.length &&
       ubicacion.length &&
       correo.length &&
-
       !firstNameError &&
- 
       !lastNameError &&
-      
-   
       !emailError &&
-     
       !passwError &&
       !passw_2Error
     ) {
@@ -487,9 +470,7 @@ export const Modalregistro = ({ modalRegis, setModalRegis }) => {
       correo.length &&
       !firstNameError &&
       !lastNameError &&
-     
       !emailError &&
-    
       !passwError &&
       !passw_2Error
     ) {
@@ -521,7 +502,7 @@ export const Modalregistro = ({ modalRegis, setModalRegis }) => {
             <Grid item xs={12} md={12}>
               <Grid container spacing={1} alignItems="center">
                 <Grid
-                className="scroll"
+                  className="scroll"
                   item
                   xs={6}
                   md={6}
@@ -533,8 +514,7 @@ export const Modalregistro = ({ modalRegis, setModalRegis }) => {
                     borderBottomLeftRadius: "40px",
                     borderTopLeftRadius: "40px",
                     paddingBottom: "5rem",
-                    overflowY:"visible"
-                    
+                    overflowY: "visible",
                   }}
                 >
                   <Grid container spacing={1} /*alignItems="center" */>
@@ -887,6 +867,18 @@ export const Modalregistro = ({ modalRegis, setModalRegis }) => {
             </Grid>
           </Grid>
         </Grid>
+      </Dialog>
+      <Dialog open={verifyDialog} onClose={() => setVerifyDialog(false)}>
+        <CheckEmailModal
+          checkEmailModal={checkEmailModal}
+          submitCode={submitCode}
+          setSubmitCode={setSubmitCode}
+          setVerifyCode={setVerifyCode}
+          verifyMsg={verifyMsg}
+          registrySuccess={registrySuccess}
+          setRegisterToLogin={setRegisterToLogin}
+          generateCode={generateCode}
+        />
       </Dialog>
     </>
   );

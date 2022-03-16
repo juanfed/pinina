@@ -23,6 +23,9 @@ import imagenPaseador4 from "../../assets/img/paseador4.svg";
 import agregarVeterinario from "../../assets/img/agregarveteri.png";
 import agregarPaseador from "../../assets/img/agregarpaseador.png";
 
+import { useRouter } from "next/router";
+
+
 import { useInput } from "@mui/base";
 import { styled } from "@mui/system";
 import {
@@ -34,7 +37,17 @@ import {
   InputAdornment,
 } from "@material-ui/core/";
 
+
 const ContenedorIzquierdo = () => {
+  const router = useRouter();
+
+  const landing  = () => {
+    console.log("hola")
+    router.push("/Spa");
+    
+  };
+ 
+
   return (
     <Grid item className="caja c1" xs={2} md={2}>
       <Grid item xs={12} md={12}>
@@ -61,62 +74,122 @@ const ContenedorIzquierdo = () => {
           Servicios de tu interes{" "}
         </Grid>
 
-        <Grid item xs={3} md={3}>
-          
-            <img className="servicios" src={imagenEtologia} alt="etologia" />
-          
+        <Grid container spacing={1} xs={12} md={12}>
+          <Grid item xs={3} md={3}>
+            <Link
+              component="button"
+              variant="body2"
+              onClick={landing}
+            >
+              <img className="servicios" src={imagenEtologia} alt="etologia" />
+            </Link>
+
+          </Grid>
+          <Grid item xs={3} md={3}>
+          <Link
+              component="button"
+              variant="body2"
+              onClick={landing}
+            >
+              
+              <img className="servicios" src={imagenHotel} alt="Hotel" />
+              </Link>
+
+          </Grid>
+          <Grid item xs={3} md={3}>
+          <Link
+              component="button"
+              variant="body2"
+              onClick={landing}
+            >
+              <img className="servicios" src={imagenSpa} alt="Spa" />
+              </Link>
+          </Grid>
+          <Grid item xs={3} md={3}>
+          <Link
+              component="button"
+              variant="body2"
+              onClick={landing}
+            >
+              <img
+                className="servicios"
+                src={imagenTransporte}
+                alt="traporte"
+              />
+           </Link>
+          </Grid>
         </Grid>
-        <Grid item xs={3} md={3}>
-         
-            {" "}
-            <img className="servicios" src={imagenHotel} alt="Hotel" />
-         
+
+        <Grid container spacing={1} xs={12} md={12}>
+          <Grid item xs={3} md={3}>
+          <Link
+              component="button"
+              variant="body2"
+              onClick={landing}
+            >
+              <img className="servicios" src={imagenFiestas} alt="Fiestas" />
+              </Link>
+          </Grid>
+          <Grid item xs={3} md={3}>
+          <Link
+              component="button"
+              variant="body2"
+              onClick={landing}
+            >
+              <img className="servicios" src={imagenSeguros} alt="Seguros" />
+              </Link>
+          </Grid>
+          <Grid item xs={3} md={3}>
+          <Link
+              component="button"
+              variant="body2"
+              onClick={landing}
+            >
+              <img
+                className="servicios"
+                src={imagenFuneraria}
+                alt="Funeraria"
+              />
+           </Link>
+          </Grid>
+          <Grid item xs={3} md={3}>
+          <Link
+              component="button"
+              variant="body2"
+              onClick={landing}
+            >
+              <img className="servicios" src={imagenGimnasio} alt="Gimnasio" />
+              </Link>
+          </Grid>
         </Grid>
-        <Grid item xs={3} md={3}>
-          
-            {" "}
-            <img className="servicios" src={imagenSpa} alt="Spa" />
-         
-        </Grid>
-        <Grid item xs={3} md={3}>
-        
-            {" "}
-            <img className="servicios" src={imagenTransporte} alt="traporte" />
-         
-        </Grid>
-        <Grid item xs={3} md={3}>
-        
-            {" "}
-            <img className="servicios" src={imagenFiestas} alt="Fiestas" />
-         
-        </Grid>
-        <Grid item xs={3} md={3}>
-         
-            {" "}
-            <img className="servicios" src={imagenSeguros} alt="Seguros" />
-         
-        </Grid>
-        <Grid item xs={3} md={3}>
-          
-            {" "}
-            <img className="servicios" src={imagenFuneraria} alt="Funeraria" />
-         
-        </Grid>
-        <Grid item xs={3} md={3}>
-         
-            {" "}
-            <img className="servicios" src={imagenGimnasio} alt="Gimnasio" />
-         
-        </Grid>
-        <Grid item xs={3} md={3}>
-          <img
-            className="servicios"
-            src={imagenofrecerServicios}
-            alt="ofrecerServicios"
-          />
-        </Grid>
-        <Grid item xs={3} md={3}>
-          <img className="servicios" src={imagenAñadir} alt="Añadir" />
+
+        <Grid container spacing={1} xs={12} md={12}>
+          <Grid item xs={3} md={3}>
+          <Link
+              component="button"
+              variant="body2"
+              onClick={landing}
+            >
+              <img
+                className="servicios"
+                src={imagenofrecerServicios}
+                alt="ofrecerServicios"
+              />{" "}
+           </Link>
+          </Grid>
+          <Grid item xs={3} md={3}>
+          <Link
+              component="button"
+              variant="body2"
+              onClick={landing}
+            >
+              <img className="servicios" src={imagenAñadir} alt="Añadir" />{" "}
+              </Link>
+          </Grid>
+
+          <Grid item xs={3} md={3}></Grid>
+
+          <Grid item xs={3} md={3}></Grid>
         </Grid>
       </Grid>
 
@@ -347,15 +420,13 @@ const ContenedorIzquierdo = () => {
           >
             Agregar perfil
           </Grid>
-          
         </Grid>
 
         {/* hasta aqui va agregar veterinario */}
       </Grid>
 
-       {/* hasta aqui va veterinarios tendencia */}
+      {/* hasta aqui va veterinarios tendencia */}
 
-       
       {/* Paseadores tendencia */}
       <Grid className="contenedores" container xs={12} md={12}>
         <Grid
@@ -585,14 +656,12 @@ const ContenedorIzquierdo = () => {
           >
             Agregar perfil
           </Grid>
-          
         </Grid>
 
         {/* hasta aqui va agregar paseador */}
       </Grid>
 
-       {/* hasta aqui va paseadores tendencia */}
-
+      {/* hasta aqui va paseadores tendencia */}
     </Grid>
   );
 };
