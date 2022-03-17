@@ -8,6 +8,7 @@ import ReduxOptionsDial from '../../layouts/speedDials/ReduxOptionsDial';
 import MainAppBar from '../../layouts/MainAppBar';
 
 
+import ListaTipoVacunasMain from '../../components/lists/T_vacunasT_tipo_vacunasSxx9zList.js';
 //REPLACEIMPORTS
 
 // Actions
@@ -35,6 +36,7 @@ import useStyles from '../../assets/css/js/styles';
 // Material UI Icons
 import CloseIcon from '@mui/icons-material/Close';
 import SaveIcon from '@mui/icons-material/Save';
+import AddIcon from '@mui/icons-material/Add';
 import SearchIcon from '@mui/icons-material/Search';
 import WhiteTable from '../../components/tables/WhiteTable';
 import { primaryColor } from '../../assets/css/js/mainTheme';
@@ -62,33 +64,34 @@ const C_vacTVacucCreate = () => {
     const [search, setSearch] = useState(false);
     const [modalDelete, setModalDelete] = useState(false);
     const [data, setData] = useState({
-        id_vacuna: '',
-
-        id_tipo_vacunas: '',
-        id_mascotas: '',
-        id_clientes: '',
-        id_usuario: '',
-        sintomas_vacuna: '',
-        fecha_vacuna: '',
-        dosis: '',
-        fecha_proxima_vacuna: ''
+        id_vacuna : '',
+        
+          id_tipo_vacunas: '',
+          id_mascotas: '',
+          id_clientes: '',
+          id_usuario: '',
+          sintomas_vacuna: '',
+          fecha_vacuna: '',
+          dosis: '',
+          fecha_proxima_vacuna: ''
     });
+    
     //general data for general consultation
     const [t_vacunas, setT_vacunas] = useState([]);
     //data for table
     const [tableData, setTableData] = useState([]);
     //initial rows displayed in table
     const initialTableRows = [
-
-        { id: 0, title: 'Id de Tipo de Vacunas' },
-        { id: 1, title: 'Id de Mascotas' },
-        { id: 2, title: 'Id de Clientes' },
-        { id: 3, title: 'Id de Usuario' },
-        { id: 4, title: 'Sintomas de Vacuna' },
-        { id: 5, title: 'Fecha de Vacuna' },
-        { id: 6, title: 'Dosis' },
-        { id: 7, title: 'Fecha de Proxima de Vacuna' },
-
+        
+          { id: 0, title: 'Id de Tipo de Vacunas' },
+          { id: 1, title: 'Id de Mascotas' },
+          { id: 2, title: 'Id de Clientes' },
+          { id: 3, title: 'Id de Usuario' },
+          { id: 4, title: 'Sintomas de Vacuna' },
+          { id: 5, title: 'Fecha de Vacuna' },
+          { id: 6, title: 'Dosis' },
+          { id: 7, title: 'Fecha de Proxima de Vacuna' },
+        
     ]
     //usestate for change by CRUD manage
     const [tableRows, setTableRows] = useState(initialTableRows);
@@ -97,6 +100,7 @@ const C_vacTVacucCreate = () => {
     //save data from consultation
     const [initialData, setInitialData] = useState([]);
     const [openDialog, setOpenDialog] = useState(false);
+    const [loadingConsult, setLoadingConsult] = useState({});
     const [editItem, setEditItem] = useState(false);
     const [dialogTitle, setDialogTitle] = useState('');
 
@@ -124,8 +128,10 @@ const C_vacTVacucCreate = () => {
             // Query
             let response;
             if (add) {
+                axiosClient.defaults.headers.common['Authorization'] =  `Bearer ${localStorage.getItem('token').replace(/['"]+/g, '')}`
                 response = await axiosClient.post('/t_vacunas/create', data);
             } else if (edit) {
+                axiosClient.defaults.headers.common['Authorization'] =  `Bearer ${localStorage.getItem('token').replace(/['"]+/g, '')}`
                 response = await axiosClient.put('/t_vacunas/edit', data);
             }
             if (response.data.code === 0) {
@@ -154,16 +160,16 @@ const C_vacTVacucCreate = () => {
     //function to manage empty fields in the create and update data
     const validateFields = () => {
         if (
-
-            data.id_tipo_vacunas.length &&
-            data.id_mascotas.length &&
-            data.id_clientes.length &&
-            data.id_usuario.length &&
-            data.sintomas_vacuna.length &&
-            data.fecha_vacuna.length &&
-            data.dosis.length &&
-            data.fecha_proxima_vacuna.length !== 0
-        ) {
+                
+                data.id_tipo_vacunas.length &&
+                data.id_mascotas.length &&
+                data.id_clientes.length &&
+                data.id_usuario.length &&
+                data.sintomas_vacuna.length &&
+                data.fecha_vacuna.length &&
+                data.dosis.length &&
+                data.fecha_proxima_vacuna.length !== 0
+            ) {
             handleSubmit();
         } else {
             enqueueSnackbar('No ha rellenado todos los campos', { variant: 'error' });
@@ -181,6 +187,7 @@ const C_vacTVacucCreate = () => {
         try {
 
             // Query
+            axiosClient.defaults.headers.common['Authorization'] =  `Bearer ${localStorage.getItem('token').replace(/['"]+/g, '')}`
             const { data } = await axiosClient.delete('/t_vacunas/delete/' + elementToDelete);
             if (data.code === 0) {
                 query();
@@ -202,6 +209,7 @@ const C_vacTVacucCreate = () => {
 
     const query = async () => {
         try {
+            axiosClient.defaults.headers.common['Authorization'] =  `Bearer ${localStorage.getItem('token').replace(/['"]+/g, '')}`
             const response = await axiosClient.get('t_vacunas' + '/readG/');
             if (response.data.code != -1) {
                 setT_vacunas(response.data.msg);
@@ -227,7 +235,7 @@ const C_vacTVacucCreate = () => {
             const data = t_vacunas.map(i => {
                 return {
                     data_0: i.id_vacuna,
-
+                    
                     data_1: i.id_tipo_vacunas,
                     data_2: i.id_mascotas,
                     data_3: i.id_clientes,
@@ -236,7 +244,7 @@ const C_vacTVacucCreate = () => {
                     data_6: i.fecha_vacuna,
                     data_7: i.dosis,
                     data_8: i.fecha_proxima_vacuna,
-
+                    
                 }
             });
             setTableData(data);
@@ -263,7 +271,7 @@ const C_vacTVacucCreate = () => {
             setTableData(t_vacunas.map(i => {
                 return {
                     data_0: i.id_vacuna,
-
+                    
                     data_1: i.id_tipo_vacunas,
                     data_2: i.id_mascotas,
                     data_3: i.id_clientes,
@@ -277,7 +285,7 @@ const C_vacTVacucCreate = () => {
             }));
             setTableRows(
                 [
-
+                    
                     { id: 0, title: 'Id de Tipo de Vacunas' },
                     { id: 1, title: 'Id de Mascotas' },
                     { id: 2, title: 'Id de Clientes' },
@@ -293,7 +301,7 @@ const C_vacTVacucCreate = () => {
             setTableData(t_vacunas.map(i => {
                 return {
                     data_0: i.id_vacuna,
-
+                    
                     data_1: i.id_tipo_vacunas,
                     data_2: i.id_mascotas,
                     data_3: i.id_clientes,
@@ -302,7 +310,7 @@ const C_vacTVacucCreate = () => {
                     data_6: i.fecha_vacuna,
                     data_7: i.dosis,
                     data_8: i.fecha_proxima_vacuna,
-
+                    
                 }
             }));
             setTableRows(initialTableRows)
@@ -330,14 +338,14 @@ const C_vacTVacucCreate = () => {
         if (searchData.length !== 0) {
             const filterData = initialData.filter(i => {
                 return (i.id_tipo_vacunas).toLowerCase().includes(searchData) ||
-                    (i.id_mascotas).toLowerCase().includes(searchData) ||
-                    (i.id_clientes).toLowerCase().includes(searchData) ||
-                    (i.id_usuario).toLowerCase().includes(searchData) ||
-                    (i.sintomas_vacuna).toLowerCase().includes(searchData) ||
-                    (i.fecha_vacuna).toLowerCase().includes(searchData) ||
-                    (i.dosis).toLowerCase().includes(searchData) ||
-                    (i.fecha_proxima_vacuna).toLowerCase().includes(searchData)
-
+               (i.id_mascotas).toLowerCase().includes(searchData) ||
+               (i.id_clientes).toLowerCase().includes(searchData) ||
+               (i.id_usuario).toLowerCase().includes(searchData) ||
+               (i.sintomas_vacuna).toLowerCase().includes(searchData) ||
+               (i.fecha_vacuna).toLowerCase().includes(searchData) ||
+               (i.dosis).toLowerCase().includes(searchData) ||
+               (i.fecha_proxima_vacuna).toLowerCase().includes(searchData)
+              
             });
             setT_vacunas(filterData);
         } else {
@@ -351,7 +359,7 @@ const C_vacTVacucCreate = () => {
             setTableData(t_vacunas.map(i => {
                 return {
                     data_0: i.id_vacuna,
-
+                    
                     data_1: i.id_tipo_vacunas,
                     data_2: i.id_mascotas,
                     data_3: i.id_clientes,
@@ -365,7 +373,7 @@ const C_vacTVacucCreate = () => {
             }));
             setTableRows(
                 [
-
+                    
                     { id: 0, title: 'Id de Tipo de Vacunas' },
                     { id: 1, title: 'Id de Mascotas' },
                     { id: 2, title: 'Id de Clientes' },
@@ -381,7 +389,7 @@ const C_vacTVacucCreate = () => {
             setTableData(t_vacunas.map(i => {
                 return {
                     data_0: i.id_vacuna,
-
+                    
                     data_1: i.id_tipo_vacunas,
                     data_2: i.id_mascotas,
                     data_3: i.id_clientes,
@@ -390,7 +398,7 @@ const C_vacTVacucCreate = () => {
                     data_6: i.fecha_vacuna,
                     data_7: i.dosis,
                     data_8: i.fecha_proxima_vacuna,
-
+                    
                 }
             }));
             setTableRows(initialTableRows)
@@ -401,15 +409,15 @@ const C_vacTVacucCreate = () => {
         setData({
             ...data,
             id_vacuna: vacunas.data_0,
-
-            id_tipo_vacunas: vacunas.data_1,
-            id_mascotas: vacunas.data_2,
-            id_clientes: vacunas.data_3,
-            id_usuario: vacunas.data_4,
-            sintomas_vacuna: vacunas.data_5,
-            fecha_vacuna: vacunas.data_6,
-            dosis: vacunas.data_7,
-            fecha_proxima_vacuna: vacunas.data_8
+            
+                id_tipo_vacunas: vacunas.data_1,
+                id_mascotas: vacunas.data_2,
+                id_clientes: vacunas.data_3,
+                id_usuario: vacunas.data_4,
+                sintomas_vacuna: vacunas.data_5,
+                fecha_vacuna: vacunas.data_6,
+                dosis: vacunas.data_7,
+                fecha_proxima_vacuna: vacunas.data_8
         })
         setEditItem(true);
     };
@@ -542,7 +550,7 @@ const C_vacTVacucCreate = () => {
                 </Grid>
             </Grid>
         </Dialog>
-
+            
         <Dialog
             open={openDialog}
             onClose={handleCloseModal}
@@ -566,24 +574,15 @@ const C_vacTVacucCreate = () => {
                             </Typography>
                         </Grid>
                     </Grid>
-
-
+                    
 
                     <Grid item md={6} sm={12} xs={12}>
-                        <TextField
-                            fullWidth
-                            required={false}
-                            type="text"
-                            name="id_tipo_vacunas"
-                            color='secondary'
-                            size='small'
-                            variant="outlined"
-                            label="Id de Tipo de Vacunas"
-                            placeholder="Ingrese id de tipo de vacunas"
-                            value={data.id_tipo_vacunas}
-                            onChange={handleChange}
+                        <ListaTipoVacunasMain
+                            consultData={data}
+                            setConsultData={setData}
                         />
                     </Grid>
+                    
 
                     <Grid item md={6} sm={12} xs={12}>
                         <TextField
@@ -747,14 +746,14 @@ const C_vacTVacucCreate = () => {
                 </Grid>
             </Grid>
         </Dialog>
-
+        
         {data.id_vacuna &&
             <>
-                {/* REPLACESON */}
+            {/* REPLACESON */}
             </>
         }
         {/* REPLACECOMPONENT */}
-
+        
 
     </>;
 }
