@@ -726,8 +726,11 @@ img {
 
 .Spa {
   
-  background-color: #FFB714;
+  background-color: #FFFF;
   border-radius: 20px;
+  padding: 1rem;
+  -webkit-box-shadow: 4px 7px 7px 1px rgba(0,0,0,0.26); 
+box-shadow: 4px 7px 7px 1px rgba(0,0,0,0.26);
 
 }
 
@@ -743,10 +746,7 @@ img {
 
 }
 
-.fotoServicios {
-  
-  padding: 0.7rem;
 
-}
+
 
 
