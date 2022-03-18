@@ -11,7 +11,7 @@ const mainTheme = createTheme(adaptV4Theme({
 		secondary: {
 			// main: '#6F502C '
 			// main: '#007575',
-			main: '#2E3436'
+			main: '#81623C'
 		},
 		default: {
 			main: '#61C05F'

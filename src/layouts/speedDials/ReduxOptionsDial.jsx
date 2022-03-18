@@ -25,6 +25,7 @@ import { primaryColor, secondaryColor } from '../../assets/css/js/mainTheme';
 import { useDispatch, useSelector } from 'react-redux';
 import router from 'next/router';
 import { AddCloseAction, AddOpenAction, cleanOnAction, deleteCloseAction, deleteOpenAction, editCloseAction, editOpenAction, saveOpenAction, searchOpenAction } from '../../redux/actions/MainAction';
+import { height } from '@mui/system';
 
 
 
@@ -52,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
 
 
     dialFab: {
-       
+      
         borderRadius: '40px !important',
         backgroundColor: '#FFF',
         border: 'solid 3px  #FFB716 !important',
@@ -62,7 +63,8 @@ const useStyles = makeStyles((theme) => ({
 
     },
     appIcon: {
-        width: "100px"
+        width: '100px',
+       
     },
     title: {
         height: '100%'
@@ -190,7 +192,7 @@ export default function ReduxOptionsDial({ title }) {
                         FabProps={{
                             style: {
                                 color: secondaryColor,
-                                backgroundColor: '#FFB714',
+                                backgroundColor: '#EFF0F2',
                                 margin:"0.6rem",
                                 borderRadius:"50px",
                                 width: 50,
@@ -214,10 +216,12 @@ const Dial = ({ classes, title }) =>
         <Grid item>
             <AppsIcon
                 color='secondary'
-                className={classes.AppsIcon}
+               /*  className={classes.appIcon} */
+               style={{ width: '30px' , height: '30px', marginBottom: '-5px'}}
+               
             />
         </Grid>
-        <Grid item>
+       {/*  <Grid item>
             <Typography
                 style={{ marginLeft: '5px' }}
                 color='secondary'
@@ -226,5 +230,5 @@ const Dial = ({ classes, title }) =>
             >
                 {title}
             </Typography>
-        </Grid>
+        </Grid> */}
     </Grid>
