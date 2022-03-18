@@ -14,6 +14,8 @@ import ListaTipoVacunasMain from "../../components/lists/T_vacunasT_tipo_vacunas
 
 import FotoVacuna from "../../assets/img/fotovacuna1.svg";
 import FotoVacuna2 from "../../assets/img/señora1.png";
+import FotoVacuna3 from "../../assets/img/señora2.png";
+import FotoVacuna4 from "../../assets/img/señora3.png";
 
 
 
@@ -463,24 +465,24 @@ const C_vacTVacucCreate = () => {
 
           {/* Aqui comoenza el contenedor principal */}
 
-          <Grid container xs={12} md={12}>
+          <Grid className="tituloVacuna" container xs={12} md={12}>
             <Grid item xs={1} md={1}>
               <img className="FotoVacuna" src={FotoVacuna} alt="feed" />
             </Grid>
             
-            <Grid item xs={5} md={5}>
-             <ReduxOptionsDial title="Vacunas" />
+            <Grid item xs={6} md={6}>
+             <ReduxOptionsDial /* title="Mis vacunas" */ />
             </Grid>
 
-            <Grid item xs={3} md={3}></Grid>
+            <Grid item xs={2} md={2}></Grid>
 
             <Grid item xs={1} md={1}>
               <img  src={FotoVacuna2} alt="feed" />
             </Grid><Grid item xs={1} md={1}>
-              <img  src={FotoVacuna} alt="feed" />
+              <img  src={FotoVacuna3} alt="feed" />
             </Grid>
             <Grid item xs={1} md={1}>
-              <img  src={FotoVacuna} alt="feed" />
+              <img  src={FotoVacuna4} alt="feed" />
             </Grid>
            
           </Grid>
