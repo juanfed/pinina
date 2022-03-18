@@ -717,36 +717,51 @@ img {
 }
 
 .opcionesSpa {
-  
   padding-left: 2rem;
   padding-right: 2rem;
   padding-top: 2rem;
-
 }
 
 .Spa {
-  
-  background-color: #FFFF;
+  background-color: #ffff;
   border-radius: 20px;
   padding: 1rem;
-  -webkit-box-shadow: 4px 7px 7px 1px rgba(0,0,0,0.26); 
-box-shadow: 4px 7px 7px 1px rgba(0,0,0,0.26);
-
+  -webkit-box-shadow: 4px 7px 7px 1px rgba(0, 0, 0, 0.26);
+  box-shadow: 4px 7px 7px 1px rgba(0, 0, 0, 0.26);
 }
 
 .TitulosPaginas {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   font-family: "Bebas-Neue";
   font-size: 20px;
   padding-bottom: 1rem;
-
-
 }
 
+.InformacionServicio {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 
+.tamaño {
+  width: 30px;
+}
 
+.ServicioTitulo1 {
+  font-family: "Bebas-Neue";
+  color: #8E5207;
+  font-size: 25px;
+}
 
+.ServicioTitulo2 {
+  font-family: "Montserrat";
+  font-size: 16px;
+}
+
+.ServicioTitulo3 {
+  font-family: "Montserrat";
+  font-size: 14px;
+}
 

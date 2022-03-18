@@ -80,14 +80,17 @@ export default function () {
   }, [userModules, user, userAdmin]);
 
   return (
-    <Grid container className="flex-container">
+    <Grid container  className="flex-container"> 
+      <Grid container className="caja c1"  xs={2} md={2}>
       <ContenedorIzquierdo />
+      </Grid>
       
-      <ContenedorCentral/>
+      
+      <ContenedorCentral />
 
+      <Grid container className="caja c4" xs={2} md={2}>
       <ContenedorDerecho />
-
-    
+      </Grid>
     </Grid>
   );
 }

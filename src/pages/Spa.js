@@ -31,12 +31,16 @@ export default function () {
   
   return (
     <Grid container className="flex-container">
+      <Grid container className="caja c1"  xs={2} md={2}>
       <ContenedorIzquierdo />
+      </Grid>
+     
       
       <ContenedorSpa/>
 
+      <Grid container className="caja c4" xs={2} md={2}>
       <ContenedorDerecho />
-
+      </Grid>
     
     </Grid>
   );

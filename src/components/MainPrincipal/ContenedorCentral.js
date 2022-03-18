@@ -19,89 +19,14 @@ import puntos from "../../assets/img/circulos.svg";
 import like from "../../assets/img/like.svg";
 import comentario from "../../assets/img/comentario.svg";
 import share from "../../assets/img/share.svg";
+import Historias from './Historias';
+
 
 const ContenedorCentral = () => {
   return (
     <Grid item xs={8} md={8}>
       {/*  Contenedor de arriba */}
-      <Grid item className="caja c2" xs={12} md={12}>
-        <img src={barraHistorias} alt="barra" />
-      </Grid>
-      {/*   Contenedor de las historias */}
-      <Grid
-        container
-        spacing={1}
-        xs={12}
-        md={12}
-        style={{
-          marginTop: "-7rem",
-        }}
-      >
-        {/*   1era historia */}
-        <Grid container xs={2} md={2}>
-          <Grid className="historiaSubida" item xs={12} md={12}>
-            <img src={historia1} alt="historia1" />
-          </Grid>
-          <Grid className="etiquetas" item xs={12} md={12}>
-            #Etiqueta
-          </Grid>
-        </Grid>
-
-        {/*   2da historia */}
-
-        <Grid container xs={2} md={2}>
-          <Grid className="historiaSubida" item xs={12} md={12}>
-            <img src={historia2} alt="historia2" />
-          </Grid>
-          <Grid className="etiquetas" item xs={12} md={12}>
-            #Etiqueta
-          </Grid>
-        </Grid>
-
-        {/*   3ra historia */}
-
-        <Grid container xs={2} md={2}>
-          <Grid className="historiaSubida" item xs={12} md={12}>
-            <img src={historia3} alt="historia3" />
-          </Grid>
-          <Grid className="etiquetas" item xs={12} md={12}>
-            #Etiqueta
-          </Grid>
-        </Grid>
-
-        {/*   4ta historia */}
-
-        <Grid container xs={2} md={2}>
-          <Grid className="historiaSubida" item xs={12} md={12}>
-            <img src={historia4} alt="historia4" />
-          </Grid>
-          <Grid className="etiquetas" item xs={12} md={12}>
-            #Etiqueta
-          </Grid>
-        </Grid>
-
-        {/*   5ta historia */}
-
-        <Grid container xs={2} md={2}>
-          <Grid className="historiaSubida" item xs={12} md={12}>
-            <img src={historia5} alt="historia5" />
-          </Grid>
-          <Grid className="etiquetas" item xs={12} md={12}>
-            #Etiqueta
-          </Grid>
-        </Grid>
-
-        {/*   6ta historia */}
-
-        <Grid container xs={2} md={2}>
-          <Grid className="historiaSubida" item xs={12} md={12}>
-            <img src={historia6} alt="historia6" />
-          </Grid>
-          <Grid className="etiquetas" item xs={12} md={12}>
-            #Etiqueta
-          </Grid>
-        </Grid>
-      </Grid>
+      <Historias />
 
       {/*  Contenedor de abajo */}
 

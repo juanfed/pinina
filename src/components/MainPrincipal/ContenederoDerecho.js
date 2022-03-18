@@ -14,7 +14,7 @@ import tendencia8 from "../../assets/img/tendencia8.svg";
 const ContenedorDerecho = () => {
   return (
     /* contenedor derecho */
-    <Grid item className="caja c4" xs={2} md={2}>
+    <Grid container xs={12} md={12}>
       <Grid container xs={12} md={12}>
         {/* menu perfil y notidicaciones  */}
         <Grid container xs={12} md={12}>

@@ -49,7 +49,7 @@ const ContenedorIzquierdo = () => {
  
 
   return (
-    <Grid item className="caja c1" xs={2} md={2}>
+    <Grid container xs={12} md={12}>
       <Grid item xs={12} md={12}>
         <img className="logoHamburguesa" src={imagenLogo} alt="logo-menu" />
       </Grid>

@@ -26,6 +26,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import router from 'next/router';
 import { AddCloseAction, AddOpenAction, cleanOnAction, deleteCloseAction, deleteOpenAction, editCloseAction, editOpenAction, saveOpenAction, searchOpenAction } from '../../redux/actions/MainAction';
 
+import VacunasDial from './VacunasDial'
+
 const useStyles = makeStyles((theme) => ({
     speedDial: {
         top: theme.spacing(1),
@@ -159,6 +161,8 @@ export default function ReduxOptionsDial({ title }) {
 
     return (
         <>
+
+        
             <SpeedDial
                 direction='right'
                 ariaLabel="Opciones"
