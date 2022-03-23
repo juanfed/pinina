@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="74" height="74" viewBox="0 0 74 74">
+  <defs>
+    <filter id="Trazado_1443" x="0" y="0" width="74" height="74" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="9" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Componente_100_6" data-name="Componente 100 – 6" transform="translate(6)">
+    <g transform="matrix(1, 0, 0, 1, -6, 0)" filter="url(#Trazado_1443)">
+      <path id="Trazado_1443-2" data-name="Trazado 1443" d="M28,0A28,28,0,1,1,0,28,28,28,0,0,1,28,0Z" transform="translate(6)" fill="#ffb714"/>
+    </g>
+    <g id="Grupo_2013" data-name="Grupo 2013" transform="translate(-288.004 -19.293)">
+      <rect id="Rectángulo_677" data-name="Rectángulo 677" width="29" height="5" rx="2.5" transform="translate(302.004 38.294)" fill="#8e5207"/>
+      <rect id="Rectángulo_678" data-name="Rectángulo 678" width="29" height="5" rx="2.5" transform="translate(302.004 45.294)" fill="#8e5207"/>
+      <rect id="Rectángulo_679" data-name="Rectángulo 679" width="29" height="5" rx="2.5" transform="translate(302.004 52.294)" fill="#8e5207"/>
+    </g>
+  </g>
+</svg>
