@@ -462,12 +462,13 @@ const C_vacTVacucCreate = () => {
 
         <Grid container className="caja c1" xs={8} md={8}>
           <Historias />
+          
 
           {/* Aqui comoenza el contenedor principal */}
 
           <Grid className="tituloVacuna" container xs={12} md={12}>
             <Grid item xs={1} md={1}>
-              <img className="FotoVacuna" src={FotoVacuna} alt="feed" />
+              <img className="FotoDueños" src={FotoVacuna} alt="feed" />
             </Grid>
             
             <Grid item xs={6} md={6}>
@@ -477,12 +478,12 @@ const C_vacTVacucCreate = () => {
             <Grid item xs={2} md={2}></Grid>
 
             <Grid item xs={1} md={1}>
-              <img  src={FotoVacuna2} alt="feed" />
+              <img className="FotoDueños" src={FotoVacuna2} alt="feed" />
             </Grid><Grid item xs={1} md={1}>
-              <img  src={FotoVacuna3} alt="feed" />
+              <img className="FotoDueños" src={FotoVacuna3} alt="feed" />
             </Grid>
             <Grid item xs={1} md={1}>
-              <img  src={FotoVacuna4} alt="feed" />
+              <img className="FotoDueños" src={FotoVacuna4} alt="feed" />
             </Grid>
            
           </Grid>
@@ -558,9 +559,10 @@ const C_vacTVacucCreate = () => {
           <Grid
             container
             justifyContent="center"
-            className={classes.tableContainer}
+            className={classes.tableContainer} 
           >
-            <Grid item xs={12} md={10}>
+            <Grid className="TablaGeneral" item xs={12} md={12}>
+              
               <WhiteTable
                 tableData={tableData}
                 rows={tableRows}
@@ -687,6 +689,7 @@ const C_vacTVacucCreate = () => {
 
                 <Grid item md={6} sm={12} xs={12}>
                   <TextField
+                  
                     fullWidth
                     required={false}
                     type="text"

@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
 
 
     dialFab: {
-      
+       
         borderRadius: '40px !important',
         backgroundColor: '#FFF',
         border: 'solid 3px  #FFB716 !important',
@@ -192,7 +192,7 @@ export default function ReduxOptionsDial({ title }) {
                         FabProps={{
                             style: {
                                 color: secondaryColor,
-                                backgroundColor: '#EFF0F2',
+                                backgroundColor: '#FFB714',
                                 margin:"0.6rem",
                                 borderRadius:"50px",
                                 width: 50,
@@ -217,7 +217,7 @@ const Dial = ({ classes, title }) =>
             <AppsIcon
                 color='secondary'
                /*  className={classes.appIcon} */
-               style={{ width: '30px' , height: '30px', marginBottom: '-5px'}}
+               style={{ width: '30px' , height: '30px',  marginBottom: '-5px'}}
                
             />
         </Grid>

@@ -36,14 +36,14 @@ import { useSnackbar } from "notistack";
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
-        backgroundColor: '#FFF7C9',
-        borderTop: 'solid 1px   #ffeb3b',
-        borderBottom: 'solid 1px   #ffeb3b'
+        backgroundColor: '#FFB714',
+        /* borderTop: 'solid 1px   #ffeb3b',
+        borderBottom: 'solid 1px   #ffeb3b' */
     },
     body: {
         fontSize: 14,
-        borderTop: 'solid 1px  #ffeb3b',
-        borderBottom: 'solid 1px  #ffeb3b',
+        /* borderTop: 'solid 1px  #ffeb3b',
+        borderBottom: 'solid 1px  #ffeb3b', */
         /*  borderLeft: 'solid 1px  #ffeb3b' */
 
     },
@@ -52,14 +52,14 @@ const StyledTableCell = withStyles((theme) => ({
 const StyledTableRow = withStyles((theme) => ({
     root: {
         '&:nth-of-type(even)': {
-            backgroundColor: '#FFF7C9',
+            backgroundColor: '#FFFFFF',
         },
     },
 }))(TableRow);
 
 const useStyles = makeStyles({
     main: {
-        border: 'solid 3px  #ffeb3b',
+        /* border: 'solid 3px  #ffeb3b', */
         borderRadius: '20px'
     },
     table: {
@@ -172,6 +172,12 @@ export default function WhiteTable(props) {
                         {rows.map(i => (
                             <StyledTableCell key={i.id}>
                                 <Typography
+                                style={{
+                                    fontSize: "16px",
+                                  
+                                    color: "#8E5207",
+                                  }}
+                                
                                     className={classes.typography}
                                     align='center'
                                     variant='body1'

@@ -766,10 +766,24 @@ img {
 }
 
 .tituloVacuna {
-  padding: 2rem;
+  padding: 2rem 2rem 0 2rem
+
 }
 
 .dialPrueba {
   background-color: #ffb714;
 }
 
+.TablaGeneral {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.encabezadoTabla{
+ background-color: #ffb714;
+}
+
+.FotoDueños{
+  width: 100%;
+  height: auto;
+ }

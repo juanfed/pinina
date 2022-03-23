@@ -34,7 +34,7 @@ const Historias = () => {
         xs={12}
         md={12}
         style={{
-          marginTop: "-7rem",
+          marginTop: "-6.5rem",
         }}
       >
         {/*   1era historia */}
