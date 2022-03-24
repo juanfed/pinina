@@ -17,8 +17,6 @@ import FotoVacuna2 from "../../assets/img/señora1.png";
 import FotoVacuna3 from "../../assets/img/señora2.png";
 import FotoVacuna4 from "../../assets/img/señora3.png";
 
-
-
 // Actions
 import {
   AddCloseAction,
@@ -53,8 +51,11 @@ import SearchIcon from "@mui/icons-material/Search";
 import WhiteTable from "../../components/tables/WhiteTable";
 import { primaryColor } from "../../assets/css/js/mainTheme";
 
-import ContenedorIzquierdo from "../../components/MainPrincipal/ContenedorIzquierdo";
+import ContenedorIzquierdoAdmin from "../../components/interfazAdministrativa/ContenedorIzquierdoAdmin";
+import ContenedorDerechoAdmin from "../../components/interfazAdministrativa/ContenedorDerechoAdmin";
 import ContenedorDerecho from "../../components/MainPrincipal/ContenederoDerecho";
+import FloatMenu from "../../components/floatMenu/index.jsx";
+
 
 const C_vacTVacucCreate = () => {
   // Dispatch Instance
@@ -453,16 +454,29 @@ const C_vacTVacucCreate = () => {
     dispatch(searchCloseAction());
   };
 
+  const buttons = [
+    { id: 0, text: "prueba", className: "icon-1", icon: <img src="/img/icon-1.svg" width="100%" alt="" /> },
+    { id: 1, text: "prueba", className: "icon-2", icon: <img src="/img/icon-2.svg" width="100%" alt="" /> },
+    { id: 1, text: "prueba", className: "icon-3", icon: <img src="/img/icon-3.svg" width="100%" alt="" /> },
+    { id: 1, text: "prueba", className: "icon-4", icon: <img src="/img/icon-4.svg" width="100%" alt="" /> },
+]
+
   return (
     <>
       <Grid container className="flex-container">
         <Grid container className="caja c1" xs={2} md={2}>
-          <ContenedorIzquierdo />
+          <ContenedorIzquierdoAdmin />
+
+          < Grid item className="container-floatmenu" xs={12} md={12} style={{
+                          zIndex:"1",
+                        }}>
+            <FloatMenu buttons={buttons}  />
+            </Grid>
         </Grid>
 
         <Grid container className="caja c1" xs={8} md={8}>
-          <Historias />
-          
+        
+         
 
           {/* Aqui comoenza el contenedor principal */}
 
@@ -470,22 +484,22 @@ const C_vacTVacucCreate = () => {
             <Grid item xs={1} md={1}>
               <img className="FotoDueños" src={FotoVacuna} alt="feed" />
             </Grid>
-            
+
             <Grid item xs={6} md={6}>
-             <ReduxOptionsDial /* title="Mis vacunas" */ />
+              <ReduxOptionsDial /* title="Mis vacunas" */ />
             </Grid>
 
             <Grid item xs={2} md={2}></Grid>
 
             <Grid item xs={1} md={1}>
               <img className="FotoDueños" src={FotoVacuna2} alt="feed" />
-            </Grid><Grid item xs={1} md={1}>
+            </Grid>
+            <Grid item xs={1} md={1}>
               <img className="FotoDueños" src={FotoVacuna3} alt="feed" />
             </Grid>
             <Grid item xs={1} md={1}>
               <img className="FotoDueños" src={FotoVacuna4} alt="feed" />
             </Grid>
-           
           </Grid>
           <Grid container justifyContent="center">
             <Grid
@@ -559,10 +573,9 @@ const C_vacTVacucCreate = () => {
           <Grid
             container
             justifyContent="center"
-            className={classes.tableContainer} 
+            className={classes.tableContainer}
           >
             <Grid className="TablaGeneral" item xs={12} md={12}>
-              
               <WhiteTable
                 tableData={tableData}
                 rows={tableRows}
@@ -689,7 +702,6 @@ const C_vacTVacucCreate = () => {
 
                 <Grid item md={6} sm={12} xs={12}>
                   <TextField
-                  
                     fullWidth
                     required={false}
                     type="text"
@@ -807,7 +819,7 @@ const C_vacTVacucCreate = () => {
         </Grid>
 
         <Grid container className="caja c1" xs={2} md={2}>
-          <ContenedorDerecho />
+          <ContenedorDerechoAdmin />
         </Grid>
       </Grid>
     </>

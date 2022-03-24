@@ -23,12 +23,11 @@ const FloatMenu = ({ buttons }) => {
                 <section className={ active ? "hidden-circles" : "intern-circles" }>
                     <img src="/img/circle-1.svg" className="circle-1" width="100%" alt="" />
                     <img src="/img/circle-2.svg" className="circle-2" width="100%" alt="" />
-                    <img src="/img/circle-3.svg" className="circle-3" width="100%" alt="" />
-                    <img src="/img/circle-4.svg" className="circle-4" width="100%" alt="" />
+                    <img src="/img/circuloexterior.svg" className="circle-3" width="100%" alt="" />
                     <img src="/img/circle-5.svg" className="circle-5" width="100%" alt="" />
                 </section>
                 <img 
-                    src="/img/burger.svg" 
+                    src="/img/huellaHumano.svg" 
                     onClick={ () => setActive(!active) }
                     className={ active ? "active-burguer-menu" : "burger-menu" } 
                     width="100%" 
