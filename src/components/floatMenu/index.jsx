@@ -27,7 +27,7 @@ const FloatMenu = ({ buttons }) => {
                     <img src="/img/circle-5.svg" className="circle-5" width="100%" alt="" />
                 </section>
                 <img 
-                    src="/img/huellaHumano.svg" 
+                    src="/img/botonHuella.svg" 
                     onClick={ () => setActive(!active) }
                     className={ active ? "active-burguer-menu" : "burger-menu" } 
                     width="100%" 

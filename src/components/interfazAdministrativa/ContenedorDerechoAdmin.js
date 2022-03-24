@@ -1,14 +1,11 @@
 import React, { useState } from "react";
-import {
-  Grid,
-  Button,
-} from "@mui/material";
+import { Grid, Button } from "@mui/material";
 
 import notificacion from "../../assets/img/Notificación.svg";
 import perfilMenu from "../../assets/img/perfilderecho.svg";
 
 import iconTitle from "../../assets/img/iconTitle.svg";
-
+import icon2Title from "../../assets/img/consultaLogo.svg";
 
 const ContenedorDerechoAdmin = () => {
   return (
@@ -28,6 +25,8 @@ const ContenedorDerechoAdmin = () => {
       </Grid>
       <Grid item xs={12} md={12}></Grid>
 
+      {/* aqui comienza 1 recordatorio */}
+
       <Grid className="RecordatoriosCont" container xs={12} md={12}>
         <Grid className="Recordatorio" container xs={12} md={12}>
           <Grid className="RecordatorioNaranja" container xs={12} md={12}>
@@ -40,43 +39,105 @@ const ContenedorDerechoAdmin = () => {
             </Grid>
           </Grid>
 
-          <Grid className="TituloNotificación" item xs={10} md={10}>
-          Tetravalente
-            </Grid>
+          <Grid className="nombreNotificación" item xs={12} md={12}>
+            Tetravalente
+          </Grid>
 
-            <Grid className="TituloNotificación" item xs={10} md={10}>
+          <Grid className="fechaNotificación" item xs={12} md={12}>
             22-03-2022
+          </Grid>
+
+          <Grid container xs={12} md={12}>
+            <Grid className="BotonNotificación" item xs={6} md={6}>
+              <Button
+                className="BotonSombras"
+                style={{
+                  background: "#FFB713",
+                  fontFamily: "Montserrat",
+                  color: "#8E5207",
+                }}
+                fullWidth
+              >
+                Posponer
+              </Button>
             </Grid>
 
-            <Grid  container xs={12} md={12}>
-            <Grid  item xs={6} md={6}>
-            <Button
-              style={{
-                background: "#FFB713",
-                fontFamily: "Montserrat",
-              }}
-              fullWidth
-            >
-              Posponer
-            </Button>
+            <Grid className="BotonNotificación" item xs={6} md={6}>
+              <Button
+                className="BotonSombras"
+                style={{
+                  background: "#FFFF",
+                  fontFamily: "Montserrat",
+                  color: "#8E5207",
+                }}
+                fullWidth
+              >
+                Cancelar
+              </Button>
             </Grid>
-
-            <Grid  item xs={6} md={6}>
-            <Button
-              style={{
-                background: "#F0F0F0",
-      
-                fontFamily: "Montserrat",
-              }}
-              fullWidth
-            >
-              Cancelar
-            </Button>
-            </Grid>
-            </Grid>
-
+          </Grid>
         </Grid>
       </Grid>
+
+      {/* aqui termina 1 recordatorio */}
+
+       {/* aqui comienza 2do recordatorio */}
+
+       <Grid className="RecordatoriosCont" container xs={12} md={12}>
+        <Grid className="Recordatorio" container xs={12} md={12}>
+          <Grid className="RecordatorioNaranja" container xs={12} md={12}>
+            <Grid className="TituloNotificación" item xs={10} md={10}>
+              Próxima cita médica
+            </Grid>
+
+            <Grid className="icon2Title" item xs={2} md={2}>
+              <img src={icon2Title} alt="iconTitle" />
+            </Grid>
+          </Grid>
+
+          <Grid className="nombreNotificación" item xs={12} md={12}>
+            Consulta general
+          </Grid>
+
+          <Grid className="fechaNotificación" item xs={12} md={12}>
+            28-03-2023
+          </Grid>
+
+          <Grid container xs={12} md={12}>
+            <Grid className="BotonNotificación" item xs={6} md={6}>
+              <Button
+                className="BotonSombras"
+                style={{
+                  background: "#FFB713",
+                  fontFamily: "Montserrat",
+                  color: "#8E5207",
+                }}
+                fullWidth
+              >
+                Posponer
+              </Button>
+            </Grid>
+
+            <Grid className="BotonNotificación" item xs={6} md={6}>
+              <Button
+                className="BotonSombras"
+                style={{
+                  background: "#FFFF",
+                  fontFamily: "Montserrat",
+                  color: "#8E5207",
+                }}
+                fullWidth
+              >
+                Cancelar
+              </Button>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+
+      {/* aqui termina 2do recordatorio */}
+      
+
     </Grid>
   );
 };
