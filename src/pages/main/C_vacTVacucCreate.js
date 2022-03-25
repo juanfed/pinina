@@ -16,6 +16,10 @@ import FotoVacuna from "../../assets/img/fotovacuna1.svg";
 import FotoVacuna2 from "../../assets/img/señora1.png";
 import FotoVacuna3 from "../../assets/img/señora2.png";
 import FotoVacuna4 from "../../assets/img/señora3.png";
+import Image from "../../assets/img/botonAceptar.svg";
+import Image2 from "../../assets/img/botonCancelar.svg";
+import Image3 from "../../assets/img/botonCancelar2.svg";
+import Image4 from "../../assets/img/botonAceptar2.svg";
 
 // Actions
 import {
@@ -55,7 +59,6 @@ import ContenedorIzquierdoAdmin from "../../components/interfazAdministrativa/Co
 import ContenedorDerechoAdmin from "../../components/interfazAdministrativa/ContenedorDerechoAdmin";
 import ContenedorDerecho from "../../components/MainPrincipal/ContenederoDerecho";
 import FloatMenu from "../../components/floatMenu/index.jsx";
-
 
 const C_vacTVacucCreate = () => {
   // Dispatch Instance
@@ -455,11 +458,31 @@ const C_vacTVacucCreate = () => {
   };
 
   const buttons = [
-    { id: 0, text: "prueba", className: "icon-1", icon: <img src="/img/icon-1.svg" width="100%" alt="" /> },
-    { id: 1, text: "prueba", className: "icon-2", icon: <img src="/img/icon-2.svg" width="100%" alt="" /> },
-    { id: 1, text: "prueba", className: "icon-3", icon: <img src="/img/icon-3.svg" width="100%" alt="" /> },
-    { id: 1, text: "prueba", className: "icon-4", icon: <img src="/img/icon-4.svg" width="100%" alt="" /> },
-]
+    {
+      id: 0,
+      text: "prueba",
+      className: "icon-1",
+      icon: <img src="/img/icon-1.svg" width="100%" alt="" />,
+    },
+    {
+      id: 1,
+      text: "prueba",
+      className: "icon-2",
+      icon: <img src="/img/icon-2.svg" width="100%" alt="" />,
+    },
+    {
+      id: 1,
+      text: "prueba",
+      className: "icon-3",
+      icon: <img src="/img/icon-3.svg" width="100%" alt="" />,
+    },
+    {
+      id: 1,
+      text: "prueba",
+      className: "icon-4",
+      icon: <img src="/img/icon-4.svg" width="100%" alt="" />,
+    },
+  ];
 
   return (
     <>
@@ -467,17 +490,20 @@ const C_vacTVacucCreate = () => {
         <Grid container className="caja c1" xs={2} md={2}>
           <ContenedorIzquierdoAdmin />
 
-          < Grid item className="container-floatmenu" xs={12} md={12} style={{
-                          zIndex:"1",
-                        }}>
-            <FloatMenu buttons={buttons}  />
-            </Grid>
+          <Grid
+            item
+            className="container-floatmenu"
+            xs={12}
+            md={12}
+            style={{
+              zIndex: "1",
+            }}
+          >
+            <FloatMenu buttons={buttons} />
+          </Grid>
         </Grid>
 
         <Grid container className="caja c1" xs={8} md={8}>
-        
-         
-
           {/* Aqui comoenza el contenedor principal */}
 
           <Grid className="tituloVacuna" container xs={12} md={12}>
@@ -585,7 +611,7 @@ const C_vacTVacucCreate = () => {
               />
             </Grid>
           </Grid>
-          <Dialog open={modalDelete} onClose={handleClose}>
+          <Dialog open={modalDelete} onClose={handleClose} >
             <Grid
               container
               justifyContent="center"
@@ -606,11 +632,14 @@ const C_vacTVacucCreate = () => {
                   </DialogContentText>
                 </DialogContent>
               </Grid>
-              <Grid item>
+              <Grid item >
                 <DialogActions>
                   <Button
                     onClick={handleClose}
-                    color="primary"
+                    style={{
+                      color: "#8E5207",
+                      backgroundImage: `url(${Image4})`,
+                    }}
                     variant="contained"
                     fullWidth
                   >
@@ -618,7 +647,11 @@ const C_vacTVacucCreate = () => {
                   </Button>
                   <Button
                     onClick={() => deleteElement()}
-                    color="primary"
+                    style={{
+                      color: "#FFB714",
+                  
+                      backgroundImage: `url(${Image3})`,
+                    }}
                     autoFocus
                     variant="contained"
                     fullWidth
@@ -772,37 +805,30 @@ const C_vacTVacucCreate = () => {
                       paddingTop: "20px",
                     }}
                   >
-                    <Grid item xs={3}>
+                    <Grid item xs={6}>
                       <Button
-                        color="primary"
                         variant="contained"
                         fullWidth
-                        startIcon={
-                          <SaveIcon
-                            style={{
-                              height: 25,
-                              width: 25,
-                            }}
-                          />
-                        }
+                        style={{
+                          color: "#8E5207",
+                          backgroundImage: `url(${Image})`,
+                        }}
+                        
                         onClick={validateFields}
                       >
                         <Typography align="center">Guardar</Typography>
                       </Button>
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item xs={6}>
                       <Button
-                        color="primary"
+                        style={{
+                          color: "#FFB714",
+                      
+                          backgroundImage: `url(${Image2})`,
+                        }}
                         variant="contained"
                         onClick={handleCloseModal}
-                        startIcon={
-                          <CloseIcon
-                            style={{
-                              height: 25,
-                              width: 25,
-                            }}
-                          />
-                        }
+                        
                         fullWidth
                       >
                         <Typography align="center">Cancelar</Typography>
