@@ -834,9 +834,16 @@ img {
 
 @keyframes animateBg
   {
-0%{filter:hue-rotate(0deg); }
+    0%{filter:hue-rotate(250deg); }
   
-    100%{filter:hue-rotate(360deg); }
+    100%{filter:hue-rotate(300deg); }
+      }
+
+      @keyframes animateBg2
+  {
+0%{filter:hue-rotate(260deg); }
+  
+    100%{filter:hue-rotate(300deg); }
       }
 
 
@@ -845,7 +852,7 @@ img {
   width: 400px;
   top: 7%;
   left: -30%;
-  opacity: 0.8;
+  opacity: 0.7;
   animation: animateBg 5s linear infinite;
   
 }
@@ -856,13 +863,14 @@ img {
     100%{transform: scale(0); }
       }
 
+  
 
 .circle-7 {
   position: absolute;
   width: 400px;
   top: 7%;
   left: -30%;
-  opacity: 0.8;
+  opacity: 0.9;
   animation: animate 2s linear infinite;
   
 }
@@ -883,6 +891,7 @@ img {
   height: 60px;
   cursor: pointer;
   transition: all 0.3s ease;
+  z-index: 100;
 }
 
 .burger-menu:hover {
@@ -897,6 +906,7 @@ img {
   height: 60px;
   cursor: pointer;
   transition: all 0.3s ease;
+  z-index: 100;
 }
 
 .active-burguer-menu:hover {
@@ -914,6 +924,7 @@ img {
   transition: all 0.3s ease;
 }
 
+
 .icon-1 {
   position: absolute;
   top: 10px;
@@ -923,6 +934,18 @@ img {
   transition: all 0.3s ease;
 }
 
+.icon-1:hover {
+  position: absolute;
+  top: 0px;
+  left: -10px;
+  width: 85px;
+  height: 85px;
+  animation: rotation-2 5s infinite linear;
+ 
+}
+
+
+
 .icon-2 {
   position: absolute;
   top: 40px;
@@ -930,6 +953,16 @@ img {
   width: 75px;
   height: 75px;
   transition: all 0.3s ease;
+}
+
+.icon-2:hover {
+  position: absolute;
+  top: 40px;
+  left: 60px;
+  width: 85px;
+  height: 85px;
+  transition: all 0.3s ease;
+  animation: rotation-2 5s infinite linear;
 }
 
 .icon-3 {
@@ -941,6 +974,26 @@ img {
   transition: all 0.3s ease;
 }
 
+.icon-3:hover {
+  position: absolute;
+  top: 40px;
+  left: 120px;
+  width: 85px;
+  height: 85px;
+  transition: all 0.3s ease;
+  animation: rotation-2 5s infinite linear;
+}
+
+.icon-4:hover {
+  position: absolute;
+  top: 10px;
+  left: 175px;
+  width: 85px;
+  height: 85px;
+  transition: all 0.3s ease;
+  animation: rotation-2 5s infinite linear;
+}
+
 .icon-4 {
   position: absolute;
   top: 10px;
@@ -950,6 +1003,15 @@ img {
   transition: all 0.3s ease;
 }
 
+.icon-5:hover {
+  position: absolute;
+  top: -260px;
+  left: 5px;
+  width: 85px;
+  height: 85px;
+  transition: all 0.3s ease;
+  animation: rotation-2 5s infinite linear;
+}
 .icon-5 {
   position: absolute;
   top: -260px;
@@ -959,6 +1021,16 @@ img {
   transition: all 0.3s ease;
 }
 
+
+.icon-6:hover {
+  position: absolute;
+  top: -290px;
+  left: 60px;
+  width: 85px;
+  height: 85px;
+  transition: all 0.3s ease;
+  animation: rotation-2 5s infinite linear;
+}
 .icon-6 {
   position: absolute;
   top: -290px;
@@ -966,6 +1038,16 @@ img {
   width: 75px;
   height: 75px;
   transition: all 0.3s ease;
+}
+
+.icon-7:hover{
+  position: absolute;
+  top: -290px;
+  left: 120px;
+  width: 85px;
+  height: 85px;
+  transition: all 0.3s ease;
+  animation: rotation-2 5s infinite linear;
 }
 
 .icon-7 {
@@ -984,6 +1066,18 @@ img {
   width: 75px;
   height: 75px;
   transition: all 0.3s ease;
+  
+}
+
+
+.icon-8:hover {
+  position: absolute;
+  top: -260px;
+  left: 175px;
+  width: 85px;
+  height: 85px;
+  transition: all 0.3s ease;
+  animation: rotation-2 5s infinite linear;
 }
 
 @keyframes rotation-1 {
@@ -1003,6 +1097,163 @@ img {
     transform: rotate(-360deg);
   }
 }
+
+@keyframes animate
+{
+  0%{transform: scale(1); }
+
+  100%{transform: scale(0); }
+    }
+
+.loader {
+  position: absolute;
+  top: 46%;
+  left: 41%;
+  width: 50px;
+height: 50px;
+z-index: 90;
+}
+
+.dot { position: absolute;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: animateBg2 5s linear infinite;}
+
+.dot1 { 
+  transform: rotate(calc(18deg));}
+
+  .dot2 { 
+    transform: rotate(calc(36deg));}
+    .dot3 { 
+      transform: rotate(calc(54deg));}
+    
+      .dot4 { 
+        transform: rotate(calc(72deg));}
+        .dot5 {
+          transform: rotate(calc(90deg));}
+    
+            .dot6 {
+              transform: rotate(calc(108deg));}
+              .dot7 {
+                transform: rotate(calc(126deg));}
+              
+                .dot8 {
+                  transform: rotate(calc(144deg));}
+                  .dot9 {
+                    transform: rotate(calc(162deg));}
+                  
+                    .dot10 {
+                      transform: rotate(calc(180deg));}
+                      .dot11 {
+                        transform: rotate(calc(198deg));}
+                      
+                        .dot12 {
+                          transform: rotate(calc(216deg));}
+                          .dot13 {
+                            transform: rotate(calc(234deg));}
+                            .dot14 {
+                              transform: rotate(calc(252deg));}
+                            
+                              .dot15 {
+                                transform: rotate(calc(270deg));}
+                                .dot16 {
+                                  transform: rotate(calc(288deg));}
+                                
+                                  .dot17 {
+                                    transform: rotate(calc(306deg));}
+                                    .dot18 {
+                                      transform: rotate(calc(324deg));}
+                                    
+                                      .dot19 {
+                                        transform: rotate(calc(342deg));}
+                                        .dot20 {
+                                          transform: rotate(calc(360deg));}
+
+
+.dot::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #02FE0B;
+  box-shadow: 0 0 10px #02FE0B,
+  0 0 20px #02FE0B,
+   0 0 40px #02FE0B,
+   0 0 60px #02FE0B,
+  0 0 80px #02FE0B,
+   0 0 100px #02FE0B;
+
+   animation: animate 2s linear infinite;
+  
+
+}
+
+.dot1::before {
+  animation-delay: calc(0.1s);}
+
+  .dot2::before {
+    animation-delay: calc(0.2s);}
+
+    .dot3::before {
+      animation-delay: calc(0.3s);}
+    
+      .dot4::before {
+        animation-delay: calc(0.4s);}
+
+        .dot5::before {
+          animation-delay: calc(0.5s);}
+        
+          .dot6::before {
+            animation-delay: calc(0.6s);}
+            .dot7::before {
+              animation-delay: calc(0.7s);}
+            
+              .dot8::before {
+                animation-delay: calc(0.8s);}
+            
+                .dot9::before {
+                  animation-delay: calc(0.9s);}
+                
+                  .dot10::before {
+                    animation-delay: calc(1s);}
+            
+                    .dot11::before {
+                      animation-delay: calc(1.1s);}
+                    
+                      .dot12::before {
+                        animation-delay: calc(1.2s);}
+
+                        .dot13::before {
+                          animation-delay: calc(1.3s);}
+                        
+                          .dot14::before {
+                            animation-delay: calc(1.4s);}
+                        
+                            .dot15::before {
+                              animation-delay: calc(1.5s);}
+                            
+                              .dot16::before {
+                                animation-delay: calc(1.6s);}
+                        
+                                .dot17::before {
+                                  animation-delay: calc(1.7s);}
+                                
+                                  .dot18::before {
+                                    animation-delay: calc(1.8s);}
+                                    .dot19::before {
+                                      animation-delay: calc(1.9s);}
+                                    
+                                      .dot20::before {
+                                        animation-delay: calc(2s);}
+                                    
+
+
 
 /* FLOAT MENU STYLES END */
 
