@@ -21,10 +21,15 @@ const FloatMenu = ({ buttons }) => {
         <Draggable onDrag={ (e, data) => handleDrag(e, data) }>
             <main className="floatmenu">
                 <section className={ active ? "hidden-circles" : "intern-circles" }>
+               
+                <img src="/img/circuloFondo.svg" className="circle-6" width="100%" alt="" />
                     <img src="/img/circle-1.svg" className="circle-1" width="100%" alt="" />
                     <img src="/img/circle-2.svg" className="circle-2" width="100%" alt="" />
                     <img src="/img/circuloexterior.svg" className="circle-3" width="100%" alt="" />
                     <img src="/img/circle-5.svg" className="circle-5" width="100%" alt="" />
+                    <img src="/img/circle-7.svg" className="circle-8" width="100%" alt="" />
+                    <img src="/img/profundidad.svg" className="circle-7" width="100%" alt="" /> 
+                
                 </section>
                 <img 
                     src="/img/botonHuella.svg" 
