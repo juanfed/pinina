@@ -11,27 +11,27 @@ const mainTheme = createTheme(adaptV4Theme({
 		secondary: {
 			// main: '#6F502C '
 			// main: '#007575',
-			main: '#81623C'
+			main: '#8E5207'
 		},
 		default: {
-			main: '#61C05F'
+			main: '#8E5207'
 		}
 	},
 	palette4: {
 		primary: {
-			main: '#F5ED68'
+			main: '#FFF15A'
 		},
 		secondary: {
 			// main: '#081348' 
-			main: '#472B13'
+			main: '#8E5207'
 		}
 	},
 	palette5: {
 		primary: {
-			main: '#C5A886'
+			main: '#FFF15A'
 		},
 		secondary: {
-			main: '#31190C'
+			main: '#8E5207'
 		}
 	}
 }));

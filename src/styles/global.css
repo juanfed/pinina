@@ -780,7 +780,6 @@ img {
   max-width: 250px;
   max-height: 30vh;
   transition: all 0.3s ease;
-  
 }
 
 .intern-circles {
@@ -832,20 +831,25 @@ img {
   animation: animate 3s linear infinite;
 }
 
-@keyframes animateBg
-  {
-    0%{filter:hue-rotate(250deg); }
-  
-    100%{filter:hue-rotate(300deg); }
-      }
+@keyframes animateBg {
+  0% {
+    filter: hue-rotate(250deg);
+  }
 
-      @keyframes animateBg2
-  {
-0%{filter:hue-rotate(260deg); }
-  
-    100%{filter:hue-rotate(300deg); }
-      }
+  100% {
+    filter: hue-rotate(300deg);
+  }
+}
 
+@keyframes animateBg2 {
+  0% {
+    filter: hue-rotate(260deg);
+  }
+
+  100% {
+    filter: hue-rotate(300deg);
+  }
+}
 
 .circle-6 {
   position: absolute;
@@ -854,16 +858,16 @@ img {
   left: -30%;
   opacity: 0.7;
   animation: animateBg 5s linear infinite;
-  
 }
-@keyframes animate
-  {
-    0%{transform: scale(1); }
-  
-    100%{transform: scale(0); }
-      }
+@keyframes animate {
+  0% {
+    transform: scale(1);
+  }
 
-  
+  100% {
+    transform: scale(0);
+  }
+}
 
 .circle-7 {
   position: absolute;
@@ -872,7 +876,6 @@ img {
   left: -30%;
   opacity: 0.9;
   animation: animate 2s linear infinite;
-  
 }
 
 /* .circle-6 {
@@ -924,7 +927,6 @@ img {
   transition: all 0.3s ease;
 }
 
-
 .icon-1 {
   position: absolute;
   top: 10px;
@@ -941,10 +943,7 @@ img {
   width: 85px;
   height: 85px;
   animation: rotation-2 5s infinite linear;
- 
 }
-
-
 
 .icon-2 {
   position: absolute;
@@ -1021,7 +1020,6 @@ img {
   transition: all 0.3s ease;
 }
 
-
 .icon-6:hover {
   position: absolute;
   top: -290px;
@@ -1040,7 +1038,7 @@ img {
   transition: all 0.3s ease;
 }
 
-.icon-7:hover{
+.icon-7:hover {
   position: absolute;
   top: -290px;
   left: 120px;
@@ -1066,9 +1064,7 @@ img {
   width: 75px;
   height: 75px;
   transition: all 0.3s ease;
-  
 }
-
 
 .icon-8:hover {
   position: absolute;
@@ -1098,162 +1094,197 @@ img {
   }
 }
 
-@keyframes animate
-{
-  0%{transform: scale(1); }
+@keyframes animate {
+  0% {
+    transform: scale(1);
+  }
 
-  100%{transform: scale(0); }
-    }
+  100% {
+    transform: scale(0);
+  }
+}
 
 .loader {
   position: absolute;
   top: 46%;
   left: 41%;
   width: 50px;
-height: 50px;
-z-index: 90;
+  height: 50px;
+  z-index: 90;
 }
 
-.dot { position: absolute;
+.dot {
+  position: absolute;
   opacity: 0.3;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  animation: animateBg2 5s linear infinite;}
+  animation: animateBg2 5s linear infinite;
+}
 
-.dot1 { 
-  transform: rotate(calc(18deg));}
+.dot1 {
+  transform: rotate(calc(18deg));
+}
 
-  .dot2 { 
-    transform: rotate(calc(36deg));}
-    .dot3 { 
-      transform: rotate(calc(54deg));}
-    
-      .dot4 { 
-        transform: rotate(calc(72deg));}
-        .dot5 {
-          transform: rotate(calc(90deg));}
-    
-            .dot6 {
-              transform: rotate(calc(108deg));}
-              .dot7 {
-                transform: rotate(calc(126deg));}
-              
-                .dot8 {
-                  transform: rotate(calc(144deg));}
-                  .dot9 {
-                    transform: rotate(calc(162deg));}
-                  
-                    .dot10 {
-                      transform: rotate(calc(180deg));}
-                      .dot11 {
-                        transform: rotate(calc(198deg));}
-                      
-                        .dot12 {
-                          transform: rotate(calc(216deg));}
-                          .dot13 {
-                            transform: rotate(calc(234deg));}
-                            .dot14 {
-                              transform: rotate(calc(252deg));}
-                            
-                              .dot15 {
-                                transform: rotate(calc(270deg));}
-                                .dot16 {
-                                  transform: rotate(calc(288deg));}
-                                
-                                  .dot17 {
-                                    transform: rotate(calc(306deg));}
-                                    .dot18 {
-                                      transform: rotate(calc(324deg));}
-                                    
-                                      .dot19 {
-                                        transform: rotate(calc(342deg));}
-                                        .dot20 {
-                                          transform: rotate(calc(360deg));}
+.dot2 {
+  transform: rotate(calc(36deg));
+}
+.dot3 {
+  transform: rotate(calc(54deg));
+}
 
+.dot4 {
+  transform: rotate(calc(72deg));
+}
+.dot5 {
+  transform: rotate(calc(90deg));
+}
+
+.dot6 {
+  transform: rotate(calc(108deg));
+}
+.dot7 {
+  transform: rotate(calc(126deg));
+}
+
+.dot8 {
+  transform: rotate(calc(144deg));
+}
+.dot9 {
+  transform: rotate(calc(162deg));
+}
+
+.dot10 {
+  transform: rotate(calc(180deg));
+}
+.dot11 {
+  transform: rotate(calc(198deg));
+}
+
+.dot12 {
+  transform: rotate(calc(216deg));
+}
+.dot13 {
+  transform: rotate(calc(234deg));
+}
+.dot14 {
+  transform: rotate(calc(252deg));
+}
+
+.dot15 {
+  transform: rotate(calc(270deg));
+}
+.dot16 {
+  transform: rotate(calc(288deg));
+}
+
+.dot17 {
+  transform: rotate(calc(306deg));
+}
+.dot18 {
+  transform: rotate(calc(324deg));
+}
+
+.dot19 {
+  transform: rotate(calc(342deg));
+}
+.dot20 {
+  transform: rotate(calc(360deg));
+}
 
 .dot::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background: #02FE0B;
-  box-shadow: 0 0 10px #02FE0B,
-  0 0 20px #02FE0B,
-   0 0 40px #02FE0B,
-   0 0 60px #02FE0B,
-  0 0 80px #02FE0B,
-   0 0 100px #02FE0B;
+  background: #02fe0b;
+  box-shadow: 0 0 10px #02fe0b, 0 0 20px #02fe0b, 0 0 40px #02fe0b,
+    0 0 60px #02fe0b, 0 0 80px #02fe0b, 0 0 100px #02fe0b;
 
-   animation: animate 2s linear infinite;
-  
-
+  animation: animate 2s linear infinite;
 }
 
 .dot1::before {
-  animation-delay: calc(0.1s);}
+  animation-delay: calc(0.1s);
+}
 
-  .dot2::before {
-    animation-delay: calc(0.2s);}
+.dot2::before {
+  animation-delay: calc(0.2s);
+}
 
-    .dot3::before {
-      animation-delay: calc(0.3s);}
-    
-      .dot4::before {
-        animation-delay: calc(0.4s);}
+.dot3::before {
+  animation-delay: calc(0.3s);
+}
 
-        .dot5::before {
-          animation-delay: calc(0.5s);}
-        
-          .dot6::before {
-            animation-delay: calc(0.6s);}
-            .dot7::before {
-              animation-delay: calc(0.7s);}
-            
-              .dot8::before {
-                animation-delay: calc(0.8s);}
-            
-                .dot9::before {
-                  animation-delay: calc(0.9s);}
-                
-                  .dot10::before {
-                    animation-delay: calc(1s);}
-            
-                    .dot11::before {
-                      animation-delay: calc(1.1s);}
-                    
-                      .dot12::before {
-                        animation-delay: calc(1.2s);}
+.dot4::before {
+  animation-delay: calc(0.4s);
+}
 
-                        .dot13::before {
-                          animation-delay: calc(1.3s);}
-                        
-                          .dot14::before {
-                            animation-delay: calc(1.4s);}
-                        
-                            .dot15::before {
-                              animation-delay: calc(1.5s);}
-                            
-                              .dot16::before {
-                                animation-delay: calc(1.6s);}
-                        
-                                .dot17::before {
-                                  animation-delay: calc(1.7s);}
-                                
-                                  .dot18::before {
-                                    animation-delay: calc(1.8s);}
-                                    .dot19::before {
-                                      animation-delay: calc(1.9s);}
-                                    
-                                      .dot20::before {
-                                        animation-delay: calc(2s);}
-                                    
+.dot5::before {
+  animation-delay: calc(0.5s);
+}
 
+.dot6::before {
+  animation-delay: calc(0.6s);
+}
+.dot7::before {
+  animation-delay: calc(0.7s);
+}
 
+.dot8::before {
+  animation-delay: calc(0.8s);
+}
+
+.dot9::before {
+  animation-delay: calc(0.9s);
+}
+
+.dot10::before {
+  animation-delay: calc(1s);
+}
+
+.dot11::before {
+  animation-delay: calc(1.1s);
+}
+
+.dot12::before {
+  animation-delay: calc(1.2s);
+}
+
+.dot13::before {
+  animation-delay: calc(1.3s);
+}
+
+.dot14::before {
+  animation-delay: calc(1.4s);
+}
+
+.dot15::before {
+  animation-delay: calc(1.5s);
+}
+
+.dot16::before {
+  animation-delay: calc(1.6s);
+}
+
+.dot17::before {
+  animation-delay: calc(1.7s);
+}
+
+.dot18::before {
+  animation-delay: calc(1.8s);
+}
+.dot19::before {
+  animation-delay: calc(1.9s);
+}
+
+.dot20::before {
+  animation-delay: calc(2s);
+}
 
 /* FLOAT MENU STYLES END */
 
@@ -1326,7 +1357,6 @@ z-index: 90;
   position: relative;
   top: -10rem;
   margin-right: 0.45rem;
-  
 }
 
 .Recordatorio {
@@ -1346,14 +1376,12 @@ z-index: 90;
   align-items: center;
   display: flex;
   padding: 0 1rem 0 1rem;
-  
 }
 
 .TituloNotificación {
   font-family: "Montserrat";
   color: #8e5207;
   font-size: 16px;
-  
 }
 
 .BotonNotificación {
@@ -1369,24 +1397,108 @@ z-index: 90;
   font-family: "Montserrat";
   color: #8e5207;
   font-size: 21px;
-  
 }
 
 .fechaNotificación {
   font-family: "Montserrat";
   color: #8e5207;
   font-size: 13px;
-  
 }
 
 .icon2Title {
   width: 50px;
   height: 50px;
-  
 }
 
 .iconTitle {
   width: 40px;
   height: 40px;
-  
 }
+
+@keyframes animate {
+  0% {
+    transform: scale(0.05);
+  }
+
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+.huellaAnimada {
+  position: relative;
+  animation: animate 3s linear infinite;
+  top: -4.5rem;
+  margin-bottom: -2rem;
+  left: -1rem;
+}
+
+.text-center {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.T2 {
+  font-family: "Montserrat";
+  color: #8e5207;
+}
+
+.decor {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 0 0.5rem 0 0.5rem;
+}
+
+.addMascotas {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.dialogTitle {
+  background-color: #ffb714;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-family: "Bebas-Neue";
+}
+
+.NuevoRegistroDialog {
+  color: #8e5207;
+  font-family: "Bebas-Neue";
+  font-size: 18px;
+}
+
+.BotonNuevoRegistroDialog {
+  margin: 0.5rem 0 0 0;
+}
+
+.mb-3 {
+ 
+ font-family: "Bebas-Neue";
+ justify-content: center;
+ align-items: center;
+ display: flex;
+ font-family: "Bebas-Neue";
+
+}
+
+.con3 {
+  background-color: #ffb714;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  
+ 
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+.MascTitle {
+ 
+  font-family: "Bebas-Neue";
+  font-size: 21px;
+  color: #8e5207;
+ 
+ }
+
+

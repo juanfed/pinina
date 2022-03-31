@@ -97,7 +97,7 @@ return <>
                         variant="outlined"
                         style={{ width: '80%' }}
                         placeholder="Ingrese su Termino de Busqueda"
-                        label="Ingrese su Termino de Busqueda"
+                        label="Ingrese el nombre de la mascota"
                         value={ searchWord }
                         onChange={ e => setSearchWord(e.target.value) }
                     />

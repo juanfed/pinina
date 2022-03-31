@@ -3,6 +3,7 @@ import { primaryColor, secondaryColor } from "./mainTheme";
 import { makeStyles } from "@mui/styles";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Imagen1 from "../../img/bicolor.svg";
+import { CenterFocusStrong } from "@mui/icons-material";
 
 const drawerWidth = 340;
 const theme = createTheme();
@@ -275,8 +276,19 @@ const useStyles = makeStyles((theme) => ({
   dialogContainer: {
     padding: theme.spacing(5, 10, 5, 10),
   },
+
+  dialogContainer2: {
+    padding: theme.spacing(2, 10, 5, 10),
+  },
+  dialogContainer3: {
+    padding: theme.spacing(1, 1, 1, 1),
+  },
+
   dialogTitle: {
-    padding: theme.spacing(2, 5, 2, 5),
+    padding: theme.spacing(0, 0, 0, 0),
+    color: "#8E5207",
+    height: 60,
+
   },
   dialogButton: {
     padding: theme.spacing(2, 5, 0, 5),
@@ -288,11 +300,14 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   sonContainer: {
-    padding: theme.spacing(0, 5, 2, 20),
+    padding: theme.spacing(0, 0, 0, 4),
     [theme.breakpoints.down("md")]: {
       padding: theme.spacing(0, 0, 0, 0),
     },
   },
+
+  
+
   noEntries: {
     padding: theme.spacing(5, 5, 5, 5),
   },
@@ -302,6 +317,13 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "10px",
     border: "solid 3px   #ffeb3b",
   },
+
+  textCenter: {
+   marginRight:"2rem",
+   
+    
+  },
+
   search: {
     padding: theme.spacing(0, 0, 1, 0),
   },
