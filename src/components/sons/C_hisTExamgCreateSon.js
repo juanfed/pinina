@@ -10,6 +10,7 @@ import huellaAnimada from "../../assets/img/huellaAnimada.svg";
 import mascotas from "../../assets/img/mascotas.svg";
 import addMascotas from "../../assets/img/add.png";
 import image6 from "../../assets/img/botonAceptar4.svg";
+import Image4 from "../../assets/img/botonAceptar.svg";
 
 import T_historias_clinicasT_mascotasoaNMbModal from "../modals/T_historias_clinicasT_mascotasoaNMbModal.js";
 //REPLACEIMPORTS
@@ -35,6 +36,8 @@ import useStyles from "../../assets/css/js/styles";
 import SearchIcon from "@mui/icons-material/Search";
 import AddIcon from "@mui/icons-material/Add";
 import CloseIcon from "@mui/icons-material/Close";
+
+import TitleEli3 from "../../assets/img/mascotas.svg";
 
 const C_hisTExamgCreateSon = ({
   setSearch,
@@ -417,29 +420,56 @@ const C_hisTExamgCreateSon = ({
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">
-          {"Esta Seguro de Eliminar " + idToDelete}
-        </DialogTitle>
+        <Grid container className="TitleEli" md={12} sm={12} xs={12}>
+          <Grid item md={8} sm={10} xs={10}>
+            <DialogTitle className="TitleEli2" id="alert-dialog-title">
+              {"¿Esta Seguro de Eliminar " + idToDelete + "?"}
+            </DialogTitle>
+          </Grid>
+          <Grid item className="TitleEli3" md={4} sm={2} xs={2}>
+            <img className="TitleEli3" src={TitleEli3} alt="TitleEli3" />
+          </Grid>
+        </Grid>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
             Si elimina el elemento no podrá ser recuperado.
           </DialogContentText>
         </DialogContent>
+
         <DialogActions>
-          <Button onClick={() => handleClose()} color="primary">
-            Cancelar
-          </Button>
-          <Button
-            onClick={() => deleteElement(idToDelete)}
-            color="secondary"
-            autoFocus
-          >
-            Eliminar
-          </Button>
+          <Grid container  md={12} sm={12} xs={12}>
+            
+            <Grid item className="but"  md={6} sm={6} xs={6}>
+              <Button
+                onClick={() => handleClose()}
+                fullWidth
+                style={{
+                  color: "#8E5207",
+                  backgroundColor:"#FFB714",
+ 
+                }}
+              >
+                Cancelar
+              </Button>
+            </Grid>
+            <Grid item className="but2"  md={6} sm={6} xs={6}>
+              <Button
+                onClick={() => deleteElement(idToDelete)}
+                fullWidth
+                style={{
+                  color:"#FFB714",
+                  backgroundColor:"#8E5207",
+                
+                }}
+              >
+                Eliminar
+              </Button>
+            </Grid>
+          </Grid>
         </DialogActions>
       </Dialog>
-      <Grid container className={classes.sonContainer}>
-        <Grid item xs={10}>
+      <Grid container  md={12} sm={12} xs={12} className={classes.sonContainer} >
+        <Grid item  md={8} sm={8} xs={8}>
           <SonOptionsDial
             title="Historias Clinicas"
             handleAdd={handleAdd}
@@ -459,32 +489,32 @@ const C_hisTExamgCreateSon = ({
             />
           </Grid>
         </Grid>
-      </Grid>
-      <Grid container justifyContent="center" spacing={2} alignItems="center">
+
         {searchState && (
           <>
-            <Grid item xs={4}>
+            <Grid container md={3} sm={10} xs={10}>
               <Grid
                 container
                 justifyContent="center"
                 alignItems="center"
-                className={classes.searchContainer}
+                className={classes.searchContainer} md={12} sm={12} xs={12}
               >
                 <Grid item>
                   <Grid
                     container
                     alignItems="center"
-                    className={classes.SearchIcon}
+                     md={2} sm={2} xs={2}
                   >
                     <Grid item>
                       <SearchIcon className={classes.searchIcon} />
                     </Grid>
                   </Grid>
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item md={9} sm={9} xs={9}>
                   <InputBase
                     fullWidth
                     placeholder="Buscar..."
+
                     classes={{
                       root: classes.inputRoot,
                       input: classes.inputInput,
@@ -494,9 +524,7 @@ const C_hisTExamgCreateSon = ({
                     value={searchData}
                   />
                 </Grid>
-              </Grid>
-            </Grid>
-            <Grid item>
+                <Grid item md={1} sm={1} xs={1}>
               <IconButton
                 size="small"
                 className={classes.searchIconButton}
@@ -505,9 +533,20 @@ const C_hisTExamgCreateSon = ({
                 <CloseIcon className={classes.icon} />
               </IconButton>
             </Grid>
+              </Grid>
+
+              
+
+            </Grid>
+            
           </>
         )}
 
+
+      </Grid>
+      
+      <Grid container justifyContent="center" spacing={2} alignItems="center">
+        
         <Grid item md={11.4}>
           {searchResult.length > 0 ? (
             <WhiteTable
@@ -539,33 +578,32 @@ const C_hisTExamgCreateSon = ({
           setEditState(false);
         }}
       >
-            <Grid
-              container
-              justifyContent="center"
-              className={classes.dialogTitle}
-              fullWidth
-            >
-              <Grid item md={12} sm={12} xs={12} className="dialogTitle">
-                <Typography align="center" variant="h5">
-                  {dialogTitle}
-                </Typography>
-              </Grid>
-            </Grid>
-
-
-            {/* hasta aqui va el titulo del dialog  */}
-            
         <Grid
           container
-          className={classes.dialogContainer3} 
+          justifyContent="center"
+          className={classes.dialogTitle}
+          fullWidth
+        >
+          <Grid item md={12} sm={12} xs={12} className="dialogTitle">
+            <Typography align="center" variant="h5">
+              {dialogTitle}
+            </Typography>
+          </Grid>
+        </Grid>
+
+        {/* hasta aqui va el titulo del dialog  */}
+
+        <Grid
+          container
+          className={classes.dialogContainer3}
           justifyContent="center"
         >
-           
-
-
-          <Grid container spacing={1} justifyContent="center"  className={classes.dialogContainer2}>
-           
-
+          <Grid
+            container
+            spacing={1}
+            justifyContent="center"
+            className={classes.dialogContainer2}
+          >
             <Grid container className="decor" md={6} sm={12} xs={12}>
               <Grid item md={2} sm={12} xs={12} className="T2">
                 <img
@@ -807,14 +845,14 @@ const C_hisTExamgCreateSon = ({
               <Grid item md={12} sm={12} xs={12}>
                 <Button
                   fullWidth
-                  className="BotonNuevoRegistroDialog" 
+                  className="BotonNuevoRegistroDialog"
                   variant="contained"
                   onClick={(e) => handleSubmit(e)}
                   style={{
                     backgroundImage: `url(${image6})`,
                   }}
                 >
-                  <Typography className="NuevoRegistroDialog" >
+                  <Typography className="NuevoRegistroDialog">
                     {addState ? "Nuevo Registro" : "Editar Registro"}
                   </Typography>
                 </Button>

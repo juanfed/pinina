@@ -1501,4 +1501,39 @@ img {
  
  }
 
+ 
+ .TitleEli {
+  background-color: #ffb714;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+.TitleEli2 {
+  color: #8e5207;
+  font-family: "Bebas-Neue";
+  font-size: 22px;
+}
+
+.but {
+  padding:0.5rem
+  
+}
+
+.but2 {
+  padding:0.5rem
+}
+
+.SearchIcon {
+  color: #8e5207;
+  height: 100%;
+  width: auto;
+
+ 
+
+}
+
+
 

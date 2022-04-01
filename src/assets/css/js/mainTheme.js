@@ -15,7 +15,9 @@ const mainTheme = createTheme(adaptV4Theme({
 		},
 		default: {
 			main: '#8E5207'
-		}
+		},
+		
+		
 	},
 	palette4: {
 		primary: {
@@ -34,6 +36,8 @@ const mainTheme = createTheme(adaptV4Theme({
 			main: '#8E5207'
 		}
 	}
+
+	
 }));
 
 export const tableTypographyColor = '#6B6B6B';

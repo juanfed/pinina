@@ -304,6 +304,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       padding: theme.spacing(0, 0, 0, 0),
     },
+    
+
   },
 
   
@@ -313,9 +315,13 @@ const useStyles = makeStyles((theme) => ({
   },
   searchContainer: {
     /* padding: theme.spacing(2, 2, 2, 2), */
-    backgroundColor: "#fff9c4",
-    borderRadius: "10px",
+    backgroundColor: "#FFB714",
+    borderRadius: "30px",
     border: "solid 3px   #ffeb3b",
+    height: "50%",
+    color: "#8E5207",
+    
+    
   },
 
   textCenter: {
@@ -339,6 +345,7 @@ const useStyles = makeStyles((theme) => ({
             justifyContent: 'center', */
     color: secondaryColor,
     height: "100%",
+     
   },
   searchIconButton: {
     backgroundColor: "#FFF7C9",
