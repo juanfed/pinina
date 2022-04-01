@@ -25,6 +25,8 @@ import WhiteTable from '../components/tables/WhiteTable';
 import ConfirmationDialog from '../components/modals/ConfirmationDialog';
 import { ADMIN_USER_MODULES } from '../redux/types';
 
+import FloatMenu from "../components/floatMenu/index.jsx";
+
 export default function AdminUser() {
     // Snackbar Instance
     const { enqueueSnackbar } = useSnackbar();
@@ -387,8 +389,56 @@ export default function AdminUser() {
             setMoreInfoModule(false);
         }
     }, [userProfileModules])
+
+    const buttons = [
+        {
+          id: 0,
+          text: "prueba",
+          className: "icon-1",
+          icon: <img src="/img/icon-1.svg" width="100%" alt="" />,
+        },
+        {
+          id: 1,
+          text: "prueba",
+          className: "icon-2",
+          icon: <img src="/img/icon-2.svg" width="100%" alt="" />,
+        },
+        {
+          id: 1,
+          text: "prueba",
+          className: "icon-3",
+          icon: <img src="/img/icon-3.svg" width="100%" alt="" />,
+        },
+        {
+          id: 1,
+          text: "prueba",
+          className: "icon-4",
+          icon: <img src="/img/icon-4.svg" width="100%" alt="" />,
+        },
+      ];
+
+
     return <>
-        <MainAppBar />
+     <Grid container className="flex-container">
+        <Grid
+            item
+            className="container-floatmenu"
+            xs={12}
+            md={12}
+            style={{
+              zIndex: "10",
+            }}
+          >
+            <FloatMenu buttons={buttons} />
+         </Grid>
+        
+      
+            
+       
+
+
+      
+
         {selectedBusinessData?.id_empresa ?
             <>
                 <Grid container justifyContent='center' className={classes.background}>
@@ -521,5 +571,7 @@ export default function AdminUser() {
                 </Grid>
             </Grid>
         }
+
+</Grid>
     </>;
 }

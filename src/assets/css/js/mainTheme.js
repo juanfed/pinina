@@ -4,7 +4,7 @@ const mainTheme = createTheme(adaptV4Theme({
 	palette: {
 		primary: {
 			// main: '#F8F29A',
-			main: '#FFF15A'
+			main: '#FFB716'
 			// main: '#081348',
 			// main: '#55E8C2'
 		},
@@ -16,6 +16,12 @@ const mainTheme = createTheme(adaptV4Theme({
 		default: {
 			main: '#8E5207'
 		},
+
+		error: {
+			main: '#8E5207',
+			dark: '#8E5207',
+			light: '#8E5207',
+		},
 		
 		
 	},
@@ -26,15 +32,26 @@ const mainTheme = createTheme(adaptV4Theme({
 		secondary: {
 			// main: '#081348' 
 			main: '#8E5207'
-		}
+		},
+		error: {
+			main: '#8E5207',
+			dark: '#8E5207',
+			light: '#8E5207',
+		},
 	},
 	palette5: {
 		primary: {
-			main: '#FFF15A'
+			main: '#8E5207',
+			dark: '#8E5207',
+			light: '#8E5207',
 		},
 		secondary: {
 			main: '#8E5207'
-		}
+		},
+		error: {
+			main: '#8E5207'
+		},
+
 	}
 
 	
@@ -43,5 +60,6 @@ const mainTheme = createTheme(adaptV4Theme({
 export const tableTypographyColor = '#6B6B6B';
 const primaryColor = mainTheme.palette.primary.main;
 const secondaryColor = mainTheme.palette.secondary.main;
-export { primaryColor, secondaryColor };
+const errorColor = mainTheme.palette.error.main;
+export { primaryColor, secondaryColor , errorColor};
 export default mainTheme;

@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, createRef } from 'react';
 import { Provider } from 'react-redux';
-import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
+import { makeStyles } from '@material-ui/core/styles';
+import { ThemeProvider,  StyledEngineProvider } from '@mui/material/styles';
 import Head from 'next/head';
 import '../styles/global.css';
 
@@ -15,6 +16,16 @@ import MainAppBar from '../layouts/MainAppBar';
 
 function MyApp({ Component, pageProps }) {
 	const theme = mainTheme;
+
+/* 
+    const useStyles = makeStyles (() =>({
+success:{backgroundColor:'#694C0B' },
+    }));
+
+    const classes = useStyles(); */
+
+    
+    
 	// origen de la aplicación pinina
 	const [load, setLoad] = useState(false);
 	useEffect(() => {
@@ -31,7 +42,12 @@ function MyApp({ Component, pageProps }) {
         <Provider store={store}>
             <StyledEngineProvider injectFirst>
                 <ThemeProvider theme={theme}>
-					<SnackbarProvider maxSnack={3}>
+					<SnackbarProvider maxSnack={3}
+                   /*  classes={{
+                        variantSuccess: classes.success,
+                        
+                    }} */>
+                  
 						{load &&
 							<Component {...pageProps} />
 						}
