@@ -26,6 +26,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import router from 'next/router';
 import { AddCloseAction, AddOpenAction, cleanOnAction, deleteCloseAction, deleteOpenAction, editCloseAction, editOpenAction, saveOpenAction, searchOpenAction } from '../../redux/actions/MainAction';
 
+
+import image from '../../assets/img/botonAceptar3.svg';
+
+import { color } from '@mui/system';
+
 const useStyles = makeStyles((theme) => ({
     speedDial: {
         top: theme.spacing(1),
@@ -44,9 +49,11 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: 'white'
     },
     dialFab: {
-        width: 400,
+        width: 300,
         borderRadius: '25px',
-        backgroundColor: '#FFF',
+
+        backgroundImage: `url(${image})`,
+
         border: 'solid 3px  #FFE400',
         "&:hover": {
             backgroundColor: '#FFF'
@@ -54,10 +61,12 @@ const useStyles = makeStyles((theme) => ({
 
     },
     appIcon: {
-        width: 40
+        width: 40,
+        backgroundColor: '#FFB714' 
     },
     title: {
-        height: '100%'
+        height: '100%',
+        
     }
 }));
 export default function SonOptionsDial({ title, handleAdd, handleEdit, addState, editState, handleBack, handleDelete, deleteState, handleSearch }) {
@@ -145,7 +154,7 @@ export default function SonOptionsDial({ title, handleAdd, handleEdit, addState,
                         FabProps={{
                             style: {
                                 color: secondaryColor,
-                                backgroundColor: '#FFF',
+                                backgroundColor: '#FFB714',
                                 width: 50,
                                 height: 50,
                                 border: 'solid 3px  #FFE400',

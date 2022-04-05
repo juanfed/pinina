@@ -31,8 +31,8 @@ const useStyles = makeStyles((theme) => ({
     appBar: {
         padding: theme.spacing(2, 1, 2, 1),
         minHeight: '70px',
-        backdropFilter: "blur(3px)",
-        backgroundColor: 'rgba(255,255,255,0.8)'
+       /*  backdropFilter: "blur(3px)",
+        backgroundColor: 'rgba(255,255,255,1)'  */
 
     },
     logo: {
@@ -45,6 +45,7 @@ export default function MainAppBar() {
     const classes = useStyles();
     const { selectedBusinessData } = useSelector(state => state.admin)
     return <>
+   
         <AppBar hidden position="fixed" elevation={0} className={classes.appBar}>
 
             <Grid container alignItems='center' >
@@ -115,5 +116,7 @@ export default function MainAppBar() {
         <div className={classes.root}>
             <Box />
         </div>
+
+        
     </>;
 }

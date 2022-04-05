@@ -35,7 +35,7 @@ export function ListItems() {
           <div id="collapseOne" className="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
             <div className="card-body">
               
-              <Link href="/main/C_vacTVacufCreate" activeStyle={{ color: '#e1e1e1!important', backgroundColor: '#000!important' }}>
+              <Link href="/main/C_vacTVacueCreate" activeStyle={{ color: '#e1e1e1!important', backgroundColor: '#000!important' }}>
                   <ListItem button disableGutters>
                     <ListItemIcon>
                       <ListIcon />
@@ -65,7 +65,7 @@ export function ListItems() {
           <div id="collapseOne" className="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
             <div className="card-body">
               
-              <Link href="/main/C_invTInveuCreate" activeStyle={{ color: '#e1e1e1!important', backgroundColor: '#000!important' }}>
+              <Link href="/main/C_invTInveiCreate" activeStyle={{ color: '#e1e1e1!important', backgroundColor: '#000!important' }}>
                   <ListItem button disableGutters>
                     <ListItemIcon>
                       <ListIcon />

@@ -2,12 +2,12 @@ import makeStyles from '@mui/styles/makeStyles';
 import { primaryColor, secondaryColor } from './mainTheme';
 
 export const adminUserStyles = makeStyles((theme) => ({
-	background: {
+	/* background: {
 		// paddingBottom: '500px',
 		backgroundColor: '#F6F6F6'
-	},
+	}, */
 	profileContainer: {
-		// padding: theme.spacing(1, 5, 1, 18),
+		
 		padding: theme.spacing(2, 10, 1, 10)
 	},
 	root: {
@@ -34,10 +34,10 @@ export const adminUserStyles = makeStyles((theme) => ({
 	},
 	headerPaper: {
 		borderRadius: '15px',
-		backgroundColor: primaryColor
+		/* backgroundColor: primaryColor */
 	},
 	paperContent: {
-		backgroundColor: '#fff',
+		/* backgroundColor: '#fff', */
 		borderRadius: '15px',
 	},
 	icon: {
@@ -48,7 +48,7 @@ export const adminUserStyles = makeStyles((theme) => ({
 	},
 	paperOptions: {
 		borderRadius: '15px',
-		backgroundColor: primaryColor
+		/* backgroundColor: primaryColor */
 	},
 	subtitleContainer: {
 		padding: theme.spacing(2, 4, 2, 4)

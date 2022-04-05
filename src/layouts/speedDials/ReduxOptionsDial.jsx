@@ -25,11 +25,17 @@ import { primaryColor, secondaryColor } from '../../assets/css/js/mainTheme';
 import { useDispatch, useSelector } from 'react-redux';
 import router from 'next/router';
 import { AddCloseAction, AddOpenAction, cleanOnAction, deleteCloseAction, deleteOpenAction, editCloseAction, editOpenAction, saveOpenAction, searchOpenAction } from '../../redux/actions/MainAction';
+import { height } from '@mui/system';
+
+
 
 const useStyles = makeStyles((theme) => ({
     speedDial: {
         top: theme.spacing(1),
         left: theme.spacing(2),
+        
+       
+
     },
     icons: {
         width: 400
@@ -38,23 +44,27 @@ const useStyles = makeStyles((theme) => ({
         width: 100
     },
     fabIcons: {
-        color: secondaryColor
+        color: '#FFB716'
+        
     },
     toolTips: {
-        backgroundColor: 'white'
+        backgroundColor: '#FFB714'
     },
+
+
     dialFab: {
-        width: 250,
-        borderRadius: '25px',
-        backgroundColor: '#FFF',
-        border: 'solid 3px  #FFE400',
+       
+        borderRadius: '40px !important',
+        backgroundColor: '#E8EAEB',
+        border: 'solid 3px  #FFB716 !important',
         "&:hover": {
-            backgroundColor: '#FFF'
+            backgroundColor: '#FFB716'
         }
 
     },
     appIcon: {
-        width: 40
+        width: '100px',
+       
     },
     title: {
         height: '100%'
@@ -159,16 +169,19 @@ export default function ReduxOptionsDial({ title }) {
 
     return (
         <>
+
+        
             <SpeedDial
+            
                 direction='right'
                 ariaLabel="Opciones"
-                className={classes.speedDial}
+               /*  className={classes.speedDial} */
                 hidden={hidden}
-                icon={<Dial classes={classes.appIcon} title={title} />}
+                icon={<Dial classes={classes.appIcon} />}
                 onClose={handleClose}
                 onOpen={handleOpen}
                 open={open}
-                FabProps={{ className: classes.dialFab }}
+                FabProps={{ className: classes.dialFab}}
             >
                 {actions.map((action) => (
                     <SpeedDialAction
@@ -179,12 +192,14 @@ export default function ReduxOptionsDial({ title }) {
                         FabProps={{
                             style: {
                                 color: secondaryColor,
-                                backgroundColor: '#FFF',
+                                backgroundColor: '#FFB714',
+                                margin:"0.6rem",
+                                borderRadius:"50px",
                                 width: 50,
                                 height: 50,
                                 border: 'solid 3px  #FFE400',
                                 "&:hover": {
-                                    backgroundColor: primaryColor
+                                    backgroundColor: "#81623C"
                                 }
                             }
                         }}
@@ -201,10 +216,12 @@ const Dial = ({ classes, title }) =>
         <Grid item>
             <AppsIcon
                 color='secondary'
-                className={classes.AppsIcon}
+               /*  className={classes.appIcon} */
+               style={{ width: '30px' , height: '30px',  marginBottom: '-5px'}}
+               
             />
         </Grid>
-        <Grid item>
+       {/*  <Grid item>
             <Typography
                 style={{ marginLeft: '5px' }}
                 color='secondary'
@@ -213,5 +230,5 @@ const Dial = ({ classes, title }) =>
             >
                 {title}
             </Typography>
-        </Grid>
+        </Grid> */}
     </Grid>

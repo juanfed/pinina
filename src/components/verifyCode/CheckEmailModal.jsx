@@ -356,10 +356,12 @@ export default function CheckEmailModal({
                             </Button>
                             :
                             <Button
+                            style={{
+                                background: "#FFB713",
+                              }}
                                 disabled={sendButton}
                                 className={classes.resendButton}
                                 fullWidth variant='contained'
-                                color='secondary'
                                 onClick={() => setSubmitCode(true)}
                             >
                                 Enviar
@@ -380,7 +382,10 @@ export default function CheckEmailModal({
                         </Grid>
                         <Grid item xs={12}>
                             {waitTime && <Typography color='secondary'>{time}</Typography>}
-                            <Button fullWidth disabled={waitTime} color='secondary' onClick={checkGenCode}>
+                            <Button fullWidth disabled={waitTime} color='secondary' onClick={checkGenCode} style={{
+                  color: "#8E5207"
+                }}>
+                                
                                 Reenviar código
                             </Button>
                         </Grid>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="277.593" height="277.593" viewBox="0 0 277.593 277.593">
+  <g id="Grupo_2048" data-name="Grupo 2048" transform="translate(-311.955 -73.762)">
+    <circle id="Elipse_143" data-name="Elipse 143" cx="97.96" cy="97.96" r="97.96" transform="translate(312.215 212.558) rotate(-45)" fill="none" stroke="#ffb818" stroke-miterlimit="10" stroke-width="0.368"/>
+    <g id="Grupo_2044" data-name="Grupo 2044">
+      <path id="Trazado_1488" data-name="Trazado 1488" d="M358.493,209.266l-5.7-3.292v6.584Z" fill="#ffb714"/>
+      <path id="Trazado_1489" data-name="Trazado 1489" d="M543.01,209.266l5.7-3.292v6.584Z" fill="#ffb714"/>
+    </g>
+    <g id="Grupo_2045" data-name="Grupo 2045">
+      <path id="Trazado_1490" data-name="Trazado 1490" d="M450.752,120.43l3.292-5.7H447.46Z" fill="#ffb714"/>
+      <path id="Trazado_1491" data-name="Trazado 1491" d="M450.752,304.947l3.292,5.7H447.46Z" fill="#ffb714"/>
+    </g>
+    <g id="Grupo_2046" data-name="Grupo 2046">
+      <path id="Trazado_1492" data-name="Trazado 1492" d="M385.515,147.452l-1.7-6.36-4.655,4.655Z" fill="#ffb714"/>
+      <path id="Trazado_1493" data-name="Trazado 1493" d="M515.988,277.925l6.36,1.7-4.656,4.656Z" fill="#ffb714"/>
+    </g>
+    <g id="Grupo_2047" data-name="Grupo 2047">
+      <path id="Trazado_1494" data-name="Trazado 1494" d="M515.988,147.452l6.36-1.7-4.656-4.655Z" fill="#ffb714"/>
+      <path id="Trazado_1495" data-name="Trazado 1495" d="M385.515,277.925l-1.7,6.36-4.655-4.656Z" fill="#ffb714"/>
+    </g>
+  </g>
+</svg>
