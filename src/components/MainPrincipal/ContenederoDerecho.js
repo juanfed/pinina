@@ -10,208 +10,206 @@ import tendencia5 from "../../assets/img/tendencia5.svg";
 import tendencia6 from "../../assets/img/tendencia6.svg";
 import tendencia7 from "../../assets/img/tendencia7.svg";
 import tendencia8 from "../../assets/img/tendencia8.svg";
+import { Box } from "@mui/material";
 
 const ContenedorDerecho = () => {
   return (
     /* contenedor derecho */
-    <Grid container xs={12} md={12}>
+    <Box sx={{ width: '100%' }}>
       <Grid container xs={12} md={12}>
-        {/* menu perfil y notidicaciones  */}
         <Grid container xs={12} md={12}>
-          <Grid item xs={3} md={3}>
-            <img src={notificacion} alt="notificación" />
-          </Grid>
-          <Grid className="contenedorPerfil" container xs={9} md={9}>
-            <Grid className="contenedorNotificación" item xs={3} md={3}>
-              <img src={perfilMenu} alt="perfilMenu" />
+          {/* menu perfil y notidicaciones  */}
+          <Grid container xs={12} md={12}>
+            <Grid item xs={3} md={3}>
+              <img src={notificacion} alt="notificación" />
             </Grid>
-            <Grid className="contenedorNombre" item xs={9} md={9}>
-              María Fernanda
+            <Grid className="contenedorPerfil" container xs={9} md={9}>
+              <Grid className="contenedorNotificación" item xs={3} md={3}>
+                <img src={perfilMenu} alt="perfilMenu" />
+              </Grid>
+              <Grid className="contenedorNombre" item xs={9} md={9}>
+                María Fernanda
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
 
-        <Grid className="anunciosDerecha" item xs={12} md={12} style={{ marginBottom: "1rem", marginTop: "1rem"}}>
+          <Grid className="anunciosDerecha" item xs={12} md={12} style={{ marginBottom: "1rem", marginTop: "1rem" }}>
             Veterinarios tendencia
           </Grid>
 
-        {/* veterinarios tendencia  */}
-        <Grid container xs={12} md={12}>
-          
-          <Grid container xs={7} md={7} >
-            <Grid className="tendencia1" item xs={12} md={12} style={{ marginBottom: "-30px"}}>
-              María Fernandez
+          {/* veterinarios tendencia  */}
+          <Grid container xs={12} md={12}>
+
+            <Grid container xs={7} md={7} >
+              <Grid className="tendencia1" item xs={12} md={12} style={{ marginBottom: "-30px" }}>
+                María Fernandez
+              </Grid>
+              <Grid className="tendencia2" item xs={12} md={12}  >
+                Veterinario
+              </Grid>
+              <Grid className="tendencia3" item xs={12} md={12} style={{ marginTop: "-30px" }}>
+                Soacha
+              </Grid>
             </Grid>
-            <Grid className="tendencia2" item xs={12} md={12}  >
-              Veterinario
-            </Grid>
-            <Grid className="tendencia3" item xs={12} md={12} style={{ marginTop: "-30px"}}>
-              Soacha
+
+            <Grid item xs={5} md={5}>
+              <img className="fotoFeed1" src={tendencia1} alt="tendencia1" />
             </Grid>
           </Grid>
 
-          <Grid item xs={5} md={5}>
-            <img className="fotoFeed1" src={tendencia1} alt="tendencia1" />
-          </Grid>
-        </Grid>
+          <Grid container xs={12} md={12}>
 
-        <Grid container xs={12} md={12}>
-          
-          <Grid container xs={7} md={7}>
-            <Grid className="tendencia1" item xs={12} md={12} style={{ marginBottom: "-30px"}}>
-              María Fernandez
+            <Grid container xs={7} md={7}>
+              <Grid className="tendencia1" item xs={12} md={12} style={{ marginBottom: "-30px" }}>
+                María Fernandez
+              </Grid>
+              <Grid className="tendencia2" item xs={12} md={12}>
+                Veterinario
+              </Grid>
+              <Grid className="tendencia3" item xs={12} md={12} style={{ marginTop: "-30px" }}>
+                Soacha
+              </Grid>
             </Grid>
-            <Grid className="tendencia2" item xs={12} md={12}>
-              Veterinario
-            </Grid>
-            <Grid className="tendencia3" item xs={12} md={12} style={{ marginTop: "-30px"}}>
-              Soacha
+
+            <Grid item xs={5} md={5}>
+              <img className="fotoFeed1" src={tendencia2} alt="tendencia1" />
             </Grid>
           </Grid>
 
-          <Grid item xs={5} md={5}>
-            <img className="fotoFeed1" src={tendencia2} alt="tendencia1" />
-          </Grid>
-        </Grid>
-
-        <Grid className="anunciosDerecha" item xs={12} md={12} style={{ marginBottom: "1rem", marginTop: "1rem"}}>
+          <Grid className="anunciosDerecha" item xs={12} md={12} style={{ marginBottom: "1rem", marginTop: "1rem" }}>
             Paseadores tendencia
           </Grid>
 
-        {/* Paseadores tendencia  */}
-        <Grid container xs={12} md={12}>
-          
-          <Grid container xs={7} md={7}>
-            <Grid className="tendencia1" item xs={12} md={12} style={{ marginBottom: "-30px"}}>
-              María Fernandez
+          {/* Paseadores tendencia  */}
+          <Grid container xs={12} md={12}>
+
+            <Grid container xs={7} md={7}>
+              <Grid className="tendencia1" item xs={12} md={12} style={{ marginBottom: "-30px" }}>
+                María Fernandez
+              </Grid>
+              <Grid className="tendencia2" item xs={12} md={12}>
+                Veterinario
+              </Grid>
+              <Grid className="tendencia3" item xs={12} md={12} style={{ marginTop: "-30px" }}>
+                Soacha
+              </Grid>
             </Grid>
-            <Grid className="tendencia2" item xs={12} md={12}>
-              Veterinario
-            </Grid>
-            <Grid className="tendencia3" item xs={12} md={12} style={{ marginTop: "-30px"}}>
-              Soacha
+
+            <Grid item xs={5} md={5}>
+              <img className="fotoFeed1" src={tendencia3} alt="tendencia1" />
             </Grid>
           </Grid>
 
-          <Grid item xs={5} md={5}>
-            <img className="fotoFeed1" src={tendencia3} alt="tendencia1" />
-          </Grid>
-        </Grid>
+          <Grid container xs={12} md={12}>
 
-        <Grid container xs={12} md={12}>
-          
-          <Grid container xs={7} md={7}>
-            <Grid className="tendencia1" item xs={12} md={12} style={{ marginBottom: "-30px"}}>
-              María Fernandez
+            <Grid container xs={7} md={7}>
+              <Grid className="tendencia1" item xs={12} md={12} style={{ marginBottom: "-30px" }}>
+                María Fernandez
+              </Grid>
+              <Grid className="tendencia2" item xs={12} md={12}>
+                Veterinario
+              </Grid>
+              <Grid className="tendencia3" item xs={12} md={12} style={{ marginTop: "-30px" }}>
+                Soacha
+              </Grid>
             </Grid>
-            <Grid className="tendencia2" item xs={12} md={12}>
-              Veterinario
-            </Grid>
-            <Grid className="tendencia3" item xs={12} md={12} style={{ marginTop: "-30px"}}>
-              Soacha
+
+            <Grid item xs={5} md={5}>
+              <img className="fotoFeed1" src={tendencia4} alt="tendencia1" />
             </Grid>
           </Grid>
 
-          <Grid item xs={5} md={5}>
-            <img className="fotoFeed1" src={tendencia4} alt="tendencia1" />
-          </Grid>
-        </Grid>
 
-
-        <Grid className="anunciosDerecha" item xs={12} md={12} style={{ marginBottom: "1rem", marginTop: "1rem"}}>
+          <Grid className="anunciosDerecha" item xs={12} md={12} style={{ marginBottom: "1rem", marginTop: "1rem" }}>
             Guarderias tendencia
           </Grid>
 
-        {/* Guarderia tendencia  */}
-        <Grid container xs={12} md={12}>
-          
-          <Grid container xs={7} md={7}>
-            <Grid className="tendencia1" item xs={12} md={12} style={{ marginBottom: "-30px"}}>
-              María Fernandez
+          {/* Guarderia tendencia  */}
+          <Grid container xs={12} md={12}>
+
+            <Grid container xs={7} md={7}>
+              <Grid className="tendencia1" item xs={12} md={12} style={{ marginBottom: "-30px" }}>
+                María Fernandez
+              </Grid>
+              <Grid className="tendencia2" item xs={12} md={12}>
+                Veterinario
+              </Grid>
+              <Grid className="tendencia3" item xs={12} md={12} style={{ marginTop: "-30px" }}>
+                Soacha
+              </Grid>
             </Grid>
-            <Grid className="tendencia2" item xs={12} md={12}>
-              Veterinario
-            </Grid>
-            <Grid className="tendencia3" item xs={12} md={12} style={{ marginTop: "-30px"}}>
-              Soacha
+
+            <Grid item xs={5} md={5}>
+              <img className="fotoFeed1" src={tendencia5} alt="tendencia1" />
             </Grid>
           </Grid>
 
-          <Grid item xs={5} md={5}>
-            <img className="fotoFeed1" src={tendencia5} alt="tendencia1" />
-          </Grid>
-        </Grid>
+          <Grid container xs={12} md={12}>
 
-        <Grid container xs={12} md={12}>
-          
-          <Grid container xs={7} md={7}>
-            <Grid className="tendencia1" item xs={12} md={12} style={{ marginBottom: "-30px"}}>
-              María Fernandez
+            <Grid container xs={7} md={7}>
+              <Grid className="tendencia1" item xs={12} md={12} style={{ marginBottom: "-30px" }}>
+                María Fernandez
+              </Grid>
+              <Grid className="tendencia2" item xs={12} md={12}>
+                Veterinario
+              </Grid>
+              <Grid className="tendencia3" item xs={12} md={12} style={{ marginTop: "-30px" }}>
+                Soacha
+              </Grid>
             </Grid>
-            <Grid className="tendencia2" item xs={12} md={12}>
-              Veterinario
-            </Grid>
-            <Grid className="tendencia3" item xs={12} md={12} style={{ marginTop: "-30px"}}>
-              Soacha
+
+            <Grid item xs={5} md={5}>
+              <img className="fotoFeed1" src={tendencia6} alt="tendencia1" />
             </Grid>
           </Grid>
 
-          <Grid item xs={5} md={5}>
-            <img className="fotoFeed1" src={tendencia6} alt="tendencia1" />
-          </Grid>
-        </Grid>
-        
 
 
-        <Grid className="anunciosDerecha" item xs={12} md={12} style={{ marginBottom: "1rem", marginTop: "1rem"}}>
+          <Grid className="anunciosDerecha" item xs={12} md={12} style={{ marginBottom: "1rem", marginTop: "1rem" }}>
             Proveedores tendencia
           </Grid>
 
-        {/* proveedores tendencia  */}
-        <Grid container xs={12} md={12}>
-          
-          <Grid container xs={7} md={7}>
-            <Grid className="tendencia1" item xs={12} md={12} style={{ marginBottom: "-30px"}}>
-              María Fernandez
+          {/* proveedores tendencia  */}
+          <Grid container xs={12} md={12}>
+
+            <Grid container xs={7} md={7}>
+              <Grid className="tendencia1" item xs={12} md={12} style={{ marginBottom: "-30px" }}>
+                María Fernandez
+              </Grid>
+              <Grid className="tendencia2" item xs={12} md={12}>
+                Veterinario
+              </Grid>
+              <Grid className="tendencia3" item xs={12} md={12} style={{ marginTop: "-30px" }}>
+                Soacha
+              </Grid>
             </Grid>
-            <Grid className="tendencia2" item xs={12} md={12}>
-              Veterinario
-            </Grid>
-            <Grid className="tendencia3" item xs={12} md={12} style={{ marginTop: "-30px"}}>
-              Soacha
+
+            <Grid item xs={5} md={5}>
+              <img className="fotoFeed1" src={tendencia7} alt="tendencia1" />
             </Grid>
           </Grid>
 
-          <Grid item xs={5} md={5}>
-            <img className="fotoFeed1" src={tendencia7} alt="tendencia1" />
+          <Grid container xs={12} md={12}>
+
+            <Grid container xs={7} md={7}>
+              <Grid className="tendencia1" item xs={12} md={12} style={{ marginBottom: "-30px" }}>
+                María Fernandez
+              </Grid>
+              <Grid className="tendencia2" item xs={12} md={12}>
+                Veterinario
+              </Grid>
+              <Grid className="tendencia3" item xs={12} md={12} style={{ marginTop: "-30px" }}>
+                Soacha
+              </Grid>
+            </Grid>
+
+            <Grid item xs={5} md={5}>
+              <img className="fotoFeed1" src={tendencia8} alt="tendencia1" />
+            </Grid>
           </Grid>
         </Grid>
-
-        <Grid container xs={12} md={12}>
-          
-          <Grid container xs={7} md={7}>
-            <Grid className="tendencia1" item xs={12} md={12} style={{ marginBottom: "-30px"}}>
-              María Fernandez
-            </Grid>
-            <Grid className="tendencia2" item xs={12} md={12}>
-              Veterinario
-            </Grid>
-            <Grid className="tendencia3" item xs={12} md={12} style={{ marginTop: "-30px"}}>
-              Soacha
-            </Grid>
-          </Grid>
-
-          <Grid item xs={5} md={5}>
-            <img className="fotoFeed1" src={tendencia8} alt="tendencia1" />
-          </Grid>
-        </Grid>
-
-
-
-        
-        
       </Grid>
-    </Grid>
+    </Box>
   );
 };
 

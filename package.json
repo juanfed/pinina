@@ -6,7 +6,6 @@
         "dev": "next dev -p 5000",
         "build": "next build && next export",
         "export": "next export",
-
         "start": "next start"
     },
     "dependencies": {
@@ -17,9 +16,10 @@
         "@mui/material": "^5.5.0",
         "@mui/styles": "^5.5.0",
         "@mui/x-data-grid": "^5.6.0",
-        "axios": "^0.21.1",
+        "axios": "^0.21.4",
         "clsx": "^1.1.1",
         "i": "^0.3.7",
+        "moment": "^2.29.2",
         "mongoose": "^6.2.5",
         "next": "10.0.7",
         "next-auth": "^4.2.1",

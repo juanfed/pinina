@@ -1,277 +1,120 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Grid from "@material-ui/core/Grid";
-import barraHistorias from "../../assets/img/barra.svg";
 import feed from "../../assets/img/peero1.svg";
-import feed2 from "../../assets/img/perro2.svg";
-import feed3 from "../../assets/img/feed3.svg";
-import feed4 from "../../assets/img/feed4.svg";
-import historia1 from "../../assets/img/historia1.svg";
-import historia2 from "../../assets/img/historia2.svg";
-import historia3 from "../../assets/img/historia3.svg";
-import historia4 from "../../assets/img/historia4.svg";
-import historia5 from "../../assets/img/historia5.svg";
-import historia6 from "../../assets/img/historia6.svg";
 import perfilPerro from "../../assets/img/perfilperro.svg";
-import perro2 from "../../assets/img/perfilperro2.svg";
-import perro3 from "../../assets/img/fercho.svg";
-import perro4 from "../../assets/img/laika.svg";
 import puntos from "../../assets/img/circulos.svg";
 import like from "../../assets/img/like.svg";
 import comentario from "../../assets/img/comentario.svg";
 import share from "../../assets/img/share.svg";
 import Historias from './Historias';
+import moment from 'moment';
+import axiosClient from "../../config/AxiosClient";
 
 
 const ContenedorCentral = () => {
-  return (
-    <Grid item xs={8} md={8}>
-      {/*  Contenedor de arriba */}
-      <Historias />
 
-      {/*  Contenedor de abajo */}
+	const [datos, setDatos] = useState([])
+	const [comentarios, setComentarios] = useState([])
 
-      <Grid className="caja c3" container spacing={1} xs={12} md={12}>
-        <Grid container xs={12} md={12}>
-          {/*  Feed */}
-          <Grid className="contenedorFeed" container xs={6} md={6}>
-            <Grid container xs={12} md={12}>
-              <Grid item xs={3} md={3}>
-                <img className="fotoFeed1" src={perfilPerro} alt="feed" />
-              </Grid>
-              <Grid container xs={2} md={2}>
-                <Grid className="tituloFeed1" item xs={12} md={12} style={{ marginBottom: "-20px", marginLeft:"-20px"}}>
-                  Lazio
-                </Grid>
-                <Grid className="tituloFeed2" item xs={12} md={12} style={{  marginLeft:"-20px"}}>
-                  Siguiendo
-                </Grid>
-                <Grid className="tituloFeed3" item xs={12} md={12} style={{ marginTop: "-15px" , marginLeft:"-20px"}}>
-                  Nivel 1
-                </Grid>
-              </Grid>
+	useEffect(() => {
+		const datos = async () => {
+			const response = await axiosClient.get(
+				"/mostrarpublicaciones/"
+			);
+			setDatos(response.data.publicaciones);
+			setComentarios(response.data.publicaciones?.comentarios);
+		}
+		datos()
+	}, []);
 
-              <Grid className="puntos" container xs={6} md={6}>
-                {" "}
-              </Grid>
-              <Grid className="puntos" container xs={1} md={1}>
-                {" "}
-                <img src={puntos} alt="puntos" />
-              </Grid>
+	const mostrar = () => {
+		console.log(datos);
+		console.log(datos[0].nombre_mascota);
+		console.log(datos[0].nivel_mascota);
+		console.log(datos[0].fecha_publicacion);
+		console.log(datos[0].likes_publicacion);
+		console.log(datos[0].fotos);
+		console.log(datos[0].fotos[0].nombre_imagen);
+		console.log(datos[0].comentarios[0].comentario);
+	}
 
-              <Grid item xs={12} md={12}>
-                <img src={feed} alt="feed" />
-              </Grid>
+	return (
+		<Grid item xs={8} md={8}>
+			{/*  Contenedor de arriba */}
+			<Historias />
 
-              <Grid container xs={12} md={12}>
-                <Grid item xs={1} md={1}>
-                  <img src={like} alt="Like" />
-                </Grid>
-                <Grid className="cantidadLikes" item xs={3} md={3} style={{ margin: "0.8rem"}}>
-                  2.385 Likes
-                </Grid>
-                <Grid item xs={5} md={5}></Grid>
-                <Grid item xs={1} md={1} style={{ margin: "5px"}}>
-                  <img src={comentario} alt="Like" />
-                </Grid>
-                <Grid item xs={1} md={1}>
-                  <img src={share} alt="Like" />
-                </Grid>
+			{/*  Contenedor de abajo */}
+			<button type="text" onClick={mostrar}>Imprimir</button>
+			<Grid className="caja c3" container spacing={1} xs={12} md={12}>
+				<Grid container xs={12} md={12}>
+					{/*  Feed */}
+					{datos.length && datos.map((dato) => (
+						<Grid className="contenedorFeed" container xs={6} md={6} key={dato.id_publicacion}>
 
-                <Grid className="descripcion"  item xs={12} md={12} >
-                  Mira mi nuevo truco, hoy aprendí un nuevo truco, ya puedo
-                  saltar y estoy muy feliz, por eso quiero que lo veas.
-                </Grid>
+							<Grid container xs={12} md={12} style={{ boder: '2px solid red' }}>
+								<Grid item xs={3} md={3}>
+									<img className="fotoFeed1" src={perfilPerro} alt="feed" />
+								</Grid>
+								<Grid container xs={2} md={2}>
+									<Grid className="tituloFeed1" item xs={12} md={12} style={{ marginBottom: "-20px", marginLeft: "-20px" }}>
+										{dato.nombre_mascota}
+									</Grid>
+									<Grid className="tituloFeed2" item xs={12} md={12} style={{ marginLeft: "-20px" }}>
+										Siguiendo
+									</Grid>
+									<Grid className="tituloFeed3" item xs={12} md={12} style={{ marginTop: "-15px", marginLeft: "-20px" }}>
+										{dato.nivel_mascota ? <p>Nivel: {dato.nivel_mascota}</p> : <p>Nivel: 0</p>}
+									</Grid>
+								</Grid>
 
-                <Grid className="descripcionHora"  item xs={12} md={12} style={{ marginTop:"10px"}}>
-                  Hoy 12:26am
-                </Grid>
+								<Grid className="puntos" container xs={6} md={6}>
+								</Grid>
+								<Grid className="puntos" container xs={1} md={1}>
+									{" "}
+									<img src={puntos} alt="puntos" />
+								</Grid>
 
-              </Grid>
-            </Grid>
-          </Grid>
+								<Grid item xs={12} md={12} style={{width : '10rem'}}>
+									{dato.fotos.map((d) => (
+										< img src = {`http://localhost:4001/${d.nombre_imagen}`} alt={d.nombre_imagen}/>
+									))}
+								</Grid>
+								<Grid container xs={12} md={12}>
+									<Grid item xs={1} md={1}>
+										<img src={like} alt="Like" />
+									</Grid>
+									<Grid className="cantidadLikes" item xs={3} md={3} style={{ margin: "0.8rem" }}>
+										{dato.likes_publicacion}
+									</Grid>
+									<Grid item xs={5} md={5}></Grid>
+									<Grid item xs={1} md={1} style={{ margin: "5px" }}>
+										<img src={comentario} alt="Like" />
+									</Grid>
+									<Grid item xs={1} md={1}>
+										<img src={share} alt="Like" />
+									</Grid>
 
-          {/* aqui termina el Feed */}
+									<Grid className="descripcion" item xs={12} md={12} >
+										{dato.descripcion_publicacion}
+									</Grid>
 
-          {/*  Feed2 */}
-          <Grid className="contenedorFeed" container xs={6} md={6}>
-            <Grid container xs={12} md={12}>
-              <Grid item xs={3} md={3}>
-                <img className="fotoFeed1" src={perro2} alt="feed" />
-              </Grid>
-              <Grid container xs={2} md={2}>
-                <Grid className="tituloFeed1" item xs={12} md={12} style={{ marginBottom: "-20px", marginLeft:"-20px"}}>
-                  Brando
-                </Grid>
-                <Grid className="tituloFeed2" item xs={12} md={12} style={{  marginLeft:"-20px"}}>
-                  Siguiendo
-                </Grid>
-                <Grid className="tituloFeed3" item xs={12} md={12} style={{ marginTop: "-15px" , marginLeft:"-20px"}}>
-                  Nivel 3
-                </Grid>
-              </Grid>
+									<Grid className="descripcionHora" item xs={12} md={12} style={{ marginTop: "10px" }}>
+										{`Fecha: ${moment.utc(dato.fecha_publicacion).format('MM/DD/YYYY')}`}
+									</Grid>
+									<Grid xs={12} md={12} >
+										{dato.comentarios.map((comment)=>(
+											<div>{comment.comentario}</div>
+										))}
+									</Grid>
 
-              <Grid className="puntos" container xs={6} md={6}>
-                {" "}
-              </Grid>
-              <Grid className="puntos" container xs={1} md={1}>
-                {" "}
-                <img src={puntos} alt="puntos" />
-              </Grid>
-
-              <Grid item xs={12} md={12}>
-                <img src={feed2} alt="feed" />
-              </Grid>
-
-              <Grid container xs={12} md={12}>
-                <Grid item xs={1} md={1}>
-                  <img src={like} alt="Like" />
-                </Grid>
-                <Grid className="cantidadLikes" item xs={3} md={3} style={{ margin: "0.8rem"}}>
-                  1.221 Likes
-                </Grid>
-                <Grid item xs={5} md={5}></Grid>
-                <Grid item xs={1} md={1} style={{ margin: "5px"}}>
-                  <img src={comentario} alt="Like" />
-                </Grid>
-                <Grid item xs={1} md={1}>
-                  <img src={share} alt="Like" />
-                </Grid>
-
-                <Grid className="descripcion"  item xs={12} md={12} >
-                  Mira mi nuevo truco, hoy aprendí un nuevo truco, ya puedo
-                  saltar y estoy muy feliz, por eso quiero que lo veas.
-                </Grid>
-
-                <Grid className="descripcionHora"  item xs={12} md={12} style={{ marginTop:"10px"}}>
-                  Hoy 12:26am
-                </Grid>
-
-              </Grid>
-            </Grid>
-          </Grid>
-          {/* aqui termina el Feed2 */}
-
-         {/*  Feed3 */}
-         <Grid className="contenedorFeed" container xs={6} md={6}>
-            <Grid container xs={12} md={12}>
-              <Grid item xs={3} md={3}>
-                <img className="fotoFeed1" src={perro3} alt="feed" />
-              </Grid>
-              <Grid container xs={2} md={2}>
-                <Grid className="tituloFeed1" item xs={12} md={12} style={{ marginBottom: "-20px", marginLeft:"-20px"}}>
-                  Tobby
-                </Grid>
-                <Grid className="tituloFeed2" item xs={12} md={12} style={{  marginLeft:"-20px"}}>
-                  Siguiendo
-                </Grid>
-                <Grid className="tituloFeed3" item xs={12} md={12} style={{ marginTop: "-15px" , marginLeft:"-20px"}}>
-                  Nivel 0
-                </Grid>
-              </Grid>
-
-              <Grid className="puntos" container xs={6} md={6}>
-                {" "}
-              </Grid>
-              <Grid className="puntos" container xs={1} md={1}>
-                {" "}
-                <img src={puntos} alt="puntos" />
-              </Grid>
-
-              <Grid item xs={12} md={12}>
-                <img src={feed3} alt="feed" />
-              </Grid>
-
-              <Grid container xs={12} md={12}>
-                <Grid item xs={1} md={1}>
-                  <img src={like} alt="Like" />
-                </Grid>
-                <Grid className="cantidadLikes" item xs={3} md={3} style={{ margin: "0.8rem"}}>
-                  1.221 Likes
-                </Grid>
-                <Grid item xs={5} md={5}></Grid>
-                <Grid item xs={1} md={1} style={{ margin: "5px"}}>
-                  <img src={comentario} alt="Like" />
-                </Grid>
-                <Grid item xs={1} md={1}>
-                  <img src={share} alt="Like" />
-                </Grid>
-
-                <Grid className="descripcion"  item xs={12} md={12} >
-                  Mira mi nuevo truco, hoy aprendí un nuevo truco, ya puedo
-                  saltar y estoy muy feliz, por eso quiero que lo veas.
-                </Grid>
-
-                <Grid className="descripcionHora"  item xs={12} md={12} style={{ marginTop:"10px"}}>
-                  Hoy 12:26am
-                </Grid>
-
-              </Grid>
-            </Grid>
-          </Grid>
-          {/* aqui termina el Feed3 */}
-
-          {/*  Feed4 */}
-          <Grid className="contenedorFeed" container xs={6} md={6}>
-            <Grid container xs={12} md={12}>
-              <Grid item xs={3} md={3}>
-                <img className="fotoFeed1" src={perro4} alt="feed" />
-              </Grid>
-              <Grid container xs={2} md={2}>
-                <Grid className="tituloFeed1" item xs={12} md={12} style={{ marginBottom: "-20px", marginLeft:"-20px"}}>
-                  Zeus
-                </Grid>
-                <Grid className="tituloFeed2" item xs={12} md={12} style={{  marginLeft:"-20px"}}>
-                  Siguiendo
-                </Grid>
-                <Grid className="tituloFeed3" item xs={12} md={12} style={{ marginTop: "-15px" , marginLeft:"-20px"}}>
-                  Nivel 2
-                </Grid>
-              </Grid>
-
-              <Grid className="puntos" container xs={6} md={6}>
-                {" "}
-              </Grid>
-              <Grid className="puntos" container xs={1} md={1}>
-                {" "}
-                <img src={puntos} alt="puntos" />
-              </Grid>
-
-              <Grid item xs={12} md={12}>
-                <img src={feed4} alt="feed" />
-              </Grid>
-
-              <Grid container xs={12} md={12}>
-                <Grid item xs={1} md={1}>
-                  <img src={like} alt="Like" />
-                </Grid>
-                <Grid className="cantidadLikes" item xs={3} md={3} style={{ margin: "0.8rem"}}>
-                  1.221 Likes
-                </Grid>
-                <Grid item xs={5} md={5}></Grid>
-                <Grid item xs={1} md={1} style={{ margin: "5px"}}>
-                  <img src={comentario} alt="Like" />
-                </Grid>
-                <Grid item xs={1} md={1}>
-                  <img src={share} alt="Like" />
-                </Grid>
-
-                <Grid className="descripcion"  item xs={12} md={12} >
-                  Mira mi nuevo truco, hoy aprendí un nuevo truco, ya puedo
-                  saltar y estoy muy feliz, por eso quiero que lo veas.
-                </Grid>
-
-                <Grid className="descripcionHora"  item xs={12} md={12} style={{ marginTop:"10px"}}>
-                  Hoy 12:26am
-                </Grid>
-
-              </Grid>
-            </Grid>
-          </Grid>
-          {/* aqui termina el Feed4 */}
-        </Grid>
-      </Grid>
-    </Grid>
-  );
+								</Grid>
+							</Grid>
+						</Grid>
+					))}
+				</Grid>
+			</Grid>
+		</Grid>
+	);
 };
 
 export default ContenedorCentral;
