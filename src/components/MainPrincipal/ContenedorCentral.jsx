@@ -14,7 +14,7 @@ import axiosClient from "../../config/AxiosClient";
 const ContenedorCentral = () => {
 
 	const [datos, setDatos] = useState([])
-	const [comentarios, setComentarios] = useState([])
+	const [comentarios, setComentarios] = useState(true)
 
 	useEffect(() => {
 		const datos = async () => {
@@ -22,7 +22,6 @@ const ContenedorCentral = () => {
 				"/mostrarpublicaciones/"
 			);
 			setDatos(response.data.publicaciones);
-			setComentarios(response.data.publicaciones?.comentarios);
 		}
 		datos()
 	}, []);
@@ -36,6 +35,14 @@ const ContenedorCentral = () => {
 		console.log(datos[0].fotos);
 		console.log(datos[0].fotos[0].nombre_imagen);
 		console.log(datos[0].comentarios[0].comentario);
+	}
+
+	const comment = () =>{
+		if(comentarios){
+			setComentarios(false)
+		}else{
+			setComentarios(true)
+		}
 	}
 
 	return (
@@ -76,7 +83,9 @@ const ContenedorCentral = () => {
 
 								<Grid item xs={12} md={12} style={{width : '10rem'}}>
 									{dato.fotos.map((d) => (
-										< img src = {`http://localhost:4001/${d.nombre_imagen}`} alt={d.nombre_imagen}/>
+										<figure clasName="figure_Imagen">
+											< img src = {`http://localhost:4001/${d.nombre_imagen}`} alt={d.nombre_imagen}/>
+										</figure>
 									))}
 								</Grid>
 								<Grid container xs={12} md={12}>
@@ -102,9 +111,10 @@ const ContenedorCentral = () => {
 										{`Fecha: ${moment.utc(dato.fecha_publicacion).format('MM/DD/YYYY')}`}
 									</Grid>
 									<Grid xs={12} md={12} >
-										{dato.comentarios.map((comment)=>(
-											<div>{comment.comentario}</div>
-										))}
+										<button type="text" onClick={comment}>Mostrar comentarios</button>
+										{comentarios ? null : <div>{dato.comentarios.map((comment)=>(
+											<p>{comment.comentario}</p>
+										))}</div>}
 									</Grid>
 
 								</Grid>
