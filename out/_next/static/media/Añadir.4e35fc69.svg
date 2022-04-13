@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="91" height="91" viewBox="0 0 91 91">
+  <defs>
+    <filter id="Elipse_7" x="0" y="0" width="91" height="91" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="9" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Añadir" transform="translate(6)">
+    <g transform="matrix(1, 0, 0, 1, -6, 0)" filter="url(#Elipse_7)">
+      <circle id="Elipse_7-2" data-name="Elipse 7" cx="36.5" cy="36.5" r="36.5" transform="translate(6)" fill="#ffb714"/>
+    </g>
+    <g id="Grupo_1652" data-name="Grupo 1652" transform="translate(-9.5 13.191)">
+      <path id="Trazado_219" data-name="Trazado 219" d="M1101.72,481.079a23.605,23.605,0,1,1,23.521,23.626,23.68,23.68,0,0,1-23.521-23.626m23.608,20.019a20,20,0,1,0-20-20.03,20.062,20.062,0,0,0,20,20.03" transform="translate(-1079.325 -457.791)" fill="#8e5207"/>
+      <path id="Trazado_220" data-name="Trazado 220" d="M1122.725,486.656c-1.284,0-2.567.018-3.849-.007-1.181-.022-1.885-.667-1.891-1.672a1.67,1.67,0,0,1,1.864-1.7c2.359-.023,4.721-.072,7.077.018,1.205.046,1.678-.211,1.606-1.541-.124-2.311-.043-4.634-.03-6.951.008-1.294.607-2.017,1.641-2.044,1.084-.029,1.727.723,1.734,2.079.014,2.483.028,4.966-.009,7.449-.011.761.242,1.006,1,.995,2.482-.037,4.966-.022,7.449-.01,1.353.007,2.105.654,2.076,1.736-.03,1.036-.751,1.632-2.048,1.64-2.276.014-4.553,0-6.829,0-1.631,0-1.632,0-1.632,1.574,0,2.276.007,4.552,0,6.828-.007,1.361-.635,2.12-1.705,2.109s-1.667-.76-1.673-2.143c-.01-2.442-.032-4.884.013-7.325.015-.817-.25-1.095-1.064-1.058-1.239.057-2.482.015-3.724.014" transform="translate(-1083.188 -461.656)" fill="#8e5207"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1115" height="28" viewBox="0 0 1115 28">
+  <g id="barra" transform="translate(-26 -190)">
+    <g id="Rectángulo_818" data-name="Rectángulo 818" transform="translate(26 190)" fill="#fff" stroke="#ffb714" stroke-width="4">
+      <rect width="1115" height="28" rx="14" stroke="none"/>
+      <rect x="2" y="2" width="1111" height="24" rx="12" fill="none"/>
+    </g>
+    <rect id="Rectángulo_819" data-name="Rectángulo 819" width="1100" height="14" rx="7" transform="translate(34 197)" fill="#ffd065"/>
+    <rect id="Rectángulo_820" data-name="Rectángulo 820" width="466" height="14" rx="7" transform="translate(34 197)" fill="#ffb714"/>
+  </g>
+</svg>

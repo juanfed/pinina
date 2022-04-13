@@ -2,28 +2,28 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
 import { useSnackbar } from "notistack";
-import axiosClient from '../../config/AxiosClient';
+import axiosClient from '../../../config/AxiosClient';
 
 // Components
-import ReduxOptionsDial from '../../layouts/speedDials/ReduxOptionsDial';
-import MainAppBar from '../../layouts/MainAppBar';
+import ReduxOptionsDial from '../../../layouts/speedDials/ReduxOptionsDial';
+import MainAppBar from '../../../layouts/MainAppBar';
 
-import T_citasT_mascotasNqo31Modal from '../../components/modals/T_citasT_mascotasNqo31Modal.js';
+// import T_citasT_mascotasNqo31Modal from '../../components/modals/T_citasT_mascotasNqo31Modal.js';
 
-import T_citasT_clienteswhSa6Modal from '../../components/modals/T_citasT_clienteswhSa6Modal.js';
+// import T_citasT_clienteswhSa6Modal from '../../components/modals/T_citasT_clienteswhSa6Modal.js';
 //REPLACEIMPORTS
 
 
 
 // Actions
-import { AddCloseAction, cleanCloseAction, cleanOffAction, cleanOnAction, cleanOpenAction, deleteCloseAction, editCloseAction, editOpenAction, saveCloseAction, sonCloseAction } from '../../redux/actions/MainAction';
+import { AddCloseAction, cleanCloseAction, cleanOffAction, cleanOnAction, cleanOpenAction, deleteCloseAction, editCloseAction, editOpenAction, saveCloseAction, sonCloseAction } from '../../../redux/actions/MainAction';
 
 // Material UI Components
 import { Grid, Button, TextField, List, ListItem, ListItemText, Divider } from '@mui/material';
 import { Typography, IconButton, FormLabel, FormControl, FormControlLabel, Checkbox, Box, Dialog, DialogContent, DialogContentText, DialogActions, DialogTitle } from '@mui/material';
 
 // Styles
-import useStyles from '../../assets/css/js/styles';
+import useStyles from '../../../assets/css/js/styles';
 
 // Material UI Icons
 import CloseIcon from '@mui/icons-material/Close';

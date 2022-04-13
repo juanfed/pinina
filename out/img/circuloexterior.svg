@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="305" height="305" viewBox="0 0 305 305">
+  <g id="circuloexterior" transform="translate(0.785 0.332)">
+    <path id="Trazado_1572" data-name="Trazado 1572" d="M151.3,17.829A133.469,133.469,0,1,1,56.921,56.921,133.467,133.467,0,0,1,151.3,17.829m0-.829A134.3,134.3,0,1,0,285.6,151.3,134.3,134.3,0,0,0,151.3,17Z" transform="translate(1.192 1.177)" fill="#ffb714"/>
+    <line id="Línea_187" data-name="Línea 187" y2="19" transform="translate(152.215 -0.332)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_188" data-name="Línea 188" x2="1.105" y2="13.817" transform="translate(143.647 5.466)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_189" data-name="Línea 189" x2="2.896" y2="13.551" transform="translate(124.536 7.875)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_190" data-name="Línea 190" x2="4.642" y2="13.065" transform="translate(105.9 12.761)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_191" data-name="Línea 191" x2="6.311" y2="12.336" transform="translate(88.06 20.045)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_192" data-name="Línea 192" x2="7.87" y2="11.407" transform="translate(71.325 29.584)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_193" data-name="Línea 193" x2="9.285" y2="10.291" transform="translate(55.983 41.223)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_194" data-name="Línea 194" x2="10.545" y2="8.986" transform="translate(42.288 54.775)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_195" data-name="Línea 195" x2="11.639" y2="7.538" transform="translate(30.472 69.995)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_196" data-name="Línea 196" x2="12.512" y2="5.947" transform="translate(20.756 86.63)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_197" data-name="Línea 197" x2="13.187" y2="4.267" transform="translate(13.284 104.382)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_198" data-name="Línea 198" x2="13.629" y2="2.509" transform="translate(8.2 122.963)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_199" data-name="Línea 199" x2="13.85" y2="0.707" transform="translate(5.58 142.052)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_200" data-name="Línea 200" y1="1.105" x2="13.817" transform="translate(5.481 160.212)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_201" data-name="Línea 201" y1="2.896" x2="13.551" transform="translate(7.89 177.533)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_202" data-name="Línea 202" y1="4.642" x2="13.065" transform="translate(12.776 194.422)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_203" data-name="Línea 203" y1="6.311" x2="12.336" transform="translate(20.06 210.593)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_204" data-name="Línea 204" y1="7.87" x2="11.407" transform="translate(29.599 225.77)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_205" data-name="Línea 205" y1="9.285" x2="10.291" transform="translate(41.238 239.697)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_206" data-name="Línea 206" y1="10.545" x2="8.986" transform="translate(54.789 252.132)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_207" data-name="Línea 207" y1="11.639" x2="7.538" transform="translate(70.01 262.854)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_208" data-name="Línea 208" y1="12.512" x2="5.947" transform="translate(86.645 271.696)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_209" data-name="Línea 209" y1="13.187" x2="4.267" transform="translate(104.397 278.494)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_210" data-name="Línea 210" y1="13.629" x2="2.509" transform="translate(122.977 283.136)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_211" data-name="Línea 211" y1="13.85" x2="0.707" transform="translate(142.067 285.535)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_212" data-name="Línea 212" x1="1.105" y1="13.817" transform="translate(160.227 285.668)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_213" data-name="Línea 213" x1="2.896" y1="13.551" transform="translate(177.548 283.523)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_214" data-name="Línea 214" x1="4.642" y1="13.065" transform="translate(194.437 279.124)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_215" data-name="Línea 215" x1="6.311" y1="12.336" transform="translate(210.608 272.569)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_216" data-name="Línea 216" x1="7.87" y1="11.407" transform="translate(225.784 263.959)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_217" data-name="Línea 217" x1="9.285" y1="10.291" transform="translate(239.712 253.436)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_218" data-name="Línea 218" x1="10.545" y1="8.986" transform="translate(252.147 241.189)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_219" data-name="Línea 219" x1="11.639" y1="7.538" transform="translate(262.868 227.417)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_220" data-name="Línea 220" x1="12.512" y1="5.947" transform="translate(271.711 212.373)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_221" data-name="Línea 221" x1="13.187" y1="4.267" transform="translate(278.509 196.301)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_222" data-name="Línea 222" x1="13.629" y1="2.509" transform="translate(283.151 179.478)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_223" data-name="Línea 223" x1="13.85" y1="0.707" transform="translate(285.55 162.191)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_224" data-name="Línea 224" x1="13.817" y2="1.105" transform="translate(285.682 143.632)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_225" data-name="Línea 225" x1="13.551" y2="2.896" transform="translate(283.538 124.521)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_226" data-name="Línea 226" x1="13.065" y2="4.642" transform="translate(279.139 105.885)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_227" data-name="Línea 227" x1="12.336" y2="6.311" transform="translate(272.584 88.045)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_228" data-name="Línea 228" x1="11.407" y2="7.87" transform="translate(263.974 71.31)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_229" data-name="Línea 229" x1="10.291" y2="9.285" transform="translate(253.451 55.968)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_230" data-name="Línea 230" x1="8.986" y2="10.545" transform="translate(241.204 42.273)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_231" data-name="Línea 231" x1="7.538" y2="11.639" transform="translate(227.431 30.457)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_232" data-name="Línea 232" x1="5.947" y2="12.512" transform="translate(212.388 20.742)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_233" data-name="Línea 233" x1="4.267" y2="13.187" transform="translate(196.316 13.269)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_234" data-name="Línea 234" x1="2.509" y2="13.629" transform="translate(179.493 8.185)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_235" data-name="Línea 235" x1="0.707" y2="13.85" transform="translate(162.206 5.565)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_236" data-name="Línea 236" x2="2.454" y2="18.636" transform="translate(132.583 1.243)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_237" data-name="Línea 237" x2="4.863" y2="18.15" transform="translate(113.007 5.134)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_238" data-name="Línea 238" x2="7.196" y2="17.365" transform="translate(94.117 11.545)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_239" data-name="Línea 239" x2="9.395" y2="16.27" transform="translate(76.222 20.377)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_240" data-name="Línea 240" x2="11.44" y2="14.9" transform="translate(59.631 31.463)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_241" data-name="Línea 241" x2="13.286" y2="13.286" transform="translate(44.631 44.617)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_242" data-name="Línea 242" x2="14.9" y2="11.44" transform="translate(31.478 59.616)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_243" data-name="Línea 243" x2="16.27" y2="9.395" transform="translate(20.392 76.207)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_244" data-name="Línea 244" x2="17.365" y2="7.196" transform="translate(11.56 94.102)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_245" data-name="Línea 245" x2="18.15" y2="4.863" transform="translate(5.149 112.993)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_246" data-name="Línea 246" x2="18.636" y2="2.454" transform="translate(1.258 132.568)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_247" data-name="Línea 247" x2="19" transform="translate(-0.785 151.668)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_248" data-name="Línea 248" y1="2.454" x2="18.636" transform="translate(1.258 169.928)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_249" data-name="Línea 249" y1="4.863" x2="18.15" transform="translate(5.149 187.094)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_250" data-name="Línea 250" y1="7.196" x2="17.365" transform="translate(11.56 203.652)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_251" data-name="Línea 251" y1="9.395" x2="16.27" transform="translate(20.392 219.348)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_252" data-name="Línea 252" y1="11.44" x2="14.9" transform="translate(31.478 233.894)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_253" data-name="Línea 253" y1="13.286" x2="13.286" transform="translate(44.631 247.047)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_254" data-name="Línea 254" y1="14.9" x2="11.44" transform="translate(59.631 258.587)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_255" data-name="Línea 255" y1="16.27" x2="9.395" transform="translate(76.222 268.303)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_256" data-name="Línea 256" y1="17.365" x2="7.196" transform="translate(94.117 276.04)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_257" data-name="Línea 257" y1="18.15" x2="4.863" transform="translate(113.007 281.666)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_258" data-name="Línea 258" y1="18.636" x2="2.454" transform="translate(132.583 285.071)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_259" data-name="Línea 259" y1="17" transform="translate(152.215 287.668)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_260" data-name="Línea 260" x1="2.454" y1="18.636" transform="translate(169.943 285.071)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_261" data-name="Línea 261" x1="4.863" y1="18.15" transform="translate(187.109 281.666)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_262" data-name="Línea 262" x1="7.196" y1="17.365" transform="translate(203.667 276.04)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_263" data-name="Línea 263" x1="9.395" y1="16.27" transform="translate(219.362 268.303)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_264" data-name="Línea 264" x1="11.44" y1="14.9" transform="translate(233.909 258.587)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_265" data-name="Línea 265" x1="13.286" y1="13.286" transform="translate(247.062 247.047)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_266" data-name="Línea 266" x1="14.9" y1="11.44" transform="translate(258.602 233.894)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_267" data-name="Línea 267" x1="16.27" y1="9.395" transform="translate(268.318 219.348)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_268" data-name="Línea 268" x1="17.365" y1="7.196" transform="translate(276.055 203.652)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_269" data-name="Línea 269" x1="18.15" y1="4.863" transform="translate(281.681 187.094)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_270" data-name="Línea 270" x1="18.636" y1="2.454" transform="translate(285.086 169.928)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_271" data-name="Línea 271" x1="17" transform="translate(287.215 151.668)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_272" data-name="Línea 272" x1="18.636" y2="2.454" transform="translate(285.086 132.568)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_273" data-name="Línea 273" x1="18.15" y2="4.863" transform="translate(281.681 112.993)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_274" data-name="Línea 274" x1="17.365" y2="7.196" transform="translate(276.055 94.102)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_275" data-name="Línea 275" x1="16.27" y2="9.395" transform="translate(268.318 76.207)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_276" data-name="Línea 276" x1="14.9" y2="11.44" transform="translate(258.602 59.616)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_277" data-name="Línea 277" x1="13.286" y2="13.286" transform="translate(247.062 44.617)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_278" data-name="Línea 278" x1="11.44" y2="14.9" transform="translate(233.909 31.463)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_279" data-name="Línea 279" x1="9.395" y2="16.27" transform="translate(219.362 20.377)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_280" data-name="Línea 280" x1="7.196" y2="17.365" transform="translate(203.667 11.545)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_281" data-name="Línea 281" x1="4.863" y2="18.15" transform="translate(187.109 5.134)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+    <line id="Línea_282" data-name="Línea 282" x1="2.454" y2="18.636" transform="translate(169.943 1.243)" fill="none" stroke="#ffb714" stroke-miterlimit="10" stroke-width="0.75"/>
+  </g>
+</svg>
