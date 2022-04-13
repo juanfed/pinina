@@ -1,13 +1,21 @@
 import axiosClient from "../../config/AxiosClient";
-import { LOGIN_START, LOGIN_START_ERROR, LOGIN_START_SUCCESS, REGISTER_START, REGISTER_START_SUCCESS, REGISTER_START_ERROR, CONSULT_COUNTRIES_SUCCESS, CONSULT_COUNTRIES_ERROR, SET_FORGOT_PASSWORD_MODAL } from "../types"
+import { LOGIN_START, 
+    LOGIN_START_ERROR, 
+    LOGIN_START_SUCCESS, 
+    REGISTER_START, 
+    REGISTER_START_SUCCESS, 
+    REGISTER_START_ERROR, 
+    CONSULT_COUNTRIES_SUCCESS, 
+    CONSULT_COUNTRIES_ERROR, 
+    SET_FORGOT_PASSWORD_MODAL } from "../types"
 
 export const loginAction = (userInfo) => async (dispatch) => {
     dispatch(loginStart());
     try {
-        const login = await axiosClient.post('/login/loginPinina', userInfo);
+        const login = await axiosClient.post('/loginClientes', userInfo);
         if (login.data.code === 1) {
             // Dispatch
-            localStorage.setItem('token', login.data.user.tokenGenerado);
+            localStorage.setItem('token', login.data.cliente.tokenGenerado);
             dispatch(loginStartSuccess(login));
             return login.data
         }

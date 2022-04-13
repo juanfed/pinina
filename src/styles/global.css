@@ -332,9 +332,11 @@ img {
   background-color: #0085dd;
 }
 
-.mockup {
+
+/* home parte donde el usuario accede por primera vez, y que contiene la parte del registro y login*/
+/* .mockup {
   margin-left: 3rem;
-}
+} */
 
 * {
   margin: 0px;
@@ -412,15 +414,15 @@ img {
 }
 
 .logodefacebook {
-  width: 10px;
+  width: 15px;
 }
 
 .logodeinstagram {
-  width: 20px;
+  width: 28px;
 }
 
 .logodetwitter {
-  width: 22px;
+  width: 30px;
 }
 
 .foto-perfil {
@@ -1568,6 +1570,91 @@ img {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*home parte central*/
+.home-main{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+} 
+
+.home--main--imagen{
+  width: 800px;
+  margin-left: 3rem;
+}
+.home--main--loginRegister{
+  width: 800px;
+}
+
+@media screen and (max-width: 1400px){
+  .home-main{
+    flex-direction: column;
+    margin-top: 3rem;
+  }
+
+  .home--main--imagen{
+    margin-left: 4rem ;
+  }
+
+  .home--main--loginRegister{
+    margin-top: 4rem;
+    margin-left: 8rem;
+  }
+}
+@media screen and (max-width: 900px){
+  .home--main--imagen{
+    width: 500px;
+    margin-left: 10rem;
+  }
+
+  .home--main--loginRegister{
+    margin-top: 5rem;
+    margin-left: 2rem;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .home--main--loginRegister{
+    margin-left: 0rem;
+    padding-left: 0rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*etiqueta figura de la imagen*/
 
 .caja {
@@ -1641,10 +1728,16 @@ img {
   height: 100px;
 }
 
+.comentario{
+  color: black;
+}
+
 .deleteComment{
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
+
+
 
 

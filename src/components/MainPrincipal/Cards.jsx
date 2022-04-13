@@ -83,7 +83,7 @@ const Cards = ({ dato }) => {
 		left: '50%',
 		transform: 'translate(-50%, -50%)',
 		width: 480,
-		height: 650,
+		height: 450,
 		overflow: 'auto',
 		bgcolor: 'background.paper',
 		border: '2px solid #000',
@@ -228,11 +228,11 @@ const Cards = ({ dato }) => {
 
 
 						{comentarios ? <div>
-							<Fade in={comentarios} style={{ backgroundColor: '#f48c06', borderRadius: '5%', borderColor: '#ededed' }}>
+							<Fade in={comentarios} style={{ backgroundColor: '#e4e4e4', borderRadius: '5%', borderColor: '#f48c06' }}>
 								{dato.comentarios.length ?
-									<Box sx={style}>
+									<Box sx={style} style>
 										<div>{dato.comentarios.map((comment) => (
-											<List sx={{ width: '100%', maxWidth: 360, bgcolor: '#f48c06' }}>
+											<List sx={{ width: '100%', maxWidth: 360, bgcolor: '#e4e4e4' }}>
 												<ListItem alignItems="flex-start">
 													<ListItemText
 														secondary={
@@ -242,12 +242,11 @@ const Cards = ({ dato }) => {
 																	component="span"
 																	variant="body2"
 																	color="text.primary"
-																	style={{ fontSize: "14px", color: '#ededed', fontWeight: '800' }}
+																	style={{ fontSize: "14px", color: '#f48c06', fontWeight: '800', maxWidth: '480px' }}
 																>
 																	{comment.id_clientes == 8 ? <p className="deleteComment"> <div onClick={deleteComment}><DeleteIcon/></div> {comment.primer_nombre} {comment.primer_apelido} :</p> : <p>{comment.primer_nombre} {comment.primer_apelido}</p>}
 																</Typography>
-																<br></br>
-																{comment.comentario}  
+																<p className="comentario">{comment.comentario}</p> 
 
 																<br />
 															</React.Fragment>
@@ -260,6 +259,7 @@ const Cards = ({ dato }) => {
 
 												<form onSubmit={send}>
 													<textarea type="text" id='comentario' name="comentario" placeholder='Comenta' onChange={comentar}  className='comment'/>
+													<br />
 													<br />
 													<button onClick={addComment} type='submit'>Publicar</button>
 												</form>
@@ -276,6 +276,7 @@ const Cards = ({ dato }) => {
 											<div>
 												<form onSubmit={send}>
 													<textarea type="text" id='comentario' name="comentario" placeholder='Añade un comentario' onChange={comentar} className='comment' />
+													<br />
 													<br />
 													<button onClick={addComment} type='submit'>Publicar</button>
 												</form>

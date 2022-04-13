@@ -119,7 +119,7 @@ export default () => {
       });
     }
   }, [login]);
-  
+
   //get Countries from Backend
   useEffect(() => {
     dispatch(getCountriesAction());
@@ -207,6 +207,8 @@ export default () => {
           <Link
             style={{
               color: "#3B3D3E",
+              fontSize: '1.25rem',
+              fontWeight: '600'
             }}
             component="button"
             variant="body2"
@@ -220,6 +222,8 @@ export default () => {
           <Link
             style={{
               color: "#3B3D3E",
+              fontSize: '1.25rem',
+              fontWeight: '600'
             }}
             component="button"
             variant="body2"
@@ -262,14 +266,15 @@ export default () => {
           </a>
         </Grid>
 
-        <Grid item xs={6} md={6}>
-          <img className="mockup" src={imagen} alt="imagen-mockup" />
-        </Grid>
+        <div className="home-main">
+          <figure className="home--main--imagen">
+            <img className="mockup" src={imagen} alt="imagen-mockup" />
+          </figure>
 
-        <Grid item xs={6} md={6}>
-          <div className="partesuperior">
-            <Grid container spacing={1} style={{ textAlign: "center" }}>
-              <Grid item xs={12}>
+          <div className="home--main--loginRegister">
+            <div className="partesuperior">
+              <Grid container spacing={1} style={{ textAlign: "center" }}>
+
                 <img
                   className="perro"
                   style={{
@@ -279,151 +284,152 @@ export default () => {
                   src={imagen2}
                   alt="imagen-perro"
                 />
-              </Grid>
 
-              {/* correo electronico */}
-              <Grid item xs={12}>
-                <Grid container spacing={1} alignItems="flex-end">
-                  <Grid xs={1} md={1}>
-                    <AccountCircleIcon style={{ color: "#EBEBEB" }} />
-                  </Grid>
-                  <Grid item xs={11} md={11}>
-                    <TextField
-                      inputProps={{
-                        style: {
-                          color: "#FFB714",
-                        },
-                      }}
-                      InputLabelProps={{
-                        style: { color: "#EBEBEB" },
-                      }}
-                      fullWidth
-                      type="email"
-                      id="input-with-icon-grid"
-                      label="Correo electrónico"
-                      name="correo"
-                      value={correo}
-                      onChange={handleChange}
-                    />
-                  </Grid>
-                </Grid>
-              </Grid>
 
-              {/* contraseña */}
-              <Grid item xs={12}>
-                <Grid container spacing={1} alignItems="flex-end">
-                  <Grid xs={1} md={1}>
-                    <LockIcon style={{ color: "#EBEBEB" }} />
-                  </Grid>
-                  <Grid item xs={11} md={11}>
-                    <TextField
-                      inputProps={{
-                        style: {
-                          color: "#FFB714",
-                        },
-                      }}
-                      InputLabelProps={{
-                        style: { color: "#EBEBEB" },
-                      }}
-                      fullWidth
-                      type="password"
-                      id="input-with-icon-grid"
-                      label="Contraseña"
-                      name="password"
-                      value={password}
-                      onChange={handleChange}
-                    />
+                {/* correo electronico */}
+                <Grid item xs={12}>
+                  <Grid container spacing={1} alignItems="flex-end">
+                    <Grid xs={1} md={1}>
+                      <AccountCircleIcon style={{ color: "#EBEBEB" }} />
+                    </Grid>
+                    <Grid item xs={11} md={11}>
+                      <TextField
+                        inputProps={{
+                          style: {
+                            color: "#FFB714",
+                          },
+                        }}
+                        InputLabelProps={{
+                          style: { color: "#EBEBEB" },
+                        }}
+                        fullWidth
+                        type="email"
+                        id="input-with-icon-grid"
+                        label="Correo electrónico"
+                        name="correo"
+                        value={correo}
+                        onChange={handleChange}
+                      />
+                    </Grid>
                   </Grid>
                 </Grid>
-              </Grid>
 
-              {/* boton iniciar sesión */}
-              <Grid item xs={6}>
-                <Button
-                  style={{
-                    background: "#FFB713",
-                    marginBottom: "1rem",
-                    marginTop: "1rem",
-                    fontFamily: "Bebas-Neue",
-                  }}
-                  onClick={handleSubmit}
-                >
-                  Iniciar sesión
-                </Button>
-              </Grid>
+                {/* contraseña */}
+                <Grid item xs={12}>
+                  <Grid container spacing={1} alignItems="flex-end">
+                    <Grid xs={1} md={1}>
+                      <LockIcon style={{ color: "#EBEBEB" }} />
+                    </Grid>
+                    <Grid item xs={11} md={11}>
+                      <TextField
+                        inputProps={{
+                          style: {
+                            color: "#FFB714",
+                          },
+                        }}
+                        InputLabelProps={{
+                          style: { color: "#EBEBEB" },
+                        }}
+                        fullWidth
+                        type="password"
+                        id="input-with-icon-grid"
+                        label="Contraseña"
+                        name="password"
+                        value={password}
+                        onChange={handleChange}
+                      />
+                    </Grid>
+                  </Grid>
+                </Grid>
 
-              {/* olvide mi contraseña */}
-              <Grid item xs={6}>
+                {/* boton iniciar sesión */}
+                <Grid item xs={6}>
+                  <Button
+                    style={{
+                      background: "#FFB713",
+                      marginBottom: "1rem",
+                      marginTop: "1rem",
+                      fontFamily: "Bebas-Neue",
+                    }}
+                    onClick={handleSubmit}
+                  >
+                    Iniciar sesión
+                  </Button>
+                </Grid>
+
+                {/* olvide mi contraseña */}
+                <Grid item xs={6}>
+                  <Link
+                    style={{
+                      marginTop: "1.5rem",
+                      color: "#FFB713",
+                    }}
+                    component="button"
+                    variant="body2"
+                    onClick={() => {
+                      console.info("Olvidé mi contraseña");
+                    }}
+                  >
+                    Olvide mi contraseña
+                  </Link>
+                </Grid>
+              </Grid>
+            </div>
+            {/* Registrarme */}
+            <div className="parteinferior">
+              <Grid item xs={12}>
                 <Link
                   style={{
-                    marginTop: "1.5rem",
-                    color: "#FFB713",
+                    fontSize: "21px",
+                    fontFamily: "Bebas-Neue",
+                    color: "#FFB714",
                   }}
                   component="button"
                   variant="body2"
-                  onClick={() => {
-                    console.info("Olvidé mi contraseña");
-                  }}
+                  onClick={() => setModalRegis(true)}
                 >
-                  Olvide mi contraseña
+                  Registrarse
                 </Link>
               </Grid>
-            </Grid>
-          </div>
-          {/* Registrarme */}
-          <div className="parteinferior">
-            <Grid item xs={12}>
-              <Link
-                style={{
-                  fontSize: "21px",
-                  fontFamily: "Bebas-Neue",
-                  color: "#FFB714",
-                }}
-                component="button"
-                variant="body2"
-                onClick={() => setModalRegis(true)}
-              >
-                Registrarse
-              </Link>
-            </Grid>
-          </div>
+            </div>
 
-          {/* Ingresar con google */}
-          <div className="conredes">
-            <Grid container spacing={1}>
-              <Grid item xs={6} md={6} style={{ textAlign: "center" }}>
-                <img className="googlehuella" src={imagen3} alt="icon-google" />
+            {/* Ingresar con google */}
+            <div className="conredes">
+              <Grid container spacing={1}>
+                <Grid item xs={6} md={6} style={{ textAlign: "center" }}>
+                  <img className="googlehuella" src={imagen3} alt="icon-google" />
+                </Grid>
+                <Grid
+                  item
+                  xs={6}
+                  md={6}
+                  style={{ textAlign: "left", marginLeft: "-4rem" }}
+                >
+                  <GoogleAuth />
+                </Grid>
               </Grid>
-              <Grid
-                item
-                xs={6}
-                md={6}
-                style={{ textAlign: "left", marginLeft: "-4rem" }}
-              >
-                <GoogleAuth />
-              </Grid>
-            </Grid>
 
-            {/* Ingresar con facebook */}
-            <Grid container spacing={1}>
-              <Grid item xs={6} md={6} style={{ textAlign: "center" }}>
-                <img
-                  className="facebookhuella"
-                  src={imagen4}
-                  alt="icon-facebook"
-                />
+              {/* Ingresar con facebook */}
+              <Grid container spacing={1}>
+                <Grid item xs={6} md={6} style={{ textAlign: "center" }}>
+                  <img
+                    className="facebookhuella"
+                    src={imagen4}
+                    alt="icon-facebook"
+                  />
+                </Grid>
+                <Grid
+                  item
+                  xs={6}
+                  md={6}
+                  style={{ textAlign: "left", marginLeft: "-4rem" }}
+                >
+                  <FacebookAuth />
+                </Grid>
               </Grid>
-              <Grid
-                item
-                xs={6}
-                md={6}
-                style={{ textAlign: "left", marginLeft: "-4rem" }}
-              >
-                <FacebookAuth />
-              </Grid>
-            </Grid>
+            </div>
           </div>
-        </Grid>
+        </div>
       </Grid>
       {<Modalregistro setModalRegis={setModalRegis} modalRegis={modalRegis} />}
     </Grid>
