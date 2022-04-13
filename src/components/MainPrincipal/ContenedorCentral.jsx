@@ -27,12 +27,12 @@ const ContenedorCentral = () => {
 			<Historias />
 
 			{/*  Contenedor de abajo */}
-			<Grid className="caja c3" container spacing={{ xs: 2, md:3}} columns={{xs: 4, sm: 8, md: 12}} style={{marginBottom: '4rem'}}>
+			<div className="caja c3" >
 					{/*  Feed */}
 					{datos.length && datos.map((dato) => (
 						<Cards dato={dato} />
 					))}
-			</Grid>
+			</div>
 		</Grid>
 	);
 };

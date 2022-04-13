@@ -1663,12 +1663,14 @@ img {
 
 .c3 {
   margin-top: 1rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(250px,420px));
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   font-size: 14px;
   font-family: "Montserrat";
+  margin-bottom: 4rem;
 }
 
 .figura--iconoPerfil img{
