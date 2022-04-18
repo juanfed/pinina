@@ -695,15 +695,7 @@ img {
   color: #8e5207;
 }
 
-.cantidadLikes {
-  display: flex;
-  justify-content: left;
-  align-items: left;
-  text-align: left;
-  color: #8e5207;
-  font-family: "Bebas-Neue";
-  font-size: 25px;
-}
+
 
 .opcionesSpa {
   padding-left: 2rem;
@@ -1721,6 +1713,40 @@ img {
   flex-direction: column;
   width: 100%;
   height: 300px;
+}
+
+.cards--buton{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.cards--buton--likes{
+  display: flex;
+}
+
+.cards--buton--likes--figure{
+  width: 2.1rem;
+  margin-right: .5rem;
+}
+
+.cards--buton--commentAndShare{
+  display: flex;
+}
+
+.cards--buton--coment, .cards--buton--share{
+  width: 2.1rem;
+  margin-right: .5rem;
+}
+
+.cantidadLikes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #8e5207;
+  font-family: "Bebas-Neue";
+  font-size: 1.8rem;
 }
 
 .comment{

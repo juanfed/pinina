@@ -110,12 +110,12 @@ const Cards = ({ dato }) => {
 		e.target.reset()
 	}
 
-	const deleteComment = async () =>{
+	const deleteComment = async () => {
 		const borrarComment = await axiosClient.delete(
 			`/eliminarcomentario`, {
-				comentario_id : dato.comentarios.comentario_id,
-				id_publicacion: dato.comentarios.id_publicacion
-			}
+			comentario_id: dato.comentarios.comentario_id,
+			id_publicacion: dato.comentarios.id_publicacion
+		}
 		)
 	}
 	console.log(dato.comentarios);
@@ -201,19 +201,25 @@ const Cards = ({ dato }) => {
 					/> : null}
 				</div>
 				<Grid container xs={12} md={12} style={{ margin: "0rem .5rem" }}>
-					<Grid item xs={1} md={1} style={{ cursor: "pointer" }}>
-						<img src={Like} alt="Like" onClick={darlike} />
-					</Grid>
-					<Grid className="cantidadLikes" item xs={3} md={3} style={{ margin: "0.8rem" }}>
-						{likes}
-					</Grid>
-					<Grid item xs={5} md={5}></Grid>
-					<Grid item xs={1} md={1} style={{ margin: "5px" }}>
-						<img src={comentario} alt="Like" onClick={(() => { setComentarios(true) })} className="boton--comentario" />
-					</Grid>
-					<Grid item xs={1} md={1}>
-						<img src={share} alt="Like" />
-					</Grid>
+					<div className="cards--buton">
+						<div className="cards--buton--likes">
+							<figure className="cards--buton--likes--figure">
+								<img src={Like} alt="Like" onClick={darlike} />
+							</figure>
+
+							<p className="cantidadLikes" >
+								{likes}
+							</p>
+						</div>
+						<div className="cards--buton--commentAndShare">
+							<figure className="cards--buton--coment">
+								<img src={comentario} alt="Like" onClick={(() => { setComentarios(true) })} className="boton--comentario" />
+							</figure>
+							<figure className="cards--buton--share">
+								<img src={share} alt="Like" />
+							</figure>
+						</div>
+					</div>
 
 					<Grid className="descripcion" item xs={12} md={12} >
 						{dato.descripcion_publicacion}
@@ -244,9 +250,9 @@ const Cards = ({ dato }) => {
 																	color="text.primary"
 																	style={{ fontSize: "14px", color: '#f48c06', fontWeight: '800', maxWidth: '480px' }}
 																>
-																	{comment.id_clientes == 8 ? <p className="deleteComment"> <div onClick={deleteComment}><DeleteIcon/></div> {comment.primer_nombre} {comment.primer_apelido} :</p> : <p>{comment.primer_nombre} {comment.primer_apelido}</p>}
+																	{comment.id_clientes == 8 ? <p className="deleteComment"> <div onClick={deleteComment}><DeleteIcon /></div> {comment.primer_nombre} {comment.primer_apelido} :</p> : <p>{comment.primer_nombre} {comment.primer_apelido}</p>}
 																</Typography>
-																<p className="comentario">{comment.comentario}</p> 
+																<p className="comentario">{comment.comentario}</p>
 
 																<br />
 															</React.Fragment>
@@ -258,7 +264,7 @@ const Cards = ({ dato }) => {
 											<div>
 
 												<form onSubmit={send}>
-													<textarea type="text" id='comentario' name="comentario" placeholder='Comenta' onChange={comentar}  className='comment'/>
+													<textarea type="text" id='comentario' name="comentario" placeholder='Comenta' onChange={comentar} className='comment' />
 													<br />
 													<br />
 													<button onClick={addComment} type='submit'>Publicar</button>
