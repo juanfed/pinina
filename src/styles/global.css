@@ -1715,6 +1715,11 @@ img {
   height: 300px;
 }
 
+.fotos--cards{
+  width: 420px;
+  height: 300px;
+}
+
 .cards--buton{
   display: flex;
   width: 100%;

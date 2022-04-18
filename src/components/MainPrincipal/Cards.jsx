@@ -156,9 +156,9 @@ const Cards = ({ dato }) => {
 									<Box
 										component="img"
 										sx={{
-											height: 255,
-											display: 'block',
-											width: 400,
+											height: 300,
+											display: 'inline-block',
+											width: 420,
 											overflow: 'hidden',
 											width: '100%',
 										}}
@@ -169,36 +169,57 @@ const Cards = ({ dato }) => {
 							</div>
 						))}
 					</AutoPlaySwipeableViews>
-					{mostrarBotones ? <MobileStepper
-						steps={maxSteps}
-						position="static"
-						activeStep={activeStep}
-						style={{ backgroundColor: "transparent" }}
-						nextButton={
-							<Button
-								size="small"
-								onClick={handleNext}
-								disabled={activeStep === maxSteps - 1}
-							>
-								Next
-								{theme.direction === 'rtl' ? (
-									<KeyboardArrowLeft />
-								) : (
-									<KeyboardArrowRight />
-								)}
-							</Button>
-						}
-						backButton={
-							<Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-								{theme.direction === 'rtl' ? (
-									<KeyboardArrowRight />
-								) : (
-									<KeyboardArrowLeft />
-								)}
-								Back
-							</Button>
-						}
-					/> : null}
+					{mostrarBotones ?
+						<MobileStepper
+							steps={maxSteps}
+							position="absolute"
+							activeStep={activeStep}
+							style={{ backgroundColor: "transparent", width: "100%", display: "flex", justifyContent: "space-around", padding: "0px" }}
+							nextButton={
+
+								<Button
+									size="small"
+									onClick={handleNext}
+									disabled={activeStep === maxSteps - 1}
+								>
+									Next
+									{theme.direction === 'rtl' ? (
+										<KeyboardArrowLeft />
+									) : (
+										<KeyboardArrowRight />
+									)}
+								</Button>
+							}
+							backButton={
+								<Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+									{theme.direction === 'rtl' ? (
+										<KeyboardArrowRight />
+									) : (
+										<KeyboardArrowLeft />
+									)}
+									Back
+								</Button>
+							}
+						/> : 
+						<MobileStepper
+							steps={maxSteps}
+							position="absolute"
+							activeStep={activeStep}
+							style={{ backgroundColor: "transparent", width: "100%", display: "flex", 
+							justifyContent: "space-around", padding: ".7rem 0rem" }}
+							nextButton={
+
+								<Button
+									size="small"
+									onClick={handleNext}
+									disabled={activeStep === maxSteps}>
+								</Button>
+							}
+							backButton={
+								<Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+								</Button>
+							}
+						/>}
 				</div>
 				<Grid container xs={12} md={12} style={{ margin: "0rem .5rem" }}>
 					<div className="cards--buton">
