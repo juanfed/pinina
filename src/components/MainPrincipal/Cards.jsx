@@ -118,7 +118,6 @@ const Cards = ({ dato }) => {
 		}
 		)
 	}
-	console.log(dato.comentarios);
 	return (
 		<Card className="contenedorFeed" sx={{ maxWidth: 445 }} key={dato.id_publicacion} style={{ paddingBottom: ".5rem" }}>
 			<div className="header--card">
