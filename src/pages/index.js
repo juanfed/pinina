@@ -93,6 +93,7 @@ import { authStyles } from "./../assets/css/js/authStyles";
 import { getCountriesAction } from "./../redux/actions/MainAction";
 import { Modalregistro } from "./../layouts/modals/modalregistro";
 
+// donde se lanza la alerta para la instalcion de la pwa en dispositivos moviles
 
 export default function Home() {
 	const [login, setLogin] = useState(true);
