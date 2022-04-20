@@ -12,10 +12,11 @@ import { LOGIN_START,
 export const loginAction = (userInfo) => async (dispatch) => {
     dispatch(loginStart());
     try {
-        const login = await axiosClient.post('/loginClientes', userInfo);
+        const login = await axiosClient.post('/login/loginpinina', userInfo);
         if (login.data.code === 1) {
             // Dispatch
-            localStorage.setItem('token', login.data.cliente.tokenGenerado);
+            localStorage.setItem('id_usuario', login.data.user.id_usuario);
+            localStorage.setItem('token', login.data.user.tokenGenerado);
             dispatch(loginStartSuccess(login));
             return login.data
         }

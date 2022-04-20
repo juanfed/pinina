@@ -4,8 +4,8 @@ import Image from "../../img/nuevofondo.jpg";
 export const registerStyle = makeStyles((theme) => ({
     root: {
         height: '100vh',
-       
-        
+
+
     },
     toRightContainer: {
         height: '100vh',
@@ -13,9 +13,9 @@ export const registerStyle = makeStyles((theme) => ({
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-       
-      backgroundAttachment:'fixed',
-        
+
+        backgroundAttachment: 'fixed',
+
     },
     mainContainer: {
         padding: theme.spacing(0, 20, 0, 20)

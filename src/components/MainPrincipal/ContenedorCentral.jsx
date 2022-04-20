@@ -8,19 +8,20 @@ import Cards from "./Cards";
 const ContenedorCentral = () => {
 
 	const [datos, setDatos] = useState([])
+	const idUsuario = localStorage.getItem("id_usuario")
 	
-
 	useEffect(() => {
 		const datos = async () => {
 			const response = await axiosClient.get(
-				"/mostrarpublicaciones/8"
+				`mostrarpublicaciones/${idUsuario}`
 			);
 			setDatos(response.data.publicaciones);
 		}
 		datos()
 	}, []);
-
-
+	
+	
+	console.log(localStorage.getItem("id_usuario"))
 	return (
 		<Grid item xs={8} md={8}>
 			{/*  Contenedor de arriba */}

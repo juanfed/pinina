@@ -55,7 +55,7 @@ const Cards = ({ dato }) => {
 
 	const darlike = async () => {
 		const response = await axiosClient.get(
-			`/darlike/${dato.id_publicacion}/8`
+			`/darlike/${dato.id_publicacion}/${localStorage.getItem("id_usuario")}`
 		);
 		if (like) {
 			setLikes(likes + 1)
@@ -68,7 +68,7 @@ const Cards = ({ dato }) => {
 
 	const seguir = async () => {
 		const respuesta = await axiosClient.post(
-			`/seguircuentausuario/8/${dato.id_clientes}`
+			`/seguircuentausuario/${localStorage.getItem("id_usuario")}/${dato.id_usuario}`
 		);
 		if (follow) {
 			setFollow(false)
@@ -97,11 +97,12 @@ const Cards = ({ dato }) => {
 	}
 
 	const addComment = async () => {
+		// el back no ha cambiado nombre para pasar por parametro el id clientes
 		const agregarComentario = await axiosClient.post(
 			`/crearcomentarios`, {
 			id_publicacion: dato.id_publicacion,
 			comentario: coment.comentario,
-			id_clientes: 8
+			id_clientes: localStorage.getItem("id_usuario")
 		})
 	}
 
@@ -110,14 +111,13 @@ const Cards = ({ dato }) => {
 		e.target.reset()
 	}
 
-	const deleteComment = async () => {
+	const deleteComment = async (comment) => {
 		const borrarComment = await axiosClient.delete(
-			`/eliminarcomentario`, {
-			comentario_id: dato.comentarios.comentario_id,
-			id_publicacion: dato.comentarios.id_publicacion
-		}
+			`/eliminarcomentario/${comment.comentario_id}/${comment.id_publicacion}/`
 		)
 	}
+
+	console.log(dato.comentarios)
 	return (
 		<Card className="contenedorFeed" sx={{ maxWidth: 445 }} key={dato.id_publicacion} style={{ paddingBottom: ".5rem" }}>
 			<div className="header--card">
@@ -270,7 +270,7 @@ const Cards = ({ dato }) => {
 																	color="text.primary"
 																	style={{ fontSize: "14px", color: '#f48c06', fontWeight: '800', maxWidth: '480px' }}
 																>
-																	{comment.id_clientes == 8 ? <p className="deleteComment"> <div onClick={deleteComment}><DeleteIcon /></div> {comment.primer_nombre} {comment.primer_apelido} :</p> : <p>{comment.primer_nombre} {comment.primer_apelido}</p>}
+																	{comment.id_usuario == localStorage.getItem("id_usuario") ? <p className="deleteComment"> <div onClick={(()=>{deleteComment(comment)})}><DeleteIcon /></div> {comment.primer_nombre} {comment.primer_apelido} :</p> : <p>{comment.primer_nombre} {comment.primer_apelido}</p>}
 																</Typography>
 																<p className="comentario">{comment.comentario}</p>
 

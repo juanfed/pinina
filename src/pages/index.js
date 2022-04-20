@@ -13,6 +13,7 @@ import imagen5 from "./../../src/assets/img/Grupo 1352.png";
 import imagen6 from "./../../src/assets/img/logofacebook.svg";
 import imagen7 from "./../../src/assets/img/logoinstagram.svg";
 import imagen8 from "./../../src/assets/img/logotwitter.svg";
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 import GoogleAuth from "./../components/auth/GoogleAuth";
 
@@ -96,6 +97,7 @@ import { Modalregistro } from "./../layouts/modals/modalregistro";
 // donde se lanza la alerta para la instalcion de la pwa en dispositivos moviles
 
 export default function Home() {
+	const matches = useMediaQuery('(min-width:600px)');
 	const [login, setLogin] = useState(true);
 	const [title, setTitle] = useState("Iniciar Sesión");
 	const [modalRegis, setModalRegis] = useState(false);
