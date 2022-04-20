@@ -12,7 +12,10 @@ export const authStyles = makeStyles((theme) => ({
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundAttachment:'fixed',
-        
+        [theme.breakpoints.down('sm')]: {
+            minHeight: "230vh",
+            backgroundColor: 'red'
+        }
     },
     mainContainer: {
         padding: theme.spacing(0, 20, 0, 20)

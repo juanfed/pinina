@@ -195,83 +195,77 @@ export default function Home() {
 	return (
 		<Grid container className={classes.root}>
 			<Grid
-				container
 				justify="flex-end"
 				className={classes.toRightContainer}
 				alignItems="center"
+				sm={12}
 			>
-				<Grid
-					item
-					xs={11}
-					md={11}
-					style={{
-						display: "flex",
-						gap: "3rem",
-					}}
-				>
-					<img className="headerlogin" src={imagen5} alt="logo-principal" />
+				<div className='home--parteSuperior'>
+					<div className='home--parteSuperior--texto'>
+						<figure>
+							<img className="headerlogin" src={imagen5} alt="logo-principal" />
+						</figure>
+						<div className='parteSuperior--texto'>
+							<div>
+								<Link
+									style={{
+										color: "#3B3D3E",
+										fontSize: '1.3rem',
+										fontWeight: '600'
+									}}
+									className='parteSuperior--texto'
+									component="button"
+									variant="body2"
+									onClick={() => {
+										console.info("Conócenos");
+									}}
+								>
+									<h3>Conócenos</h3>
+								</Link>
+							</div>
+							<div>
+							<Link
+								style={{
+									color: "#3B3D3E",
+									fontSize: '1.25rem',
+									fontWeight: '600'
+								}}
+								component="button"
+								variant="body2"
+								onClick={() => {
+									console.info("Conócenos");
+								}}
+							>
+								<h3>Nuestra App</h3>
+							</Link>
+							</div>
+						</div>
+					</div>
+					<div className='parteSuperior--logos'>
+						<a href="https://www.facebook.com/PetPinina" target="_blanck">
+							{" "}
+							<img
+								className="logodefacebook"
+								src={imagen6}
+								alt="logo-facebook"
+							/>{" "}
+						</a>
+						<a href="https://www.instagram.com/petsaci/" target="_blanck">
+							{" "}
+							<img
+								className="logodeinstagram"
+								src={imagen7}
+								alt="logo-instagram"
+							/>
+						</a>
+						<a href="https://twitter.com/petsaci" target="_blanck">
+							{" "}
+							<img className="logodetwitter" src={imagen8} alt="logo-twitter" />
+						</a>
+					</div>
+				</div>
 
-					<Link
-						style={{
-							color: "#3B3D3E",
-							fontSize: '1.25rem',
-							fontWeight: '600'
-						}}
-						component="button"
-						variant="body2"
-						onClick={() => {
-							console.info("Conócenos");
-						}}
-					>
-						Conócenos
-					</Link>
 
-					<Link
-						style={{
-							color: "#3B3D3E",
-							fontSize: '1.25rem',
-							fontWeight: '600'
-						}}
-						component="button"
-						variant="body2"
-						onClick={() => {
-							console.info("Conócenos");
-						}}
-					>
-						Nuestra App
-					</Link>
-				</Grid>
-
-				<Grid
-					item
-					xs={1}
-					md={1}
-					style={{
-						display: "flex",
-						gap: "1rem",
-					}}
-				>
-					<a href="https://www.facebook.com/PetPinina" target="_blanck">
-						{" "}
-						<img
-							className="logodefacebook"
-							src={imagen6}
-							alt="logo-facebook"
-						/>{" "}
-					</a>
-					<a href="https://www.instagram.com/petsaci/" target="_blanck">
-						{" "}
-						<img
-							className="logodeinstagram"
-							src={imagen7}
-							alt="logo-instagram"
-						/>
-					</a>
-					<a href="https://twitter.com/petsaci" target="_blanck">
-						{" "}
-						<img className="logodetwitter" src={imagen8} alt="logo-twitter" />
-					</a>
-				</Grid>
 
 				<div className="home-main">
 					<figure className="home--main--imagen">
@@ -299,7 +293,7 @@ export default function Home() {
 										<Grid xs={1} md={1}>
 											<AccountCircleIcon style={{ color: "#EBEBEB" }} />
 										</Grid>
-										<Grid item xs={11} md={11}>
+										<Grid item sm={12} xs={11} md={11}>
 											<TextField
 												inputProps={{
 													style: {

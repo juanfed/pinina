@@ -1548,7 +1548,75 @@ img {
 
 
 
+/*Home parte superior*/
 
+.home--parteSuperior{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+}
+
+.home--parteSuperior--texto{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0rem 2rem;
+}
+
+.parteSuperior--texto{
+  display: flex;
+  gap: 0rem 2rem;
+}
+
+
+.parteSuperior--logos{
+  display: flex;
+  gap: 0rem 1rem;
+}
+
+
+/*Home parte superior responsive*/
+
+@media screen and (max-width: 800px) {
+  .headerlogin{
+    width: 500px;
+  }
+  .home--parteSuperior{
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home--parteSuperior--texto{
+    display: flex;
+    flex-direction: column;
+  }
+  .parteSuperior--texto{
+    gap: 0rem 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .parteSuperior--texto h3{
+    font-size: 3.5rem;
+  }
+
+  .parteSuperior--logos{
+    gap: 1rem 4rem;
+  }
+
+  .logodefacebook {
+    width: 30px;
+  }
+  
+  .logodeinstagram {
+    width: 50px;
+  }
+  
+  .logodetwitter {
+    width: 60px;
+  }
+
+}
 
 
 
@@ -1593,6 +1661,16 @@ img {
 }
 .home--main--loginRegister{
   width: 800px;
+}
+
+@media screen and (max-width: 800px){
+  .home--main--imagen img{
+    width: 700px;
+    margin-left: -6rem;
+  }
+  .home--main--loginRegister{
+    width: 900px;
+  }
 }
 
 @media screen and (max-width: 1400px){

@@ -7,16 +7,16 @@ export const registerStyle = makeStyles((theme) => ({
 
 
     },
-    toRightContainer: {
-        height: '100vh',
-        backgroundImage: `url(${Image})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+    // toRightContainer: {
+    //     height: '100vh',
+    //     backgroundImage: `url(${Image})`,
+    //     backgroundSize: 'cover',
+    //     backgroundPosition: 'center',
+    //     backgroundRepeat: 'no-repeat',
 
-        backgroundAttachment: 'fixed',
+    //     backgroundAttachment: 'fixed',
 
-    },
+    //}
     mainContainer: {
         padding: theme.spacing(0, 20, 0, 20)
     },
