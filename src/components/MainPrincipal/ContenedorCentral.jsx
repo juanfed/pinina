@@ -6,6 +6,12 @@ import Cards from "./Cards";
 
 
 const ContenedorCentral = () => {
+	// variable global para el token
+	var headers = {
+		"headers": {
+			authorization: `token: ${localStorage.getItem('token')}`
+		}
+	}
 
 	const [datos, setDatos] = useState([])
 	const idUsuario = localStorage.getItem("id_usuario")
@@ -13,7 +19,7 @@ const ContenedorCentral = () => {
 	useEffect(() => {
 		const datos = async () => {
 			const response = await axiosClient.get(
-				`mostrarpublicaciones/${idUsuario}`
+				`mostrarpublicaciones/${idUsuario}`, headers 
 			);
 			setDatos(response.data.publicaciones);
 		}

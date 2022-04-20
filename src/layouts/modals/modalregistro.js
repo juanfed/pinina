@@ -57,6 +57,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import Autocomplete from "@mui/material/Autocomplete";
 
 import { Button, Divider, TextField, InputAdornment } from "@material-ui/core/";
+import axiosClient from "../../config/AxiosClient";
 
 export const Modalregistro = ({ modalRegis, setModalRegis }) => {
   // Styles Material UI instance
@@ -134,15 +135,51 @@ export const Modalregistro = ({ modalRegis, setModalRegis }) => {
 
   //function for verify the generate code
   const sendVerifyCode = async () => {
+    let primer_nombre, segundo_nombre, primer_apellido, segundo_apellido;
+    let nombre_completo = nombres.split(' ')
+    if (nombre_completo && apellidos) {
+      try {
+        primer_nombre = nombre_completo[0];
+        segundo_nombre = nombre_completo[1];
+        if (segundo_nombre == undefined || segundo_nombre == null) {
+          segundo_nombre = "";
+        }
+
+      } catch (err) {
+        console.error(err)
+        return null;
+      }
+
+
+      try {
+
+        apellidos = apellidos.split(' ');
+        primer_apellido = apellidos[0];
+        segundo_apellido = apellidos[1];
+        if (segundo_apellido == undefined || segundo_apellido == null) {
+          segundo_apellido = "";
+        }
+      } catch (err) {
+        console.error(err)
+        return null;
+      }
+    }
+
+    const userInfoUser = {
+      correo: correo,
+      primer_nombre,
+      segundo_nombre,
+      primer_apellido,
+      segundo_apellido,
+      codigo: verifyCode,
+      password: password,
+      ubicacion: ubicacion
+    }
+
+    console.log(userInfoUser)
+
     const response = await dispatch(
-      verifyRegCodeAction({
-        correo: correo,
-        nombres: nombres,
-        apellidos: apellidos,
-        codigo: verifyCode,
-        password: password,
-        ubicacion: ubicacion
-      })
+      verifyRegCodeAction(userInfoUser)
     );
 
     if (response.code === "1") {
@@ -210,6 +247,17 @@ export const Modalregistro = ({ modalRegis, setModalRegis }) => {
   useEffect(() => {
     if (registerToLogin) {
       setVerifyDialog(false);
+      const userDataLogin = {
+        correo: correo,
+        password: password
+      }
+      const captura = async () =>{
+        const responseRegister =  await axiosClient.post(`/login/loginPinina`, userDataLogin)
+        localStorage.setItem('id_usuario', responseRegister.data.user.id_usuario);
+        localStorage.setItem('token', responseRegister.data.user.tokenGenerado);
+      }
+      captura()
+
       router.push("/petsAndClients");
     }
   }, [registerToLogin]);

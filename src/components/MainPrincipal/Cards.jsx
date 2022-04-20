@@ -21,6 +21,12 @@ import { List, ListItem, ListItemText } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 const Cards = ({ dato }) => {
+	var headers = {
+		"headers": {
+			authorization: `token: ${localStorage.getItem('token')}`
+		}
+	}
+	let data;
 	const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 	const theme = useTheme();
 	const [activeStep, setActiveStep] = useState(0);
@@ -32,6 +38,7 @@ const Cards = ({ dato }) => {
 	const [coment, setComent] = useState({
 		comentario: ''
 	});
+
 
 	const handleStepChange = (step) => {
 		setActiveStep(step);
@@ -55,7 +62,7 @@ const Cards = ({ dato }) => {
 
 	const darlike = async () => {
 		const response = await axiosClient.get(
-			`/darlike/${dato.id_publicacion}/${localStorage.getItem("id_usuario")}`
+			`/darlike/${dato.id_publicacion}/${localStorage.getItem("id_usuario")}`, headers
 		);
 		if (like) {
 			setLikes(likes + 1)
@@ -68,7 +75,7 @@ const Cards = ({ dato }) => {
 
 	const seguir = async () => {
 		const respuesta = await axiosClient.post(
-			`/seguircuentausuario/${localStorage.getItem("id_usuario")}/${dato.id_usuario}`
+			`/seguircuentausuario/${localStorage.getItem("id_usuario")}/${dato.id_usuario}`, data, headers
 		);
 		if (follow) {
 			setFollow(false)
@@ -103,7 +110,7 @@ const Cards = ({ dato }) => {
 			id_publicacion: dato.id_publicacion,
 			comentario: coment.comentario,
 			id_clientes: localStorage.getItem("id_usuario")
-		})
+		}, headers)
 	}
 
 	const send = (e) => {
@@ -113,7 +120,7 @@ const Cards = ({ dato }) => {
 
 	const deleteComment = async (comment) => {
 		const borrarComment = await axiosClient.delete(
-			`/eliminarcomentario/${comment.comentario_id}/${comment.id_publicacion}/`
+			`/eliminarcomentario/${comment.comentario_id}/${comment.id_publicacion}/`, headers
 		)
 	}
 

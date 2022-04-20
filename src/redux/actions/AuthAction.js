@@ -12,7 +12,7 @@ import { LOGIN_START,
 export const loginAction = (userInfo) => async (dispatch) => {
     dispatch(loginStart());
     try {
-        const login = await axiosClient.post('/login/loginpinina', userInfo);
+        const login  = await axiosClient.post('/login/loginpinina', userInfo);
         if (login.data.code === 1) {
             // Dispatch
             localStorage.setItem('id_usuario', login.data.user.id_usuario);
@@ -98,11 +98,13 @@ const countriesError = (error) => ({
 
 export const genRegCodeAction = (userData) => async () => {
     try {
+        console.log(userData)
         const response = await axiosClient.post('/generate-code-register', userData);
         console.log(response.data)
         return response.data
     }
     catch (error) {
+        console.log(userData)
         console.log(error.response.data)
         return error.response.data
     }

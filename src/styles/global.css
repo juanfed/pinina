@@ -1667,6 +1667,7 @@ img {
   .home--main--imagen img{
     width: 700px;
     margin-left: -6rem;
+    display: none;
   }
   .home--main--loginRegister{
     width: 900px;
