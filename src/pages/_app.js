@@ -36,6 +36,7 @@ function MyApp({ Component, pageProps }) {
             <title>Pet Pinina</title>
             <link rel='icon' href='/faviconp.ico' />
             <link rel="manifest" href="/manifest.json" />
+            <meta name="theme-color" content="#317EFB" />
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
             <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet"></link>

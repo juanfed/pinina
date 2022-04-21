@@ -17,15 +17,10 @@ module.exports = withPlugins(
 			}
 		}],
 		[withPWA, {
-			reactStrictMode: true,
 			pwa: {
-				dest: "public",
-				register: true,
-				skipWaiting: true,
-				disable: false,
+				dest: 'public',
 				runtimeCaching,
-				buildExcludes: [/middleware-manifest.json$/]
-			}
+			  },
 		}]
 	]
 )
