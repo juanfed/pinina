@@ -1,6 +1,8 @@
 const withPlugins = require('next-compose-plugins');
 const withImages = require('next-images');
 const withPWA = require('next-pwa');
+const runtimeCaching = require("next-pwa/cache");
+
 
 
 module.exports = withPlugins(
@@ -20,6 +22,8 @@ module.exports = withPlugins(
 				dest: "public",
 				register: true,
 				skipWaiting: true,
+				runtimeCaching,
+				buildExcludes: [/middleware-manifest.json$/]
 			}
 		}]
 	]
