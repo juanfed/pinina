@@ -22,6 +22,7 @@ module.exports = withPlugins(
 				dest: "public",
 				register: true,
 				skipWaiting: true,
+				disable: false,
 				runtimeCaching,
 				buildExcludes: [/middleware-manifest.json$/]
 			}
