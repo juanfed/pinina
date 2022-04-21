@@ -11,6 +11,7 @@ import profileStyles from "../assets/css/js/profileStyles";
 import Deworming from "../components/ClientsAndPets/Deworming";
 // Snackbar
 import { useSnackbar } from "notistack";
+import { useRouter } from 'next/router';
 import MainAppBar from "../layouts/MainAppBar";
 import {
   getBusinessAdminAction,
@@ -26,8 +27,11 @@ import { useSelector, useDispatch } from "react-redux";
 import ContenedorIzquierdo from "../components/MainPrincipal/ContenedorIzquierdo";
 import ContenedorCentral from "../components/MainPrincipal/ContenedorCentral";
 import ContenedorDerecho from "../components/MainPrincipal/ContenederoDerecho";
+import axiosClient from '../config/AxiosClient';
+import { Modal } from "reactstrap";
 
 export default function () {
+  const router = useRouter();
   // Snackbar Instance
   const { usersBusiness, userAdmin, modules, userModules } = useSelector(
     (state) => state.admin
@@ -37,9 +41,8 @@ export default function () {
   const [checkModules, setCheckModules] = useState(true);
   const { enqueueSnackbar } = useSnackbar();
   const classes = profileStyles();
-  useEffect(() => {
-    enqueueSnackbar("Sesión Iniciada", { variant: "success" });
-  }, []);
+  
+  
   useEffect(() => {
     dispatch(getBusinessAdminAction({ id_usuario: user?.id }));
     dispatch(getBusinessByUserAction({ id_usuario: user?.id }));
@@ -80,18 +83,30 @@ export default function () {
   }, [userModules, user, userAdmin]);
   console.log(usersBusiness)
 
+  var login
+  if(localStorage.getItem("token") == undefined){
+    login = false
+    setTimeout(()=>{router.push("/");}, 2000)
+    
+  }else{
+    enqueueSnackbar("Sesión Iniciada", { variant: "success" });
+    login = true
+  }
   return (
-    <Grid container  className="flex-container"> 
-      <Grid container className="caja c1"  xs={2} md={2}>
-      <ContenedorIzquierdo />
+    <div>
+      {login ? <Grid container className="flex-container">
+      <Grid container className="caja c1" xs={2} md={2}>
+        <ContenedorIzquierdo />
       </Grid>
-      
-      
+
       <ContenedorCentral />
 
       <Grid container className="caja c4" xs={2} md={2}>
-      <ContenedorDerecho />
+        <ContenedorDerecho />
       </Grid>
-    </Grid>
+    </Grid>: 
+    <div>
+    </div>}
+    </div>
   );
 }

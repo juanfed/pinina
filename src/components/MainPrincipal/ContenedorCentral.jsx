@@ -26,6 +26,8 @@ const ContenedorCentral = () => {
 		datos()
 	}, []);
 	
+
+	
 	
 	console.log(localStorage.getItem("id_usuario"))
 	return (
